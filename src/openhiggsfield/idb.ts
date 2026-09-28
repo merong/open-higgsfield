@@ -71,6 +71,6 @@ export function defaultKv(): Kv {
 }
 
 export function browserLegacy(): LegacyStore | undefined {
-  if (typeof localStorage === "undefined") return undefined;
+  if (typeof window === "undefined" || typeof localStorage === "undefined") return undefined;
   return localStorage;
 }

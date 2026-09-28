@@ -24,7 +24,7 @@ export function browserStorage<T>(): PersistStorage<T> {
 
 function read(name: string): string | null {
   try {
-    if (typeof localStorage === "undefined") return null;
+    if (typeof window === "undefined" || typeof localStorage === "undefined") return null;
     return localStorage.getItem(name);
   } catch {
     return null;
@@ -33,7 +33,7 @@ function read(name: string): string | null {
 
 function write(name: string, value: string | null): void {
   try {
-    if (typeof localStorage === "undefined") return;
+    if (typeof window === "undefined" || typeof localStorage === "undefined") return;
     if (value === null) localStorage.removeItem(name);
     else localStorage.setItem(name, value);
   } catch {

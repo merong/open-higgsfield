@@ -1,0 +1,97 @@
+[
+  {
+    "url": "http://localhost:3100/projects/80ada9a2-5073-48ae-afe7-45b49572486d",
+    "qa": {
+      "errors": [],
+      "warnings": [],
+      "exceptions": []
+    },
+    "download": true
+  },
+  {
+    "url": "http://localhost:3100/projects/new?format=product-detail",
+    "heading": "무엇을 만들어 볼까요?",
+    "inputs": 22,
+    "width": 1440,
+    "viewport": 1440,
+    "qa": {
+      "errors": [],
+      "warnings": [],
+      "exceptions": []
+    },
+    "failed": []
+  },
+  {
+    "url": "http://localhost:3100/projects/new?format=card-news",
+    "heading": "무엇을 만들어 볼까요?",
+    "inputs": 23,
+    "width": 1440,
+    "viewport": 1440,
+    "qa": {
+      "errors": [],
+      "warnings": [],
+      "exceptions": []
+    },
+    "failed": []
+  },
+  {
+    "url": "http://localhost:3100/projects/new?format=reels",
+    "heading": "무엇을 만들어 볼까요?",
+    "inputs": 16,
+    "width": 1440,
+    "viewport": 1440,
+    "qa": {
+      "errors": [],
+      "warnings": [],
+      "exceptions": []
+    },
+    "failed": []
+  },
+  {
+    "url": "http://localhost:3100/account",
+    "heading": "내 라이브러리",
+    "inputs": 14,
+    "width": 1440,
+    "viewport": 1440,
+    "qa": {
+      "errors": [],
+      "warnings": [],
+      "exceptions": []
+    },
+    "failed": []
+  },
+  {
+    "url": "http://localhost:3100/help",
+    "heading": "아이디어에서 완성까지,한 단계씩.",
+    "inputs": 7,
+    "width": 1440,
+    "viewport": 1440,
+    "qa": {
+      "errors": [],
+      "warnings": [],
+      "exceptions": []
+    },
+    "failed": []
+  },
+  {
+    "url": "http://localhost:3100/help",
+    "width": 390,
+    "viewport": 390,
+    "filtered": "6개 안내",
+    "qa": {
+      "errors": [],
+      "warnings": [],
+      "exceptions": []
+    }
+  },
+  {
+    "url": "http://localhost:3100/projects/new?format=product-detail",
+    "width": 390,
+    "viewport": 390,
+    "qa": {
+      "errors": [],
+      "warnings": [],
+      "exceptions": []
+    }
+  }
+]
