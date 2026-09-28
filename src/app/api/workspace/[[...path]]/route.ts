@@ -1,3 +1,4 @@
+import { imagePlane, PRODUCT_REFERENCE_MODEL } from "@/projects/landing-images";
 import { recommendProjectTypography } from "@/service/typography";
 import { getImageBoard, generateBoardImages, stepBoardImages, applyBoardImages, resetBoardImages } from "@/service/landing-images";
 import { NextRequest, NextResponse } from "next/server";
@@ -87,6 +88,7 @@ async function route(request: NextRequest, context: Context) {
         generationReady: user ? await platformReady(user.id) : false,
         outlineReady: user ? await outlineReady() : false,
         quickCardReady: user ? await openAiReady() : false,
+        productImageCost: user ? quote(imagePlane(PRODUCT_REFERENCE_MODEL, "Product reference", "1:1")) : 0,
       });
     }
     if (resource === "auth" && method === "POST") {

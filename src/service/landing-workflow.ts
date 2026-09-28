@@ -8,10 +8,10 @@ import { randomUUID } from "node:crypto";
 import { LANDING_KINDS, landingTerminal, type LandingWorkflow, type LandingIntent, type LandingSection } from "@/projects/landing-workflow";
 import { createDraft } from "@/projects/outline";
 import { newSlot, safeLink, PRESETS } from "@/projects/formats";
-import { imagePlan } from "@/projects/landing-images";
+import { imagePlan, imagePlane, PRODUCT_REFERENCE_MODEL } from "@/projects/landing-images";
 import { parseImagePlan, parseProductInfo, parseProject } from "@/projects/validation";
 import { database, type Database } from "./db";
-import { ledger } from "./credits";
+import { ledger, quote } from "./credits";
 import { object, ServiceError, text } from "./errors";
 import { resolveOpenAi } from "./openai-settings";
 import { landingModel, type LandingModel } from "./landing-model";
@@ -40,7 +40,7 @@ async function save(tx: Database, r: LandingWorkflow, reason: string, changed = 
     status: r.status, revision: r.revision, contentVersion: r.contentVersion, changed,
     calls: r.calls, model: r.model, effort: r.effort, summary: r.events.at(-1)?.message,
     summaryKind: "application_result", error: r.error, intent: r.intent, plan: r.plan,
-    review: r.review, editorial: r.editorial, ...(changed ? { project: r.project } : {}),
+    review: r.review, editorial: r.editorial, autoImages: r.autoImages, ...(changed ? { project: r.project } : {}),
   }, `landing:${r.id}:${r.revision}`);
 }
 export async function getLanding(userId: string, id: string) {
@@ -230,6 +230,17 @@ export async function actLanding(userId: string, id: string, input: unknown) {
         if (r.stage !== "plan" || r.status !== "waiting_user" || !r.intentApproved) throw new ServiceError(409, "섹션 기획을 먼저 확인해 주세요.");
         r.plan = parseLandingPlan(d.plan, r.plan, r.project.format as PageFormat, r.referenceImages); r.planApproved = true; if(r.project.typography)r.project.typography.confirmed=true; r.stage = "write"; r.status = "pending"; changed = true;
         event(r, "섹션 흐름을 승인했어요", `${r.plan.length}개 섹션의 역할과 순서를 보호하며 본문을 작성합니다.`);
+      } else if (action === "auto_images") {
+        if (!r.autoImages) {
+          if (r.project.format !== "product-detail" || !r.referenceImages?.length || r.status !== "ready") throw new ServiceError(409, "상품 사진과 완성된 초안을 먼저 확인해 주세요.");
+          const count = r.project.slots.filter(s => imagePlan(s).enabled).length;
+          const credits = count * quote(imagePlane(PRODUCT_REFERENCE_MODEL, "Product reference", "1:1"));
+          if (!count || d.imageCredits !== credits) throw new ServiceError(409, "생성할 이미지 수와 비용을 다시 확인해 주세요.");
+          r.autoImages = { state: "queued", model: PRODUCT_REFERENCE_MODEL, credits, key: randomUUID() };
+          const { queueAutomaticProductImages } = await import("./landing-images");
+          await queueAutomaticProductImages(tx, userId, r);
+          event(r, "섹션별 상품 이미지를 제작해요", `${count}장 · ${credits} 크레딧. 업로드 원본을 참고해 후보를 만들며, 확인한 뒤 적용할 수 있어요.`);
+        }
       } else if (action === "revise_plan") {
         if (r.stage !== "plan" || r.status !== "waiting_user" || r.planApproved) throw new ServiceError(409, "승인 전 기획만 다시 제안할 수 있어요.");
         r.feedback = text(d.feedback, "기획 의견", 1500, 2); r.status = "pending";

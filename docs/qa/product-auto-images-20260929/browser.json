@@ -1,0 +1,40 @@
+{
+  "browser": "Ego Lite",
+  "spaceId": 28,
+  "origin": "http://localhost:3100",
+  "account": "user1",
+  "provider": "isolated server fetch fixture; paid API not called",
+  "projectId": "884be38b-c53a-4422-8507-e929b3587bc1",
+  "runId": "1a97c3b3-8bbd-4db8-9c4c-85db698b465a",
+  "originalsPreservedBeforeApply": true,
+  "appliedPersistedAfterReload": true,
+  "referenceIdsMatchSections": true,
+  "providerSubmissions": 2,
+  "aspectRatios": [
+    "1:1",
+    "16:9"
+  ],
+  "balanceBefore": 199,
+  "balanceAfter": 191,
+  "consoleBeforeReload": {
+    "errors": [],
+    "warnings": [],
+    "exceptions": []
+  },
+  "consoleAfterReload": {
+    "errors": [],
+    "warnings": [],
+    "exceptions": []
+  },
+  "resourceErrors": [],
+  "mobileLayout": {
+    "viewport": 390,
+    "width": 390,
+    "dialogs": [
+      {
+        "width": 358,
+        "scroll": 358
+      }
+    ]
+  }
+}

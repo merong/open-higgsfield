@@ -3,3 +3,5 @@
 .li-dialog .ohf-dialog-head{position:sticky;top:0;background:var(--surface-panel);padding-bottom:16px;z-index:5;flex-shrink:0}.li-dialog .ohf-dialog-body{flex-shrink:0}
 /* A single asset can be inspected beside its prompt without an empty grid column. */
 .li-grid:has(>.li-tile:only-child){grid-template-columns:1fr}.li-tile:only-child{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}@media(max-width:640px){.li-tile:only-child{grid-template-columns:1fr}}
+
+.li-auto-option{padding:18px;margin:16px 0 24px;background:var(--accent-08);border:1px solid var(--accent-14);border-radius:var(--radius-md)}.li-auto-option label{display:flex;align-items:flex-start;gap:12px;cursor:pointer}.li-auto-option input{margin-top:4px;accent-color:var(--accent);flex:none}.li-auto-option strong{display:block;font-size:14px;line-height:1.6}.li-auto-option small{display:block;color:var(--text-secondary);font-size:12px;line-height:1.8;margin-top:6px}.li-auto-option p{font-size:13px;line-height:1.7;margin:12px 0 0;color:var(--text-primary)}

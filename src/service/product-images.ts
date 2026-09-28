@@ -70,3 +70,10 @@ export async function productVisionImages(userId: string, images: ProductImage[]
   }
   return result;
 }
+
+export async function uploadProductReference(userId: string, id: string, client: import("@/generation/platform").PlatformClient) {
+  const { preview } = await ownedProductImage(userId, id);
+  if (!client.upload) throw new ServiceError(502, "상품 사진을 전달할 수 없는 이미지 연결입니다.");
+  try { return await client.upload(preview, "image/jpeg"); }
+  catch { throw new ServiceError(502, "상품 사진을 전달하지 못했어요. 이미지 생성은 접수하지 않았습니다. 연결을 확인한 뒤 다시 시도해 주세요."); }
+}

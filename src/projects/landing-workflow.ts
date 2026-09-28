@@ -17,6 +17,7 @@ export interface LandingSection {
 }
 export interface LandingIssue { sectionId: string; message: string; severity: "attention" | "error" }
 export interface LandingWorkflow {
+  autoImages?: { state: "queued"; model: string; credits: number; key: string };
   editorial?: EditorialLoop;
   typographyRecommendations?: import("./typography").TypographyRecommendation[];
   referenceImages?: ProductImage[];

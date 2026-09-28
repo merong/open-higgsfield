@@ -1,3 +1,4 @@
+import { marketingImage } from "./marketing-image";
 import { dop } from "./dop";
 import { flux2 } from "./flux-2";
 import { flux3 } from "./flux-3";
@@ -52,6 +53,7 @@ export const MODELS: readonly ModelEntry[] = [
   kling3MotionStd,
   kling3MotionPro,
   flux2,
+  marketingImage,
   grokImagine2,
   ideogram4,
   recraft41,

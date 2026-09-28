@@ -1,0 +1,130 @@
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/higgsfield-ai/soul/v2/standard'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/higgsfield-ai/soul/v2/standard',
+  status: 200
+}
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/kling-video/v3.0-turbo/text-to-video'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/kling-video/v3.0-turbo/text-to-video',
+  status: 200
+}
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/higgsfield-ai/soul/v2/standard'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/higgsfield-ai/soul/v2/standard',
+  status: 200
+}
+[platform] request {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-1/status'
+}
+[platform] response {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-1/status',
+  status: 200
+}
+[platform] request {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-2/status'
+}
+[platform] response {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-2/status',
+  status: 200
+}
+[platform] request {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-3/status'
+}
+[platform] response {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-3/status',
+  status: 200
+}
+✔ demo seed is atomic and repeatable; username login and admin IP gates (4141.495208ms)
+✔ IP attestation rejects forged forwarding headers, invalid signatures and stale peers (25.651417ms)
+✔ admin grants are audited, atomic and idempotent; ordinary users cannot administer (10.733125ms)
+✔ only admins store encrypted shared keys and metadata never exposes secrets (4.459167ms)
+✔ stored shared key drives all three format submissions, survives rotation for polling and stays off responses (30.626667ms)
+✔ image plans survive validation and empty preview preserves ratios, alt, escaping and FAQ placement (5.37325ms)
+✔ all-image request is durable, idempotent, owner checked and requires explicit apply (60.592458ms)
+✔ partial failure refunds, successes remain reviewable, retry charges only failed image (42.879625ms)
+✔ stale text and disabled/deleted placements cannot be overwritten by candidates (42.53425ms)
+✔ archive retry never re-submits or charges; pending requests resume (35.324875ms)
+✔ ambiguous provider submission blocks automatic retries and new generation (15.041916ms)
+✔ insufficient credits, changed quote and video model submit no provider requests (7.143ms)
+✔ landing workflow reserves once, fences approvals and performs no calls while waiting (51.098917ms)
+✔ landing user intent rejects script URLs; anchors must exist; no invented CTA or dummy media (17.135584ms)
+✔ landing plan approval preserves editable order, disallows duplicate/foreign sections and script kinds (51.041875ms)
+✔ landing scoped revision protects all other sections, CTA and invalidates review (61.748917ms)
+✔ landing handoff is explicit, durable and never updates a completed workflow (41.78575ms)
+✔ landing cancelling an in-flight call refunds once and ignores late model result (9.76275ms)
+✔ landing errors and lease expiry pause without automatic retry or extra reservation (17.330834ms)
+✔ landing model budget pauses; project CAS conflict preserves another editor's changes (29.844667ms)
+✔ landing request carries saved model/effort, bounded structured schema and only summaries (6.681584ms)
+✔ archiving an unfinished landing closes its workflow and releases its reservation (11.522166ms)
+✔ landing feature output separates headings and details without losing or executing copy (27.025334ms)
+✔ landing image confirmation updates active workflow and protects copy review and subsequent patch (65.536667ms)
+✔ text-only planned sections accept empty image prompts without blocking the draft (21.532583ms)
+✔ FAQ introduction survives AI writing, persistence and export without becoming an unanswered question (20.971917ms)
+✔ FAQ and specification validation keeps malformed pairs atomic for write and revisions (23.383ms)
+✔ a finished draft never generates automatically; the click validates references and the current quote (182.66025ms)
+✔ approved queue resumes idempotently, uploads owned references, preserves section ratios and originals until apply (98.760583ms)
+✔ reference upload/ownership and changed unit price fail before provider submission or debit (42.13325ms)
+✔ insufficient credits do not enqueue; an inspected original-only board can start but unreviewed candidates are protected (79.653458ms)
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/files/generate-upload-url'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/files/generate-upload-url',
+  status: 200
+}
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/marketing-studio/image'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/marketing-studio/image',
+  status: 200
+}
+[platform] request {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/managed-1/status'
+}
+[platform] response {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/managed-1/status',
+  status: 200
+}
+✔ managed provider credentials survive reference upload and status polling (57.473625ms)
+✔ product validation, manual draft, fixed information render and escaping (3.354583ms)
+✔ product and landing workflow discovery, idempotency and refunds are isolated by format (48.52ms)
+✔ product intent, plan, copy, scoped revision, approved images, handoff, and library persistence (110.140209ms)
+✔ multipart uploads bound the streamed body even without content-length (33.032625ms)
+✔ uploads preserve original bytes and ownership; vision uses a decoded image copy (27.284041ms)
+✔ corrupt, disguised, oversized, empty, animated and too-large pixel inputs do not persist (14.131917ms)
+✔ EXIF orientation is respected and AI images are bounded without modifying originals (85.976084ms)
+✔ invalid reference selections reject before reserving credits or creating a workflow (7.397041ms)
+✔ multimodal request, approved source mapping, refresh, copy revision, image board and handoff (67.181292ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 41
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14116.801541
