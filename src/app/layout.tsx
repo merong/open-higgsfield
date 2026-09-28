@@ -52,7 +52,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ko">
+    // Extensions (e.g. RHWP) add attributes to <html> before hydration.
+    // Tolerate root attributes only; descendant hydration checks stay enabled.
+    <html lang="ko" suppressHydrationWarning>
       <body><WorkspaceShell>{children}</WorkspaceShell></body>
     </html>
   );

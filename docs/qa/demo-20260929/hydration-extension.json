@@ -1,0 +1,19 @@
+{
+  "method": "Ego Lite pre-hydration DOM injection; console.error and console.warn capture",
+  "url": "https://openhigsfield.oootool.com/help",
+  "before": {
+    "injected": true,
+    "hydrationWarnings": 1,
+    "windowErrors": []
+  },
+  "after": {
+    "qa": {
+      "console": [],
+      "errors": [],
+      "injected": true
+    },
+    "extension": "rhwp",
+    "version": "0.8.6",
+    "searchResult": "0개 안내"
+  }
+}
