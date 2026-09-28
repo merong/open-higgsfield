@@ -1,0 +1,236 @@
+{
+  "suiteId": "agentic-pages-v1",
+  "version": 1,
+  "createdAt": "2026-09-29",
+  "status": "authored_not_executed",
+  "runnerGuide": "runner-guide.md",
+  "runTemplate": "run-template.md",
+  "scenarios": [
+    {
+      "id": "LP-01",
+      "format": "landing",
+      "inputMode": "url",
+      "industry": "B2B SaaS",
+      "primaryCheck": "가치 제안과 CTA",
+      "document": "cases/LP-01.md",
+      "dimensions": [
+        "intent",
+        "factuality"
+      ],
+      "tags": [
+        "url",
+        "cta",
+        "partial-edit"
+      ],
+      "fixtures": [
+        "fixtures/lp-01-teamflow.html"
+      ],
+      "requiresPhotoPreparation": false,
+      "requiresReachableFixtureHost": true,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "LP-02",
+      "format": "landing",
+      "inputMode": "sentence",
+      "industry": "지역 청소",
+      "primaryCheck": "최소 입력과 이미지 수",
+      "document": "cases/LP-02.md",
+      "dimensions": [
+        "intent",
+        "effort",
+        "image_fit"
+      ],
+      "tags": [
+        "minimal-input",
+        "image-count"
+      ],
+      "fixtures": [],
+      "requiresPhotoPreparation": false,
+      "requiresReachableFixtureHost": false,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "LP-03",
+      "format": "landing",
+      "inputMode": "url",
+      "industry": "온라인 교육",
+      "primaryCheck": "일부 접근 실패와 사실",
+      "document": "cases/LP-03.md",
+      "dimensions": [
+        "factuality",
+        "intent"
+      ],
+      "tags": [
+        "url",
+        "partial-source",
+        "copy"
+      ],
+      "fixtures": [
+        "fixtures/lp-03-class.html"
+      ],
+      "requiresPhotoPreparation": false,
+      "requiresReachableFixtureHost": true,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "LP-04",
+      "format": "landing",
+      "inputMode": "sentence",
+      "industry": "체험 행사",
+      "primaryCheck": "일정 보존과 재접속",
+      "document": "cases/LP-04.md",
+      "dimensions": [
+        "factuality",
+        "visual",
+        "effort"
+      ],
+      "tags": [
+        "date",
+        "resume",
+        "crop"
+      ],
+      "fixtures": [],
+      "requiresPhotoPreparation": false,
+      "requiresReachableFixtureHost": false,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "LP-05",
+      "format": "landing",
+      "inputMode": "photos",
+      "industry": "인테리어 상담",
+      "primaryCheck": "공간 사진과 표시 크기",
+      "document": "cases/LP-05.md",
+      "dimensions": [
+        "image_fit",
+        "visual",
+        "effort"
+      ],
+      "tags": [
+        "photos",
+        "region-comment",
+        "resize"
+      ],
+      "fixtures": [],
+      "requiresPhotoPreparation": true,
+      "requiresReachableFixtureHost": false,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "PD-01",
+      "format": "product-detail",
+      "inputMode": "url",
+      "industry": "드립백 커피",
+      "primaryCheck": "구성 수량과 배송",
+      "document": "cases/PD-01.md",
+      "dimensions": [
+        "factuality",
+        "intent",
+        "image_fit"
+      ],
+      "tags": [
+        "url",
+        "quantity",
+        "missing-facts"
+      ],
+      "fixtures": [
+        "fixtures/pd-01-coffee.html"
+      ],
+      "requiresPhotoPreparation": false,
+      "requiresReachableFixtureHost": true,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "PD-02",
+      "format": "product-detail",
+      "inputMode": "photos",
+      "industry": "보습크림",
+      "primaryCheck": "상품 보존과 배경 수정",
+      "document": "cases/PD-02.md",
+      "dimensions": [
+        "factuality",
+        "image_fit",
+        "visual"
+      ],
+      "tags": [
+        "photos",
+        "identity",
+        "background",
+        "undo"
+      ],
+      "fixtures": [],
+      "requiresPhotoPreparation": true,
+      "requiresReachableFixtureHost": false,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "PD-03",
+      "format": "product-detail",
+      "inputMode": "photos",
+      "industry": "의류 셔츠",
+      "primaryCheck": "옵션과 사진 대응",
+      "document": "cases/PD-03.md",
+      "dimensions": [
+        "factuality",
+        "image_fit",
+        "visual"
+      ],
+      "tags": [
+        "photos",
+        "variants",
+        "crop"
+      ],
+      "fixtures": [],
+      "requiresPhotoPreparation": true,
+      "requiresReachableFixtureHost": false,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "PD-04",
+      "format": "product-detail",
+      "inputMode": "url",
+      "industry": "USB-C 허브",
+      "primaryCheck": "조건부 사양과 호환성",
+      "document": "cases/PD-04.md",
+      "dimensions": [
+        "factuality",
+        "intent",
+        "image_fit"
+      ],
+      "tags": [
+        "url",
+        "spec-conditions",
+        "claim-conflict"
+      ],
+      "fixtures": [
+        "fixtures/pd-04-hub.html"
+      ],
+      "requiresPhotoPreparation": false,
+      "requiresReachableFixtureHost": true,
+      "executionStatus": "not_run"
+    },
+    {
+      "id": "PD-05",
+      "format": "product-detail",
+      "inputMode": "sentence",
+      "industry": "모듈 선반",
+      "primaryCheck": "모호한 대상과 수정 복원",
+      "document": "cases/PD-05.md",
+      "dimensions": [
+        "intent",
+        "factuality",
+        "effort"
+      ],
+      "tags": [
+        "clarification",
+        "dimensions",
+        "undo"
+      ],
+      "fixtures": [],
+      "requiresPhotoPreparation": false,
+      "requiresReachableFixtureHost": false,
+      "executionStatus": "not_run"
+    }
+  ]
+}

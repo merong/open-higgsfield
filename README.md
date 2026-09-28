@@ -4,6 +4,8 @@
 > videos with 38 models from one prompt bar — no closed ecosystem, no studio
 > subscription.
 
+**Agentic page QA:** [10 reusable landing/product-detail scenarios](docs/qa/agentic-scenarios/README.md) — inputs, user feedback, fixtures and evaluation records for human or AI-guided E2E runs.
+
 ## 🌐 Try it Online — No Install Required
 
 **Hosted version:** [openhiggsfield.ai](https://openhiggsfield.ai)
