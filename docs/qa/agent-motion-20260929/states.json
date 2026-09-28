@@ -1,0 +1,39 @@
+[
+  {
+    "mode": "connect",
+    "width": 390,
+    "viewport": 390,
+    "running": 11
+  },
+  {
+    "mode": "image",
+    "width": 390,
+    "viewport": 390,
+    "running": 10
+  },
+  {
+    "mode": "voice",
+    "width": 390,
+    "viewport": 390,
+    "running": 16
+  },
+  {
+    "mode": "revise",
+    "width": 390,
+    "viewport": 390,
+    "running": 8
+  },
+  {
+    "queued": "true",
+    "sceneStates": [
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused"
+    ]
+  }
+]
