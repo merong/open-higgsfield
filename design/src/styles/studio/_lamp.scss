@@ -1,0 +1,56 @@
+/* ---------- platform lamp ---------- */
+
+/* Its own pill, but the control inside it is drawn as a scope tab is — same
+   height, plate and type, so the two instruments read as one set. */
+.ohf-key {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--h-md);
+  padding: 0 13px;
+  border-radius: var(--radius-ctl);
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-strong);
+  letter-spacing: var(--ls-tight);
+  color: var(--tx2);
+  transition:
+    color 0.22s ease,
+    background var(--dur-base) ease;
+}
+.ohf-key:hover {
+  color: var(--tx);
+  background: rgba(255, 255, 255, 0.035);
+}
+.ohf-key:active {
+  transform: scale(0.97);
+}
+.ohf-key svg {
+  flex-shrink: 0;
+  color: var(--tx3);
+  transition: color 0.22s ease;
+}
+.ohf-key:hover svg {
+  color: var(--tx2);
+}
+.ohf-key[data-ready="true"] svg,
+.ohf-key[data-busy="true"] svg {
+  color: var(--accent);
+}
+.ohf-key[data-busy="true"] {
+  color: var(--tx);
+}
+/* Idle is a steady lamp; the pulse is reserved for a job actually running. */
+.ohf-lamp {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tx4);
+  transition: background 0.25s ease;
+}
+.ohf-key[data-busy="true"] .ohf-lamp {
+  background: var(--accent);
+  animation: ohf-pulse 2.4s ease-in-out infinite;
+}
+

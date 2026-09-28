@@ -1,0 +1,204 @@
+/* ---------- keyframes ---------- */
+
+@keyframes ohf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes ohf-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ohf-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* The way out is not the way in reversed: it leaves in two thirds the time,
+   on an accelerating curve, and travels less. An exit that mirrors its
+   entrance reads mechanical — a dismissal should feel decided. */
+@keyframes ohf-pop-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.985) translateY(4px);
+  }
+}
+@keyframes ohf-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes ohf-tile {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* A sweep that loops has to close on itself. The band pattern repeats every
+   tile width and the travel is exactly one tile, so the last frame renders
+   identically to the first — the light never stops, never teleports back to
+   the start, and never leaves a stretch of dead plate behind it. Linear for
+   the same reason: an eased loop coasts to a standstill at the seam and has to
+   set off again from zero. The softness comes from the band's own falloff, not
+   from the timing curve. Runs on `transform`, so the compositor carries it and
+   a grid full of pending tiles costs no main-thread paint. */
+@keyframes ohf-sheen {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes ohf-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes ohf-arrive {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+    filter: brightness(1.5) saturate(0.6);
+  }
+  55% {
+    opacity: 1;
+    filter: brightness(1.12) saturate(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+/* Each instrument arrives from the edge it is docked to. */
+@keyframes ohf-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* The toolbar takes the composer's place, so it arrives with the weight of an
+   instrument rather than the flicker of a toast: up from the dock's own edge,
+   deep ease-out, and out again in half the time on the way back. */
+@keyframes ohf-selbar-in {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+    scale: 0.9;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+@keyframes ohf-selbar-out {
+  from {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    translate: 0 8px;
+    scale: 0.96;
+  }
+}
+/* Each control resolves out of the blur rather than sliding in — the bar reads
+   as one plate coming into focus, not seven chips flying together. Written on
+   `translate` and `scale` so a control's own press still lands: the filled
+   state of a transform animation would outrank it. */
+@keyframes ohf-selitem {
+  from {
+    opacity: 0;
+    translate: 0 9px;
+    scale: 0.88;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    filter: blur(0);
+  }
+}
+/* The count is a number that changed, not a label that redrew. */
+@keyframes ohf-count {
+  from {
+    opacity: 0;
+    translate: 0 -0.5em;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes ohf-keep {
+  0% {
+    transform: scale(1);
+  }
+  36% {
+    transform: scale(1.34);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes ohf-drain {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+@keyframes ohf-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ohf-spin-once {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+

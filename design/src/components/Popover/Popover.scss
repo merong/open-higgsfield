@@ -1,0 +1,19 @@
+.ohf-popover--down {
+  bottom: auto;
+  top: var(--ohf-pop-y, calc(100% + 10px));
+  transform-origin: top left;
+}
+.ohf-popover--static {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  animation: none;
+}
+.ohf-menu-row[data-state="hover"] {
+  background: var(--s3);
+  color: var(--tx);
+  .ohf-menu-ic {
+    color: var(--accent);
+  }
+}

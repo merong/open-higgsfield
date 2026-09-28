@@ -1,0 +1,24 @@
+@use "@/styles/mixins" as m;
+
+.ohf-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: var(--h-sm);
+  padding: 0 11px;
+  border-radius: var(--radius-md);
+  background: var(--s1);
+  border: 1px solid var(--line);
+  color: var(--tx2);
+  font-size: 12px;
+  white-space: nowrap;
+  @include m.tabular;
+}
+.ohf-credit-icon {
+  display: flex;
+  color: var(--tx3);
+}
+.ohf-credit-amount {
+  font-weight: var(--fw-bold);
+  color: var(--tx);
+}

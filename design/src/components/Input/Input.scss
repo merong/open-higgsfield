@@ -1,0 +1,27 @@
+.ohf-input {
+  color: var(--tx);
+  &::placeholder {
+    color: var(--tx4);
+  }
+  &[data-state="focus"] {
+    border-color: var(--accent-32);
+    box-shadow: 0 0 0 3px var(--accent-08);
+  }
+  &[aria-invalid="true"] {
+    border-color: var(--danger-line);
+    &:focus {
+      box-shadow: 0 0 0 3px var(--danger-bg);
+    }
+  }
+  &:disabled {
+    color: var(--tx-off);
+    background: transparent;
+    border-color: var(--line);
+  }
+}
+.ohf-input--area {
+  resize: none;
+  min-height: 72px;
+  padding: 10px 12px;
+  line-height: 1.5;
+}

@@ -1,0 +1,30 @@
+.ohf-tabs--sm .ohf-tab {
+  height: var(--h-xs);
+  padding: 0 12px;
+  font-size: 12px;
+  border-radius: 9px;
+}
+.ohf-tabs--sm .ohf-thumb {
+  border-radius: 9px;
+}
+/* 13 = the tab's 10px radius plus the plate's 3px inset, so the corners stay
+   concentric. */
+.ohf-tabs-plate {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 13px;
+  background: var(--s1);
+  border: 1px solid var(--line);
+}
+.ohf-tab[data-state="hover"] {
+  color: var(--tx);
+  background: rgba(255, 255, 255, 0.035);
+}
+.ohf-tab[data-state="hover"] svg {
+  color: var(--tx2);
+}
+/* Mirrors the studio's unconditional .ohf-tab:active (_tabs.scss) — no
+   :not() qualifier there, so none here either. */
+.ohf-tab[data-state="active"] {
+  transform: scale(0.97);
+}

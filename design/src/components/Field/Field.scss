@@ -1,0 +1,31 @@
+@use "@/styles/mixins" as m;
+
+.ohf-field-mark {
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  color: var(--tx4);
+  &--req {
+    color: var(--accent);
+  }
+}
+.ohf-field-counter {
+  font-size: var(--fs-xs);
+  color: var(--tx4);
+  @include m.tabular;
+  &--over {
+    color: var(--danger);
+  }
+}
+.ohf-field-hint,
+.ohf-field-error {
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  color: var(--tx4);
+}
+.ohf-field-error {
+  color: var(--danger);
+}
+.ohf-field--error .ohf-input {
+  border-color: var(--danger-line);
+}

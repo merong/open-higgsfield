@@ -1,0 +1,15 @@
+✔ font registry has 10 Korean and 10 Latin official distributions with exact hashes and licenses (38.909417ms)
+✔ roles and real weights are validated; unknown font URLs and synthesized bold are rejected (1.91475ms)
+✔ all three formats retain typography through validation and only catalog CSS reaches HTML (1.434583ms)
+✔ AI suggestions are distinct and allowlisted; confirmed user selection is never replaced (0.194042ms)
+✔ manual AI recommendation is owned, version-bound, uncharged and handles provider failures (21.003625ms)
+✔ card workflow proposes typography with planning and changing fonts preserves copy while invalidating output (25.578417ms)
+✔ landing and product plans propose fonts; approval, copy generation and handoff preserve the selected family (67.348166ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11616.97925

@@ -1,0 +1,25 @@
+@use "@/styles/mixins" as m;
+
+.ohf-ctl {
+  &[data-state="hover"] {
+    background: var(--s3);
+    color: var(--tx);
+  }
+  &[data-state="active"] {
+    transform: scale(0.96);
+  }
+  @include m.disabled {
+    color: var(--tx-off);
+    border-color: var(--line);
+    background: transparent;
+    transform: none;
+  }
+}
+.ohf-ctl-label {
+  color: var(--tx3);
+}
+.ohf-ctl-caret {
+  display: flex;
+  color: var(--tx3);
+  margin-left: 1px;
+}

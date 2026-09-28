@@ -1,0 +1,26 @@
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ohf *,
+  .ohf *::before,
+  .ohf *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .ohf-lamp {
+    animation: none;
+    opacity: 1;
+  }
+  /* A timer bar forced to 0.01ms reads as "already expired". Better absent. */
+  .ohf-undo-drain {
+    display: none;
+  }
+  /* A sweep frozen one frame in reads as a rendering fault rather than as a
+     wait. The band goes; the plate keeps its grain, and the clock, which is not
+     motion, goes on reporting that the run is alive. */
+  .ohf-skeleton::before,
+  .ohf-generate-sheen {
+    display: none;
+  }
+}

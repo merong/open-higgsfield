@@ -1,0 +1,121 @@
+{
+  "at": "2026-09-19T06:26:26.944Z",
+  "check": {
+    "state": "verified",
+    "message": "저장한 키로 기존 생성 요청을 조회했습니다. 인증과 상태 조회가 확인되었습니다."
+  },
+  "remainingCredits": 156,
+  "usedCredits": 44,
+  "jobs": [
+    {
+      "id": "15736272-4a7d-45ea-a9c1-f579398126b6",
+      "projectId": "543422a4-61fb-4cf9-9815-3962aa821317",
+      "state": "completed",
+      "cost": 4,
+      "images": 1,
+      "video": false
+    },
+    {
+      "id": "4d14a5f5-5edd-47b6-8512-80dd69c609e4",
+      "projectId": "1bdf1de6-0990-49b3-843b-ca854c5fa976",
+      "state": "completed",
+      "cost": 32,
+      "images": 0,
+      "video": true
+    },
+    {
+      "id": "4b89bd09-1028-4ddf-8321-71c0ded704e0",
+      "projectId": "2e5cfb67-5f41-479f-8e73-63d2a0d4d365",
+      "state": "completed",
+      "cost": 4,
+      "images": 1,
+      "video": false
+    },
+    {
+      "id": "855718cb-3b47-4040-b8be-0b1e48dfd80d",
+      "projectId": null,
+      "state": "completed",
+      "cost": 4,
+      "images": 1,
+      "video": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "2e5cfb67-5f41-479f-8e73-63d2a0d4d365",
+      "format": "card-news",
+      "version": 3,
+      "slots": [
+        {
+          "id": "0a38e661-cdae-436c-9469-d18deed29897",
+          "kind": "image",
+          "appliedJobId": "4b89bd09-1028-4ddf-8321-71c0ded704e0",
+          "hasMedia": true
+        },
+        {
+          "id": "89cf986c-5e39-4c8e-a6ee-5aa0f4f2dd81",
+          "hasMedia": false
+        },
+        {
+          "id": "315981dc-6ae0-4e74-b195-77223e4b411d",
+          "hasMedia": false
+        }
+      ]
+    },
+    {
+      "id": "1bdf1de6-0990-49b3-843b-ca854c5fa976",
+      "format": "reels",
+      "version": 3,
+      "slots": [
+        {
+          "id": "411b000f-cf69-43d0-af98-fcf5e1edfaa4",
+          "kind": "video",
+          "appliedJobId": "4d14a5f5-5edd-47b6-8512-80dd69c609e4",
+          "hasMedia": true
+        },
+        {
+          "id": "1ab79656-3cb9-4118-939b-9ebe48b9423e",
+          "hasMedia": false
+        }
+      ]
+    },
+    {
+      "id": "543422a4-61fb-4cf9-9815-3962aa821317",
+      "format": "landing",
+      "version": 3,
+      "slots": [
+        {
+          "id": "4c247848-8782-4952-a318-450e05618442",
+          "kind": "image",
+          "appliedJobId": "15736272-4a7d-45ea-a9c1-f579398126b6",
+          "hasMedia": true
+        },
+        {
+          "id": "a60f2718-bb39-44ea-9e7b-f1701934afa4",
+          "hasMedia": false
+        },
+        {
+          "id": "8e373096-8fa9-41fe-b8d0-4b8f0567c802",
+          "hasMedia": false
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "name": "live-card.png",
+      "bytes": 1495179,
+      "type": "image/png"
+    },
+    {
+      "name": "live-reels.webm",
+      "bytes": 1531295,
+      "type": "video/webm"
+    },
+    {
+      "name": "live-landing.zip",
+      "bytes": 4467396,
+      "type": "application/zip"
+    }
+  ]
+}

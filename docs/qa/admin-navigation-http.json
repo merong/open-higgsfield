@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-09-19T07:15:21.142Z",
+  "results": [
+    {
+      "endpoint": "dashboard",
+      "admin": 200,
+      "member": 403,
+      "guest": 401
+    },
+    {
+      "endpoint": "users",
+      "admin": 200,
+      "member": 403,
+      "guest": 401
+    },
+    {
+      "endpoint": "projects",
+      "admin": 200,
+      "member": 403,
+      "guest": 401
+    },
+    {
+      "endpoint": "activity",
+      "admin": 200,
+      "member": 403,
+      "guest": 401
+    },
+    {
+      "endpoint": "overview",
+      "admin": 200,
+      "member": 403,
+      "guest": 401
+    },
+    {
+      "endpoint": "library",
+      "admin": 200,
+      "member": 403,
+      "guest": 401
+    },
+    {
+      "path": "/admin",
+      "admin": 200,
+      "member": 307,
+      "guest": 307
+    },
+    {
+      "path": "/admin/users",
+      "admin": 200,
+      "member": 307,
+      "guest": 307
+    },
+    {
+      "path": "/admin/projects",
+      "admin": 200,
+      "member": 307,
+      "guest": 307
+    },
+    {
+      "path": "/admin/activity",
+      "admin": 200,
+      "member": 307,
+      "guest": 307
+    },
+    {
+      "path": "/admin/results",
+      "admin": 200,
+      "member": 307,
+      "guest": 307
+    },
+    {
+      "path": "/admin/credits",
+      "admin": 200,
+      "member": 307,
+      "guest": 307
+    },
+    {
+      "path": "/admin/settings",
+      "admin": 200,
+      "member": 307,
+      "guest": 307
+    }
+  ],
+  "settingsRedirect": "/admin/settings",
+  "invalidFilter": 400
+}

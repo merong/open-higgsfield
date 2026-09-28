@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "tokens/maps";
+
+// The showcase pins a state with data-state, so every state rule is written
+// for the real pseudo-class and for the pinned attribute at once.
+@mixin hover {
+  &:hover:not(:disabled):not([aria-disabled="true"]),
+  &[data-state="hover"] {
+    @content;
+  }
+}
+
+@mixin active {
+  &:active:not(:disabled):not([aria-disabled="true"]),
+  &[data-state="active"] {
+    @content;
+  }
+}
+
+@mixin disabled {
+  &:disabled,
+  &[aria-disabled="true"],
+  &[data-state="disabled"] {
+    @content;
+  }
+}
+
+@mixin control-states($hover-bg, $hover-color) {
+  transition:
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+  @include hover {
+    background: $hover-bg;
+    color: $hover-color;
+  }
+  @include active {
+    transform: scale(0.96);
+  }
+  @include disabled {
+    color: var(--tx-off);
+    cursor: default;
+    transform: none;
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--accent-32);
+    outline-offset: 2px;
+  }
+}
+
+@mixin press {
+  transition: transform var(--dur-base) var(--ease);
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+@mixin tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin bp($name) {
+  @media (max-width: map.get(maps.$bp, $name)) {
+    @content;
+  }
+}
+
+@function z($name) {
+  @return map.get(maps.$z, $name);
+}

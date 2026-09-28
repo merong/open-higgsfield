@@ -1,0 +1,181 @@
+/* ---------- gallery ---------- */
+
+.ohf-gallery {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  /* Top padding clears the floating bar; the mask dissolves runs into the
+     ground under it instead of cutting them against the chrome. */
+  --ohf-fade: 62px;
+  padding: 72px 20px calc(var(--ohf-dock-h, 138px) + 8px);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 var(--ohf-fade)
+  );
+  mask-image: linear-gradient(to bottom, transparent 0, #000 var(--ohf-fade));
+}
+.ohf-grid-window {
+  position: relative;
+  width: 100%;
+}
+.ohf-grid {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  grid-template-columns: repeat(var(--ohf-cols, 4), minmax(0, 1fr));
+  column-gap: 14px;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.ohf-tile {
+  break-inside: avoid;
+  display: block;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  background: var(--s1);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1);
+  text-align: left;
+  isolation: isolate;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
+  transition:
+    border-color var(--dur-slow) ease,
+    border-width 0.26s var(--ease-slide),
+    box-shadow 0.25s var(--ease);
+  animation: ohf-tile 0.32s var(--ease) both;
+  animation-delay: var(--d, 0s);
+}
+.ohf-tile:hover {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow-2);
+}
+/* The press belongs to the control that opens the card, not to the card that
+   now also carries its own actions. */
+.ohf-tile:has(.ohf-tile-open:active) {
+  transform: scale(0.99);
+}
+.ohf-tile:has(.ohf-tile-open:focus-visible) {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow-2), 0 0 0 2px var(--accent-32);
+}
+.ohf-tile-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  animation: ohf-fade 0.4s ease;
+}
+
+/* The whole card opens. It is a transparent plate rather than a wrapper, so
+   the caption keeps painting through it and the actions stack above it. */
+.ohf-tile-open {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  border-radius: inherit;
+}
+/* The ring is drawn by the card — an outline on an inset-0 child is clipped
+   by the card's own overflow. */
+.ohf-tile-open:focus-visible {
+  outline: none;
+}
+
+/* Keep, reuse and delete ride the corner opposite the duration badge, on the
+   same smoked plate the badge uses so they read as one family over any
+   picture the platform returns. */
+.ohf-tile-acts {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  z-index: 2;
+  display: flex;
+  gap: 5px;
+}
+.ohf-tile-act {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--plate);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: var(--plate-ink);
+  opacity: 0;
+  transform: translateY(-4px) scale(0.94);
+  /* An invisible control is not a clickable one; keyboard focus is unaffected
+     by this, so the rail stays reachable by tab. */
+  pointer-events: none;
+  transition:
+    opacity 0.16s ease,
+    transform var(--dur-slow) var(--ease),
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    color var(--dur-base) ease;
+}
+.ohf-tile:hover .ohf-tile-act,
+/* Keyboard focus, not focus of any kind: a mouse click leaves its button
+   focused, and `:focus-within` would hold the whole rail open after the
+   pointer has gone — the card would sit there looking hovered until something
+   else took focus. `:focus-visible` is exactly the distinction the browser
+   already draws, so tabbing still opens the rail. */
+.ohf-tile:has(:focus-visible) .ohf-tile-act,
+/* A save is liveness, and liveness is never hidden: the rail holds open until
+   the file lands, so the pointer can leave the card without the spinner going
+   with it. */
+.ohf-tile[data-saving] .ohf-tile-act,
+/* A kept run says so without being hovered — the mark is the state. */
+.ohf-tile-act[data-on="true"] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+/* The shared spinner's track is drawn for the studio's own surfaces; on the
+   card's smoked plate it takes the plate's ink so the ring reads over any
+   picture the platform returns. */
+.ohf-tile-act .ohf-spinner {
+  width: 15px;
+  height: 15px;
+  border-color: rgba(255, 255, 255, 0.24);
+  border-top-color: var(--accent);
+}
+.ohf-tile-act:hover {
+  background: rgba(9, 13, 12, 0.86);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #f5faf8;
+}
+.ohf-tile-act:active {
+  transform: scale(0.92);
+}
+.ohf-tile-act[data-on="true"] {
+  color: var(--accent);
+  border-color: var(--accent-32);
+}
+.ohf-tile-act[data-on="true"]:hover {
+  background: rgba(9, 13, 12, 0.86);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+.ohf-tile-act--danger:hover {
+  background: rgba(40, 14, 11, 0.88);
+  border-color: var(--danger-line);
+  color: var(--danger);
+}
+/* One beat, fired from the click and never from mount. */
+.ohf-tile-act[data-beat] svg {
+  animation: ohf-keep var(--dur-slide) var(--ease);
+}
+

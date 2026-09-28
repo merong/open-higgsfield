@@ -1,0 +1,1331 @@
+[
+  {
+    "format": "reels",
+    "id": "18e28dfc-14b5-459b-a943-21b5ca87e899",
+    "projectId": "eb7f4133-c06d-465b-b377-0d24b08c5bb8",
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "timeline": [
+      {
+        "stage": "understand",
+        "status": "pending",
+        "calls": 0
+      },
+      {
+        "stage": "plan",
+        "status": "pending",
+        "calls": 1
+      },
+      {
+        "stage": "review",
+        "status": "pending",
+        "calls": 2,
+        "repairs": 0
+      },
+      {
+        "stage": "plan",
+        "status": "waiting_user",
+        "calls": 3,
+        "repairs": 0
+      }
+    ],
+    "stage": "plan",
+    "status": "waiting_user",
+    "question": {
+      "id": "dfaa67b5-1979-454b-8032-86fe6c3e04b0",
+      "kind": "plan",
+      "text": "검수한 대본과 남은 확인 사항을 살펴보세요. 승인하면 문구를 보호하고 대표 샘플을 만듭니다."
+    },
+    "review": {
+      "repairs": 0,
+      "reviews": [
+        {
+          "round": 1,
+          "summary": "15초 무내레이션 브랜드 소개로, 전체 모습→손잡이→차를 마시는 장면의 지정 순서와 6초·4초·5초 배분이 명확합니다. 제품명·색상·용량은 제공 사실 범위에서만 사용했고 금지된 효능·후기·인증·판매 정보도 없습니다. 다만 실제 생성 화면이나 원본 참고 이미지는 없어, 동일 컵의 색·형태·손잡이 정합성은 생성 후 사람 확인이 필요합니다.",
+          "criteria": [
+            {
+              "key": "intent",
+              "status": "pass",
+              "evidence": "scene-1~3이 각각 hook·detail·closing 역할을 가지며, 성인 차 음용자를 위한 차분한 브랜드 소개와 ‘내레이션 없이 15초’ 조건을 충족한다."
+            },
+            {
+              "key": "facts",
+              "status": "pass",
+              "evidence": "화면 문구는 ‘초록 컵’, ‘300ml’와 ‘손에 닿는 손잡이’, ‘일상의 차 한 잔’으로 구성됐다. 초록·300ml·도자기 컵이라는 제공 정보 밖의 효능, 후기, 인증, 할인, 배송 주장은 없다."
+            },
+            {
+              "key": "narrative",
+              "status": "pass",
+              "evidence": "scene-1의 전체 실루엣 소개에서 scene-2 손잡이 클로즈업으로 초점을 좁히고, scene-3의 음용 장면으로 일상 사용 맥락을 마무리한다. 180·120·150프레임은 총 15초 구성에 부합한다."
+            },
+            {
+              "key": "visual",
+              "status": "attention",
+              "evidence": "프롬프트는 같은 초록 도자기 컵·테이블·측면 자연광을 반복 지정해 연속성 계획은 충분하다. 그러나 referenceImages와 실제 생성 결과가 없어 컵 색상·형태 및 장면 간 동일 제품 유지 여부는 확인할 수 없다."
+            },
+            {
+              "key": "readability",
+              "status": "pass",
+              "evidence": "각 화면 문구는 6자 내외의 짧은 1~2행이며, scene-1 6초·scene-2 4초·scene-3 5초의 표시 시간 안에 읽기 부담이 낮다. 내레이션이 없어 자막과 음성의 경쟁도 없다."
+            }
+          ],
+          "issues": [],
+          "at": 1790073095072
+        }
+      ],
+      "scopeIds": [],
+      "targetIds": []
+    },
+    "scenes": [
+      {
+        "id": "scene-1",
+        "crop": 50,
+        "role": "hook",
+        "zoom": 100,
+        "title": "초록 컵 전체 모습",
+        "frames": 180,
+        "prompt": "A calm product-introduction scene featuring a single green ceramic cup with a simple, tranquil form, centered on a warm neutral tabletop. Medium-wide three-quarter view showing the full cup silhouette clearly, empty cup, minimal soft beige background, gentle daylight from the side, subtle natural shadow, elegant restrained styling. Slow camera push-in toward the cup. Establish continuity for later scenes: same green ceramic cup, same tabletop, same warm daylight, same calm visual tone. No text, no logos, no printed pages.",
+        "version": 1,
+        "narration": "",
+        "copyLocked": false,
+        "screenText": "초록 컵\n300ml",
+        "textPosition": "lower",
+        "subtitleStyle": "calm",
+        "durationLocked": true
+      },
+      {
+        "id": "scene-2",
+        "crop": 50,
+        "role": "detail",
+        "zoom": 100,
+        "title": "손잡이 디테일",
+        "frames": 120,
+        "prompt": "Close-up detail shot of the handle of the same green ceramic cup from the previous scene. An adult hand gently approaches and rests fingers around the handle, emphasizing its shape without making performance claims. Warm neutral tabletop and soft beige background remain consistent, side daylight reveals the ceramic surface and gentle shadows. Shallow depth of field, slow lateral camera slide, calm refined product mood. Preserve the exact same green ceramic cup, warm daylight, tabletop, and visual continuity. No text, no logos, no printed pages.",
+        "version": 1,
+        "narration": "",
+        "copyLocked": false,
+        "screenText": "손에 닿는 손잡이",
+        "textPosition": "lower",
+        "subtitleStyle": "calm",
+        "durationLocked": true
+      },
+      {
+        "id": "scene-3",
+        "crop": 50,
+        "role": "closing",
+        "zoom": 100,
+        "title": "차를 마시는 순간",
+        "frames": 150,
+        "prompt": "Lifestyle closing scene with the same green ceramic cup held gently by an adult seated at the same warm neutral tabletop. Show the person lifting the cup for a quiet sip, with the cup clearly visible in a medium side shot; face may be softly out of focus or partially outside the frame. Soft warm daylight, peaceful home-like neutral background, subtle steam suggested naturally above tea, unhurried camera hold. Preserve the same green ceramic cup, tabletop, lighting, and calm continuity from prior scenes. No text, no logos, no printed pages.",
+        "version": 1,
+        "narration": "",
+        "copyLocked": false,
+        "screenText": "일상의 차 한 잔",
+        "textPosition": "lower",
+        "subtitleStyle": "calm",
+        "durationLocked": true
+      }
+    ],
+    "slots": [
+      {
+        "id": "scene-1",
+        "cta": "",
+        "dim": 0.2,
+        "body": "초록 컵\n300ml",
+        "crop": 50,
+        "href": "",
+        "kind": "cover",
+        "trim": 0,
+        "title": "초록 컵 전체 모습",
+        "kicker": "hook",
+        "prompt": "A calm product-introduction scene featuring a single green ceramic cup with a simple, tranquil form, centered on a warm neutral tabletop. Medium-wide three-quarter view showing the full cup silhouette clearly, empty cup, minimal soft beige background, gentle daylight from the side, subtle natural shadow, elegant restrained styling. Slow camera push-in toward the cup. Establish continuity for later scenes: same green ceramic cup, same tabletop, same warm daylight, same calm visual tone. No text, no logos, no printed pages.",
+        "duration": 6,
+        "composition": "full"
+      },
+      {
+        "id": "scene-2",
+        "cta": "",
+        "dim": 0.2,
+        "body": "손에 닿는 손잡이",
+        "crop": 50,
+        "href": "",
+        "kind": "body",
+        "trim": 0,
+        "title": "손잡이 디테일",
+        "kicker": "detail",
+        "prompt": "Close-up detail shot of the handle of the same green ceramic cup from the previous scene. An adult hand gently approaches and rests fingers around the handle, emphasizing its shape without making performance claims. Warm neutral tabletop and soft beige background remain consistent, side daylight reveals the ceramic surface and gentle shadows. Shallow depth of field, slow lateral camera slide, calm refined product mood. Preserve the exact same green ceramic cup, warm daylight, tabletop, and visual continuity. No text, no logos, no printed pages.",
+        "duration": 4,
+        "composition": "full"
+      },
+      {
+        "id": "scene-3",
+        "cta": "",
+        "dim": 0.2,
+        "body": "일상의 차 한 잔",
+        "crop": 50,
+        "href": "",
+        "kind": "cta",
+        "trim": 0,
+        "title": "차를 마시는 순간",
+        "kicker": "closing",
+        "prompt": "Lifestyle closing scene with the same green ceramic cup held gently by an adult seated at the same warm neutral tabletop. Show the person lifting the cup for a quiet sip, with the cup clearly visible in a medium side shot; face may be softly out of focus or partially outside the frame. Soft warm daylight, peaceful home-like neutral background, subtle steam suggested naturally above tea, unhurried camera hold. Preserve the same green ceramic cup, tabletop, lighting, and calm continuity from prior scenes. No text, no logos, no printed pages.",
+        "duration": 5,
+        "composition": "full"
+      }
+    ]
+  },
+  {
+    "format": "landing",
+    "id": "b9d44ac6-2f9a-41c2-8c94-ba23bcc6b2ba",
+    "projectId": "e80a130c-4b8b-4deb-8856-c9ef1b6cb610",
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "timeline": [
+      {
+        "stage": "understand",
+        "status": "pending",
+        "calls": 0
+      },
+      {
+        "stage": "understand",
+        "status": "waiting_user",
+        "calls": 1
+      }
+    ],
+    "stage": "understand",
+    "status": "waiting_user",
+    "slots": [
+      {
+        "id": "8c693233-5e0f-4888-aed4-d7a0faa51904",
+        "cta": "자세히 알아보기",
+        "dim": 0.5,
+        "body": "전하고 싶은 핵심 메시지를 담아 보세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "hero",
+        "trim": 0,
+        "title": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적",
+        "kicker": "",
+        "prompt": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "duration": 4,
+        "composition": "split"
+      },
+      {
+        "id": "4ace6ecb-597a-45ea-a19d-2bb757f0f8c7",
+        "cta": "자세히 알아보기",
+        "dim": 0.5,
+        "body": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적은 브랜드 소개입니다. 제공한 사실만 사용하세요. 제품 이름은 초록 컵, 색은 초록, 용량은 300ml입니다. 효능·후기·인증·할인·배송 정책을 만들지 마세요. 컵 전체 모습→손잡이 디테일→차를 마시는 장면으로 구분합니다. 외부 검색과 유료 이미지·영상·음성 생성은 하지 않습니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "features",
+        "trim": 0,
+        "title": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적은 브랜드 소개입니다. 제공한 사실만 사용하세요. 제품",
+        "kicker": "01",
+        "prompt": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적. QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적은 브랜드 소개입니다. 제공한 사실만 사용하세요. 제품 이름은 초록 컵, 색은 초록, 용량은 300ml입니다. 효능·후기·인증·할인·배송 정책을 만들지 마세요. 컵 전체 모습→손잡이 디테일→차를 마시는 장면으로 구분합니다. 외부 검색과 유료 이미지·영상·음성 생성은 하지 않습니다.. No text, no logos.",
+        "duration": 4,
+        "composition": "split"
+      },
+      {
+        "id": "18eeeabc-ab52-4f22-8b28-8700a995cf5a",
+        "cta": "자세히 알아보기",
+        "dim": 0.5,
+        "body": "브랜드의 실제 정보와 경험을 바탕으로 이 문장을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "story",
+        "trim": 0,
+        "title": "하나씩 살펴보세요",
+        "kicker": "02",
+        "prompt": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "duration": 4,
+        "composition": "split"
+      },
+      {
+        "id": "8a18d27f-f833-4e2b-b41f-7ff97a2f60bd",
+        "cta": "자세히 알아보기",
+        "dim": 0.5,
+        "body": "브랜드의 실제 정보와 경험을 바탕으로 이 문장을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "faq",
+        "trim": 0,
+        "title": "나에게 맞는 선택",
+        "kicker": "03",
+        "prompt": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "duration": 4,
+        "composition": "split"
+      },
+      {
+        "id": "b5e208a6-c4a9-4334-85b9-a5d22b7243bd",
+        "cta": "자세히 알아보기",
+        "dim": 0.5,
+        "body": "브랜드의 실제 정보와 경험을 바탕으로 이 문장을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "cta",
+        "trim": 0,
+        "title": "지금, 시작해 보세요",
+        "kicker": "04",
+        "prompt": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "duration": 4,
+        "composition": "split"
+      }
+    ]
+  },
+  {
+    "format": "product-detail",
+    "id": "5ea91ad9-72e7-4c51-b71a-cc075053e3d4",
+    "projectId": "cd5008dc-d47f-43d7-8fc2-058fc5a2df53",
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "timeline": [
+      {
+        "stage": "understand",
+        "status": "pending",
+        "calls": 0
+      },
+      {
+        "stage": "understand",
+        "status": "waiting_user",
+        "calls": 1
+      }
+    ],
+    "stage": "understand",
+    "status": "waiting_user",
+    "slots": [
+      {
+        "id": "ce6a4208-d4b6-4ab3-b37c-05f8c6815488",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "",
+        "crop": 0,
+        "href": "",
+        "kind": "hero",
+        "trim": 0,
+        "title": "QA 초록 컵",
+        "kicker": "",
+        "prompt": "QA 초록 컵. Product detail photography, natural light. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": true,
+          "description": "QA 초록 컵 · 상품 소개"
+        },
+        "composition": "split"
+      },
+      {
+        "id": "6c9050a2-e623-43ea-a635-68347df6c414",
+        "cta": "",
+        "dim": 0.5,
+        "body": "QA 품질 검증: 초록 도자기 컵의 차분한 형태를 소개합니다. 독자는 일상의 차 한 잔을 즐기는 성인, 목적은 브랜드 소개입니다. 제공한 사실만 사용하세요. 제품 이름은 초록 컵, 색은 초록, 용량은 300ml입니다. 효능·후기·인증·할인·배송 정책을 만들지 마세요. 컵 전체 모습→손잡이 디테일→차를 마시는 장면으로 구분합니다. 외부 검색과 유료 이미지·영상·음성 생성은 하지 않습니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "features",
+        "trim": 0,
+        "title": "구매 포인트",
+        "kicker": "",
+        "prompt": "QA 초록 컵. Product detail photography, natural light. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "QA 초록 컵 · 구매 포인트"
+        },
+        "composition": "split"
+      },
+      {
+        "id": "03001dd0-767a-4f0e-9697-c279984f8ca2",
+        "cta": "",
+        "dim": 0.5,
+        "body": "상품의 실제 정보를 바탕으로 설명을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "story",
+        "trim": 0,
+        "title": "상품 디테일",
+        "kicker": "",
+        "prompt": "QA 초록 컵. Product detail photography, natural light. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "QA 초록 컵 · 상품 디테일"
+        },
+        "composition": "split"
+      },
+      {
+        "id": "77f8fcde-ba10-4fe5-9d22-77b20ea4865f",
+        "cta": "",
+        "dim": 0.5,
+        "body": "상품의 실제 정보를 바탕으로 설명을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "usage",
+        "trim": 0,
+        "title": "사용 방법",
+        "kicker": "",
+        "prompt": "QA 초록 컵. Product detail photography, natural light. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "QA 초록 컵 · 사용 방법"
+        },
+        "composition": "split"
+      },
+      {
+        "id": "e810a1e7-afa0-4bca-86dd-daa599e7a4d7",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "상품의 실제 정보를 바탕으로 설명을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "cta",
+        "trim": 0,
+        "title": "구매 연결",
+        "kicker": "",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": false,
+          "description": "QA 초록 컵 · 구매 연결"
+        },
+        "composition": "split"
+      }
+    ]
+  },
+  {
+    "format": "landing",
+    "id": "1ed7b855-772d-4791-a13f-2820b3300c50",
+    "projectId": "3aa091f6-46bc-44fb-ba79-f46695f4364b",
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "timeline": [
+      {
+        "stage": "understand",
+        "status": "pending",
+        "calls": 0
+      },
+      {
+        "stage": "understand",
+        "status": "waiting_user",
+        "calls": 1
+      },
+      {
+        "stage": "plan",
+        "status": "pending",
+        "calls": 1
+      },
+      {
+        "stage": "plan",
+        "status": "waiting_user",
+        "calls": 2
+      },
+      {
+        "stage": "write",
+        "status": "pending",
+        "calls": 2
+      },
+      {
+        "stage": "review",
+        "status": "pending",
+        "calls": 3,
+        "repairs": 0
+      },
+      {
+        "stage": "review",
+        "status": "ready",
+        "calls": 4,
+        "repairs": 0
+      }
+    ],
+    "stage": "review",
+    "status": "ready",
+    "review": {
+      "repairs": 0,
+      "reviews": [
+        {
+          "round": 1,
+          "summary": "원고 기준 검수입니다(실제 화면 픽셀·모바일 가독성·외부 링크 작동은 검증하지 않음). 초록색 도자기 컵, 300ml, 차를 마시는 성인이라는 제공 사실을 일관되게 유지했고, 전체 실루엣→손잡이→사용 장면의 역할 분담도 승인 기획과 맞습니다. 다만 CTA가 제공된 상세 페이지의 성격을 전제하므로 링크 목적지를 확인해야 합니다. 문장과 이미지 지시는 전반적으로 차분한 소개 목적에 맞고, 효능·후기·인증·가격·판매 조건은 추가하지 않았습니다.",
+          "criteria": [
+            {
+              "key": "intent",
+              "status": "attention",
+              "evidence": "히어로의 ‘전체 실루엣’부터 손잡이, 사용 장면, 300ml FAQ까지 방문 목적에 맞게 전개됩니다. 다만 CTA ‘컵 자세히 보기’가 실제로 컵 상세 내용으로 연결되는지는 원고만으로 확인할 수 없습니다."
+            },
+            {
+              "key": "facts",
+              "status": "pass",
+              "evidence": "전 섹션에서 확인 가능한 사실은 초록색, 도자기 컵, 300ml로 한정됩니다. ‘성인’은 사용 장면의 대상 조건으로만 쓰였으며 효능·가격·후기·인증·할인·판매 정책은 추가되지 않았습니다."
+            },
+            {
+              "key": "narrative",
+              "status": "pass",
+              "evidence": "히어로가 컵의 전체와 300ml를 먼저 제시하고, ‘컵 전체로 보는 초록색’→‘손잡이의 모습’→‘차를 마시는 장면에’로 관찰 대상을 좁힌 뒤 FAQ와 CTA로 마무리합니다."
+            },
+            {
+              "key": "visual",
+              "status": "pass",
+              "evidence": "이미지 계획은 전체 제품 컷(3:4), 컵의 윤곽과 색상을 보는 컷(1:1), 손잡이 근접 컷(3:4), 손과 컵의 관계를 보는 사용 장면(16:9)으로 서로 다른 역할을 명확히 나눕니다."
+            },
+            {
+              "key": "readability",
+              "status": "pass",
+              "evidence": "features 섹션은 ‘초록색|…’처럼 관찰 항목과 설명을 분리했고, FAQ는 질문·답변 구조로 300ml·초록색·도자기 정보를 짧게 확인하게 합니다. 확정 문구를 임의로 축약하지 않았습니다."
+            }
+          ],
+          "issues": [
+            {
+              "sectionId": "94f9aac8-1d5d-4b9d-bfc2-48dc5c354ed0",
+              "severity": "attention",
+              "message": "CTA와 href는 제공됐지만 목적지의 실제 내용은 원고만으로 확인할 수 없습니다. ‘컵 자세히 보기’가 초록색 도자기 컵의 상세 정보를 제공하는 페이지로 연결되는지 게시 전 확인하세요.",
+              "targetId": "94f9aac8-1d5d-4b9d-bfc2-48dc5c354ed0"
+            }
+          ],
+          "at": 1790073239411
+        }
+      ],
+      "scopeIds": [],
+      "targetIds": []
+    },
+    "slots": [
+      {
+        "id": "d4d7255f-cd6a-4604-ab01-520bf8805b70",
+        "cta": "컵 자세히 보기",
+        "dim": 0.5,
+        "body": "차를 마시는 순간 곁에 두는 초록색 도자기 컵입니다. 입구부터 몸체, 손잡이까지 이어지는 전체 실루엣을 먼저 살펴보세요. 이 컵의 용량은 300ml입니다.",
+        "crop": 0,
+        "href": "https://example.com",
+        "kind": "hero",
+        "trim": 0,
+        "title": "초록색 도자기 컵",
+        "kicker": "전체 실루엣과 300ml",
+        "prompt": "A single green ceramic cup centered in a calm editorial product still life, shown at a slightly angled medium distance so the rim, full body, and handle are all clearly visible. Restrained matte neutral background or minimal tabletop surface, soft diffused natural light, quiet premium mood, vertical 3:4 composition. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "3:4",
+          "enabled": true,
+          "description": "초록색 도자기 컵 한 개를 화면 중심에 단독으로 배치한 전체 제품 컷. 컵의 입구부터 몸체, 손잡이까지 한눈에 보이도록 약간 비스듬한 거리에서 담습니다. 배경은 시선을 분산시키지 않는 차분한 단색 또는 절제된 표면으로 구성합니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "7493e4af-ac5e-4e87-b6fe-9e30610a082a",
+        "cta": "",
+        "dim": 0.5,
+        "body": "초록색|컵 전체에 고르게 드러나는 색상을 중심으로 확인합니다.\n전체 실루엣|입구, 몸체, 손잡이가 한 화면 안에서 이어지는 모습을 살펴봅니다.\n곁에 두는 형태|차를 마시는 순간에 어울리는 모습인지 천천히 바라볼 수 있습니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "features",
+        "trim": 0,
+        "title": "컵 전체로 보는 초록색",
+        "kicker": "색상과 형태를 한눈에",
+        "prompt": "A front-facing near-full product portrait of a green ceramic cup, slightly closer than a hero shot, with its complete outline and unobstructed handle clearly visible. The green color and cup silhouette are the visual focus; no props or only an extremely minimal neutral surface. Soft even studio daylight, calm editorial style, square 1:1 composition. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": true,
+          "description": "초록색 컵의 전체 형태를 분명히 보여 주는 정면에 가까운 제품 이미지. 손잡이는 가리지 않고 보이게 두며, 첫 이미지보다 조금 가까운 거리에서 컵의 윤곽과 초록색이 중심이 되도록 촬영합니다. 다른 소품은 넣지 않거나 최소화합니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "ca8fa7eb-518e-4e8d-b7f7-1af7d4c561dd",
+        "cta": "",
+        "dim": 0.5,
+        "body": "바깥 윤곽|초록색 도자기 손잡이의 곡선을 가까이에서 보여 줍니다.\n안쪽 공간|손잡이 안쪽의 빈 공간과 형태를 따로 살펴볼 수 있습니다.\n몸체와의 연결|손잡이가 컵 몸체와 이어지는 부분을 중심으로 담았습니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "features",
+        "trim": 0,
+        "title": "손잡이의 모습",
+        "kicker": "손에 닿는 부분을 가까이",
+        "prompt": "An intimate close-up of the handle of a green ceramic cup, focusing on the outer curve, the inner opening, and the junction where the handle meets the cup body. Keep the rest of the cup secondary and partially out of frame, with a softly blurred simple background. Gentle diffused light reveals the ceramic surface, vertical 3:4 composition. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "3:4",
+          "enabled": true,
+          "description": "초록색 도자기 컵의 손잡이를 중심으로 한 근접 컷. 컵 전체를 다시 소개하기보다 손잡이의 바깥 윤곽, 안쪽 공간, 몸체와 이어지는 부분이 잘 드러나게 구성합니다. 배경은 흐리거나 단순하게 처리해 손잡이에만 시선이 머물게 합니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "4b7f3b47-1d4d-467c-9ecf-ba7d5b1bf2cc",
+        "cta": "",
+        "dim": 0.5,
+        "body": "컵은 손에 들었을 때 또 다른 모습으로 이어집니다. 차를 마시는 성인이 초록색 도자기 컵을 자연스럽게 든 장면을 통해, 제품 단독 컷에서는 보기 어려운 사용 순간을 차분하게 보여 줍니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "story",
+        "trim": 0,
+        "title": "차를 마시는 장면에",
+        "kicker": "손에 들린 사용 순간",
+        "prompt": "A wide, calm lifestyle scene of an adult drinking tea while naturally holding a green ceramic cup. Frame the relationship between hand and cup as the focus; do not emphasize the person's face or any identifiable location. A quiet, uncluttered setting, soft natural window light, realistic editorial photography, wide 16:9 composition. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "차를 마시는 성인의 손이 초록색 도자기 컵을 자연스럽게 들고 있는 사용 장면. 인물의 얼굴이나 특정 공간을 강조하기보다 컵과 손의 관계가 중심이 되게 담습니다. 앞선 전체 컷·손잡이 근접 컷과 달리 실제 사용 맥락을 전달하는 넓은 구도입니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "363919b1-cce7-4604-a79c-1241ed7ddc03",
+        "cta": "",
+        "dim": 0.5,
+        "body": "이 컵의 용량은 얼마인가요?|300ml입니다.\n색상은 무엇인가요?|초록색입니다.\n어떤 재질의 컵인가요?|도자기 컵입니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "faq",
+        "trim": 0,
+        "title": "용량은 300ml",
+        "kicker": "선택에 필요한 기본 정보",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "텍스트로 300ml 용량을 명확히 전달하는 구성이므로 별도 이미지는 필요하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "94f9aac8-1d5d-4b9d-bfc2-48dc5c354ed0",
+        "cta": "컵 자세히 보기",
+        "dim": 0.5,
+        "body": "전체 실루엣, 손잡이, 차를 마시는 장면을 다시 살펴보세요. 초록색 도자기 컵의 300ml 용량과 형태를 확인한 뒤, ‘컵 자세히 보기’로 이어집니다.",
+        "crop": 0,
+        "href": "https://example.com",
+        "kind": "cta",
+        "trim": 0,
+        "title": "컵을 더 살펴보기",
+        "kicker": "다음으로 이어보기",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "행동을 안내하는 마무리 영역이므로 별도 이미지는 생략하고 제목, 짧은 안내, CTA에 집중합니다."
+        },
+        "composition": "split"
+      }
+    ]
+  },
+  {
+    "format": "product-detail",
+    "id": "19853550-2853-4b32-ba05-e871f3b3d9c1",
+    "projectId": "dffae37b-bac9-4d4c-9913-a3fd0cd9bdc6",
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "timeline": [
+      {
+        "stage": "understand",
+        "status": "pending",
+        "calls": 0
+      },
+      {
+        "stage": "understand",
+        "status": "waiting_user",
+        "calls": 1
+      },
+      {
+        "stage": "plan",
+        "status": "pending",
+        "calls": 1
+      },
+      {
+        "stage": "plan",
+        "status": "waiting_user",
+        "calls": 2
+      },
+      {
+        "stage": "write",
+        "status": "pending",
+        "calls": 2
+      },
+      {
+        "stage": "review",
+        "status": "pending",
+        "calls": 3,
+        "repairs": 0
+      },
+      {
+        "stage": "review",
+        "status": "ready",
+        "calls": 4,
+        "repairs": 0
+      }
+    ],
+    "stage": "review",
+    "status": "ready",
+    "review": {
+      "repairs": 0,
+      "reviews": [
+        {
+          "round": 1,
+          "summary": "원고 검수 결과, 초록색·300ml·도자기 컵이라는 제공 사실과 상품 요약의 가격·옵션이 일관되며, 효능·후기·인증·할인·배송 정책을 임의로 만들지 않았습니다. 컵 전체→손잡이→차를 마시는 장면의 구성도 승인 의도에 맞습니다. 다만 사용 장면 문구의 ‘성인’ 설정은 이미지 제안에만 있고 본문에서는 독자 대상이 선명하지 않아 확인이 필요합니다. 이는 실제 화면·링크·이미지 출력이 아닌 제공된 원고와 기획을 대조한 검수입니다.",
+          "criteria": [
+            {
+              "key": "intent",
+              "status": "pass",
+              "evidence": "히어로부터 손잡이, ‘일상의 차 한 잔’ 사용 장면, 구매 CTA까지 이어져 차를 마시는 성인이 상품을 살펴본 뒤 구매로 이동하는 목표와 맞습니다."
+            },
+            {
+              "key": "facts",
+              "status": "pass",
+              "evidence": "‘QA 초록 컵’, 초록, 300ml, 28,000원 정보가 상품 요약·규격 표·CTA에서 일치합니다. 배송·반품은 모두 ‘확인 필요’로 처리했습니다."
+            },
+            {
+              "key": "narrative",
+              "status": "pass",
+              "evidence": "‘차 한 잔의 자리에 놓이는 초록’에서 전체 형태를 제시하고, 손잡이 디테일과 사용 맥락을 거쳐 ‘초록 컵을 더 살펴보세요’로 마무리합니다."
+            },
+            {
+              "key": "visual",
+              "status": "pass",
+              "evidence": "새 이미지 제안이 각각 컵 전체 1:1, 손잡이 클로즈업 3:4, 차를 마시는 테이블 장면 16:9로 역할을 분리합니다. 제공된 원본 사진은 없습니다."
+            },
+            {
+              "key": "readability",
+              "status": "pass",
+              "evidence": "규격 섹션은 ‘항목|값’ 줄 형식을 지키고, 손잡이 섹션도 짧은 항목 단위로 나뉘어 있습니다. 배송·반품의 미확정 정보도 짧고 명확합니다."
+            }
+          ],
+          "issues": [
+            {
+              "sectionId": "da58283c-f55e-443c-ac8c-36c5144194b1",
+              "severity": "attention",
+              "message": "본문은 ‘차를 마시는 순간’만 언급하고 성인 대상은 이미지 제안에만 있습니다. 성인 대상 표기가 반드시 필요한지 확인하세요. 필요하다면 제공된 확정 대상에 맞춰 ‘차를 마시는 성인의 일상’으로 본문을 보완할 수 있습니다.",
+              "targetId": "da58283c-f55e-443c-ac8c-36c5144194b1"
+            }
+          ],
+          "at": 1790073287652
+        }
+      ],
+      "scopeIds": [],
+      "targetIds": []
+    },
+    "slots": [
+      {
+        "id": "0d6ca718-b8fa-4efb-a889-9adf11f9f055",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "QA 초록 컵은 초록색 300ml 도자기 컵입니다. 차를 준비하는 자리 위에서 컵의 색과 전체 형태를 먼저 살펴보세요. 일상의 차 한 잔에 곁들이는 컵으로, 손에 들기 전 눈으로 마주하는 첫 장면을 차분하게 소개합니다.",
+        "crop": 0,
+        "href": "https://example.com",
+        "kind": "hero",
+        "trim": 0,
+        "title": "차 한 잔의 자리에 놓이는 초록",
+        "kicker": "QA 초록 컵 · 초록 · 300ml",
+        "prompt": "Square editorial product photograph of a single green ceramic cup, full cup visible from a straight-on slightly elevated viewpoint, centered on a plain light warm background, restrained composition with no additional props, soft diffused daylight, calm premium Korean editorial mood, clearly visible cup silhouette and green color, realistic studio styling, no text, no logos",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": true,
+          "description": "새 이미지 제안: 단색 또는 절제된 밝은 배경 위에 초록색 도자기 컵 전체를 정면에서 담은 대표 컷. 컵의 전체 비율과 초록색이 분명히 보이도록 구성하며, 다른 소품이나 문구는 최소화합니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "8569ca20-6e77-4c1b-9cd7-37a998eb6908",
+        "cta": "",
+        "dim": 0.5,
+        "body": "손잡이|컵을 들 때 손이 닿는 부분을 가까이 보여 줍니다.\n연결부|손잡이와 컵 몸체가 만나는 모습을 중심으로 살펴봅니다.\n시선의 흐름|컵 전체 다음에 디테일을 보며 사용 장면으로 자연스럽게 이어집니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "features",
+        "trim": 0,
+        "title": "손에 가까운 손잡이",
+        "kicker": "컵을 드는 순간에 가까운 디테일",
+        "prompt": "Vertical close-up editorial photograph of the handle of a green ceramic cup, handle and its connection to the cup body in sharp focus at the center of the frame, partial cup crop, simple softly blurred neutral background, gentle side daylight, quiet tactile still-life mood, realistic ceramic surface without claiming material qualities, no hands, no text, no logos",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "3:4",
+          "enabled": true,
+          "description": "새 이미지 제안: 초록색 도자기 컵의 손잡이를 중심으로 가까이 담은 디테일 컷. 손잡이와 컵 몸체의 연결 부위가 화면의 중심에 오도록 하고, 배경은 단순하게 처리합니다. 소재 특성이나 제작 방식은 보이는 사실처럼 단정하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "da58283c-f55e-443c-ac8c-36c5144194b1",
+        "cta": "",
+        "dim": 0.5,
+        "body": "300ml의 QA 초록 컵을 일상의 차 한 잔을 준비하는 테이블 위에 놓아 보세요. 컵 전체와 손잡이를 살펴본 뒤, 차를 마시는 순간에 이 컵이 놓이는 모습을 확인하는 순서입니다. 얼굴보다 손과 차를 마시는 행동에 시선을 두어 조용한 사용 맥락을 담습니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "usage",
+        "trim": 0,
+        "title": "일상의 차 한 잔",
+        "kicker": "차를 마시는 성인의 일상 장면",
+        "prompt": "Wide 16:9 lifestyle editorial photograph of an adult drinking tea at a calm home table, a green ceramic cup clearly visible and identifiable in the foreground, focus on the person's hand holding the cup and the tea-drinking action, face outside the frame or softly cropped, uncluttered table, natural window light, muted quiet atmosphere, no other products emphasized, no text, no logos",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "새 이미지 제안: 차를 마시는 성인의 일상 테이블 장면에 초록색 도자기 컵을 배치한 사용 컷. 컵이 화면에서 식별될 만큼 보이게 하고, 인물은 얼굴보다 손과 차를 마시는 행동 중심으로 담습니다. 컵 외의 제품·효능·후기 표현은 넣지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "be193884-2c8c-4326-839a-dbfe1df843bf",
+        "cta": "",
+        "dim": 0.5,
+        "body": "상품명|QA 초록 컵\n카테고리|도자기 컵\n색상|초록\n용량|300ml\n사용 맥락|일상의 차 한 잔",
+        "crop": 0,
+        "href": "",
+        "kind": "specs",
+        "trim": 0,
+        "title": "제품 정보",
+        "kicker": "구매 전 확인할 기본 정보",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "규격 정보를 읽기 쉽게 정리하는 섹션으로, 별도 이미지는 필요하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "0664832b-1185-4695-8c90-4659783ee7dc",
+        "cta": "",
+        "dim": 0.5,
+        "body": "배송 정보와 반품 정책은 현재 확인이 필요합니다. 구매 전 상품 페이지의 안내를 확인해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "shipping",
+        "trim": 0,
+        "title": "배송·반품 안내",
+        "kicker": "구매 전 정책 안내를 확인해 주세요",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "정책 안내를 명확히 전달하는 텍스트 중심 섹션으로, 별도 이미지는 필요하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "cee9eabb-3175-45ed-8898-002828c60b8e",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "QA 초록 컵의 초록 옵션과 28,000원 정보를 확인한 뒤 구매를 이어가세요. 배송과 반품 조건은 구매 전 상품 페이지에서 함께 확인해 주세요.",
+        "crop": 0,
+        "href": "https://example.com",
+        "kind": "cta",
+        "trim": 0,
+        "title": "초록 컵을 더 살펴보세요",
+        "kicker": "상품 정보 확인 후 구매로 이어가기",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "구매 연결을 위한 마무리 섹션으로, 별도 이미지는 필요하지 않습니다."
+        },
+        "composition": "split"
+      }
+    ]
+  },
+  {
+    "format": "product-detail",
+    "phase": "public-copy-separation",
+    "id": "47fbc21f-d2f8-41e1-9ffd-6cc4ca1928d1",
+    "projectId": "127230da-4624-41da-aee1-83f1df5957e8",
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "timeline": [
+      {
+        "stage": "understand",
+        "status": "pending",
+        "calls": 0
+      },
+      {
+        "stage": "understand",
+        "status": "waiting_user",
+        "calls": 1
+      },
+      {
+        "stage": "plan",
+        "status": "pending",
+        "calls": 1
+      },
+      {
+        "stage": "plan",
+        "status": "waiting_user",
+        "calls": 2
+      },
+      {
+        "stage": "write",
+        "status": "pending",
+        "calls": 2
+      },
+      {
+        "stage": "review",
+        "status": "pending",
+        "calls": 3,
+        "repairs": 0
+      },
+      {
+        "stage": "refine",
+        "status": "pending",
+        "calls": 4,
+        "repairs": 1
+      },
+      {
+        "stage": "refine",
+        "status": "paused",
+        "calls": 5,
+        "repairs": 1
+      }
+    ],
+    "stage": "refine",
+    "status": "paused",
+    "review": {
+      "repairs": 1,
+      "reviews": [
+        {
+          "at": 1790073564653,
+          "round": 1,
+          "issues": [
+            {
+              "message": "원문은 유료 이미지 생성을 하지 않는다고 확정했지만 생성 이미지 프롬프트가 포함되어 있습니다. prompt를 비우고 imagePlan.enabled를 false로 바꾸거나, 실제 제공 원본 사진이 있을 때만 그 사진을 sourceImageId로 연결하세요.",
+              "severity": "error",
+              "targetId": "1e2332b3-05d5-4da5-8be3-885f6cf2f713",
+              "sectionId": "1e2332b3-05d5-4da5-8be3-885f6cf2f713"
+            },
+            {
+              "message": "원문은 유료 이미지 생성을 하지 않는다고 확정했지만 손잡이 디테일 생성 프롬프트가 포함되어 있습니다. prompt를 비우고 imagePlan.enabled를 false로 바꾸거나, 실제 제공 원본 사진이 있을 때만 그 사진을 sourceImageId로 연결하세요.",
+              "severity": "error",
+              "targetId": "3bd58130-94f3-476a-a0a9-e839600bd87e",
+              "sectionId": "3bd58130-94f3-476a-a0a9-e839600bd87e"
+            },
+            {
+              "message": "원문은 유료 이미지 생성을 하지 않는다고 확정했지만 사용 장면 생성 프롬프트가 포함되어 있습니다. prompt를 비우고 imagePlan.enabled를 false로 바꾸거나, 실제 제공 원본 사진이 있을 때만 그 사진을 sourceImageId로 연결하세요.",
+              "severity": "error",
+              "targetId": "5bb9d00f-97da-4dd8-9ae8-87cc6209c949",
+              "sectionId": "5bb9d00f-97da-4dd8-9ae8-87cc6209c949"
+            }
+          ],
+          "summary": "제공된 원문·확정 상품 정보·기획을 기준으로 원고를 검수했습니다. 초록색, 300ml, 도자기 컵, 일상의 차 한 잔이라는 확인된 정보와 가격·옵션은 일관되게 보존되었고, 컵 전체→손잡이→사용 장면의 흐름도 충족합니다. 다만 원문은 유료 이미지 생성을 하지 않는다고 명시했으나 세 개 섹션에 생성 이미지 프롬프트가 포함되어 있어 수정이 필요합니다. 배송·반품은 ‘확인 필요’로 처리되어 임의 정책을 만들지 않았습니다.",
+          "criteria": [
+            {
+              "key": "intent",
+              "status": "attention",
+              "evidence": "대상인 차를 마시는 성인에게 전체 모습, 손잡이, 사용 맥락, 규격을 차례로 제시하고 CTA도 ‘구매하러 가기’로 일치합니다. 다만 원문의 유료 이미지 생성 금지 조건과 생성 프롬프트가 충돌합니다."
+            },
+            {
+              "key": "facts",
+              "status": "pass",
+              "evidence": "상품 요약과 ‘상품 정보’ 표의 QA 초록 컵, 28,000원, 초록, 300ml가 확정 정보와 일치합니다. 배송·반품도 ‘확인 필요’로만 안내합니다."
+            },
+            {
+              "key": "narrative",
+              "status": "pass",
+              "evidence": "‘차 한 잔을 담는 초록’에서 기본 정보를 제시한 뒤 ‘손에 닿는 손잡이’, ‘일상의 차 한 잔’, 사용 맥락·규격·정책·CTA로 구매 판단 흐름이 이어집니다."
+            },
+            {
+              "key": "visual",
+              "status": "fail",
+              "evidence": "대표·손잡이·사용 장면은 서로 다른 역할로 기획되었지만, 원문에 없는 생성 이미지 프롬프트가 세 섹션에 포함되어 ‘유료 이미지 생성은 하지 않습니다’ 조건을 지키지 못합니다."
+            },
+            {
+              "key": "readability",
+              "status": "pass",
+              "evidence": "각 섹션은 짧은 제목과 1~2개 문단으로 나뉘며, 규격은 ‘항목|값’ 형식으로 명확합니다. 확정된 상품명·가격·옵션·용량도 축약되지 않았습니다."
+            }
+          ]
+        }
+      ],
+      "scopeIds": [],
+      "targetIds": [
+        "1e2332b3-05d5-4da5-8be3-885f6cf2f713",
+        "3bd58130-94f3-476a-a0a9-e839600bd87e",
+        "5bb9d00f-97da-4dd8-9ae8-87cc6209c949"
+      ]
+    },
+    "slots": [
+      {
+        "id": "1e2332b3-05d5-4da5-8be3-885f6cf2f713",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "QA 초록 컵은 초록 옵션으로 제공되는 300ml 도자기 컵입니다. 일상의 차 한 잔을 위한 컵을 차분히 살펴보세요.",
+        "crop": 0,
+        "href": "https://example.com",
+        "kind": "hero",
+        "trim": 0,
+        "title": "차 한 잔을 담는 초록",
+        "kicker": "QA 초록 컵",
+        "prompt": "A square editorial product photograph of a single green ceramic cup, shown fully and clearly centered against a simple quiet neutral background. Emphasize the overall proportions and green color without implying material finish, extra accessories, or unverified details. Soft natural daylight, calm premium Korean lifestyle brand mood, clean composition. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": true,
+          "description": "초록색 QA 초록 컵 전체가 명확히 보이는 상품 대표 이미지. 컵의 전체 비례와 색상을 확인할 수 있도록 단순한 배경에서 단독으로 보여 주세요. 제공 정보 밖의 장식, 구성품, 소재 질감은 단정하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "3bd58130-94f3-476a-a0a9-e839600bd87e",
+        "cta": "",
+        "dim": 0.5,
+        "body": "손잡이는 컵을 살필 때 함께 확인하고 싶은 부분입니다. 컵 전체와 다른 가까운 거리에서, 초록색 컵과 손잡이가 이어지는 모습을 살펴보세요.\n\n차를 마시기 전 손에 닿는 부분까지 확인하며 선택할 수 있습니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "features",
+        "trim": 0,
+        "title": "손에 닿는 손잡이",
+        "kicker": "DETAIL",
+        "prompt": "A vertical close-up editorial product photograph focused on the handle of a green ceramic cup. Show the handle and its connection to the cup body clearly, with the green color visible. Minimal calm background, soft side daylight, refined tactile composition, no hands, no props that imply unverified features. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "3:4",
+          "enabled": true,
+          "description": "QA 초록 컵의 손잡이를 중심으로 보여 주는 디테일 이미지. 컵의 초록색과 손잡이의 연결 부위가 보이도록 가까이 담되, 손잡이 형태나 사용감처럼 제공되지 않은 특성은 과장하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "5bb9d00f-97da-4dd8-9ae8-87cc6209c949",
+        "cta": "",
+        "dim": 0.5,
+        "body": "QA 초록 컵은 일상의 차 한 잔이라는 사용 맥락을 담습니다. 차를 준비하고 마시는 잠시의 시간에 초록색 컵을 곁에 두어 보세요.\n\n하루의 한 장면 속에서 컵의 색과 존재를 자연스럽게 마주할 수 있습니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "story",
+        "trim": 0,
+        "title": "일상의 차 한 잔",
+        "kicker": "DAILY TEA MOMENT",
+        "prompt": "A wide 16:9 calm lifestyle scene of an adult quietly enjoying tea at home, with a green ceramic cup clearly identifiable as the central object on a simple table. Soft window daylight, understated interior, serene editorial atmosphere. Avoid identifiable beverage types, claims of benefits, branded objects, and excessive props. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "성인의 일상적인 차 마시는 장면 속 QA 초록 컵을 보여 주는 사용 이미지. 컵이 장면의 중심에서 식별되도록 하며, 효능이나 특정 음료 종류, 제공되지 않은 소품·구성품을 암시하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "915e6734-e9de-4a64-ab57-61938f4c2abb",
+        "cta": "",
+        "dim": 0.5,
+        "body": "일상의 차 한 잔을 위한 도자기 컵입니다. 구매 전 사용 목적과 초록 옵션, 300ml 용량을 함께 확인해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "usage",
+        "trim": 0,
+        "title": "사용 맥락",
+        "kicker": "FOR DAILY TEA",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "별도 이미지 없이 사용 맥락을 짧은 문장으로 안내합니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "57b3eeba-1791-45bf-ac00-4d9295f5cff2",
+        "cta": "",
+        "dim": 0.5,
+        "body": "상품명|QA 초록 컵\n가격|28,000원\n옵션|초록\n용량|300ml",
+        "crop": 0,
+        "href": "",
+        "kind": "specs",
+        "trim": 0,
+        "title": "상품 정보",
+        "kicker": "SPECIFICATIONS",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "규격 표는 텍스트로 명확히 안내하므로 별도 이미지가 필요하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "9d927e74-f763-49f6-be74-baf3ce479850",
+        "cta": "",
+        "dim": 0.5,
+        "body": "배송 정보는 현재 확인이 필요합니다.\n\n반품 정보는 현재 확인이 필요합니다. 구매 전 관련 안내를 확인해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "shipping",
+        "trim": 0,
+        "title": "배송·반품 안내",
+        "kicker": "POLICY",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "정책 안내는 제공된 텍스트 정보만으로 전달합니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "2ada8bd5-5fc9-4bbc-b213-1ed83e6ca588",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "QA 초록 컵의 가격, 초록 옵션, 300ml 용량을 확인했습니다. 일상의 차 한 잔을 위한 컵을 찾고 있다면 구매 단계에서 상품 정보를 다시 확인해 주세요.",
+        "crop": 0,
+        "href": "https://example.com",
+        "kind": "cta",
+        "trim": 0,
+        "title": "초록 컵을 만나보세요",
+        "kicker": "QA GREEN CUP",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "구매 행동을 안내하는 마무리 영역으로 별도 이미지 없이 구성합니다."
+        },
+        "composition": "split"
+      }
+    ],
+    "error": "이미지 구상 입력을 확인해 주세요."
+  },
+  {
+    "format": "product-detail",
+    "phase": "final-validation",
+    "id": "53e7b30f-a35d-419f-8b3d-52dc71ac0c4c",
+    "projectId": "62387b1a-d9b1-40bf-919e-893f85a38163",
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "timeline": [
+      {
+        "stage": "understand",
+        "status": "pending",
+        "calls": 0
+      },
+      {
+        "stage": "understand",
+        "status": "waiting_user",
+        "calls": 1
+      },
+      {
+        "stage": "plan",
+        "status": "pending",
+        "calls": 1
+      },
+      {
+        "stage": "plan",
+        "status": "waiting_user",
+        "calls": 2
+      },
+      {
+        "stage": "write",
+        "status": "pending",
+        "calls": 2
+      },
+      {
+        "stage": "review",
+        "status": "pending",
+        "calls": 3,
+        "repairs": 0
+      },
+      {
+        "stage": "review",
+        "status": "ready",
+        "calls": 4,
+        "repairs": 0
+      }
+    ],
+    "stage": "review",
+    "status": "ready",
+    "review": {
+      "repairs": 0,
+      "reviews": [
+        {
+          "round": 1,
+          "summary": "원고 검수 결과입니다. 초록색·300ml·도자기 컵이라는 확정 사실과 상품명, 가격·옵션 요약, 규격 표, 배송·반품의 ‘확인 필요’ 안내가 일관되게 유지되었습니다. 전체→손잡이→차를 마시는 일상 장면의 흐름도 요청 의도에 맞습니다. 다만 현재 문구는 아직 생성되지 않은 이미지에서 손잡이 연결 모습과 색상 디테일을 확인할 수 있다고 단정하므로, 실제 이미지 확정 전에는 확인 안내로 완화하는 보정이 필요합니다. 이미지 프롬프트는 향후 장면 구상이며 이미지 생성·과금 실행을 뜻하지 않습니다.",
+          "criteria": [
+            {
+              "key": "intent",
+              "status": "pass",
+              "evidence": "히어로부터 손잡이 디테일, 일상 사용 장면, 규격, 정책 안내, 구매 CTA까지 차를 마시는 성인이 컵을 살펴보는 흐름으로 구성되었습니다."
+            },
+            {
+              "key": "facts",
+              "status": "attention",
+              "evidence": "상품명·초록색·300ml·도자기 컵 및 정책 ‘확인 필요’는 보존되었습니다. 다만 손잡이 연결과 색상 디테일을 ‘확인할 수 있다’는 문구는 이미지 결과가 없는 상태에서 단정됩니다."
+            },
+            {
+              "key": "narrative",
+              "status": "pass",
+              "evidence": "‘차 한 잔을 위한 초록’의 도입 뒤 전체 형태, 손잡이, 사용 맥락으로 구체화하고 마지막 구매 CTA로 마무리합니다."
+            },
+            {
+              "key": "visual",
+              "status": "pass",
+              "evidence": "1:1 전체 컵, 3:4 손잡이 디테일, 16:9 차를 마시는 장면으로 각 섹션의 시각적 역할이 분리되어 있습니다. 현재 원본 사진은 제공되지 않았습니다."
+            },
+            {
+              "key": "readability",
+              "status": "pass",
+              "evidence": "짧은 문단과 규격 표의 항목|값 형식으로 정보 단위가 분리되어 있으며, 확정된 타이포그래피 설정을 훼손하는 축약은 없습니다."
+            }
+          ],
+          "issues": [
+            {
+              "sectionId": "9960e6fa-ef17-4aba-932f-f8f351692b03",
+              "severity": "attention",
+              "message": "현재 생성 전 장면 구상만 있으므로 ‘가까운 거리에서 손잡이와 컵의 연결 모습을 살펴볼 수 있습니다’, ‘초록색을 가까이에서 확인해 보세요’는 실제 이미지 확정 후 확인할 수 있는 내용입니다. 이미지가 준비되기 전에는 ‘손잡이와 컵 몸체의 연결을 살펴볼 수 있도록 구성했습니다’처럼 계획 표현으로 보정할지 확인하세요.",
+              "targetId": "9960e6fa-ef17-4aba-932f-f8f351692b03"
+            }
+          ],
+          "at": 1790073804108
+        }
+      ],
+      "scopeIds": [],
+      "targetIds": []
+    },
+    "slots": [
+      {
+        "id": "8dd27d7a-b2c9-4549-b1c7-67f5f1274c8e",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "초록색 도자기 컵, QA 초록 컵입니다. 300ml 용량으로 일상의 차 한 잔을 담습니다.",
+        "crop": 0,
+        "href": "https://example.com",
+        "kind": "hero",
+        "trim": 0,
+        "title": "차 한 잔을 위한 초록",
+        "kicker": "일상의 차 한 잔에 어울리는 컵을 찾고 있나요?",
+        "prompt": "A calm editorial product photograph of one green ceramic cup, shown fully and centered against a quiet restrained neutral background. The entire silhouette and green color must be clearly visible, soft natural window light, subtle grounded shadow, premium Korean lifestyle brand mood, square composition, no people, no extra props. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": true,
+          "description": "초록색 도자기 컵 한 개가 화면 중심에 온전히 보이는 제품 대표 이미지. 컵의 전체 형태와 초록색이 분명히 드러나며, 차분하고 절제된 배경으로 제품 자체에 시선이 머무는 장면."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "f93433dd-7fb2-4157-8eb6-e41b06b940f2",
+        "cta": "",
+        "dim": 0.5,
+        "body": "컵 전체의 모습부터 천천히 살펴보세요. 초록색 도자기 컵이 차를 마시는 자리와 어떻게 어울릴지 상상할 수 있습니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "story",
+        "trim": 0,
+        "title": "형태를 먼저 살펴보세요",
+        "kicker": "컵을 고를 때 가장 먼저 확인하고 싶은 모습은 무엇인가요?",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "대표 이미지에서 제품 전체 형태를 확인하도록 하므로 별도 이미지는 필요하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "9960e6fa-ef17-4aba-932f-f8f351692b03",
+        "cta": "",
+        "dim": 0.5,
+        "body": "손잡이|컵을 들어 올릴 때 시선이 머무는 부분입니다.\n컵 몸체와의 연결|가까운 거리에서 손잡이와 컵의 연결 모습을 살펴볼 수 있습니다.\n초록색 디테일|컵 전체와 이어지는 초록색을 가까이에서 확인해 보세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "features",
+        "trim": 0,
+        "title": "손잡이까지 가까이",
+        "kicker": "손에 닿는 손잡이의 모습도 확인할 수 있나요?",
+        "prompt": "A close-up editorial detail photograph of the handle and handle-to-body connection of a green ceramic cup. Frame the handle as the central subject, with only a partial cup body visible; emphasize the green ceramic surface and quiet tactile presence without making material claims. Soft side window light, muted background, shallow depth of field, vertical 3:4 composition. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "3:4",
+          "enabled": true,
+          "description": "초록색 도자기 컵의 손잡이가 화면 중심이 되는 디테일 이미지. 컵 전체를 반복하기보다 손잡이와 컵 몸체의 연결 부분을 가까운 거리에서 보여 주어, 손에 들었을 때의 시선을 떠올리게 하는 장면."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "e287d498-bff6-4da6-bef8-598ee8fddc59",
+        "cta": "",
+        "dim": 0.5,
+        "body": "QA 초록 컵은 일상의 차 한 잔을 위한 도자기 컵입니다. 잠시 앉아 차를 마시는 시간에 초록색 컵을 더해 보세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "usage",
+        "trim": 0,
+        "title": "일상의 차 한 잔",
+        "kicker": "이 컵은 어느 순간에 함께할 수 있나요?",
+        "prompt": "A wide, calm lifestyle scene of an adult having tea at a simple table, with a green ceramic cup as the visual focus. Show hands near the cup and tea, but keep the face out of frame; the setting should feel quiet and everyday, with soft daylight and restrained natural tones. The cup is clearly visible on the table, cinematic 16:9 composition. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "차를 마시는 성인의 일상 장면에 놓인 초록색 도자기 컵. 인물의 얼굴보다 차와 컵, 테이블 위의 고요한 분위기가 중심이며, 컵이 일상의 차 한 잔과 함께하는 맥락을 보여 주는 장면."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "9c897043-198f-4b52-8187-2a8a88fd3d7f",
+        "cta": "",
+        "dim": 0.5,
+        "body": "상품명|QA 초록 컵\n카테고리|도자기 컵\n색상|초록\n용량|300ml",
+        "crop": 0,
+        "href": "",
+        "kind": "specs",
+        "trim": 0,
+        "title": "제품 정보",
+        "kicker": "색상과 용량은 어떻게 되나요?",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "규격 정보는 텍스트로 명확히 전달하므로 별도 이미지는 필요하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "5545b303-a25e-4c8c-a2aa-31cd20421e44",
+        "cta": "",
+        "dim": 0.5,
+        "body": "배송 정보는 확인이 필요합니다.\n반품 정보는 확인이 필요합니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "shipping",
+        "trim": 0,
+        "title": "배송·반품 안내",
+        "kicker": "배송과 반품 정보는 어디에서 확인할 수 있나요?",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "정책 안내는 제공된 문구를 정확히 전달하는 것이 우선이므로 별도 이미지는 필요하지 않습니다."
+        },
+        "composition": "split"
+      },
+      {
+        "id": "e3c91834-1905-48ad-b6a0-68159354311e",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "QA 초록 컵의 색상과 300ml 용량을 확인하고, 일상의 차 한 잔을 준비해 보세요.",
+        "crop": 0,
+        "href": "https://example.com",
+        "kind": "cta",
+        "trim": 0,
+        "title": "초록색 컵을 만나보세요",
+        "kicker": "차 한 잔을 위한 컵을 선택할 준비가 되었나요?",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": false,
+          "description": "구매 행동을 안내하는 마무리 영역으로, 별도 이미지는 필요하지 않습니다."
+        },
+        "composition": "split"
+      }
+    ]
+  }
+]

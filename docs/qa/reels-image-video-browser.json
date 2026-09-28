@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-09-21T05:49:23.905Z",
+  "video": [
+    {
+      "currentTime": 5.021333,
+      "duration": 5.021333,
+      "ended": true,
+      "error": null,
+      "height": 1920,
+      "paused": true,
+      "readyState": 4,
+      "width": 1080
+    }
+  ],
+  "sampleWatched": true
+}

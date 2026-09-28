@@ -130,11 +130,11 @@ export function Topbar({
           data-busy={busy}
           data-ready={keyConfigured}
           onClick={onKeys}
-          aria-label={keyConfigured ? "Edit platform key" : "Add platform key"}
-          title={keyConfigured ? "Edit platform key" : "Add platform key"}
+          aria-label="생성 API 환경설정"
+          title="생성 API 환경설정"
         >
           <KeyIcon />
-          <span className="ohf-key-text">{keyConfigured ? "Your key" : "Add key"}</span>
+          <span className="ohf-key-text">{keyConfigured ? "키 등록됨" : "API 연결"}</span>
           <span className="ohf-lamp" />
         </button>
       </div>

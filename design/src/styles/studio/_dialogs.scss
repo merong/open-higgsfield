@@ -1,0 +1,96 @@
+/* ---------- dialogs ---------- */
+
+.ohf dialog {
+  border: none;
+  padding: 0;
+  /* The reset above zeroes every margin, which breaks the UA centering of
+     modal dialogs — restore it. */
+  margin: auto;
+  background: transparent;
+  color: inherit;
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+}
+.ohf dialog::backdrop {
+  background: rgba(4, 5, 5, 0.66);
+  backdrop-filter: blur(10px);
+  animation: ohf-fade var(--dur-slow) ease;
+}
+.ohf dialog[open] .ohf-dialog-panel {
+  animation: ohf-pop 0.28s var(--ease);
+}
+/* Held mounted and open by the dialog's own component for the length of this;
+   `forwards` keeps the end state so nothing flashes back before it unmounts. */
+.ohf dialog[data-closing] .ohf-dialog-panel {
+  animation: ohf-pop-out 0.18s cubic-bezier(0.4, 0, 1, 1) forwards;
+  /* A panel on its way out takes no more clicks. */
+  pointer-events: none;
+}
+.ohf dialog[data-closing]::backdrop {
+  animation: ohf-fade-out 0.18s ease forwards;
+}
+.ohf-dialog-panel:focus {
+  outline: none;
+}
+.ohf-dialog-panel {
+  background: var(--s2);
+  border: 1px solid var(--line-2);
+  border-radius: 18px;
+  box-shadow: var(--shadow-3), var(--glint);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ohf-keys-panel {
+  width: 420px;
+  max-width: calc(100vw - 32px);
+}
+.ohf-keys-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 0;
+}
+.ohf-keys-title {
+  font-size: 16px;
+  font-weight: var(--fw-display);
+  letter-spacing: -0.02em;
+}
+.ohf-keys-copy {
+  margin: 6px 0 0;
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--tx3);
+}
+.ohf-keys-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 18px 18px;
+}
+.ohf-keys-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 4px;
+}
+.ohf-keys-save {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.ohf-keys-save:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+.ohf-keys-save:disabled {
+  opacity: 0.45;
+}
+

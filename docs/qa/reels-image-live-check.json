@@ -1,0 +1,77 @@
+{
+  "workflowId": "82f50aaf-4bae-429d-837b-18ad166c0cc4",
+  "projectId": "149910d6-7452-4b06-9ea3-14f8f5504753",
+  "status": "ready",
+  "model": "gpt-5.6-terra",
+  "planApproved": true,
+  "references": [
+    {
+      "id": "ad195f8e-966f-4ff3-835f-370a89b4f834",
+      "name": "fern-house.webp",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "id": "2ed4f436-621b-4f08-90d1-a55d8a19b69c",
+      "name": "greenhouse.webp",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-1",
+      "title": "연못가 초록의 시작",
+      "seconds": 5,
+      "sourceImageId": "ad195f8e-966f-4ff3-835f-370a89b4f834",
+      "asset": {
+        "id": "ad195f8e-966f-4ff3-835f-370a89b4f834",
+        "kind": "image",
+        "name": "fern-house.webp",
+        "width": 640,
+        "height": 480
+      },
+      "prompt": "Use the selected reference image as the exact starting frame. Preserve the wide composition of the pond, vine-covered concrete building, mossy stairway, dense ferns, foreground leaves, and the water reflection. Over 5 seconds, make an extremely slow, steady push-in toward the building and pond edge. Add only subtle leaf movement from a faint breeze and barely visible soft ripples on the water; keep the overcast, damp, calm atmosphere. No new subjects or objects, no fantasy effects, no fast motion, no text, no logos, no printed pages. End with a gentle dissolve-ready hold, maintaining the original image's natural textures and muted green palette."
+    },
+    {
+      "id": "scene-2",
+      "title": "햇살이 머무는 온실",
+      "seconds": 5,
+      "sourceImageId": "2ed4f436-621b-4f08-90d1-a55d8a19b69c",
+      "asset": {
+        "id": "2ed4f436-621b-4f08-90d1-a55d8a19b69c",
+        "kind": "image",
+        "name": "greenhouse.webp",
+        "width": 640,
+        "height": 360
+      },
+      "prompt": "Use the selected reference image as the exact starting frame. Preserve the centered stone statue, symmetrical glass roof, diagonal sunbeams, damp floor, surrounding plants, and darker foliage along the right side. From a low eye level, move slowly forward for 5 seconds on the central path while keeping the statue and roof symmetry stable. Add only restrained floating dust visible inside the existing sunlight and minimal natural leaf motion. Keep the warm, quiet greenhouse mood and original composition. No new subjects or objects, no altered statue, no fantasy effects, no rapid transition, no text, no logos, no printed pages. Finish by gently lingering on the right-side foliage for continuity."
+    },
+    {
+      "id": "scene-3",
+      "title": "반사 위의 쉼",
+      "seconds": 5,
+      "sourceImageId": "ad195f8e-966f-4ff3-835f-370a89b4f834",
+      "asset": {
+        "id": "ad195f8e-966f-4ff3-835f-370a89b4f834",
+        "kind": "image",
+        "name": "fern-house.webp",
+        "width": 640,
+        "height": 480
+      },
+      "prompt": "Use the selected reference image as the exact starting frame. Reframe only within the existing scene, emphasizing the moss-covered rock, fern textures, pond surface, lily pads, and reflected green architecture. Over 5 seconds, perform a very slow downward tilt from the mossy stone and lower foliage toward the water reflection. Add only tiny, natural ripples that gently soften the existing reflection; keep all plant detail, damp atmosphere, and subdued green tones intact. No new subjects or objects, no fantasy effects, no fast motion, no text, no logos, no printed pages. Hold on the reflected green surface, then fade out softly at the end."
+    }
+  ],
+  "calls": 2,
+  "generations": 0,
+  "task": null,
+  "credits": 326,
+  "quote": {
+    "image": 4,
+    "video": 40,
+    "voice": 2
+  },
+  "anonymousStatus": 401,
+  "crossOriginStatus": 403,
+  "emptySelectionStatus": 400
+}

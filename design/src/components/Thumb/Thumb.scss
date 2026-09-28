@@ -1,0 +1,85 @@
+.ohf-frame {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: var(--s3);
+
+  &--pending {
+    background: var(--s2);
+    border: 1px solid var(--line-2);
+  }
+  &--failed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-line);
+    color: var(--danger);
+  }
+  &--empty {
+    background: transparent;
+    border: 1px dashed var(--line-2);
+  }
+  &--flat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 18% 14%;
+  }
+}
+.ohf-frame-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* The pending lamp is the same pulse the platform lamp carries. */
+.ohf-frame-lamp {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-14);
+  animation: ohf-pulse 2.4s ease-in-out infinite;
+}
+.ohf-frame-line {
+  position: absolute;
+  left: 14%;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--s4);
+  &--1 {
+    right: 14%;
+    bottom: 20%;
+  }
+  &--2 {
+    right: 40%;
+    bottom: 36%;
+  }
+}
+.ohf-frame-icon {
+  display: flex;
+}
+.ohf-frame-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  &--1 {
+    width: 70%;
+  }
+  &--2 {
+    width: 55%;
+  }
+  &--pill {
+    width: 40%;
+    height: 6px;
+    margin-top: 2px;
+    border-radius: 3px;
+    background: transparent;
+    border: 1px solid currentColor;
+  }
+}

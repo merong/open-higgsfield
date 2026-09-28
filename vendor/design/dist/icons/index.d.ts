@@ -1,0 +1,47 @@
+export interface IconProps {
+    size?: number;
+}
+export declare function ImageIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function VideoIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function AudioIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function AssetsIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function KeyIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function CaretDownIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function CloseIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function CheckIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function SearchIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function ShuffleIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function RetryIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function WarningIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function ArrowRightIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function PlusIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function MinusIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function GemIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function ClockIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function FormatIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function PlayIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function PlayBadgeIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function DownloadIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function OpenOutIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function UploadIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function CopyIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function SlidersIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function ArrowUpIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function HeartIcon({ size, filled }: IconProps & {
+    filled?: boolean;
+}): import("react").JSX.Element;
+export declare function TrashIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function UndoIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function WaveBadgeIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function SparkleIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function PaletteIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function GripIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function UserIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function FilmIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function LayoutIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function LayersIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function PhoneIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function TextIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function WalletIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function ChevronLeftIcon({ size }: IconProps): import("react").JSX.Element;
+export declare function ChevronRightIcon({ size }: IconProps): import("react").JSX.Element;

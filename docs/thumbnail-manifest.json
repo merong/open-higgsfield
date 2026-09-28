@@ -1,0 +1,132 @@
+{
+  "generator": "Built-in image_gen tool; one generation per asset",
+  "date": "2026-09-19",
+  "optimization": "WebP, width 640px, quality 84, preserved aspect ratio",
+  "assets": [
+    {
+      "file": "public/content/thumbnails/beekeeper.webp",
+      "subject": "Portrait of a beekeeper in a sunlit orchard, medium format film, shallow depth of field",
+      "prompt": "Create one landscape 4:3 editorial thumbnail for an AI creative studio. Subject: Portrait of a beekeeper in a sunlit orchard, medium format film, shallow depth of field. Premium photographic art direction, distinct subject readable even at 100 pixels, natural realistic texture, tightly composed centered focal subject, edge-to-edge image, no labels, no borders, no text, no watermark. This is an illustrative sample, not a model benchmark."
+    },
+    {
+      "file": "public/content/thumbnails/recording-studio.webp",
+      "subject": "Isometric cutaway of a tiny recording studio, warm tungsten light, matte clay render",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Isometric cutaway of a tiny recording studio, warm tungsten light, matte clay render. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/concrete-poppies.webp",
+      "subject": "Editorial still life: brutalist concrete vases with wild poppies, hard noon shadows",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Editorial still life: brutalist concrete vases with wild poppies, hard noon shadows. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/rain-alley.webp",
+      "subject": "Rain-slick alley at midnight, sodium lamps, reflections in every puddle, 35mm",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Rain-slick alley at midnight, sodium lamps, reflections in every puddle, 35mm. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/luthier.webp",
+      "subject": "Studio portrait of an elderly luthier holding a half-built violin, single softbox, black backdrop",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Studio portrait of an elderly luthier holding a half-built violin, single softbox, black backdrop. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/salt-ponds.webp",
+      "subject": "Aerial top-down of salt evaporation ponds, pink and ochre geometry, midday clarity",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Aerial top-down of salt evaporation ponds, pink and ochre geometry, midday clarity. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/watch-movement.webp",
+      "subject": "Cutaway illustration of a mechanical watch movement, blueprint lines on warm paper",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Cutaway illustration of a mechanical watch movement, blueprint lines on warm paper. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/fern-house.webp",
+      "subject": "Overgrown modernist house reclaimed by ferns, overcast light, large format detail",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Overgrown modernist house reclaimed by ferns, overcast light, large format detail. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/espresso.webp",
+      "subject": "Matte ceramic espresso cup on wet slate, rim light, steam caught mid-curl",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Matte ceramic espresso cup on wet slate, rim light, steam caught mid-curl. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/ski-lodge.webp",
+      "subject": "1970s ski lodge interior, wood paneling and orange wool, low winter sun through glass",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: 1970s ski lodge interior, wood paneling and orange wool, low winter sun through glass. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/kneading-dough.webp",
+      "subject": "Hands kneading dough on floured marble, window light, muted palette, close crop",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Hands kneading dough on floured marble, window light, muted palette, close crop. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/observatory.webp",
+      "subject": "Desert observatory at blue hour, long exposure, star trails over a white dome",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Desert observatory at blue hour, long exposure, star trails over a white dome. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/forest-dawn.webp",
+      "subject": "Slow aerial dolly over fog-covered pine forest at dawn, volumetric light through the canopy",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Slow aerial dolly over fog-covered pine forest at dawn, volumetric light through the canopy. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/ink-water.webp",
+      "subject": "Macro shot of ink blooming in water, backlit, ultra slow motion, black backdrop",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Macro shot of ink blooming in water, backlit, ultra slow motion, black backdrop. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/neon-market.webp",
+      "subject": "Handheld tracking shot through a neon market at night, rain on lenses, shallow focus",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Handheld tracking shot through a neon market at night, rain on lenses, shallow focus. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/night-diner.webp",
+      "subject": "Locked-off shot of a diner at 3am, one customer, rain outside, sign flickering",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Locked-off shot of a diner at 3am, one customer, rain outside, sign flickering. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/sculptor.webp",
+      "subject": "Slow push-in on a sculptor's hands shaping wet clay, north-facing window light",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Slow push-in on a sculptor's hands shaping wet clay, north-facing window light. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/lighthouse.webp",
+      "subject": "Drone orbit around a lighthouse in heavy swell, grey sea, spray hitting the lens",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Drone orbit around a lighthouse in heavy swell, grey sea, spray hitting the lens. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/canyon.webp",
+      "subject": "Timelapse of cloud shadows sweeping a canyon rim, golden hour into dusk",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Timelapse of cloud shadows sweeping a canyon rim, golden hour into dusk. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/greenhouse.webp",
+      "subject": "Steadicam walk through an empty greenhouse, dust in shafts of light, slow reveal",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Steadicam walk through an empty greenhouse, dust in shafts of light, slow reveal. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/record-dancer.webp",
+      "subject": "Whip pan from a spinning record to a dancer mid-turn, tungsten glow, heavy motion blur",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Whip pan from a spinning record to a dancer mid-turn, tungsten glow, heavy motion blur. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/swimmer.webp",
+      "subject": "Underwater shot of a swimmer breaking the surface, bubbles, sunlight refracting",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Underwater shot of a swimmer breaking the surface, bubbles, sunlight refracting. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/train-viaduct.webp",
+      "subject": "Static wide of a train crossing a viaduct at dusk, lit windows, long lens compression",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Static wide of a train crossing a viaduct at dusk, lit windows, long lens compression. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/glass-tower.webp",
+      "subject": "Slow tilt down a glass tower facade to a busy crosswalk, overcast city light",
+      "prompt": "Create one 16:9 cinematic film still for a premium AI creative studio thumbnail. Subject: Slow tilt down a glass tower facade to a busy crosswalk, overcast city light. A single evocative still frame implying the described camera motion, not a contact sheet or sequence. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    },
+    {
+      "file": "public/content/thumbnails/landing-workspace.webp",
+      "subject": "Premium editorial photograph of an open laptop on a limestone desk showing a beautifully composed lifestyle landing page with an olive skincare still life photograph and cream editorial layout, natural window light, a small ceramic cup beside the laptop. Website builder feature thumbnail, screen occupies most of frame, no legible text or logos.",
+      "prompt": "Create one 4:3 landscape editorial image for a premium AI creative studio thumbnail. Subject: Premium editorial photograph of an open laptop on a limestone desk showing a beautifully composed lifestyle landing page with an olive skincare still life photograph and cream editorial layout, natural window light, a small ceramic cup beside the laptop. Website builder feature thumbnail, screen occupies most of frame, no legible text or logos.. Keep the requested photographic, illustration or clay-render medium. Distinct central subject readable at small thumbnail size, beautiful material detail, purposeful composition, realistic lighting, edge-to-edge artwork. No text, labels, watermarks, logos, UI borders or abstract gradient placeholders."
+    }
+  ]
+}

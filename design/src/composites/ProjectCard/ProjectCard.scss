@@ -1,0 +1,107 @@
+@use "@/styles/mixins" as m;
+
+.ohf-pcard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--s1);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1), var(--glint);
+  color: var(--tx);
+  text-decoration: none;
+  text-align: left;
+  transition:
+    border-color var(--dur-base) ease,
+    background var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+  @include m.hover {
+    border-color: var(--line-2);
+    background: var(--s2);
+  }
+  /* Deviation from the brief: the brief's SCSS paired :hover with its pin
+     but left :active unpaired. The controller's state-pinning ruling requires
+     both halves for an interactive root, so the press feedback is added here
+     through the m.active mixin, matching the scale(0.96) the app already
+     uses for Button/Chip/Pill/IconButton presses. */
+  @include m.active {
+    transform: scale(0.98);
+  }
+}
+.ohf-pcard-deck {
+  display: flex;
+  gap: 6px;
+  padding: 12px 12px 0;
+}
+.ohf-pcard-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px 14px;
+}
+.ohf-pcard-title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+  @include m.truncate;
+}
+.ohf-pcard-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--tx3);
+  @include m.tabular;
+}
+.ohf-pcard-spacer {
+  flex: 1;
+}
+.ohf-pcard-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fs-xs);
+  color: var(--tx2);
+  &--live {
+    color: var(--accent);
+  }
+  &--draft {
+    color: var(--tx3);
+  }
+}
+.ohf-pcard-lamp {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.ohf-pcard-cover {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--surface-raised);
+  padding: var(--sp-6);
+  .ohf-slide {
+    width: 52%;
+    transform: rotate(-4deg);
+    box-shadow: var(--shadow-2);
+  }
+}
+.ohf-pcard:has(.ohf-pcard-cover) {
+  .ohf-pcard-deck {
+    margin-top: -34px;
+    align-self: flex-end;
+    position: relative;
+    padding-right: var(--sp-5);
+  }
+  .ohf-pcard-body {
+    gap: var(--sp-3);
+    padding: var(--sp-5);
+  }
+  .ohf-pcard-meta {
+    flex-wrap: wrap;
+    row-gap: var(--sp-3);
+  }
+}

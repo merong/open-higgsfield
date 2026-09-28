@@ -1,3 +1,4 @@
+import { thumbnailBackground } from "./thumbnails";
 import { browserLegacy, defaultKv, type Kv, type LegacyStore } from "./idb";
 import type { Surface } from "@/generation/catalog";
 
@@ -20,7 +21,7 @@ export interface RunRecord {
       refresh can resume the poll; completed rows keep it for the same id. */
   requestId?: string;
   error?: string;
-  /** Layered-gradient fallback used while media loads or when a run failed. */
+  /** Photo-backed example used behind media, never a generated result. */
   art: string;
   createdAt: number;
   /** Kept deliberately: shows in the Favorites scope and outlives the cap. */
@@ -40,9 +41,10 @@ export async function loadHistory(
 ): Promise<RunRecord[]> {
   const stored = await readIdb(kv);
   const fromLegacy = readLegacy(legacy);
-  if (stored.length === 0) return fromLegacy;
-  if (fromLegacy.length === 0) return stored;
-  return mergeHistory(stored, fromLegacy);
+  const records = stored.length === 0 ? fromLegacy : fromLegacy.length === 0 ? stored : mergeHistory(stored, fromLegacy);
+  return records.map(record => typeof record.art !== "string" || record.art.includes("gradient(") ? {
+    ...record, art: thumbnailBackground(record.surface, record.prompt),
+  } : record);
 }
 
 export async function saveHistory(

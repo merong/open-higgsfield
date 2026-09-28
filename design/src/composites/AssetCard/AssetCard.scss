@@ -1,0 +1,55 @@
+@use "@/styles/mixins" as m;
+.ohf-asset-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: var(--sp-2);
+  padding: var(--sp-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-panel);
+  text-align: left;
+  @include m.control-states(var(--surface-raised), var(--text-primary));
+  &[aria-pressed="true"] {
+    border-color: var(--accent);
+  }
+}
+.ohf-asset-card-image {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  background: var(--surface-raised);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.ohf-asset-card-check {
+  position: absolute;
+  right: var(--sp-3);
+  top: var(--sp-3);
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.ohf-asset-card-title {
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+  padding: 0 var(--sp-2);
+  @include m.truncate;
+}
+.ohf-asset-card-meta {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  padding: 0 var(--sp-2) var(--sp-2);
+}

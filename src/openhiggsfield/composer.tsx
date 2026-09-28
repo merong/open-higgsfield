@@ -49,6 +49,7 @@ export function Composer({
   surface,
   model,
   generating,
+  generationBlocked,
   error,
   focusNonce,
   history,
@@ -61,6 +62,7 @@ export function Composer({
   surface: Surface;
   model: ModelEntry;
   generating: boolean;
+  generationBlocked?: string;
   error: string | null;
   focusNonce: number;
   /* Finished runs are attachable inputs, so the asset picker reads the same
@@ -92,9 +94,7 @@ export function Composer({
   const dockRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const promptRef = useRef<HTMLTextAreaElement>(null);
-  /* A run in flight is not a lock: it holds its own tile in the grid, so the
-     only thing that can stop a press is having nothing to say. */
-  const disabled = prompt.text.trim().length === 0;
+  const disabled = Boolean(generationBlocked) || prompt.text.trim().length === 0;
 
   /* One batch control, two mechanisms. A model that declares its own
      results-per-request gets that setting written; the rest are submitted once
@@ -211,7 +211,7 @@ export function Composer({
   const attachLabel = tray.allFull ? "Change the inputs" : "Add an input";
   const settingKey = overlay?.startsWith(SETTING) ? overlay.slice(SETTING.length) : null;
   const generateLabel = batchValue > 1 ? `Generate ${batchValue} results` : "Generate";
-  const generateTip = disabled ? "Write a prompt first" : `${generateLabel} · ${shortcut ?? "⌘↵"}`;
+  const generateTip = generationBlocked || (disabled ? "Write a prompt first" : `${generateLabel} · ${shortcut ?? "⌘↵"}`);
 
   return (
     <div className="ohf-dock" ref={dockRef} data-selecting={selecting}>
@@ -226,6 +226,7 @@ export function Composer({
         }
       >
         {notice}
+        {generationBlocked && <div className="ohf-alert" role="status"><span className="ohf-alert-text">{generationBlocked} <a href="/account/credits">크레딧 확인 ↗</a></span></div>}
 
         {error && (
           <div className="ohf-alert" role="alert">

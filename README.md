@@ -1,17 +1,31 @@
 # OpenHiggsfield AI — Open-Source Alternative to Higgsfield AI
 
-> **The free, open-source alternative to Higgsfield AI.** Generate images and
-> videos with 38 models from one prompt bar — no closed ecosystem, no studio
-> subscription.
+> Self-hosted AI studio with card-news, reels and landing-page creation.
+> Account-based projects, server persistence and operator-managed generation credits.
+
+**New workspace:** `/projects` · [Setup, feature scope and operations](docs/content-workspace.md).
 
 **Agentic page QA:** [10 reusable landing/product-detail scenarios](docs/qa/agentic-scenarios/README.md) — inputs, user feedback, fixtures and evaluation records for human or AI-guided E2E runs.
+
+**Desktop work archive:** [Imported source and verification](docs/workspace-history/README.md) · [Design system](design/README.md) · [Ego Lite demo QA](docs/qa/demo-20260929/README.md) · [Local Cloudflare Tunnel](docs/cloudflare-tunnel.md).
+
+**AI reels:** `/projects/new?format=reels` — approve a script and a real sample,
+then refine individual scenes and render 1080×1920 MP4 with optional AI narration
+and aligned subtitles. Requires `ffmpeg` and `ffprobe` on the server PATH
+(`brew install ffmpeg` on macOS); optional `FFMPEG_PATH` / `FFPROBE_PATH` overrides.
+OpenAI text model/effort uses administrator settings; speech uses `gpt-4o-mini-tts`
+and alignment uses `whisper-1`. Higgsfield scene creation uses the existing credit
+ledger. Script: 1 app credit; scene voice: `VOICE_CREDIT_COST` (default 2); media
+costs are shown before generation. Re-rendering stored media costs no generation
+credits. Final frame review is separate from full playback and listening approval.
+[Workflow design](docs/reels-hitl-design.md) · [Implementation and QA](docs/reels-hitl-progress.md).
 
 ## 🌐 Try it Online — No Install Required
 
 **Hosted version:** [openhiggsfield.ai](https://openhiggsfield.ai)
 
-Image and Video in one studio, in the browser — no Node.js, no setup. Add your
-platform key (`id:secret`) to start generating. The studio itself is free.
+The upstream hosted version may differ from this local account-based workspace.
+This checkout uses server-side operator credentials and PostgreSQL persistence.
 
 ---
 
@@ -19,12 +33,12 @@ platform key (`id:secret`) to start generating. The studio itself is free.
 
 - **Free & open-source** — no studio subscription, no vendor lock-in
 - **Self-hosted** — clone it, run it, change it
-- **Your key** — generate with your own platform key
+- **Managed generation** — server-side operator key and account credit ledger
 - **38 models** — 8 image, 30 video, one catalog, one composer
 
 ---
 
-Next.js 16 App Router on Vercel · React 19 · plain CSS · Zustand · pnpm
+Next.js 16 App Router with a custom Node server · React 19 · plain CSS · Zustand · pnpm
 
 ---
 
@@ -57,7 +71,7 @@ Next.js 16 App Router on Vercel · React 19 · plain CSS · Zustand · pnpm
 - **Four scopes** — Image, Video, Assets (every finished run) and Favorites —
   as an arrow-key-navigable tab rail.
 - **Masonry grid** of real runs at their true aspect ratio, newest first, with a
-  gradient placeholder while media loads.
+  generated photographic preview while media loads.
 - **Per-tile actions**: reuse, favorite, delete, select.
 - **Reuse restores model, settings and prompt**, so the same run can be
   re-rendered, not just re-typed.
@@ -77,9 +91,9 @@ Next.js 16 App Router on Vercel · React 19 · plain CSS · Zustand · pnpm
   generation platform, so old history can outlive its CDN lifetime and show gaps.
 - **Failed, NSFW and canceled runs** are recorded as failed tiles carrying the
   reason and a retry that restores the prompt and model.
-- **Your own platform key.** Entered in a modal, stored by a server action in an
-  httpOnly cookie. A missing key opens the modal — it never fails silently. The
-  topbar lamp states whether a key is held and whether a run is in flight.
+- **Account and operator credentials.** Generation requires login and credits.
+  The server key is never sent to the browser. Projects and billing history are
+  server-owned; the original studio gallery remains browser-local.
 
 ---
 
@@ -110,11 +124,16 @@ pnpm install
 pnpm dev            # http://localhost:3000
 ```
 
-Open the studio, press **Add key**, and paste your platform key as `id:secret`.
+Copy `.env.example` to `.env.local`, open `/projects`, and create an account.
+Local editing and exports need no provider key. See the [workspace guide](docs/content-workspace.md)
+for PostgreSQL, operator keys, AI outlines and administrator credit grants.
+See [admin settings and demo accounts](docs/admin-settings.md) for `/admin`, `/settings`, and local-IP access restrictions.
 
 ### Environment
 
 ```bash
+DATABASE_URL=                        # required in production; local PGlite in dev
+HF_OPERATOR_API_KEY=                  # operator key, server only
 HF_API_BASE_URL=                      # generation API origin, server only
 OPEN_HIGGSFIELD_READ_WRITE_TOKEN=     # Vercel Blob read-write token
 ```
@@ -126,6 +145,8 @@ OPEN_HIGGSFIELD_READ_WRITE_TOKEN=     # Vercel Blob read-write token
 | `pnpm dev` | Dev server on port 3000 |
 | `pnpm build` | Production build |
 | `pnpm start` | Serve the production build |
+| `pnpm demo:seed` | Create nine demo users and the admin; stop local PGlite server first |
+| `pnpm test` | Run service, authorization, credit and thumbnail tests |
 | `pnpm brand` | Rebuild the icons and OG card in `public/` |
 
 ---
@@ -134,7 +155,7 @@ OPEN_HIGGSFIELD_READ_WRITE_TOKEN=     # Vercel Blob read-write token
 
 ```
 src/
-  app/          /  is the full-viewport studio and the only page
+  app/          / studio; /projects, /login, /account, /admin, /settings and workspace API
                 /api/blob issues upload tokens
                 base.css owns the document canvas
   generation/   generate requests, server actions, API mapping, catalog, stores
@@ -147,7 +168,7 @@ src/
 
 ## Design principles
 
-Dark studio ground, a single lime accent `#d1fe17`, Inter throughout. The chrome
+Dark studio ground, a single lime accent `#d1fe17`, Pretendard UI typography. The chrome
 stays neutral so the generated work is the only color on the surface.
 
 1. **The tool disappears into the task** — expression never obscures state or
@@ -164,3 +185,9 @@ stays neutral so the generated work is the only color on the surface.
 
 Built for people who work in long sessions, iterating on prompts, inputs and
 settings.
+
+### 기본 크레딧 정책
+
+신규 가입·데모 계정(관리자 포함)의 기본 지급량과 관리자 지급 폼의 초기 입력값은 50입니다. 동영상은 각 요청 직전 잔액이 50을 초과하고 견적 비용을 충당할 수 있어야 생성할 수 있습니다. 이미지 생성은 견적 비용만 검사합니다. 거절된 요청은 공급자 호출이나 크레딧 예약을 만들지 않습니다.
+
+기존 계정의 잔액을 50으로 맞추는 일회성 운영 명령은 `node --import tsx scripts/reset-default-credits.ts`입니다. 로컬 PGlite 사용 시 반드시 서버를 먼저 종료하세요. 차액은 `adjustment` 원장에 보존하며, 재실행은 추가 조정 없이 종료합니다. 이후 관리자의 지급과 사용으로 변경된 잔액은 다시 초기화하지 않습니다.

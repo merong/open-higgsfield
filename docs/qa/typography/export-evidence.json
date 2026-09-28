@@ -1,0 +1,119 @@
+{
+  "card-statement": {
+    "exportId": "f970050d-cc04-4804-84f3-20607d795cf9",
+    "bytes": 2683944,
+    "projectId": "e547046d-3711-4997-add0-5e4d298e7376",
+    "typography": {
+      "body": {
+        "font": "pretendard",
+        "weight": 500
+      },
+      "title": {
+        "font": "black-han-sans",
+        "weight": 400
+      },
+      "accent": {
+        "font": "bebas-neue",
+        "weight": 400
+      },
+      "preset": "statement",
+      "version": 1,
+      "confirmed": true
+    },
+    "copyUnchanged": true
+  },
+  "landing-website": {
+    "exportId": "a8477a32-54d9-4ea2-8211-c5d4ecfbe3fe",
+    "bytes": 4215784,
+    "projectId": "dacc378a-dccb-4b43-98ce-4442d5fcfa69",
+    "typography": {
+      "version": 1,
+      "preset": "natural",
+      "title": {
+        "font": "gowun-batang",
+        "weight": 700
+      },
+      "body": {
+        "font": "suit",
+        "weight": 400
+      },
+      "accent": {
+        "font": "cormorant-garamond",
+        "weight": 600
+      },
+      "confirmed": true
+    },
+    "fonts": [
+      {
+        "id": "gowun-batang",
+        "hashMatches": true,
+        "hasLicense": true
+      },
+      {
+        "id": "suit",
+        "hashMatches": true,
+        "hasLicense": true
+      },
+      {
+        "id": "cormorant-garamond",
+        "hashMatches": true,
+        "hasLicense": true
+      },
+      {
+        "id": "pretendard",
+        "hashMatches": true,
+        "hasLicense": true
+      },
+      {
+        "id": "inter",
+        "hashMatches": true,
+        "hasLicense": true
+      }
+    ]
+  },
+  "product-website": {
+    "exportId": "2e8acea3-94be-4db8-85a7-bb57df6e25e2",
+    "bytes": 9084553,
+    "projectId": "8bb29ff2-9217-4492-823f-275978c6330e",
+    "typography": {
+      "version": 1,
+      "preset": "premium",
+      "title": {
+        "font": "noto-serif-kr",
+        "weight": 600
+      },
+      "body": {
+        "font": "pretendard",
+        "weight": 400
+      },
+      "accent": {
+        "font": "playfair-display",
+        "weight": 600
+      },
+      "confirmed": true
+    },
+    "copyUnchanged": true,
+    "fonts": [
+      {
+        "id": "noto-serif-kr",
+        "hashMatches": true,
+        "hasLicense": true
+      },
+      {
+        "id": "pretendard",
+        "hashMatches": true,
+        "hasLicense": true
+      },
+      {
+        "id": "playfair-display",
+        "hashMatches": true,
+        "hasLicense": true
+      },
+      {
+        "id": "inter",
+        "hashMatches": true,
+        "hasLicense": true
+      }
+    ]
+  }
+}

@@ -41,20 +41,36 @@ export type PlatformClientOptions = {
   fetch?: typeof fetch;
 };
 
+// Upload destinations come from the authenticated provider, never from the browser.
+export function providerStorageUrl(value: unknown): string {
+  if (typeof value !== "string") throw new PlatformError(502, "Invalid upload response");
+  const url = new URL(value);
+  if (url.protocol !== "https:" || url.username || url.password || url.port || !["higgsfield.ai", "cloudfront.net", "amazonaws.com", "cloudflarestorage.com"].some(host => url.hostname === host || url.hostname.endsWith(`.${host}`))) throw new PlatformError(502, "Untrusted upload destination");
+  return url.href;
+}
+
 export function isModelId(model: string): boolean {
   return MODEL_ID.test(model) && !model.includes("..");
 }
 
-export function createPlatformClient(options: PlatformClientOptions) {
+export interface PlatformClient {
+  upload?: (bytes: Uint8Array, contentType: string) => Promise<string>;
+  submit: (model: string, input: Record<string, unknown>) => Promise<QueuedGeneration>;
+  status: (requestId: string) => Promise<GenerationStatus>;
+}
+
+export function createPlatformClient(options: PlatformClientOptions): PlatformClient {
   const baseUrl = options.baseUrl.replace(/\/$/, "");
   const fetchImpl = options.fetch ?? fetch;
   const auth = toAuthorizationHeader(options.apiKey);
 
   async function send(method: "GET" | "POST", path: string, body?: Record<string, unknown>) {
     const url = `${baseUrl}${path}`;
-    console.info("[platform] request", { method, url, body: body ?? null });
+    console.info("[platform] request", { method, url });
     const response = await fetchImpl(url, {
       method,
+      redirect: "error",
+      signal: AbortSignal.timeout(30000),
       headers: {
         Authorization: auth,
         ...(body ? { "Content-Type": "application/json" } : {}),
@@ -63,12 +79,25 @@ export function createPlatformClient(options: PlatformClientOptions) {
     });
 
     const payload = await readJson(response);
-    console.info("[platform] response", { method, url, status: response.status, body: payload });
+    console.info("[platform] response", { method, url, status: response.status });
     if (!response.ok) throw new PlatformError(response.status, payload);
     return payload;
   }
 
   return {
+    async upload(bytes: Uint8Array, contentType: string): Promise<string> {
+      const slot = asRecord(await send("POST", "/files/generate-upload-url", { content_type: contentType }));
+      const uploadUrl = providerStorageUrl(slot.upload_url), publicUrl = providerStorageUrl(slot.public_url);
+      const headers = new Headers({ "Content-Type": contentType });
+      for (const [key, value] of Object.entries(asRecord(slot.upload_headers))) {
+        if (!/^(content-type|x-amz-[a-z0-9-]+|x-goog-[a-z0-9-]+)$/i.test(key) || typeof value !== "string") throw new PlatformError(502, "Invalid upload headers");
+        headers.set(key, value);
+      }
+      // Use a separate request; the Higgsfield API credential must not reach storage.
+      const response = await fetchImpl(uploadUrl, { method: "PUT", redirect: "error", signal: AbortSignal.timeout(45000), headers, body: new Uint8Array(bytes) });
+      if (!response.ok) throw new PlatformError(502, "Image upload failed");
+      return publicUrl;
+    },
     async submit(model: string, input: Record<string, unknown>): Promise<QueuedGeneration> {
       if (!isModelId(model)) throw new PlatformError(400, { detail: "Invalid model" });
       return mapQueued(await send("POST", `/${model}`, input));

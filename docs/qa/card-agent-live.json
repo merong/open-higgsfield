@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-20",
+  "projectId": "3efdf90e-1119-4f97-8ccf-d1fbc8d322bd",
+  "runId": "1e80a4fd-5e46-4072-be81-c64d72c7fe4d",
+  "model": "gpt-5.6-terra",
+  "effort": "low",
+  "state": "completed",
+  "turns": 6,
+  "additionalRevisions": 1,
+  "selectedDirection": 1,
+  "cardCount": 5,
+  "titles": [
+    "AI를 처음 쓰는\n직장인에게",
+    "작은 업무 한 가지부터 시작하세요.",
+    "메일 초안, 복사해 보세요",
+    "회의록도 복사해 보세요",
+    "오늘 쓸 카드 한 장,\n저장해 두세요"
+  ],
+  "mailPromptIncluded": true,
+  "meetingPromptIncluded": true,
+  "creditsBefore": 549,
+  "creditsAfter": 548,
+  "recentAgentLedger": [
+    {
+      "kind": "confirm",
+      "amount": 0
+    },
+    {
+      "kind": "hold",
+      "amount": -1
+    }
+  ],
+  "duplicateSaveSameProject": true,
+  "activeCleared": true,
+  "accessChecks": {
+    "anonymous": 401,
+    "otherUserRead": 404,
+    "otherUserWrite": 404,
+    "missingOrigin": 403
+  },
+  "adminActivityVisible": true,
+  "activityTitles": [
+    "아이디어 접수",
+    "의도 정리 진행 중",
+    "기획 방향 3가지 준비",
+    "사용자 방향 확정",
+    "초안 작성 진행 중",
+    "5장 초안 완성",
+    "편집 검수 진행 중",
+    "편집 검수 완료",
+    "원고 개선 진행 중",
+    "원고 개선 완료",
+    "추가 의견 접수",
+    "편집 검수 진행 중",
+    "편집 검수 완료",
+    "원고 개선 진행 중",
+    "원고 개선 완료",
+    "프로젝트 저장 완료"
+  ]
+}

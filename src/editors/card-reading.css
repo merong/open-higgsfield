@@ -1,0 +1,14 @@
+/* Card output tokens: shared by previews, raster exports and the standard editor. */
+.ws-card-reading { --card-image-share:43%; --card-body-size:4.5cqw; --card-body-leading:1.65; }
+.ws-card-reading--text-first { --card-image-share:30%; }
+.ws-card-reading--image-first { --card-image-share:50%; }
+.ws-card-reading.ohf-slide--split .ohf-slide-img { height:var(--card-image-share); }
+.ws-card-reading.ohf-slide--split .ohf-slide-body { top:var(--card-image-share); padding:4.5cqw 8cqw 14cqw; }
+.ws-card-reading .ohf-slide-sub,.ws-card-reading .ohf-slide-text { font-size:var(--card-body-size); line-height:var(--card-body-leading); max-width:none; white-space:pre-wrap; word-break:keep-all; overflow-wrap:break-word; letter-spacing:0; }
+.ws-card-reading .ohf-slide-title,.ws-card-reading .ohf-slide-h { white-space:pre-wrap; word-break:keep-all; overflow-wrap:break-word; }
+.ws-card-reading .ohf-slide-compare { margin-top:4cqw; gap:4cqw; }
+.ws-card-reading .ohf-slide-compare p { font-size:var(--card-body-size); line-height:var(--card-body-leading); }
+.ws-card-reading .ohf-slide-list { margin-top:3cqw; }
+
+.ws-card-reading--text-first.ohf-slide--split .ohf-slide-body { padding-left:6cqw; padding-right:6cqw; }
+.ws-card-reading .ohf-slide-sub,.ws-card-reading .ohf-slide-text { text-wrap:pretty; }

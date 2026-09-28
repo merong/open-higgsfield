@@ -1,0 +1,56 @@
+
+> openhiggsfield-ai@ build /Users/brian/works/agent/openhigsfield/open-higgsfield
+> next build
+
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 16ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 596ms
+  Running TypeScript ...
+  Finished TypeScript in 1297ms ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/30) ...
+  Generating static pages using 9 workers (7/30) 
+  Generating static pages using 9 workers (14/30) 
+(node:12182) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+  Generating static pages using 9 workers (22/30) 
+✓ Generating static pages using 9 workers (30/30) in 255ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /account
+├ ƒ /account/[section]
+├ ƒ /account/library
+├ ƒ /admin
+├ ƒ /admin/[section]
+├ ƒ /admin/results
+├ ƒ /api/blob
+├ ƒ /api/workspace/[[...path]]
+├ ○ /apple-icon.png
+├ ○ /help
+├   /help/[slug]
+│ ├ ● /help/getting-started
+│ ├ ● /help/studio-images
+│ ├ ● /help/studio-video
+│ └ ● [+9 more paths]
+├ ○ /icon.svg
+├ ○ /login
+├ ○ /manifest.webmanifest
+├ ƒ /projects
+├ ƒ /projects/[id]
+├ ƒ /projects/new
+├ ○ /robots.txt
+├ ƒ /settings
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

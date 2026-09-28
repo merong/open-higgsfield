@@ -1,0 +1,24 @@
+// Order matters: tokens first, then the reset, then the studio in its original
+// section order. Component and slide SCSS are imported by their own .tsx.
+@use "tokens/emit";
+@use "base/reset";
+@use "base/keyframes";
+@use "studio/shell";
+@use "studio/topbar";
+@use "studio/tabs";
+@use "studio/lamp";
+@use "studio/main";
+@use "studio/gallery";
+@use "studio/picking";
+@use "studio/empty";
+@use "studio/composer";
+@use "studio/attached";
+@use "studio/dock";
+@use "studio/tooltips";
+@use "studio/popovers";
+@use "studio/asset-picker";
+@use "studio/dialogs";
+@use "studio/viewer";
+@use "studio/entrance";
+@use "studio/responsive";
+@use "studio/reduced-motion";

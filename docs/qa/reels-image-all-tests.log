@@ -1,0 +1,207 @@
+
+> openhiggsfield-ai@ test /Users/brian/works/agent/openhigsfield/open-higgsfield
+> node --import tsx --test test/*.test.ts
+
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/higgsfield-ai/soul/v2/standard'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/higgsfield-ai/soul/v2/standard',
+  status: 200
+}
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/kling-video/v3.0-turbo/text-to-video'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/kling-video/v3.0-turbo/text-to-video',
+  status: 200
+}
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/higgsfield-ai/soul/v2/standard'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/higgsfield-ai/soul/v2/standard',
+  status: 200
+}
+[platform] request {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-1/status'
+}
+[platform] response {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-1/status',
+  status: 200
+}
+[platform] request {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-2/status'
+}
+[platform] response {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-2/status',
+  status: 200
+}
+[platform] request {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-3/status'
+}
+[platform] response {
+  method: 'GET',
+  url: 'https://api.higgsfield.ai/requests/registered-3/status',
+  status: 200
+}
+✔ demo seed is atomic and repeatable; username login and admin IP gates (5676.252042ms)
+✔ IP attestation rejects forged forwarding headers, invalid signatures and stale peers (26.898541ms)
+✔ admin grants are audited, atomic and idempotent; ordinary users cannot administer (9.091167ms)
+✔ only admins store encrypted shared keys and metadata never exposes secrets (4.466709ms)
+✔ stored shared key drives all three format submissions, survives rotation for polling and stays off responses (28.944834ms)
+✔ all admin reports recheck role and omit credential and password fields (70.086542ms)
+✔ user reports support role/search filters and accurate per-user counts (16.077916ms)
+✔ project reports separate archived work and combine owner and format filters (6.501209ms)
+✔ generation reports paginate deterministically and filter user, status and feature (14.972625ms)
+✔ dashboard aggregates persisted work and ledger filters retain selected users (6.549709ms)
+✔ four actual turns carry the original brief, chosen direction and artifacts; save is idempotent (45.762125ms)
+✔ one user revision runs review and refinement again without another credit (28.97125ms)
+✔ duplicate starts and concurrent/stale steps cannot call the provider or debit twice (17.065625ms)
+✔ all read/write paths enforce ownership and invalid transitions cannot modify a run (24.476042ms)
+✔ cancel fences an in-flight response, refunds once and never saves a partial project (16.760291ms)
+✔ malformed or failed provider output refunds once, returns safe errors, preserves no raw reasoning (34.851959ms)
+✔ expired leases fail safely, refund once and late completion cannot resurrect them (7.636791ms)
+✔ Responses calls use the selected model/effort, validated context and message output only (34.80125ms)
+✔ invalid writing, review and refinement artifacts never reach the project table (90.912125ms)
+✔ idle work is recoverable then expires with one refund; insufficient credit and missing configuration never reserve (10.642ms)
+✔ nine complete templates validate and ship all sample artwork (21.757625ms)
+✔ template copies have independent ids and editable content without changing the source (0.504458ms)
+✔ AI news copies retain dated official sources in their exportable captions (0.391917ms)
+✔ all nine templates save and reopen under their owner without using credits (4779.913083ms)
+✔ plant HITL: purpose, actual source provenance, plan, cover, scoped revision, real ZIP and PNG completion (302.087ms)
+✔ question waiting makes no model calls; duplicate answers and starts are idempotent, stale/foreign access rejected (19.935875ms)
+✔ generic explicit request skips purpose question; delegated defaults remain assumptions (120.664875ms)
+✔ research cannot fabricate URLs; unavailable research pauses for explicit retry or general advice (16.672875ms)
+✔ changed spec fences late text result; cancel fences and refunds once (67.411875ms)
+✔ selected patch refuses foreign or duplicate IDs; invalid output refunds without losing saved cards (78.865334ms)
+✔ budget pauses without extra provider calls; expired lease invalidates late response (36.114084ms)
+✔ broken, missing, wrong-sized or stale files never mark complete; content validation also blocks (165.458959ms)
+✔ image generation quotes exact charge, reconciles once, preserves edited version against late image (47.672916ms)
+✔ model payload honors configured model, strict formats, search sources and omits private reasoning (77.699041ms)
+✔ image success attaches only its card, image failure refunds, unknown submissions never duplicate (137.390041ms)
+✔ uploaded references enforce ownership; direct edit/reorder/restore retain stable card identities (79.059708ms)
+✔ malformed intent options fall back to three explicit purposes instead of wasting a paid run (13.162042ms)
+✔ layout-only AI patch discards rewritten copy; explicit text permission is scoped; no length-only rejection (35.439958ms)
+✔ image batch is durable and idempotent, fills only missing cards and charges once per card (131.981958ms)
+✔ batch unknown pauses without another submission; cancellation stops remaining queue (64.774583ms)
+✔ actual PNG review binds ownership, project version and ZIP; failures block completion; layout invalidates review (198.027583ms)
+✔ late output review cannot overwrite a changed plan or cancellation (78.843458ms)
+✔ one failed image refunds and does not stop other approved cards; reload resumes without duplicating (104.78775ms)
+✔ duplicate visual review is single-flight, foreign archive and altered reviewed bytes are rejected (73.260125ms)
+✔ batch stops when provider pricing changes instead of exceeding approved cost (50.837292ms)
+✔ signup grants 50 once and writes the matching ledger (5011.712792ms)
+✔ video at 50 or below is denied without provider calls, jobs or debits; images still work (89.515917ms)
+✔ 51 permits an affordable video, retries remain idempotent below the floor, and higher costs still fail (135.006958ms)
+✔ concurrent video requests serialize the eligibility check (46.706083ms)
+✔ existing balance adjustment preserves history, reconciles differences and runs only once (109.767625ms)
+✔ image plans survive validation and empty preview preserves ratios, alt, escaping and FAQ placement (6.167791ms)
+✔ all-image request is durable, idempotent, owner checked and requires explicit apply (58.573ms)
+✔ partial failure refunds, successes remain reviewable, retry charges only failed image (45.4945ms)
+✔ stale text and disabled/deleted placements cannot be overwritten by candidates (20.329167ms)
+✔ archive retry never re-submits or charges; pending requests resume (23.22275ms)
+✔ ambiguous provider submission blocks automatic retries and new generation (13.841625ms)
+✔ insufficient credits, changed quote and video model submit no provider requests (6.39275ms)
+✔ landing workflow reserves once, fences approvals and performs no calls while waiting (30.155ms)
+✔ landing user intent rejects script URLs; anchors must exist; no invented CTA or dummy media (20.691542ms)
+✔ landing plan approval preserves editable order, disallows duplicate/foreign sections and script kinds (29.644875ms)
+✔ landing scoped revision protects all other sections, CTA and invalidates review (39.076875ms)
+✔ landing handoff is explicit, durable and never updates a completed workflow (36.445666ms)
+✔ landing cancelling an in-flight call refunds once and ignores late model result (9.843084ms)
+✔ landing errors and lease expiry pause without automatic retry or extra reservation (13.380833ms)
+✔ landing model budget pauses; project CAS conflict preserves another editor's changes (31.107875ms)
+✔ landing request carries saved model/effort, bounded structured schema and only summaries (6.414375ms)
+✔ archiving an unfinished landing closes its workflow and releases its reservation (9.5635ms)
+✔ landing feature output separates headings and details without losing or executing copy (21.026042ms)
+✔ landing image confirmation updates active workflow and protects copy review and subsequent patch (62.411625ms)
+✔ text-only planned sections accept empty image prompts without blocking the draft (21.120584ms)
+✔ library scopes ordinary users to their own outputs even with forged owner filters (39.923667ms)
+✔ admin filters compose across users, features, type, prompt and all batch outputs (22.755542ms)
+✔ saved uploads are listed and file access stays owner-only except explicit admin endpoint (8.267ms)
+✔ library pagination has no 100-item truncation and stable batch ordering (60.782167ms)
+✔ library rejects malformed filters and queries do not interpolate search input (6.632916ms)
+✔ product validation, manual draft, fixed information render and escaping (3.458375ms)
+✔ product and landing workflow discovery, idempotency and refunds are isolated by format (33.045333ms)
+✔ product intent, plan, copy, scoped revision, approved images, handoff, and library persistence (89.321417ms)
+✔ multipart uploads bound the streamed body even without content-length (24.481416ms)
+✔ uploads preserve original bytes and ownership; vision uses a decoded image copy (26.039292ms)
+✔ corrupt, disguised, oversized, empty, animated and too-large pixel inputs do not persist (16.0335ms)
+✔ EXIF orientation is respected and AI images are bounded without modifying originals (167.373167ms)
+✔ invalid reference selections reject before reserving credits or creating a workflow (10.049917ms)
+✔ multimodal request, approved source mapping, refresh, copy revision, image board and handoff (79.907666ms)
+✔ photo-only recommendation supplies owned bytes and does not create a project or spend credits (14.158459ms)
+✔ missing, forged, foreign and duplicate images are rejected before model invocation (2.5975ms)
+✔ Responses transport carries all images, saved context and a strict recommendation schema (15.288708ms)
+✔ malformed model output is never applied; explicit field selection preserves factual inputs (0.255625ms)
+✔ recommendations have an account rate limit without extra generation charges (95.152ms)
+✔ one idea or partial script produces a complete valid scaffold with safe defaults (1.077667ms)
+✔ OpenAI settings require admins, encrypt keys, allow model-only updates and never return credentials (57.397208ms)
+✔ Responses API receives the full memo with strict schema; one response fills all cards and retries do not debit twice (13.081042ms)
+✔ concurrent duplicate clicks reserve and call the provider only once (5.153666ms)
+✔ refusals, incomplete responses, invalid cards and API errors refund once and never persist partial projects (36.565583ms)
+✔ model discovery uses the registered key, exposes capabilities and rejects unauthorized readers (1.766709ms)
+✔ failed discovery or invalid model/effort cannot replace a saved key or configuration (22.612125ms)
+✔ saved effort reaches Responses, non-reasoning models omit it, and key-only setup chooses an available model (28.351583ms)
+✔ connection checks are read-only and unconfigured generation does not charge credits (8.26825ms)
+✔ photo-only start stores owned references; invalid selections never reserve credits (26.128042ms)
+✔ multimodal planning maps each cut to owned source and keeps original on scoped copy edits (67.962125ms)
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/files/generate-upload-url'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/files/generate-upload-url',
+  status: 200
+}
+✔ image-derived frame preserves stored source bytes and supplies a portrait start image (10.851959ms)
+✔ provider storage upload follows signed PUT contract without forwarding API authorization (14.690834ms)
+✔ I2V submits one owned image and one charge; replay and low balance do not upload again (27.863959ms)
+✔ photo recommendation accepts empty text and returns grounded editable prompts without credits (8.6175ms)
+✔ recommendation transport includes images, model and output schema; incomplete response never applies (1.26625ms)
+✔ one photo can seed every cut and failed input upload never becomes a text-only video (30.089125ms)
+✔ reels start/answers are owned, revision fenced and idempotent; waiting invokes no model (24.777083ms)
+✔ reels plan protects copy and duration; scoped patch and subtitle style retain audio and unrelated scenes (19.86675ms)
+✔ reels cancel fences a late model result; content cannot be marked complete without reviewed files (9.290458ms)
+✔ reels measured voice timing keeps confirmed words and asks before exceeding locked duration (13.573042ms)
+✔ reels video credit policy and sample gate prevent provider calls; remote URLs cannot target private hosts (19.521417ms)
+✔ reels alignment retry reuses stored audio, charges once and subtitle edits keep voice (78.229916ms)
+[reels:voice] {
+  name: 'Error',
+  message: 'fixture transport interruption',
+  code: undefined
+}
+✔ reels actual FFmpeg sample/full encode, full decode and reviewed ZIP completion (fixture overlays) (13812.02ms)
+✔ reels model requests retain configured model/effort and have explicit output/research contracts (10.3355ms)
+✔ reels alignment bounds only the final ASR endpoint without losing words (0.175167ms)
+✔ reels ambiguous voice requests never auto-retry; explicit scoped retry keeps the prior ledger (89.459708ms)
+(node:4441) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ every shuffled starter and project format has a shipped thumbnail (9.760625ms)
+✔ legacy artwork migrates without changing saved media or favorites (2.926333ms)
+✔ account passwords, sessions and privilege boundaries (2167.791709ms)
+✔ all three formats validate and persist; ownership and stale updates are rejected (13.185291ms)
+✔ validation rejects unsafe links, slot duplication and out of range durations (0.735666ms)
+✔ credit reservation is atomic and idempotent; completion and refunds happen once (43.946708ms)
+✔ definitive provider rejection refunds; ambiguous transport failure does not resubmit (7.570083ms)
+✔ AI outline validates untrusted output and credits settle once (10.273708ms)
+✔ assets are owned, size accounted and uploaded bytes survive storage (120.359875ms)
+ℹ tests 125
+ℹ suites 0
+ℹ pass 125
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41319.407458

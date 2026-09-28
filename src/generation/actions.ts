@@ -1,90 +1,46 @@
 "use server";
 
-import { cookies } from "next/headers";
-
-import { getModel, parseSettings } from "./catalog";
+import { requireUser, currentUser } from "@/service/session";
+import { platformReady, submitJob, statusesFor } from "@/service/generation";
 import type { GenerationPlane } from "./catalog/types";
-import {
-  MissingCredentialsError,
-  PLATFORM_KEY_COOKIE,
-  PLATFORM_KEY_COOKIE_OPTIONS,
-  decodeCredentials,
-  encodeCredentials,
-  parseCredentialInput,
-} from "./credentials";
-import { createPlatformClient } from "./platform";
-import type { StatusResult } from "./platform";
-import { toPlatform } from "./to-platform";
+import { ServiceError } from "@/service/errors";
 
-export async function savePlatformCredentials(data: unknown) {
-  const { apiKey } = parseCredentialInput(data);
-  const jar = await cookies();
-  jar.set(PLATFORM_KEY_COOKIE, encodeCredentials(apiKey), PLATFORM_KEY_COOKIE_OPTIONS);
-}
-
-export async function clearPlatformCredentials() {
-  const jar = await cookies();
-  jar.set(PLATFORM_KEY_COOKIE, "", { ...PLATFORM_KEY_COOKIE_OPTIONS, maxAge: 0 });
-}
-
+/* Account credentials are resolved server-side; never return their values. */
 export async function hasPlatformCredentials() {
-  return (await readStoredCredentials()) !== null;
+  const user = await currentUser();
+  return Boolean(user) && await platformReady(user?.id);
 }
-
-export async function submitGeneration(plane: GenerationPlane) {
-  const model = getModel(plane.model);
-  const parsed: GenerationPlane = {
-    ...plane,
-    settings: parseSettings(model, plane.settings),
-  };
-  const { path, body } = toPlatform(parsed);
-  return createPlatformClient(await readCredentials()).submit(path, body);
-}
-
-/** Every request in flight, answered in one round trip. Next dispatches server
-    actions one at a time per client, so a poll per run would queue ahead of the
-    next submit — the fan-out belongs on this side of the call, where it is
-    genuinely parallel. */
-export async function getGenerationStatuses(data: unknown): Promise<StatusResult[]> {
-  const requestIds = parseRequestIds(data);
-  const client = createPlatformClient(await readCredentials());
-  return Promise.all(
-    requestIds.map(async (requestId): Promise<StatusResult> => {
-      try {
-        return { requestId, status: await client.status(requestId) };
-      } catch (caught) {
-        return { requestId, error: caught instanceof Error ? caught.message : String(caught) };
-      }
-    }),
+export async function savePlatformCredentials(_data: unknown) {
+  throw new ServiceError(
+    403,
+    "개인 키 대신 관리자가 설정한 생성 API를 사용합니다.",
   );
 }
-
-async function readStoredCredentials() {
-  const jar = await cookies();
-  return decodeCredentials(jar.get(PLATFORM_KEY_COOKIE)?.value);
+export async function clearPlatformCredentials() {
+  /* Legacy key modal is no longer exposed. */
 }
-
-async function readCredentials() {
-  const stored = await readStoredCredentials();
-  if (!stored) throw new MissingCredentialsError();
-  const baseUrl = process.env.HF_API_BASE_URL;
-  if (!baseUrl) throw new Error("Missing HF_API_BASE_URL");
-  return { ...stored, baseUrl };
+export async function submitGeneration(plane: GenerationPlane, key?: string) {
+  const user = await requireUser();
+  const job = await submitJob(user.id, plane, key || crypto.randomUUID());
+  if (!job.request_id)
+    throw new ServiceError(
+      409,
+      "접수 상태를 확인 중입니다. 계정의 생성 내역을 확인해 주세요.",
+    );
+  return {
+    status: job.state,
+    requestId: job.request_id,
+    statusUrl: "",
+    cancelUrl: "",
+  };
 }
-
-function parseRequestIds(data: unknown): string[] {
-  const payload = asObject(data, "Invalid status payload");
-  const requestIds = payload.requestIds;
-  if (!Array.isArray(requestIds) || requestIds.length === 0) {
-    throw new Error("Invalid request ids");
-  }
-  return requestIds.map((requestId) => {
-    if (typeof requestId !== "string" || !requestId) throw new Error("Invalid request id");
-    return requestId;
-  });
-}
-
-function asObject(data: unknown, message: string): Record<string, unknown> {
-  if (data === null || typeof data !== "object" || Array.isArray(data)) throw new Error(message);
-  return data as Record<string, unknown>;
+export async function getGenerationStatuses(data: unknown) {
+  const user = await requireUser();
+  const ids = (data as { requestIds?: unknown })?.requestIds;
+  if (
+    !Array.isArray(ids) ||
+    !ids.every((id) => typeof id === "string" && id.length < 200)
+  )
+    throw new ServiceError(400, "요청 ID를 확인해 주세요.");
+  return statusesFor(user.id, ids);
 }

@@ -1,0 +1,526 @@
+/* ---------- popovers ---------- */
+
+/* --ohf-pop-x and --ohf-pop-y travel to the control that opened the panel, both
+   already clamped to the composer's own column, so a panel opens against its
+   trigger instead of floating above the whole dock. */
+.ohf-popover {
+  position: absolute;
+  bottom: var(--ohf-pop-y, calc(100% + 10px));
+  left: var(--ohf-pop-x, 0px);
+  z-index: 30;
+  background: var(--s2);
+  border: 1px solid var(--line-2);
+  border-radius: 16px;
+  box-shadow: var(--shadow-3), var(--glint);
+  animation: ohf-pop 0.22s var(--ease);
+  transform-origin: bottom left;
+}
+/* One setting at a time, so the panel is the width of its own values. */
+.ohf-popover--setting {
+  width: min(268px, 100%);
+  max-height: min(50vh, 420px);
+  overflow-y: auto;
+  padding: 14px;
+}
+/* An enum's values run down a column, so the panel is a narrow one: the header
+   holds still at the top and the values scroll under it, rather than the whole
+   panel sliding its own title out of view. */
+.ohf-popover--list {
+  width: min(216px, 100%);
+  /* Room for the longest allow-list a model declares — eleven ratios stand
+     whole on a laptop rather than losing their last line to the cap. */
+  max-height: min(56vh, 452px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 12px 9px 9px;
+}
+.ohf-popover--list .ohf-field {
+  min-height: 0;
+}
+/* The header sits on the same rail the values' own box starts from. */
+.ohf-popover--list .ohf-field-label {
+  padding-left: 9px;
+}
+/* The panel's height is settled by the catalog and the viewport before a key is
+   pressed, never by the query: a field that walks up the screen while it is
+   being typed into is a field that cannot be typed into. The rows the surface
+   declares set it — 54px on a 2px gap — plus the search header, the list's own
+   padding and the group label, so a short catalog still gets a snug panel and
+   a long one stops at the cap and scrolls. Filtering moves what is inside the
+   frame; the frame holds still. */
+.ohf-popover--picker {
+  width: min(560px, 100%);
+  height: min(60vh, 520px, calc(95px + var(--ohf-picker-rows, 99) * 56px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ohf-popover--menu {
+  width: min(240px, 100%);
+  padding: 12px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.ohf-popover--menu .ohf-pop-head {
+  padding-left: 8px;
+}
+.ohf-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.ohf-menu-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: var(--h-md);
+  padding: 0 8px;
+  border-radius: var(--radius-md);
+  text-align: left;
+  color: var(--tx2);
+  transition:
+    background var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+.ohf-menu-row:hover:not(:disabled) {
+  background: var(--s3);
+  color: var(--tx);
+}
+.ohf-menu-row:disabled {
+  color: var(--tx-off);
+}
+.ohf-menu-ic {
+  display: flex;
+  color: var(--tx3);
+  transition: color var(--dur-fast) ease;
+}
+.ohf-menu-row:hover:not(:disabled) .ohf-menu-ic {
+  color: var(--accent);
+}
+.ohf-menu-row:disabled .ohf-menu-ic {
+  color: var(--tx-off);
+}
+.ohf-menu-label {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ohf-menu-count {
+  font-size: var(--fs-2xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--tx4);
+}
+.ohf-menu-row:disabled .ohf-menu-count {
+  color: var(--tx-off);
+}
+
+.ohf-pop-head {
+  font-size: 9.5px;
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--tx3);
+}
+.ohf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ohf-field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.ohf-field-label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-strong);
+  color: var(--tx2);
+}
+.ohf-field-value {
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--tx);
+}
+/* One value per line. A wrapping row left every value at its own width on a
+   ragged edge — eleven ratios read as a block to be decoded rather than a list
+   to be scanned. */
+.ohf-opts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+.ohf-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 34px;
+  /* The list scrolls; the lines never squash to make room. */
+  flex-shrink: 0;
+  padding: 0 9px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+  color: var(--tx2);
+  transition:
+    background 0.13s ease,
+    color 0.13s ease;
+}
+.ohf-opt:hover {
+  background: var(--s3);
+  color: var(--tx);
+}
+/* The list scrolls a focused line to its own edge, where an outset ring would
+   be clipped by the scroller — so the ring is drawn inside the line. */
+.ohf-opt:focus-visible {
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
+}
+.ohf-opt[aria-pressed="true"] {
+  background: var(--accent-08);
+  color: var(--accent);
+}
+.ohf-opt[aria-pressed="true"]:hover {
+  background: var(--accent-14);
+}
+.ohf-opt-label {
+  flex: 1;
+  min-width: 0;
+}
+.ohf-opt-check {
+  display: flex;
+  flex-shrink: 0;
+}
+/* A fixed optical box, so 21:9 and 1:1 leave their labels on the same rail. */
+.ohf-opt-ratio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.ohf-opt-box {
+  border: 1.3px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.55;
+}
+/* "auto" hands the frame to the model, so the frame is drawn but not fixed —
+   the same mark the pill carries when the model is left to choose. */
+.ohf-opt-box--auto {
+  width: 13px;
+  height: 9px;
+  border-style: dashed;
+}
+.ohf-opt:hover .ohf-opt-box,
+.ohf-opt[aria-pressed="true"] .ohf-opt-box {
+  opacity: 1;
+}
+
+.ohf-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: var(--h-sm);
+  padding: 0 13px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  background: var(--s1);
+  border: 1px solid var(--line);
+  color: var(--tx2);
+  transition:
+    background var(--dur-base) ease,
+    color var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+}
+.ohf-chip:hover {
+  background: var(--s3);
+  color: var(--tx);
+}
+.ohf-chip:active {
+  transform: scale(0.96);
+}
+.ohf-chip[aria-pressed="true"] {
+  background: var(--accent-14);
+  border-color: var(--accent-32);
+  color: var(--accent);
+}
+.ohf-slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+}
+.ohf-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: var(--radius-xs);
+  background:
+    linear-gradient(var(--accent), var(--accent)) 0 / var(--fill, 50%) 100% no-repeat,
+    var(--s3);
+}
+.ohf-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f2f6f5;
+  margin-top: -5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  transition: transform var(--dur-base) var(--ease);
+}
+.ohf-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+.ohf-slider::-moz-range-track {
+  height: 4px;
+  border-radius: var(--radius-xs);
+  background: var(--s3);
+}
+.ohf-slider::-moz-range-progress {
+  height: 4px;
+  border-radius: var(--radius-xs);
+  background: var(--accent);
+}
+.ohf-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  background: #f2f6f5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ohf-input {
+  width: 100%;
+  min-width: 0;
+  background: var(--s1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 8px 11px;
+  font-size: var(--fs-sm);
+  outline: none;
+  transition:
+    border-color var(--dur-base) ease,
+    box-shadow var(--dur-base) ease;
+}
+.ohf-input:hover {
+  border-color: var(--line-2);
+}
+.ohf-input:focus {
+  border-color: var(--accent-32);
+  box-shadow: 0 0 0 3px var(--accent-08);
+}
+/* The field paints its own ring; the global one would stack a second. */
+.ohf-input:focus-visible {
+  outline: none;
+}
+
+.ohf-icon-btn {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--s1);
+  border: 1px solid var(--line);
+  color: var(--tx2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--dur-base) ease,
+    color var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+}
+.ohf-icon-btn:hover {
+  background: var(--s3);
+  color: var(--tx);
+  border-color: var(--line-2);
+}
+.ohf-icon-btn:active {
+  transform: scale(0.96);
+}
+.ohf-picker-close {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.ohf-picker-close::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+}
+.ohf-icon-btn[data-spin="true"] svg {
+  animation: ohf-spin-once 0.35s var(--ease);
+}
+
+/* picker */
+
+/* Search leads the panel; the catalog is long enough that typing beats
+   scanning, so the field is the header rather than a control inside it. */
+.ohf-picker-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px 11px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.ohf-picker-search-ic {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--tx3);
+}
+.ohf-picker-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: var(--fs-base);
+  color: var(--tx);
+}
+.ohf-picker-input::placeholder {
+  color: var(--tx3);
+}
+.ohf-picker-input:focus-visible {
+  outline: none;
+}
+.ohf-picker-close {
+  flex-shrink: 0;
+}
+.ohf-picker-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ohf-picker-group {
+  padding: 9px 10px 5px;
+}
+.ohf-model-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: var(--radius-ctl);
+  border: 1px solid transparent;
+  text-align: left;
+  transition:
+    background var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
+}
+.ohf-model-row:hover {
+  background: var(--s3);
+}
+/* The current model keeps its plate whether or not the pointer is on it. */
+.ohf-model-row[aria-current] {
+  background: var(--s3);
+  border-color: var(--line-2);
+}
+.ohf-model-row-swatch {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+    var(--shadow-1);
+  position: relative;
+  overflow: hidden;
+}
+.ohf-model-row-swatch--icon {
+  display: grid;
+  place-items: center;
+  background: var(--s2);
+  color: var(--tx);
+}
+.ohf-model-row-text {
+  flex: 1;
+  min-width: 0;
+}
+.ohf-model-row-name {
+  display: block;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* What the model makes, takes and tops out at — derived from its own entry. */
+.ohf-model-row-desc {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--tx3);
+  padding-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ohf-model-row-check {
+  width: 16px;
+  flex-shrink: 0;
+  color: var(--accent);
+  display: flex;
+  justify-content: center;
+}
+/* Nothing matched, so the panel keeps its height with nothing to put in it:
+   the notice takes the middle of the empty frame rather than clinging to the
+   count line with a blank plate underneath. */
+.ohf-picker-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: auto 0;
+  padding: 30px 20px 26px;
+  text-align: center;
+}
+.ohf-picker-empty-ic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--s2);
+  border: 1px solid var(--line);
+  box-shadow: var(--glint);
+  color: var(--tx3);
+}
+.ohf-picker-empty-title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--tx);
+}
+.ohf-picker-empty-hint {
+  max-width: 40ch;
+  font-size: var(--fs-xs);
+  line-height: 1.55;
+  color: var(--tx3);
+  text-wrap: pretty;
+}
+.ohf-picker-empty .ohf-btn-solid {
+  margin-top: 3px;
+  height: 30px;
+}
+

@@ -1,0 +1,69 @@
+@use "@/styles/mixins" as m;
+
+.ohf-canvas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 16px 20px;
+  background: var(--rail);
+  border-left: 1px solid var(--line);
+}
+.ohf-canvas-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.ohf-canvas-spacer {
+  flex: 1 1 auto;
+}
+.ohf-canvas-pager {
+  font-size: var(--fs-sm);
+  color: var(--tx2);
+  @include m.tabular;
+}
+/* The stage frames the slide with the app's radius and depth; the slide
+   itself knows nothing of the app. */
+.ohf-canvas-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  .ohf-slide {
+    width: min(100%, 448px);
+    border-radius: var(--radius-ctl);
+    box-shadow: var(--shadow-3);
+  }
+}
+.ohf-canvas-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.ohf-canvas-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.ohf-canvas-label {
+  width: 44px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-strong);
+  color: var(--tx3);
+}
+.ohf-canvas-actions {
+  display: flex;
+  gap: 8px;
+  > * {
+    flex: 1;
+  }
+}
+.ohf-canvas-hint {
+  font-size: var(--fs-xs);
+  color: var(--tx4);
+}

@@ -1,0 +1,224 @@
+/* ---------- responsive ---------- */
+
+/* No hover to reveal them with, so the card's actions simply stand. */
+@media (hover: none) {
+  .ohf-tile-act {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    /* Thumb targets, not cursor targets — the rail is permanent here. */
+    width: 36px;
+    height: 36px;
+  }
+  .ohf-pick {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    pointer-events: auto;
+    width: 36px;
+    height: 36px;
+  }
+  .ohf-pick-box {
+    width: 23px;
+    height: 23px;
+  }
+  /* Nothing here reveals it, so the run signs itself permanently. */
+  .ohf-tile-caption {
+    opacity: 1;
+    transform: none;
+  }
+  /* The corner is already shared, permanently. */
+  .ohf-tile-badge {
+    translate: 32px 0;
+  }
+}
+
+/* Under this the sidebar can no longer stand beside a picture without
+   starving it, so the two stack: the work keeps the upper field and the panel
+   takes the rest, scrolling its own body. */
+@media (max-width: 900px) {
+  .ohf-viewer-panel {
+    flex-direction: column;
+  }
+  .ohf-viewer-stage {
+    padding: 16px 16px 0;
+  }
+  /* The panel asks for the height its own content needs and no more, up to
+     three fifths of the screen; the picture takes everything left over. */
+  .ohf-viewer-side {
+    flex: none;
+    width: auto;
+    max-height: 60dvh;
+    margin: 12px;
+    /* Sliding in from the right is a gesture about a column that is no longer
+       there. Stacked, the panel rises into place. */
+    animation-name: ohf-rise;
+  }
+  .ohf-viewer-side-body {
+    padding-bottom: 16px;
+  }
+}
+
+/* The lamp keeps its light but drops its label before the pair can crowd. */
+@media (max-width: 760px) {
+  .ohf-key-text {
+    display: none;
+  }
+  .ohf-key {
+    gap: 7px;
+    padding: 0 11px;
+  }
+}
+@media (max-width: 640px) {
+  /* Narrow enough that a panel spans the column — the anchor stops mattering. */
+  .ohf-popover {
+    left: 0;
+    right: 0;
+  }
+  /* Picked by thumb rather than pointer: the lines take the height back. */
+  .ohf-opt {
+    height: 40px;
+  }
+  .ohf-dock {
+    padding-bottom: 14px;
+  }
+  /* A truncated prompt is no longer a prompt — the narrow column gets a third
+     line rather than an ellipsis. */
+  .ohf-starter-text {
+    -webkit-line-clamp: 3;
+  }
+  /* The panel now owns the column, so the contact sheet gives its padding back
+     to the tiles and keeps two of them per row. */
+  .ohf-popover--assets {
+    max-height: min(58vh, 460px);
+  }
+  .ohf-assets-grid {
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: 8px;
+    padding: 12px;
+  }
+  .ohf-assets-roles {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ohf-topbar {
+    padding: 10px 14px 0;
+  }
+  .ohf-gallery {
+    --ohf-fade: 56px;
+    padding: 64px 14px 8px;
+  }
+  .ohf-dock {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .ohf-bar {
+    height: 42px;
+    border-radius: var(--radius-lg);
+  }
+  /* Where only one of the two can fit, the labels stay: three drawn frames
+     read alike at a glance, three words do not. */
+  .ohf-tab svg {
+    display: none;
+  }
+  .ohf-tab,
+  .ohf-key {
+    height: var(--h-sm);
+    padding: 0 11px;
+  }
+  /* Favorites is the exception: it is the longest word and the only mark with
+     no sibling to be confused with, so here it trades the word for the heart. */
+  .ohf-tab[data-view="favorites"] svg {
+    display: block;
+  }
+  .ohf-tab[data-view="favorites"] .ohf-tab-label {
+    display: none;
+  }
+  .ohf-tab[data-view="favorites"] {
+    padding: 0 10px;
+  }
+  /* Phone composer: the rail keeps every control and wraps, and the primary
+     action takes the full width of its own line rather than shrinking to a
+     44px mark the thumb has to aim at. */
+  .ohf-strip {
+    padding: 12px 10px 0;
+  }
+  .ohf-composer-head {
+    padding: 10px 10px 2px;
+  }
+  .ohf-composer-row {
+    padding: 2px 10px 10px;
+  }
+  .ohf-composer {
+    border-radius: 20px;
+  }
+  /* Thumb targets, not cursor targets. */
+  .ohf-ctl,
+  .ohf-batch {
+    height: 42px;
+  }
+  .ohf-attach {
+    width: 38px;
+    height: 38px;
+  }
+  .ohf-batch-step {
+    width: 28px;
+    height: 28px;
+  }
+  .ohf-generate-slot {
+    width: 100%;
+    margin-left: 0;
+  }
+  .ohf-generate {
+    width: 100%;
+    height: 44px;
+  }
+  .ohf-generate-glyph {
+    display: flex;
+  }
+  /* No modifier key to press it with. */
+  .ohf-kbd {
+    display: none;
+  }
+  /* The toolbar spans the column here rather than hugging its contents: at
+     this width a centred pill and a full-bleed one are the same thing, and the
+     spread gives every action a thumb target. */
+  .ohf-selbar {
+    width: 100%;
+    gap: 4px;
+    padding: 7px;
+    border-radius: 18px;
+  }
+  .ohf-selbar-count {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .ohf-selact {
+    height: 40px;
+    min-width: 40px;
+  }
+}
+
+/* Below this the count keeps its number and gives up its sheets, and below
+   that the primary action keeps its mark and gives up its word — every action
+   still standing at its own thumb target. */
+@media (max-width: 400px) {
+  .ohf-selstack {
+    display: none;
+  }
+  .ohf-selbar-rule {
+    margin: 0;
+  }
+}
+@media (max-width: 360px) {
+  .ohf-selact--wide {
+    padding: 0;
+  }
+  .ohf-selact-label {
+    display: none;
+  }
+}
+

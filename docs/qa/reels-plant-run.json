@@ -1,0 +1,1000 @@
+{
+  "id": "4e0279e7-3f99-4124-96b5-1f9353f2dcec",
+  "idea": "책상 위에 식물 하나 두고 싶어지는 30초 릴스를 만들어 주세요. 대상은 식물을 처음 들이는 직장인입니다. 빈 책상의 한 자리가 작은 초록 화분으로 채워지는 변화, 잔잔하고 따뜻한 자연광, 같은 크림색 화분과 작은 초록 잎을 유지합니다. 부드러운 한국어 내레이션과 짧은 화면 문구를 사용합니다. 첫 장면은 6초, 총 5장면입니다. 가격·구매 CTA·공기정화·건강 효능·관리 난이도 주장은 제외합니다. 마지막은 잠깐 초록을 바라보자는 한마디로 마무리해 주세요.",
+  "spec": {
+    "mode": "guided",
+    "voice": "coral",
+    "purpose": "branding",
+    "audience": "책상에 처음 식물을 들여 작은 일상 변화를 만들고 싶은 직장인",
+    "duration": 30,
+    "narration": true,
+    "constraints": [
+      "총 30초, 5장면으로 구성",
+      "첫 장면은 6초 유지",
+      "빈 책상에서 작은 초록 화분이 놓인 책상으로 변화 표현",
+      "모든 장면에서 같은 크림색 화분과 작은 초록 잎의 일관성 유지",
+      "잔잔하고 따뜻한 자연광 분위기",
+      "부드러운 한국어 내레이션과 짧은 화면 문구 사용",
+      "가격, 구매 CTA, 공기정화·건강 효능, 관리 난이도 주장 제외",
+      "마지막 문구는 ‘잠깐 초록을 바라봐요’ 의미로 마무리"
+    ],
+    "purposeOrigin": "user_explicit",
+    "durationLocked": true
+  },
+  "task": {
+    "key": "24ba7f45-5885-457c-9bf9-797cda8c1d69",
+    "kind": "render",
+    "scope": "full",
+    "state": "completed",
+    "sceneId": "",
+    "version": 23,
+    "startedAt": 1789926920423,
+    "renderStep": "최종 MP4 전체 디코딩·파일 검사",
+    "sceneVersion": 0
+  },
+  "model": "gpt-5.6-terra",
+  "stage": "production",
+  "budget": {
+    "calls": 5,
+    "renders": 4,
+    "maxCalls": 12,
+    "maxRenders": 12,
+    "voiceCalls": 7,
+    "generations": 5,
+    "maxVoiceCalls": 16,
+    "maxGenerations": 16
+  },
+  "effort": "low",
+  "events": [
+    {
+      "at": 1789925530069,
+      "id": "c0323a1d-ae3f-401f-9f7f-b270ca60b7ff",
+      "title": "제작을 시작했어요",
+      "message": "목적과 조건을 정리합니다. 대본 제작 1 크레딧, 이미지·영상·음성은 비용을 확인하고 선택합니다.",
+      "revision": 2
+    },
+    {
+      "at": 1789925530425,
+      "id": "8a660428-262f-4af8-b2cd-71323b6ffff3",
+      "title": "제작 방향을 정리하고 있어요",
+      "message": "확정 조건과 원문을 기준으로 작업합니다.",
+      "revision": 2
+    },
+    {
+      "at": 1789925536251,
+      "id": "97c354b1-270e-4072-baab-a36a3a0c0663",
+      "title": "AI 작업을 마쳤어요",
+      "message": "빈 책상 한 자리가 동일한 크림색 화분의 작은 초록 식물로 채워지는 30초·5장면 릴스입니다. 첫 장면 6초를 포함해 잔잔하고 따뜻한 자연광, 부드러운 한국어 내레이션과 짧은 화면 문구로 식물을 처음 들이는 직장인의 공감을 만듭니다. 가격·구매 유도·공기정화·건강 효능·관리 난이도 표현은 제외하고, 마지막은 “잠깐 초록을 바라봐요”로 마무리합니다.",
+      "revision": 3
+    },
+    {
+      "at": 1789925536579,
+      "id": "a6963d97-a055-475a-9c28-dbbec730b051",
+      "title": "대본과 콘티를 작성하고 있어요",
+      "message": "확정 조건과 원문을 기준으로 작업합니다.",
+      "revision": 4
+    },
+    {
+      "at": 1789925550767,
+      "id": "6bc67e64-cc17-4c3c-aa98-6f7de920fe59",
+      "title": "함께 정해 주세요",
+      "message": "대본과 장면 흐름을 확인해 주세요. 승인하면 문구를 보호하고 대표 샘플을 만듭니다.",
+      "revision": 5
+    },
+    {
+      "at": 1789925550767,
+      "id": "037146bf-d2f3-4300-a8b6-64acd3c9c06d",
+      "title": "AI 작업을 마쳤어요",
+      "message": "첫 장면에서 비어 있는 책상의 여백을 보여준 뒤, 동일한 크림색 화분과 작은 초록 잎이 놓이며 시선과 분위기가 달라지는 흐름입니다. 따뜻한 자연광, 느린 카메라 이동, 짧은 문구로 처음 식물을 들이는 직장인의 일상적 변화를 담았습니다. 총 30초·5장면이며 첫 장면은 6초입니다.",
+      "revision": 5
+    },
+    {
+      "at": 1789925570630,
+      "id": "bdb7515b-ac5b-46a4-9b6a-b6ffd07bd7f5",
+      "title": "선택을 반영했어요",
+      "message": "대본을 승인하고 문구를 보호합니다. 대표 장면의 이미지와 음성을 확인해 주세요.",
+      "revision": 6
+    },
+    {
+      "at": 1789925570910,
+      "id": "a026d2c5-25a8-4b7a-9e55-65ef5166418c",
+      "title": "장면 이미지를 만들고 있어요",
+      "message": "접수한 작업을 확인합니다. 새로고침해도 요청 ID를 복원합니다.",
+      "revision": 7
+    },
+    {
+      "at": 1789925641883,
+      "id": "9c406e2b-9783-4c0f-a1a3-ddac58f7e501",
+      "title": "장면 자산을 보관했어요",
+      "message": "문구와 음성을 유지하고 이 장면의 배경을 적용했습니다.",
+      "revision": 9
+    },
+    {
+      "at": 1789925732063,
+      "id": "ae52243e-6e34-43f6-9b5d-266692b05c8d",
+      "title": "목소리와 자막을 만들고 있어요",
+      "message": "AI 음성을 생성한 뒤 실제 발화 길이와 자막 시간을 확인합니다.",
+      "revision": 10
+    },
+    {
+      "at": 1789926174514,
+      "id": "0827d964-72e0-439a-aba2-3ffda1cb2ff0",
+      "title": "목소리와 자막을 만들고 있어요",
+      "message": "AI 음성을 생성한 뒤 실제 발화 길이와 자막 시간을 확인합니다.",
+      "revision": 12
+    },
+    {
+      "at": 1789926177917,
+      "id": "9da63ac3-da1d-449a-800b-f19f7c275495",
+      "title": "실제 음성과 자막을 보관했어요",
+      "message": "4.95초 · 대본과 전사를 대조했습니다. 발음과 말끝은 샘플에서 들어 주세요.",
+      "revision": 13
+    },
+    {
+      "at": 1789926210563,
+      "id": "b158d051-db09-4fbd-8392-b474d6a8a62d",
+      "title": "보관한 음성을 정렬하고 있어요",
+      "message": "음성을 다시 생성하지 않고 자막만 복구합니다. 추가 앱 크레딧 없음.",
+      "revision": 14
+    },
+    {
+      "at": 1789926226620,
+      "id": "c3b040a1-75e8-48c4-bef1-5f753b8da433",
+      "title": "대표 샘플을 합성하고 있어요",
+      "message": "원본 자산을 재사용하여 MP4를 만듭니다. 생성 크레딧은 추가로 사용하지 않습니다.",
+      "revision": 16
+    },
+    {
+      "at": 1789926231645,
+      "id": "f03f6eb8-fcf4-4afb-8448-61a0ed77c2cb",
+      "title": "대표 샘플이 준비됐어요",
+      "message": "전체 파일을 디코딩했습니다. 재생과 소리를 확인하고 필요한 구간을 수정해 주세요.",
+      "revision": 20
+    },
+    {
+      "at": 1789926330031,
+      "id": "0cf5056a-f94c-4292-b41c-e55e4c32384c",
+      "title": "이 장면만 수정했어요",
+      "message": "영상을 다시 합성합니다. 발화가 바뀐 장면만 음성을 다시 만들고 나머지 자산은 보존합니다.",
+      "revision": 21
+    },
+    {
+      "at": 1789926336584,
+      "id": "44607208-9ad6-4d09-8197-4a874b234e5e",
+      "title": "대표 샘플을 합성하고 있어요",
+      "message": "원본 자산을 재사용하여 MP4를 만듭니다. 생성 크레딧은 추가로 사용하지 않습니다.",
+      "revision": 22
+    },
+    {
+      "at": 1789926341988,
+      "id": "dca4b909-5c66-48a8-84c1-f1842ab40aa2",
+      "title": "대표 샘플이 준비됐어요",
+      "message": "전체 파일을 디코딩했습니다. 재생과 소리를 확인하고 필요한 구간을 수정해 주세요.",
+      "revision": 26
+    },
+    {
+      "at": 1789926419145,
+      "id": "1e4066de-a326-455b-b288-1cdec6e877b2",
+      "title": "샘플을 승인했어요",
+      "message": "이 분위기로 나머지 장면을 제작할 수 있어요.",
+      "revision": 27
+    },
+    {
+      "at": 1789926426545,
+      "id": "80c479b6-6154-471e-a19b-13b762b4d556",
+      "title": "장면 이미지를 만들고 있어요",
+      "message": "접수한 작업을 확인합니다. 새로고침해도 요청 ID를 복원합니다.",
+      "revision": 28
+    },
+    {
+      "at": 1789926480669,
+      "id": "0e26d052-388f-4917-a588-4c8c493934b8",
+      "title": "장면 자산을 보관했어요",
+      "message": "문구와 음성을 유지하고 이 장면의 배경을 적용했습니다.",
+      "revision": 30
+    },
+    {
+      "at": 1789926483707,
+      "id": "636a5a09-4c31-402d-a0a5-5a2aeaf604d4",
+      "title": "목소리와 자막을 만들고 있어요",
+      "message": "AI 음성을 생성한 뒤 실제 발화 길이와 자막 시간을 확인합니다.",
+      "revision": 31
+    },
+    {
+      "at": 1789926488432,
+      "id": "360b1a75-7310-4434-a229-19e58ed8bd78",
+      "title": "실제 음성과 자막을 보관했어요",
+      "message": "4.40초 · 대본과 전사를 대조했습니다. 발음과 말끝은 샘플에서 들어 주세요.",
+      "revision": 32
+    },
+    {
+      "at": 1789926488478,
+      "id": "4d38da6b-cca2-4e97-998e-335bad604c09",
+      "title": "장면 이미지를 만들고 있어요",
+      "message": "접수한 작업을 확인합니다. 새로고침해도 요청 ID를 복원합니다.",
+      "revision": 33
+    },
+    {
+      "at": 1789926552345,
+      "id": "cf635117-9bd9-4fef-85e4-b11d37d9fe27",
+      "title": "장면 자산을 보관했어요",
+      "message": "문구와 음성을 유지하고 이 장면의 배경을 적용했습니다.",
+      "revision": 35
+    },
+    {
+      "at": 1789926555380,
+      "id": "135bfd72-50a6-42de-b40b-ed1769f74fc4",
+      "title": "목소리와 자막을 만들고 있어요",
+      "message": "AI 음성을 생성한 뒤 실제 발화 길이와 자막 시간을 확인합니다.",
+      "revision": 36
+    },
+    {
+      "at": 1789926612977,
+      "id": "1d21546b-d223-4930-8b7e-0fca8fef627d",
+      "title": "목소리와 자막을 만들고 있어요",
+      "message": "AI 음성을 생성한 뒤 실제 발화 길이와 자막 시간을 확인합니다.",
+      "revision": 38
+    },
+    {
+      "at": 1789926615838,
+      "id": "5f1b2044-5c7f-4545-9064-a1c007e0034d",
+      "title": "실제 음성과 자막을 보관했어요",
+      "message": "4.80초 · 대본과 전사를 대조했습니다. 발음과 말끝은 샘플에서 들어 주세요.",
+      "revision": 39
+    },
+    {
+      "at": 1789926637063,
+      "id": "80a6762a-3e2e-4e67-aa7a-dccf24f9fdda",
+      "title": "장면 이미지를 만들고 있어요",
+      "message": "접수한 작업을 확인합니다. 새로고침해도 요청 ID를 복원합니다.",
+      "revision": 40
+    },
+    {
+      "at": 1789926658527,
+      "id": "82ee541f-9f3d-4d50-9ba5-4b7b6c213427",
+      "title": "장면 자산을 보관했어요",
+      "message": "문구와 음성을 유지하고 이 장면의 배경을 적용했습니다.",
+      "revision": 42
+    },
+    {
+      "at": 1789926661562,
+      "id": "f2bd67fb-eb4e-4d72-a277-4dfaaef7c343",
+      "title": "목소리와 자막을 만들고 있어요",
+      "message": "AI 음성을 생성한 뒤 실제 발화 길이와 자막 시간을 확인합니다.",
+      "revision": 43
+    },
+    {
+      "at": 1789926664746,
+      "id": "8910ce19-d47b-4cd0-a5f0-5c4c14774cf5",
+      "title": "실제 음성과 자막을 보관했어요",
+      "message": "5.45초 · 대본과 전사를 대조했습니다. 발음과 말끝은 샘플에서 들어 주세요.",
+      "revision": 44
+    },
+    {
+      "at": 1789926664788,
+      "id": "816d0b0a-e168-4383-bfd9-6963f7d8b3d9",
+      "title": "장면 이미지를 만들고 있어요",
+      "message": "접수한 작업을 확인합니다. 새로고침해도 요청 ID를 복원합니다.",
+      "revision": 45
+    },
+    {
+      "at": 1789926692641,
+      "id": "cf25777a-43dc-441a-9ed6-f739c9f76456",
+      "title": "장면 자산을 보관했어요",
+      "message": "문구와 음성을 유지하고 이 장면의 배경을 적용했습니다.",
+      "revision": 47
+    },
+    {
+      "at": 1789926695672,
+      "id": "3ba3bbed-d949-463d-b72f-2ee3e525a718",
+      "title": "목소리와 자막을 만들고 있어요",
+      "message": "AI 음성을 생성한 뒤 실제 발화 길이와 자막 시간을 확인합니다.",
+      "revision": 48
+    },
+    {
+      "at": 1789926698749,
+      "id": "b033b874-bec5-4ada-acbd-0d02d7ea59ae",
+      "title": "실제 음성과 자막을 보관했어요",
+      "message": "3.70초 · 대본과 전사를 대조했습니다. 발음과 말끝은 샘플에서 들어 주세요.",
+      "revision": 49
+    },
+    {
+      "at": 1789926716588,
+      "id": "e20cc368-b5b5-439d-b0fa-d59fc8d023b1",
+      "title": "전체 영상을 합성하고 있어요",
+      "message": "원본 자산을 재사용하여 MP4를 만듭니다. 생성 크레딧은 추가로 사용하지 않습니다.",
+      "revision": 50
+    },
+    {
+      "at": 1789926740693,
+      "id": "93619854-c81e-447a-a813-d3345334e3cd",
+      "title": "전체 MP4가 준비됐어요",
+      "message": "전체 파일을 디코딩했습니다. 재생과 소리를 확인하고 필요한 구간을 수정해 주세요.",
+      "revision": 58
+    },
+    {
+      "at": 1789926763044,
+      "id": "039e1cb8-0a34-4bd0-901e-e70ce71a68b9",
+      "title": "실제 출력 프레임을 검수하고 있어요",
+      "message": "장면별 실제 프레임을 원문과 대조합니다. 전체 재생과 소리는 직접 확인해 주세요.",
+      "revision": 59
+    },
+    {
+      "at": 1789926776190,
+      "id": "89566ae8-36cd-4957-8849-6ff45a6337a1",
+      "title": "출력 검수를 마쳤어요",
+      "message": "빈 책상에 화분을 놓고 시선이 머무는 일상으로 이어지는 구성과 마지막 문구는 기획 의도에 맞습니다. 다만 장면마다 화분 형태와 식물의 잎·수형이 명확히 달라 동일한 작은 초록 화분의 연속성이 깨지며, 2~5장면에 의미 없는 외국어/깨진 문자처럼 보이는 텍스트가 노출됩니다. 이는 무텍스트 이미지 조건과 가독성을 훼손합니다.",
+      "revision": 60
+    },
+    {
+      "at": 1789926870181,
+      "id": "f3f3119f-c343-4a22-95f1-5ca6793d7717",
+      "title": "장면 에셋을 연결했어요",
+      "message": "원본 문구와 음성을 유지했습니다.",
+      "revision": 61
+    },
+    {
+      "at": 1789926870216,
+      "id": "4c216250-23ca-432a-9455-056ed7d7875d",
+      "title": "이 장면만 수정했어요",
+      "message": "영상을 다시 합성합니다. 발화가 바뀐 장면만 음성을 다시 만들고 나머지 자산은 보존합니다.",
+      "revision": 62
+    },
+    {
+      "at": 1789926870241,
+      "id": "a8e1ab9d-85e7-4b3d-9485-4ef2a19bd913",
+      "title": "이 장면만 수정했어요",
+      "message": "영상을 다시 합성합니다. 발화가 바뀐 장면만 음성을 다시 만들고 나머지 자산은 보존합니다.",
+      "revision": 63
+    },
+    {
+      "at": 1789926870442,
+      "id": "07eb35e2-9a88-4d1c-8db6-09c475e92775",
+      "title": "장면 에셋을 연결했어요",
+      "message": "원본 문구와 음성을 유지했습니다.",
+      "revision": 64
+    },
+    {
+      "at": 1789926870456,
+      "id": "17bca314-3202-46b7-8fe0-b47342bd407a",
+      "title": "이 장면만 수정했어요",
+      "message": "영상을 다시 합성합니다. 발화가 바뀐 장면만 음성을 다시 만들고 나머지 자산은 보존합니다.",
+      "revision": 65
+    },
+    {
+      "at": 1789926870654,
+      "id": "5c5bfc02-9151-471d-92c0-d58ca6dae93b",
+      "title": "장면 에셋을 연결했어요",
+      "message": "원본 문구와 음성을 유지했습니다.",
+      "revision": 66
+    },
+    {
+      "at": 1789926870666,
+      "id": "ccef37a6-1735-4f2f-bb24-2c11266cd148",
+      "title": "이 장면만 수정했어요",
+      "message": "영상을 다시 합성합니다. 발화가 바뀐 장면만 음성을 다시 만들고 나머지 자산은 보존합니다.",
+      "revision": 67
+    },
+    {
+      "at": 1789926913662,
+      "id": "32159f60-2341-43e7-80fe-44d68f338b29",
+      "title": "이 장면만 수정했어요",
+      "message": "영상을 다시 합성합니다. 발화가 바뀐 장면만 음성을 다시 만들고 나머지 자산은 보존합니다.",
+      "revision": 68
+    },
+    {
+      "at": 1789926920423,
+      "id": "6dc635d9-f7b7-4d6a-9b0a-91476964a2da",
+      "title": "전체 영상을 합성하고 있어요",
+      "message": "원본 자산을 재사용하여 MP4를 만듭니다. 생성 크레딧은 추가로 사용하지 않습니다.",
+      "revision": 69
+    },
+    {
+      "at": 1789926945616,
+      "id": "f7f89c59-0a91-480d-9ba5-ea117d6861b7",
+      "title": "전체 MP4가 준비됐어요",
+      "message": "전체 파일을 디코딩했습니다. 재생과 소리를 확인하고 필요한 구간을 수정해 주세요.",
+      "revision": 77
+    },
+    {
+      "at": 1789926971652,
+      "id": "65cf0eb3-0d96-4ccc-9d0b-0119ee6e9f99",
+      "title": "실제 출력 프레임을 검수하고 있어요",
+      "message": "장면별 실제 프레임을 원문과 대조합니다. 전체 재생과 소리는 직접 확인해 주세요.",
+      "revision": 78
+    },
+    {
+      "at": 1789926983514,
+      "id": "39bf42e4-b0a0-4629-b7b6-fadfcc1e07aa",
+      "title": "출력 검수를 마쳤어요",
+      "message": "중앙 프레임 기준으로 따뜻한 자연광, 크림색 화분, 초록 식물의 톤은 전반적으로 유지되며 문구와 자막은 읽기 쉽습니다. 다만 2~5장면이 사실상 같은 화분 클로즈업으로 반복되어 ‘놓기→시선이 머묾→업무 중 쉼→바라보기’의 행동·변화 흐름이 화면에서 충분히 구분되지 않습니다. 식물 규모도 ‘작은 초록’ 콘셉트보다 크게 보입니다.",
+      "revision": 79
+    }
+  ],
+  "output": {
+    "id": "e726c813-e794-453d-ba79-8f6b23ac796f",
+    "kind": "full",
+    "audio": true,
+    "checks": [
+      "1080×1920 · H.264 / AAC · 30fps",
+      "900프레임 전체 디코딩 · 30.00초",
+      "번들 한글 폰트 · 원문/레이어/시간 일치",
+      "실제 발화 타임스탬프 사용 · 말끝 보호",
+      "오디오 최대 피크 -9.6dB"
+    ],
+    "frames": 900,
+    "issues": [],
+    "assetId": "d238132a-9392-47ee-a28a-f242bde45ac8",
+    "coverId": "1750dbe1-57a7-4a93-be5f-a3b729561c7f",
+    "version": 23,
+    "duration": 30,
+    "sceneIds": [
+      "scene-1",
+      "scene-2",
+      "scene-3",
+      "scene-4",
+      "scene-5"
+    ],
+    "createdAt": 1789926945616
+  },
+  "sample": {
+    "id": "3dbd3c0c-a393-46a0-872b-ae26892f308b",
+    "kind": "sample",
+    "audio": true,
+    "checks": [
+      "1080×1920 · H.264 / AAC · 30fps",
+      "180프레임 전체 디코딩 · 6.00초",
+      "번들 한글 폰트 · 원문/레이어/시간 일치",
+      "실제 발화 타임스탬프 사용 · 말끝 보호",
+      "오디오 최대 피크 -14.2dB"
+    ],
+    "frames": 180,
+    "issues": [],
+    "assetId": "cc551de5-aacf-445b-9c34-8389b0ee1f92",
+    "coverId": "c717b2c2-295f-4db8-a763-0bf748faf561",
+    "version": 7,
+    "duration": 6,
+    "sceneIds": [
+      "scene-1"
+    ],
+    "createdAt": 1789926341988
+  },
+  "scenes": [
+    {
+      "id": "scene-1",
+      "crop": 0,
+      "role": "hook",
+      "zoom": 125,
+      "asset": {
+        "id": "5bf18f65-e710-4957-8d34-5b47268f4a22",
+        "kind": "image",
+        "name": "scene-scene-1.png",
+        "width": 1152,
+        "height": 1536,
+        "duration": 0
+      },
+      "title": "비어 있는 한 자리",
+      "voice": {
+        "cues": [
+          {
+            "id": "cue-1",
+            "text": "바쁜 하루. 책상 위에 비어 있는 한 자리가 있죠.",
+            "endMs": 4950,
+            "startMs": 0
+          }
+        ],
+        "voice": "coral",
+        "assetId": "c9affe95-0df6-43d4-a9cc-ecf563951526",
+        "matches": true,
+        "durationMs": 4950,
+        "transcript": "바쁜 하루. 책상 위에 비어 있는 한 자리가 있죠."
+      },
+      "frames": 180,
+      "prompt": "Warm, quiet office desk by a window in early morning natural sunlight. A clean light-oak desk with a laptop softly out of focus on the left, notebook and pen neatly placed, and an intentionally empty space on the right. No plant yet. Cinematic close-to-medium composition focused on the empty space, gentle slow push-in camera movement, soft cream and beige palette, subtle dust motes, calm realistic lifestyle photography. Maintain the exact desk layout for continuity in following scenes. No text, no logos, no printed pages.",
+      "version": 5,
+      "narration": "바쁜 하루, 책상 위에 비어 있는 한 자리가 있죠.",
+      "copyLocked": true,
+      "screenText": "비어 있는 책상 한쪽",
+      "textPosition": "lower",
+      "subtitleStyle": "calm",
+      "durationLocked": true
+    },
+    {
+      "id": "scene-2",
+      "crop": 0,
+      "role": "development",
+      "zoom": 125,
+      "asset": {
+        "id": "7f4f341c-932b-48fe-b240-ec21ac9ae946",
+        "kind": "image",
+        "name": "scene-scene-3.png",
+        "audio": false,
+        "width": 1152,
+        "format": "png_pipe",
+        "height": 1536,
+        "duration": 0
+      },
+      "title": "작은 화분의 등장",
+      "voice": {
+        "cues": [
+          {
+            "id": "cue-1",
+            "text": "그 자리에 작은 초록 하나를 놓아 봅니다.",
+            "endMs": 4000,
+            "startMs": 0
+          }
+        ],
+        "voice": "coral",
+        "assetId": "6be33655-d58d-40c4-9563-82807d069824",
+        "matches": true,
+        "durationMs": 4400,
+        "transcript": "그 자리에 작은 초록 하나를 놓아 봅니다."
+      },
+      "frames": 180,
+      "prompt": "Continue the exact same warm office desk, light-oak surface, window direction, laptop and notebook placement from the previous scene. A pair of adult hands gently places one small matte cream-colored ceramic pot in the empty right-side space. The pot contains a compact plant with several small fresh green leaves. Warm soft natural window light, shallow depth of field, medium close-up, slow gentle side tracking camera. Preserve the identical cream pot and small green-leaf plant in all following scenes. No text, no logos, no printed pages.",
+      "version": 5,
+      "narration": "그 자리에 작은 초록 하나를 놓아봅니다.",
+      "copyLocked": true,
+      "screenText": "작은 초록 하나",
+      "textPosition": "lower",
+      "subtitleStyle": "calm",
+      "durationLocked": true
+    },
+    {
+      "id": "scene-3",
+      "crop": 0,
+      "role": "change",
+      "zoom": 125,
+      "asset": {
+        "id": "7f4f341c-932b-48fe-b240-ec21ac9ae946",
+        "kind": "image",
+        "name": "scene-scene-3.png",
+        "width": 1152,
+        "height": 1536,
+        "duration": 0
+      },
+      "title": "시선이 머무는 곳",
+      "voice": {
+        "cues": [
+          {
+            "id": "cue-1",
+            "text": "같은 책상인데 시선이 머무는 곳이 생깁니다.",
+            "endMs": 4800,
+            "startMs": 0
+          }
+        ],
+        "voice": "coral",
+        "assetId": "8ed0e37a-82ac-40dc-ba10-a64ec01ab2de",
+        "matches": true,
+        "durationMs": 4800,
+        "transcript": "같은 책상인데 시선이 머무는 곳이 생깁니다."
+      },
+      "frames": 180,
+      "prompt": "Same office desk and exact same matte cream ceramic pot with the same small green leaves, now resting on the right side of the desk. An office worker's hand pauses above a notebook, then naturally glances toward the plant. Warm late-morning natural window light falling softly across leaves, intimate over-the-shoulder composition, subtle rack focus from hand and notebook to plant, calm realistic cinematic lifestyle visual. Keep pot size, leaf shape, desk layout, and lighting continuity. No text, no logos, no printed pages.",
+      "version": 4,
+      "narration": "같은 책상인데, 시선이 머무는 곳이 생깁니다.",
+      "copyLocked": true,
+      "screenText": "시선이 머무는 자리",
+      "textPosition": "lower",
+      "subtitleStyle": "calm",
+      "durationLocked": true
+    },
+    {
+      "id": "scene-4",
+      "crop": 0,
+      "role": "development",
+      "zoom": 135,
+      "asset": {
+        "id": "7f4f341c-932b-48fe-b240-ec21ac9ae946",
+        "kind": "image",
+        "name": "scene-scene-3.png",
+        "audio": false,
+        "width": 1152,
+        "format": "png_pipe",
+        "height": 1536,
+        "duration": 0
+      },
+      "title": "일상 속의 초록",
+      "voice": {
+        "cues": [
+          {
+            "id": "cue-1",
+            "text": "일과 일 사이 조용한 쉼표처럼 곁에 있어요.",
+            "endMs": 5450,
+            "startMs": 0
+          }
+        ],
+        "voice": "coral",
+        "assetId": "8c799f66-012a-45ba-a3ec-3fd8df12d2e9",
+        "matches": true,
+        "durationMs": 5450,
+        "transcript": "일과 일 사이 조용한 쉼표처럼 곁에 있어요."
+      },
+      "frames": 180,
+      "prompt": "Same continuous warm desk scene with the identical small matte cream pot and compact green-leaf plant on the right. The worker types briefly on a laptop, then takes a natural pause; sunlight creates soft leaf shadows on the wooden desk. Close-up detail shot, camera slowly pans from the keyboard across the desk to the plant, tranquil warm natural light, understated realistic office atmosphere. Preserve the exact pot, leaves, laptop position, notebook, and desk arrangement. No text, no logos, no printed pages.",
+      "version": 5,
+      "narration": "일과 일 사이, 조용한 쉼표처럼 곁에 있어요.",
+      "copyLocked": true,
+      "screenText": "책상에 생긴 작은 쉼표",
+      "textPosition": "lower",
+      "subtitleStyle": "calm",
+      "durationLocked": true
+    },
+    {
+      "id": "scene-5",
+      "crop": 0,
+      "role": "closing",
+      "zoom": 145,
+      "asset": {
+        "id": "7f4f341c-932b-48fe-b240-ec21ac9ae946",
+        "kind": "image",
+        "name": "scene-scene-3.png",
+        "audio": false,
+        "width": 1152,
+        "format": "png_pipe",
+        "height": 1536,
+        "duration": 0
+      },
+      "title": "초록을 바라보는 순간",
+      "voice": {
+        "cues": [
+          {
+            "id": "cue-1",
+            "text": "지금 잠깐 초록을 바라봐요.",
+            "endMs": 3700,
+            "startMs": 0
+          }
+        ],
+        "voice": "coral",
+        "assetId": "e706e7d8-fecc-419c-ad1c-1628eff3b18d",
+        "matches": true,
+        "durationMs": 3700,
+        "transcript": "지금 잠깐 초록을 바라봐요."
+      },
+      "frames": 180,
+      "prompt": "Final continuation of the same office desk at warm golden natural window light. The exact same small matte cream ceramic pot and small green leaves are hero subject on the right side of the desk; background laptop and notebook remain softly blurred in their established positions. A calm adult hand rests near the pot without touching it. Serene close-up, very slow push-in toward the leaves, gentle leaf movement from a faint breeze, peaceful ending mood, realistic cinematic lifestyle photography. Preserve all established visual features. No text, no logos, no printed pages.",
+      "version": 6,
+      "narration": "지금, 잠깐 초록을 바라봐요.",
+      "copyLocked": true,
+      "screenText": "잠깐, 초록을 바라봐요",
+      "textPosition": "lower",
+      "subtitleStyle": "emphasis",
+      "durationLocked": true
+    }
+  ],
+  "status": "ready",
+  "history": [
+    {
+      "id": "0674d99d-c827-435e-bceb-e1049135e7f1",
+      "kind": "sample",
+      "audio": true,
+      "checks": [
+        "1080×1920 · H.264 / AAC · 30fps",
+        "180프레임 전체 디코딩 · 6.00초",
+        "번들 한글 폰트 · 원문/레이어/시간 일치",
+        "실제 발화 타임스탬프 사용 · 말끝 보호",
+        "오디오 최대 피크 -14.2dB"
+      ],
+      "frames": 180,
+      "issues": [],
+      "assetId": "3d524471-0be5-4cc7-a53a-371ea77ac981",
+      "coverId": "0d90f1a9-159a-415f-9827-b8ee98b25467",
+      "version": 6,
+      "duration": 6,
+      "sceneIds": [
+        "scene-1"
+      ],
+      "createdAt": 1789926231645
+    },
+    {
+      "id": "3dbd3c0c-a393-46a0-872b-ae26892f308b",
+      "kind": "sample",
+      "audio": true,
+      "checks": [
+        "1080×1920 · H.264 / AAC · 30fps",
+        "180프레임 전체 디코딩 · 6.00초",
+        "번들 한글 폰트 · 원문/레이어/시간 일치",
+        "실제 발화 타임스탬프 사용 · 말끝 보호",
+        "오디오 최대 피크 -14.2dB"
+      ],
+      "frames": 180,
+      "issues": [],
+      "assetId": "cc551de5-aacf-445b-9c34-8389b0ee1f92",
+      "coverId": "c717b2c2-295f-4db8-a763-0bf748faf561",
+      "version": 7,
+      "duration": 6,
+      "sceneIds": [
+        "scene-1"
+      ],
+      "createdAt": 1789926341988
+    },
+    {
+      "id": "a774e4e4-c72d-4d2a-8557-acf53abd8d5f",
+      "kind": "full",
+      "audio": true,
+      "checks": [
+        "1080×1920 · H.264 / AAC · 30fps",
+        "900프레임 전체 디코딩 · 30.00초",
+        "번들 한글 폰트 · 원문/레이어/시간 일치",
+        "실제 발화 타임스탬프 사용 · 말끝 보호",
+        "오디오 최대 피크 -9.6dB"
+      ],
+      "frames": 900,
+      "issues": [],
+      "assetId": "0eb77aa6-7bfd-45e7-a328-11c453069ac3",
+      "coverId": "545df73b-05c7-47bb-96a1-f71df889b3d7",
+      "version": 15,
+      "duration": 30,
+      "sceneIds": [
+        "scene-1",
+        "scene-2",
+        "scene-3",
+        "scene-4",
+        "scene-5"
+      ],
+      "createdAt": 1789926740693
+    },
+    {
+      "id": "e726c813-e794-453d-ba79-8f6b23ac796f",
+      "kind": "full",
+      "audio": true,
+      "checks": [
+        "1080×1920 · H.264 / AAC · 30fps",
+        "900프레임 전체 디코딩 · 30.00초",
+        "번들 한글 폰트 · 원문/레이어/시간 일치",
+        "실제 발화 타임스탬프 사용 · 말끝 보호",
+        "오디오 최대 피크 -9.6dB"
+      ],
+      "frames": 900,
+      "issues": [],
+      "assetId": "d238132a-9392-47ee-a28a-f242bde45ac8",
+      "coverId": "1750dbe1-57a7-4a93-be5f-a3b729561c7f",
+      "version": 23,
+      "duration": 30,
+      "sceneIds": [
+        "scene-1",
+        "scene-2",
+        "scene-3",
+        "scene-4",
+        "scene-5"
+      ],
+      "createdAt": 1789926945616
+    }
+  ],
+  "project": {
+    "id": "d19dcb87-d91a-4ec9-b3c6-aac6af1fa792",
+    "brand": "",
+    "brief": {
+      "tone": "calm",
+      "count": 5,
+      "topic": "책상 위에 식물 하나 두고 싶어지는 30초 릴스를 만들어 주세요. 대상은 식물을 처음 들이는 직장인입니다. ",
+      "audience": "",
+      "mustInclude": "책상 위에 식물 하나 두고 싶어지는 30초 릴스를 만들어 주세요. 대상은 식물을 처음 들이는 직장인입니다. 빈 책상의 한 자리가 작은 초록 화분으로 채워지는 변화, 잔잔하고 따뜻한 자연광, 같은 크림색 화분과 작은 초록 잎을 유지합니다. 부드러운 한국어 내레이션과 짧은 화면 문구를 사용합니다. 첫 장면은 6초, 총 5장면입니다. 가격·구매 CTA·공기정화·건강 효능·관리 난이도 주장은 제외합니다. 마지막은 잠깐 초록을 바라보자는 한마디로 마무리해 주세요."
+    },
+    "ratio": "9:16",
+    "slots": [
+      {
+        "id": "scene-1",
+        "cta": "",
+        "dim": 0.2,
+        "body": "비어 있는 책상 한쪽",
+        "crop": 0,
+        "href": "",
+        "kind": "cover",
+        "trim": 0,
+        "media": {
+          "url": "/api/workspace/assets/5bf18f65-e710-4957-8d34-5b47268f4a22",
+          "kind": "image",
+          "name": "scene-scene-1.png"
+        },
+        "title": "비어 있는 한 자리",
+        "kicker": "hook",
+        "prompt": "Warm, quiet office desk by a window in early morning natural sunlight. A clean light-oak desk with a laptop softly out of focus on the left, notebook and pen neatly placed, and an intentionally empty space on the right. No plant yet. Cinematic close-to-medium composition focused on the empty space, gentle slow push-in camera movement, soft cream and beige palette, subtle dust motes, calm realistic lifestyle photography. Maintain the exact desk layout for continuity in following scenes. No text, no logos, no printed pages.",
+        "duration": 6,
+        "composition": "full"
+      },
+      {
+        "id": "scene-2",
+        "cta": "",
+        "dim": 0.2,
+        "body": "작은 초록 하나",
+        "crop": 0,
+        "href": "",
+        "kind": "body",
+        "trim": 0,
+        "media": {
+          "url": "/api/workspace/assets/7f4f341c-932b-48fe-b240-ec21ac9ae946",
+          "kind": "image",
+          "name": "scene-scene-3.png"
+        },
+        "title": "작은 화분의 등장",
+        "kicker": "development",
+        "prompt": "Continue the exact same warm office desk, light-oak surface, window direction, laptop and notebook placement from the previous scene. A pair of adult hands gently places one small matte cream-colored ceramic pot in the empty right-side space. The pot contains a compact plant with several small fresh green leaves. Warm soft natural window light, shallow depth of field, medium close-up, slow gentle side tracking camera. Preserve the identical cream pot and small green-leaf plant in all following scenes. No text, no logos, no printed pages.",
+        "duration": 6,
+        "composition": "full"
+      },
+      {
+        "id": "scene-3",
+        "cta": "",
+        "dim": 0.2,
+        "body": "시선이 머무는 자리",
+        "crop": 0,
+        "href": "",
+        "kind": "body",
+        "trim": 0,
+        "media": {
+          "url": "/api/workspace/assets/7f4f341c-932b-48fe-b240-ec21ac9ae946",
+          "kind": "image",
+          "name": "scene-scene-3.png"
+        },
+        "title": "시선이 머무는 곳",
+        "kicker": "change",
+        "prompt": "Same office desk and exact same matte cream ceramic pot with the same small green leaves, now resting on the right side of the desk. An office worker's hand pauses above a notebook, then naturally glances toward the plant. Warm late-morning natural window light falling softly across leaves, intimate over-the-shoulder composition, subtle rack focus from hand and notebook to plant, calm realistic cinematic lifestyle visual. Keep pot size, leaf shape, desk layout, and lighting continuity. No text, no logos, no printed pages.",
+        "duration": 6,
+        "composition": "full"
+      },
+      {
+        "id": "scene-4",
+        "cta": "",
+        "dim": 0.2,
+        "body": "책상에 생긴 작은 쉼표",
+        "crop": 0,
+        "href": "",
+        "kind": "body",
+        "trim": 0,
+        "media": {
+          "url": "/api/workspace/assets/7f4f341c-932b-48fe-b240-ec21ac9ae946",
+          "kind": "image",
+          "name": "scene-scene-3.png"
+        },
+        "title": "일상 속의 초록",
+        "kicker": "development",
+        "prompt": "Same continuous warm desk scene with the identical small matte cream pot and compact green-leaf plant on the right. The worker types briefly on a laptop, then takes a natural pause; sunlight creates soft leaf shadows on the wooden desk. Close-up detail shot, camera slowly pans from the keyboard across the desk to the plant, tranquil warm natural light, understated realistic office atmosphere. Preserve the exact pot, leaves, laptop position, notebook, and desk arrangement. No text, no logos, no printed pages.",
+        "duration": 6,
+        "composition": "full"
+      },
+      {
+        "id": "scene-5",
+        "cta": "",
+        "dim": 0.2,
+        "body": "잠깐, 초록을 바라봐요",
+        "crop": 0,
+        "href": "",
+        "kind": "cta",
+        "trim": 0,
+        "media": {
+          "url": "/api/workspace/assets/7f4f341c-932b-48fe-b240-ec21ac9ae946",
+          "kind": "image",
+          "name": "scene-scene-3.png"
+        },
+        "title": "초록을 바라보는 순간",
+        "kicker": "closing",
+        "prompt": "Final continuation of the same office desk at warm golden natural window light. The exact same small matte cream ceramic pot and small green leaves are hero subject on the right side of the desk; background laptop and notebook remain softly blurred in their established positions. A calm adult hand rests near the pot without touching it. Serene close-up, very slow push-in toward the leaves, gentle leaf movement from a faint breeze, peaceful ending mood, realistic cinematic lifestyle photography. Preserve all established visual features. No text, no logos, no printed pages.",
+        "duration": 6,
+        "composition": "full"
+      }
+    ],
+    "title": "빈 책상 한 자리에 초록을",
+    "format": "reels",
+    "preset": "editorial",
+    "caption": "바쁜 책상 위에도 잠시 시선이 머무는 자리는 필요하니까요.\n\n작은 크림색 화분 하나, 작고 선명한 초록 잎 몇 장. 비어 있던 책상 한쪽이 조금 더 마음에 드는 자리로 바뀌는 순간을 담았습니다.\n\n오늘, 잠깐 초록을 바라봐요.",
+    "modelId": "kling-3-turbo",
+    "version": 23,
+    "createdAt": 1789925530065,
+    "updatedAt": 1789926913663
+  },
+  "quality": {
+    "issues": [
+      {
+        "layer": "visual",
+        "message": "‘화분을 놓아 봅니다’라는 내레이션과 달리 중앙 프레임에는 손으로 놓는 동작 없이 이미 놓여 있는 화분만 보입니다. 변화의 시작이 드러나도록 손과 빈 자리, 화분을 놓는 순간을 구분해 보여주는 편이 좋습니다.",
+        "sceneId": "scene-2",
+        "severity": "attention"
+      },
+      {
+        "layer": "visual",
+        "message": "scene-2와 동일한 화분 클로즈업 구성이 반복되어 ‘시선이 머무는 곳이 생긴다’는 변화가 화면에서 확인되지 않습니다. 노트 위 손, 인물의 시선 또는 초점 이동이 보이는 구성이 필요합니다.",
+        "sceneId": "scene-3",
+        "severity": "attention"
+      },
+      {
+        "layer": "visual",
+        "message": "‘일과 일 사이’라는 문구와 달리 키보드 작업이나 멈춤의 맥락이 중앙 프레임에 보이지 않고 앞 장면과 유사한 정지 화분 화면입니다. 업무 도구와 손의 동작이 드러나면 스토리 연결이 선명해집니다.",
+        "sceneId": "scene-4",
+        "severity": "attention"
+      },
+      {
+        "layer": "visual",
+        "message": "화분과 잎이 화면을 크게 차지하고 가지가 넓게 퍼져 있어, 기획의 ‘작은 초록 화분·작은 초록 잎’ 인상과 다소 다릅니다. 책상용 작은 화분으로 보이도록 식물의 규모와 잎 밀도를 조정하는 것을 권장합니다.",
+        "sceneId": "scene-2",
+        "severity": "attention"
+      },
+      {
+        "layer": "visual",
+        "message": "마무리 문구 ‘잠깐, 초록을 바라봐요’와 내레이션은 의미가 일치하고 가독성도 좋습니다. 다만 앞 장면들과 같은 구도가 이어져 클로징의 집중감이 약할 수 있으므로, 손이 화분 곁에 머무르거나 잎을 향한 더 가까운 시선 구분을 고려하세요.",
+        "sceneId": "scene-5",
+        "severity": "attention"
+      }
+    ],
+    "summary": "중앙 프레임 기준으로 따뜻한 자연광, 크림색 화분, 초록 식물의 톤은 전반적으로 유지되며 문구와 자막은 읽기 쉽습니다. 다만 2~5장면이 사실상 같은 화분 클로즈업으로 반복되어 ‘놓기→시선이 머묾→업무 중 쉼→바라보기’의 행동·변화 흐름이 화면에서 충분히 구분되지 않습니다. 식물 규모도 ‘작은 초록’ 콘셉트보다 크게 보입니다.",
+    "version": 23,
+    "renderId": "e726c813-e794-453d-ba79-8f6b23ac796f"
+  },
+  "reviews": [
+    {
+      "issues": [
+        {
+          "layer": "visual",
+          "message": "‘화분을 놓아 봅니다’라는 내레이션과 달리 중앙 프레임에는 손으로 놓는 동작 없이 이미 놓여 있는 화분만 보입니다. 변화의 시작이 드러나도록 손과 빈 자리, 화분을 놓는 순간을 구분해 보여주는 편이 좋습니다.",
+          "sceneId": "scene-2",
+          "severity": "attention"
+        },
+        {
+          "layer": "visual",
+          "message": "scene-2와 동일한 화분 클로즈업 구성이 반복되어 ‘시선이 머무는 곳이 생긴다’는 변화가 화면에서 확인되지 않습니다. 노트 위 손, 인물의 시선 또는 초점 이동이 보이는 구성이 필요합니다.",
+          "sceneId": "scene-3",
+          "severity": "attention"
+        },
+        {
+          "layer": "visual",
+          "message": "‘일과 일 사이’라는 문구와 달리 키보드 작업이나 멈춤의 맥락이 중앙 프레임에 보이지 않고 앞 장면과 유사한 정지 화분 화면입니다. 업무 도구와 손의 동작이 드러나면 스토리 연결이 선명해집니다.",
+          "sceneId": "scene-4",
+          "severity": "attention"
+        },
+        {
+          "layer": "visual",
+          "message": "화분과 잎이 화면을 크게 차지하고 가지가 넓게 퍼져 있어, 기획의 ‘작은 초록 화분·작은 초록 잎’ 인상과 다소 다릅니다. 책상용 작은 화분으로 보이도록 식물의 규모와 잎 밀도를 조정하는 것을 권장합니다.",
+          "sceneId": "scene-2",
+          "severity": "attention"
+        },
+        {
+          "layer": "visual",
+          "message": "마무리 문구 ‘잠깐, 초록을 바라봐요’와 내레이션은 의미가 일치하고 가독성도 좋습니다. 다만 앞 장면들과 같은 구도가 이어져 클로징의 집중감이 약할 수 있으므로, 손이 화분 곁에 머무르거나 잎을 향한 더 가까운 시선 구분을 고려하세요.",
+          "sceneId": "scene-5",
+          "severity": "attention"
+        }
+      ],
+      "summary": "중앙 프레임 기준으로 따뜻한 자연광, 크림색 화분, 초록 식물의 톤은 전반적으로 유지되며 문구와 자막은 읽기 쉽습니다. 다만 2~5장면이 사실상 같은 화분 클로즈업으로 반복되어 ‘놓기→시선이 머묾→업무 중 쉼→바라보기’의 행동·변화 흐름이 화면에서 충분히 구분되지 않습니다. 식물 규모도 ‘작은 초록’ 콘셉트보다 크게 보입니다.",
+      "version": 23,
+      "renderId": "e726c813-e794-453d-ba79-8f6b23ac796f"
+    }
+  ],
+  "sources": [],
+  "feedback": "",
+  "revision": 79,
+  "createdAt": 1789925530064,
+  "projectId": "d19dcb87-d91a-4ec9-b3c6-aac6af1fa792",
+  "responses": [
+    "68395a12-0fd1-44e5-8862-f559abb83131",
+    "41372484-c729-421a-986a-1743d20a4caa",
+    "d41c0654-4af9-419b-aa12-7f68ab9273a2",
+    "37dac6fc-390a-4ae6-bb1f-5da066ebd19f",
+    "c58ac33c-7b04-48e6-9863-72828a6cf74c",
+    "9d8d4c40-8009-4ec1-841c-85cf45fdd25f",
+    "1ffe6b69-55bb-4f5e-b5e2-e0fb8f8ea769",
+    "8fb672ef-8f33-4537-8430-715dcdc82a53",
+    "1b1565ad-4355-4661-9966-3d22469c682d",
+    "b8cda272-e171-40a6-97db-ffe35c7e4adf",
+    "bf5fe10c-732c-4dac-90c5-931a4d01a71a",
+    "be029909-6059-44d0-a7f2-90907e4e640f",
+    "2c2d74aa-3837-4c40-b4b8-f428881d711b",
+    "765819c7-0c56-4760-bc81-2fc6c19d6b18",
+    "748a71f8-7168-4aba-b416-29acf4e767ff",
+    "196c9212-bbc6-4d2f-bf19-c26fded007af",
+    "3098ba9f-b53c-4012-90c3-fb0214b05060",
+    "fc4951b0-2342-4080-a26e-4597edb46977",
+    "39634bc3-90ba-46e7-ad3c-cabd992470d5",
+    "282d0821-e68d-4540-a4dd-98df5115d9e3",
+    "468a64ac-3526-423d-b9a1-acbeaff3404a",
+    "9169aee6-6787-4982-b2d3-e9b0730047ad",
+    "49dbd1de-cb58-4b57-a3f9-5b6e5fd6711b",
+    "24ba7f45-5885-457c-9bf9-797cda8c1d69"
+  ],
+  "targetIds": [],
+  "updatedAt": 1789926983514,
+  "needResearch": false,
+  "planApproved": true,
+  "researchNote": "",
+  "contentVersion": 23,
+  "sampleApproved": true
+}

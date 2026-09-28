@@ -1,0 +1,14 @@
+{
+  "at": "2026-09-19T06:37:54.979Z",
+  "checks": [
+    "anonymous library/admin denied 401",
+    "user1 upload visible and owned",
+    "user2 foreign asset denied 404",
+    "user1 admin routes denied 403",
+    "forged owner query remains scoped",
+    "admin reads user1 file",
+    "admin user1+files filter 1 result",
+    "admin admin+reels+video filter 1 result"
+  ],
+  "uploadId": "962fb11e-3d80-4de0-a25f-69d79b5a9e64"
+}

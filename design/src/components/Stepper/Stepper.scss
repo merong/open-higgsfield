@@ -1,0 +1,13 @@
+.ohf-batch[data-state="hover"] {
+  background: var(--s3);
+}
+.ohf-batch-step[data-state="hover"] {
+  background: var(--s4);
+  color: var(--tx);
+}
+.ohf-batch-step[data-state="active"] {
+  transform: scale(0.9);
+}
+.ohf-batch-max {
+  margin-left: 2px;
+}

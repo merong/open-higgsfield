@@ -1,0 +1,14 @@
+/* ---------- entrance ---------- */
+
+.ohf-enter-1 {
+  animation: ohf-drop 0.4s var(--ease-slide) both;
+}
+/* `backwards`, not `both`: the fill is only wanted for the delay before the
+   rise starts, and ohf-rise already ends on the element's own resting values.
+   A forwards fill would leave `transform` computing to an identity matrix
+   forever, which makes the composer a backdrop root and flattens the blur of
+   the selection toolbar docked inside it. */
+.ohf-enter-2 {
+  animation: ohf-rise 0.35s var(--ease) 0.06s backwards;
+}
+

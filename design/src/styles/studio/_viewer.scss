@@ -1,0 +1,482 @@
+/* ---------- viewer ---------- */
+
+/* The run opens at the size it was made at: the picture holds the full height
+   of the viewport, and everything the studio knows about it stands in a panel
+   alongside rather than cropping the work into a card. */
+.ohf dialog.ohf-viewer {
+  width: 100vw;
+  height: 100dvh;
+  margin: 0;
+}
+.ohf dialog.ohf-viewer::backdrop {
+  background: rgba(4, 5, 5, 0.86);
+}
+.ohf-viewer-panel {
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-items: stretch;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* A viewport-sized panel has no edge to scale from, so it arrives by fade and
+   lets the picture and the sidebar carry the travel. */
+.ohf dialog[open] .ohf-viewer-panel {
+  animation: ohf-fade 0.22s ease;
+}
+.ohf dialog[data-closing] .ohf-viewer-panel {
+  animation: ohf-fade-out 0.18s ease forwards;
+  pointer-events: none;
+}
+
+.ohf-viewer-stage {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  /* Makes 100cqh below resolve to this stage's own inner height, so the figure
+     sizes off the space it actually has at every breakpoint. */
+  container-type: size;
+}
+.ohf-viewer-figure {
+  margin: 0;
+  position: relative;
+  /* Height first: the ratio states the width the picture needs to stand full
+     height, and 100% takes it back when that is wider than the stage. Sizing
+     the box rather than letting max-height clamp it keeps the ratio exact —
+     a clamped aspect-ratio box distorts instead of shrinking. */
+  width: min(100%, calc(100cqh * var(--a, 1.5)));
+  max-height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--s1);
+  box-shadow:
+    var(--shadow-3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+  isolation: isolate;
+  animation: ohf-pop var(--dur-slide) var(--ease-slide) both;
+}
+.ohf-viewer-art {
+  position: absolute;
+  inset: 0;
+}
+/* Once the media has reported its shape the box is cut to it exactly, so the
+   ground behind has nothing left to fill — and a subpixel row of seeded
+   artwork along one edge is the only thing it could still paint. */
+.ohf-viewer-figure[data-shaped] .ohf-viewer-art {
+  display: none;
+}
+.ohf-viewer-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: ohf-fade 0.3s ease;
+}
+
+.ohf-viewer-side {
+  width: 340px;
+  flex-shrink: 0;
+  margin: 12px 12px 12px 0;
+  border-radius: 16px;
+  background: var(--s2);
+  border: 1px solid var(--line-2);
+  box-shadow:
+    var(--shadow-3),
+    var(--glint);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  animation: ohf-side-in 0.36s var(--ease-slide) both;
+}
+@keyframes ohf-side-in {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.ohf-viewer-side-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 13px 13px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.ohf-viewer-title {
+  min-width: 0;
+}
+.ohf-viewer-model {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-display);
+  letter-spacing: var(--ls-heading);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ohf-viewer-when {
+  margin-top: 3px;
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--tx4);
+}
+.ohf-viewer-close {
+  width: 30px;
+  height: 30px;
+}
+
+.ohf-viewer-side-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 17px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+.ohf-viewer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.ohf-viewer-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  /* Reserves the copy button's rail so the Prompt and Details labels sit on
+     the same baseline whether or not a section carries an action. */
+  min-height: 22px;
+  margin-top: -3px;
+}
+.ohf-viewer-label {
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tx4);
+}
+.ohf-viewer-copy {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  color: var(--tx3);
+  transition:
+    background var(--dur-base) ease,
+    color var(--dur-base) ease;
+}
+.ohf-viewer-copy:hover {
+  background: var(--s3);
+  color: var(--tx);
+}
+.ohf-viewer-copy[data-done] {
+  color: var(--accent);
+}
+/* The words the run was made from: the one thing in the panel worth taking
+   away by hand, so it is set as text on a plate, not as a caption. */
+.ohf-viewer-prompt {
+  font-size: var(--fs-md);
+  line-height: 1.55;
+  color: var(--tx);
+  background: var(--s1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-ctl);
+  padding: 11px 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+.ohf-viewer-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ohf-viewer-fact {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ohf-viewer-fact dt {
+  font-size: 12px;
+  color: var(--tx3);
+  white-space: nowrap;
+}
+.ohf-viewer-fact dd {
+  font-size: 12px;
+  color: var(--tx);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ohf-viewer-side-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 13px 14px 14px;
+  border-top: 1px solid var(--line);
+}
+/* Both shared button classes are declared further down this file, so the two
+   overrides below are qualified rather than left to lose on source order. */
+.ohf-cta.ohf-viewer-recreate {
+  flex: none;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.ohf-viewer-foot-row {
+  display: flex;
+  gap: 8px;
+}
+.ohf-btn-solid.ohf-viewer-download {
+  flex: 1;
+  height: var(--h-md);
+  justify-content: center;
+}
+/* A refused read is the one state here that is not neutral: the control keeps
+   its place and its shape and changes only what it says and how it reads. */
+.ohf-btn-solid.ohf-viewer-download[data-state="failed"] {
+  background: var(--danger-bg);
+  border-color: var(--danger-line);
+  color: var(--danger);
+}
+.ohf-btn-solid.ohf-viewer-download[data-state="failed"]:hover {
+  background: rgba(255, 141, 120, 0.16);
+  border-color: var(--danger);
+}
+.ohf-viewer-save-note {
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  color: var(--danger);
+  animation: ohf-rise 0.22s var(--ease);
+}
+.ohf-viewer-trash,
+.ohf-viewer-keep {
+  width: 36px;
+  height: 36px;
+}
+/* Neutral until reached for, then the studio's danger tint — the same bargain
+   the card's delete makes, so no control anywhere sits permanently red. */
+.ohf-icon-btn.ohf-viewer-trash:hover {
+  background: var(--danger-bg);
+  border-color: var(--danger-line);
+  color: var(--danger);
+}
+.ohf-viewer-keep[data-on="true"] {
+  background: var(--accent-08);
+  border-color: var(--accent-32);
+  color: var(--accent);
+}
+.ohf-viewer-keep[data-on="true"]:hover {
+  background: var(--accent-14);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+.ohf-btn-quiet {
+  height: var(--h-sm);
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--tx2);
+  transition:
+    background var(--dur-base) ease,
+    color var(--dur-base) ease;
+}
+.ohf-btn-quiet:hover {
+  background: var(--s3);
+  color: var(--tx);
+}
+.ohf-btn-quiet:active {
+  transform: scale(0.97);
+}
+.ohf-btn-solid {
+  height: var(--h-sm);
+  padding: 0 13px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  background: var(--s3);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition:
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease;
+}
+.ohf-btn-solid:hover {
+  background: var(--s4);
+  border-color: var(--line-2);
+}
+.ohf-btn-solid:active {
+  transform: scale(0.97);
+}
+a.ohf-btn-solid {
+  color: var(--tx);
+  text-decoration: none;
+}
+.ohf-btn-quiet {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ohf-play-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(7, 11, 10, 0.5);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4f8f7;
+  transition:
+    transform 0.25s var(--ease),
+    background var(--dur-slow) ease;
+}
+.ohf-play-btn:hover {
+  transform: scale(1.06);
+  background: rgba(9, 15, 13, 0.62);
+}
+.ohf-play-btn:active {
+  transform: scale(0.98);
+}
+.ohf-wave {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 64px;
+}
+.ohf-wave span {
+  width: 3px;
+  border-radius: 3px;
+  background: rgba(244, 248, 247, 0.66);
+}
+
+/* api modal */
+.ohf-api-panel {
+  width: 440px;
+  max-width: calc(100vw - 48px);
+  padding: 24px 24px 20px;
+  gap: 18px;
+}
+.ohf-api-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ohf-api-title {
+  font-size: 17px;
+  font-weight: var(--fw-display);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.ohf-api-sub {
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--tx3);
+  padding-top: 5px;
+}
+.ohf-api-hint {
+  font-size: var(--fs-xs);
+  color: var(--tx3);
+}
+.ohf-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ohf-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  background: var(--s1);
+  border: 1px solid var(--line);
+  font-size: var(--fs-xs);
+  color: var(--tx2);
+}
+.ohf-pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tx4);
+  transition: background var(--dur-slow) ease;
+}
+.ohf-pill[data-on="true"] .ohf-pill-dot {
+  background: var(--accent);
+}
+.ohf-api-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 2px;
+}
+.ohf-cta {
+  flex: 1;
+  height: 40px;
+  border-radius: var(--radius-ctl);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-display);
+  background: linear-gradient(180deg, #d9fe3e, var(--accent));
+  color: var(--accent-ink);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition:
+    filter var(--dur-base) ease,
+    background var(--dur-slow) ease,
+    color var(--dur-slow) ease,
+    box-shadow var(--dur-slow) ease,
+    transform var(--dur-base) var(--ease);
+}
+.ohf-cta:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+.ohf-cta:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.ohf-cta:disabled {
+  background: var(--s3);
+  color: var(--tx3);
+  box-shadow: var(--shadow-1);
+}
+

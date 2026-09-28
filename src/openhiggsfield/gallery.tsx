@@ -5,7 +5,7 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 
 import type { Surface } from "@/generation/catalog";
 
-import { swatchFor } from "./artwork";
+import { thumbnailFor, thumbnailUrl } from "./thumbnails";
 import { CROSS_VIEWS, SAMPLES, pickSamples, type GalleryView } from "./data";
 import type { ActiveRun } from "./openhiggsfield-app";
 import {
@@ -488,8 +488,7 @@ function VirtualizedGrid({
 
 /* First run of the session. No placeholder scenery — the invitation carries
    itself, and the three starters are the only thing on the ground because they
-   are the only thing here that is real: sample prompts, each showing the light
-   its seed would make. One click loads the
+   are the only thing here that is real: sample prompts, each showing matching sample artwork. One click loads the
    composer; pressing Generate stays the visitor’s call. Only the surface
    scopes offer them: a starter writes one surface’s prompt, and Assets and
    Favorites span both and are stocked from the other scopes, so they state the
@@ -516,7 +515,15 @@ function Empty({
       <div className="ohf-empty-copy">
         <h2 className="ohf-empty-title">{EMPTY[view].title}</h2>
         <p className="ohf-empty-hint">{EMPTY[view].hint}</p>
+        <span className="ohf-example-label">{CROSS_VIEWS.has(view) ? "컬렉션 예시" : "프롬프트 예시 · 미리보기 이미지"}</span>
 
+        {CROSS_VIEWS.has(view) && (
+          <div className="ohf-empty-collection" aria-hidden="true">
+            {(view === "assets" ? ["concrete-poppies", "lighthouse", "recording-studio"] : ["espresso", "ski-lodge", "salt-ponds"]).map(id => (
+              <img key={id} src={thumbnailUrl(id)} alt="" width={160} height={120} />
+            ))}
+          </div>
+        )}
         {!CROSS_VIEWS.has(view) && (
           <ul
             className="ohf-empty-starters"
@@ -527,9 +534,10 @@ function Empty({
                 <button type="button" className="ohf-starter" onClick={() => onStarter(sample)}>
                   <span
                     className="ohf-starter-thumb"
-                    style={{ background: swatchFor(surface, sample), aspectRatio: thumbRatio }}
+                    style={{ aspectRatio: thumbRatio }}
                   >
-                    <span className="ohf-grain" style={{ opacity: 0.24 }} />
+                    <img src={thumbnailFor(surface, sample)} alt="" width={160} height={120} decoding="async" />
+                    {surface === "video" && <span className="ohf-starter-play"><PlayBadgeIcon size={14} /></span>}
                   </span>
                   <span className="ohf-starter-text">{sample}</span>
                   <span className="ohf-starter-go">

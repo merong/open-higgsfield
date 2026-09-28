@@ -1,0 +1,135 @@
+{
+  "checkedAt": "2026-09-21T05:48:29.807Z",
+  "workflowId": "82f50aaf-4bae-429d-837b-18ad166c0cc4",
+  "projectId": "149910d6-7452-4b06-9ea3-14f8f5504753",
+  "status": "ready",
+  "task": {
+    "key": "ccd7a005-66c4-427e-a79a-ce769c81c70a",
+    "kind": "render",
+    "scope": "sample",
+    "state": "completed",
+    "sceneId": "",
+    "version": 4,
+    "startedAt": 1789969628134,
+    "renderStep": "최종 MP4 전체 디코딩·파일 검사",
+    "sceneVersion": 0
+  },
+  "generations": 1,
+  "scene": {
+    "id": "scene-1",
+    "crop": 50,
+    "role": "hook",
+    "zoom": 100,
+    "asset": {
+      "id": "394f3aae-cceb-46b3-8d7d-af46d1b804c9",
+      "kind": "video",
+      "name": "scene-scene-1.mp4",
+      "width": 720,
+      "height": 1280,
+      "duration": 5.041667
+    },
+    "title": "연못가 초록의 시작",
+    "frames": 150,
+    "prompt": "Use the selected reference image as the exact starting frame. Preserve the wide composition of the pond, vine-covered concrete building, mossy stairway, dense ferns, foreground leaves, and the water reflection. Over 5 seconds, make an extremely slow, steady push-in toward the building and pond edge. Add only subtle leaf movement from a faint breeze and barely visible soft ripples on the water; keep the overcast, damp, calm atmosphere. No new subjects or objects, no fantasy effects, no fast motion, no text, no logos, no printed pages. End with a gentle dissolve-ready hold, maintaining the original image's natural textures and muted green palette.",
+    "version": 2,
+    "narration": "",
+    "copyLocked": true,
+    "screenText": "초록 속, 잠시",
+    "textPosition": "lower",
+    "sourceImageId": "ad195f8e-966f-4ff3-835f-370a89b4f834",
+    "subtitleStyle": "calm",
+    "durationLocked": true
+  },
+  "sample": {
+    "id": "98143d4e-8d09-417e-8715-0da86e9636c3",
+    "kind": "sample",
+    "audio": false,
+    "checks": [
+      "1080×1920 · H.264 / AAC · 30fps",
+      "150프레임 전체 디코딩 · 5.00초",
+      "번들 한글 폰트 · 원문/레이어/시간 일치",
+      "내레이션 없음 · 의도된 무음 또는 별도 음악",
+      "오디오 최대 피크 -91dB"
+    ],
+    "frames": 150,
+    "issues": [],
+    "assetId": "25705b77-f268-4e1e-b82f-c95961d8a091",
+    "coverId": "fc85d5d9-9631-4fe2-91ed-9f01397f1662",
+    "version": 4,
+    "duration": 5,
+    "sceneIds": [
+      "scene-1"
+    ],
+    "createdAt": 1789969631794
+  },
+  "sourceUnchanged": true,
+  "sourceSHA256": "6158eac9314be27ca9804ec4b760e80dfd182bb238bcdb55ddda2e90ca244850",
+  "balanceBefore": 326,
+  "balanceAfter": 286,
+  "ledger": [
+    {
+      "id": "b2e87df0-b855-41cc-8de9-4d752a02c380",
+      "amount": 0,
+      "kind": "confirm",
+      "description": "생성 완료 · 예약 확정",
+      "created_at": 1789969605070
+    },
+    {
+      "id": "8104b9c8-7265-4969-bdb4-210a0b75031d",
+      "amount": -40,
+      "kind": "hold",
+      "description": "Kling 3.0 Turbo 생성 예약",
+      "created_at": 1789969379979
+    }
+  ],
+  "jobs": [
+    {
+      "id": "d3be720d-603b-45ea-840a-698d3469e27d",
+      "requestId": "91aad074-864f-45b2-a711-61fdc6acd046",
+      "state": "completed",
+      "cost": 40,
+      "slotId": "scene-1",
+      "hasVideo": true
+    }
+  ],
+  "library": [
+    {
+      "id": "asset:fc85d5d9-9631-4fe2-91ed-9f01397f1662",
+      "feature": "reels",
+      "kind": "image",
+      "name": "초록 속, 잠시 숨을 고르는 시간-cover.png"
+    },
+    {
+      "id": "asset:25705b77-f268-4e1e-b82f-c95961d8a091",
+      "feature": "reels",
+      "kind": "video",
+      "name": "초록 속, 잠시 숨을 고르는 시간-sample-v4.mp4"
+    },
+    {
+      "id": "asset:394f3aae-cceb-46b3-8d7d-af46d1b804c9",
+      "feature": "reels",
+      "kind": "video",
+      "name": "scene-scene-1.mp4"
+    },
+    {
+      "id": "job:d3be720d-603b-45ea-840a-698d3469e27d:video",
+      "feature": "reels",
+      "kind": "video",
+      "name": "초록 속, 잠시 숨을 고르는 시간"
+    },
+    {
+      "id": "asset:2ed4f436-621b-4f08-90d1-a55d8a19b69c",
+      "feature": "reels",
+      "kind": "image",
+      "name": "greenhouse.webp"
+    },
+    {
+      "id": "asset:ad195f8e-966f-4ff3-835f-370a89b4f834",
+      "feature": "reels",
+      "kind": "image",
+      "name": "fern-house.webp"
+    }
+  ],
+  "rawBytes": 7151248,
+  "sampleBytes": 1404940
+}

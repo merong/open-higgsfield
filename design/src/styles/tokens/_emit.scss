@@ -1,0 +1,31 @@
+@use "maps";
+
+.ohf {
+  @each $k, $v in maps.$legacy {
+    --#{$k}: #{$v};
+  }
+  @each $k, $v in maps.$radius {
+    --radius-#{$k}: #{$v};
+  }
+  @each $k, $v in maps.$height {
+    --h-#{$k}: #{$v};
+  }
+  @each $k, $v in maps.$font-size {
+    --fs-#{$k}: #{$v};
+  }
+  @each $k, $v in maps.$font-weight {
+    --fw-#{$k}: #{$v};
+  }
+  @each $k, $v in maps.$letter-spacing {
+    --ls-#{$k}: #{$v};
+  }
+  @each $k, $v in maps.$space {
+    --sp-#{$k}: #{$v};
+  }
+  @each $k, $v in maps.$duration {
+    --dur-#{$k}: #{$v};
+  }
+  @each $k, $v in maps.$semantic {
+    --#{$k}: #{$v};
+  }
+}

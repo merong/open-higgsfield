@@ -1,0 +1,23 @@
+✔ reels start/answers are owned, revision fenced and idempotent; waiting invokes no model (20.472625ms)
+✔ reels plan protects copy and duration; scoped patch and subtitle style retain audio and unrelated scenes (18.340084ms)
+✔ reels cancel fences a late model result; content cannot be marked complete without reviewed files (10.478ms)
+✔ reels measured voice timing keeps confirmed words and asks before exceeding locked duration (12.692125ms)
+✔ reels video credit policy and sample gate prevent provider calls; remote URLs cannot target private hosts (18.233417ms)
+✔ reels alignment retry reuses stored audio, charges once and subtitle edits keep voice (69.829292ms)
+[reels:voice] {
+  name: 'Error',
+  message: 'fixture transport interruption',
+  code: undefined
+}
+✔ reels actual FFmpeg sample/full encode, full decode and reviewed ZIP completion (fixture overlays) (13525.641791ms)
+✔ reels model requests retain configured model/effort and have explicit output/research contracts (5.907709ms)
+✔ reels alignment bounds only the final ASR endpoint without losing words (0.133833ms)
+✔ reels ambiguous voice requests never auto-retry; explicit scoped retry keeps the prior ledger (58.140916ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 24992.878167

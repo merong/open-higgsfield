@@ -1,0 +1,40 @@
+@use "@/styles/mixins" as m;
+
+.ohf-phead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  padding: 0 20px 0 12px;
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.ohf-phead-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--h-sm);
+  height: var(--h-sm);
+  border-radius: var(--radius-md);
+  color: var(--tx3);
+  @include m.control-states(var(--s3), var(--tx));
+}
+.ohf-phead-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+  color: var(--tx);
+  white-space: nowrap;
+}
+.ohf-phead-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+  color: var(--tx4);
+  font-size: var(--fs-xs);
+}
+.ohf-phead-spacer {
+  flex: 1 1 auto;
+  min-width: 0;
+}

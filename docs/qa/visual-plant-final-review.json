@@ -1,0 +1,827 @@
+{
+  "id": "d44de09a-dbdf-4c03-8e1f-adba435f98f0",
+  "idea": "초보자가 키우기 좋은 식물로 인스타 카드뉴스 만들어줘.",
+  "mode": "guided",
+  "plan": [
+    {
+      "role": "관심 유도·선택 기준 제시",
+      "title": "초보 식집사, 무엇부터 볼까?",
+      "message": "식물 이름보다 먼저 볼 것은 내 공간의 빛과 물주기 습관! 창가 빛의 양과 흙을 확인할 수 있는지부터 생각하면 첫 식물 선택이 쉬워집니다."
+    },
+    {
+      "role": "밝은 간접광 식물 소개",
+      "title": "밝은 창가엔 스킨답서스",
+      "message": "스킨답서스(포토스)는 밝은 간접광에서 기르기 좋습니다. 강한 직사광선은 피하고, 물은 날짜보다 흙이 어느 정도 말랐는지 보고 주세요."
+    },
+    {
+      "role": "밝기 적응 식물 소개",
+      "title": "밝은 곳엔 스파이더 플랜트",
+      "message": "스파이더 플랜트는 밝은 빛을 선호하지만 중간 밝기에도 적응할 수 있습니다. 흙이 마른 뒤 물을 주고, 계속 젖어 있지 않게 관리하세요."
+    },
+    {
+      "role": "낮은 빛 적응 식물 소개",
+      "title": "빛이 적다면 산세베리아·ZZ",
+      "message": "산세베리아와 ZZ플랜트는 낮은 빛을 견디는 편입니다. 다만 빛이 너무 적으면 성장이 느려지거나 잎 모습이 달라질 수 있어요. 과습은 피하세요."
+    },
+    {
+      "role": "공통 관리·저장 행동 안내",
+      "title": "처음엔 이 4가지만 기억!",
+      "message": "① 배수구 있는 화분 ② 흙 상태 보고 물 주기 ③ 받침에 고인 물 비우기 ④ 반려동물이 있다면 식물 이름과 접근 안전 확인. 저장해 두고 식물 들이기 전 체크하세요!"
+    }
+  ],
+  "spec": {
+    "count": {
+      "value": "5",
+      "origin": "default"
+    },
+    "channel": {
+      "value": "인스타그램 카드뉴스",
+      "origin": "user_explicit"
+    },
+    "purpose": {
+      "value": "educate",
+      "origin": "user_confirmed"
+    },
+    "audience": {
+      "value": "식물 키우기를 처음 시작하는 인스타그램 이용자",
+      "origin": "ai_assumed"
+    },
+    "constraints": [
+      "초보자도 이해하기 쉬운 표현 사용",
+      "가격·구매 유도보다 실용적인 정보와 저장 안내에 집중",
+      "식물별 관리 정보는 확인 가능한 일반 정보 범위에서 구성"
+    ]
+  },
+  "model": "gpt-5.6-terra",
+  "stage": "review",
+  "budget": {
+    "calls": 6,
+    "images": 8,
+    "repairs": 0,
+    "activeMs": 121641,
+    "maxCalls": 12,
+    "maxImages": 12,
+    "maxRepairs": 2,
+    "maxActiveMs": 600000
+  },
+  "effort": "low",
+  "events": [
+    {
+      "at": 1789888300548,
+      "id": "c8b3b9a3-7d94-4e0a-8fc5-8d9bef21023a",
+      "type": "brief.updated",
+      "title": "후속 수정 시작",
+      "message": "조건을 정리하고 필요한 선택부터 안내합니다. 제작 1 크레딧을 예약했습니다.",
+      "revision": 2
+    },
+    {
+      "at": 1789888315468,
+      "id": "277f73e6-e4ee-4d65-af28-d863e986959d",
+      "type": "images.started",
+      "title": "카드마다 이미지를 채웁니다",
+      "message": "4장 · 예상 16 크레딧. 기존 이미지와 문구는 보존하며 장별로 순차 생성합니다.",
+      "revision": 2
+    },
+    {
+      "at": 1789888315474,
+      "id": "fd3088ac-19f5-4ddb-a4df-43402c6a3c3b",
+      "type": "tool.started",
+      "title": "이미지 생성 접수 중",
+      "message": "별도 이미지 크레딧을 사용합니다. 확인되지 않은 요청을 자동으로 다시 제출하지 않습니다.",
+      "revision": 3
+    },
+    {
+      "at": 1789888330901,
+      "id": "e47a3ec5-f6e2-41f9-a92f-e4213567ac98",
+      "type": "tool.completed",
+      "title": "이미지를 적용했어요",
+      "message": "텍스트는 편집 가능한 상태로 이미지와 분리했습니다.",
+      "revision": 9
+    },
+    {
+      "at": 1789888330910,
+      "id": "f2031562-4d22-4282-b38e-c8b57fb3c8aa",
+      "type": "tool.started",
+      "title": "이미지 생성 접수 중",
+      "message": "별도 이미지 크레딧을 사용합니다. 확인되지 않은 요청을 자동으로 다시 제출하지 않습니다.",
+      "revision": 11
+    },
+    {
+      "at": 1789888348847,
+      "id": "2e5f3e56-ff4a-4ad4-9a35-145c00f6f588",
+      "type": "tool.completed",
+      "title": "이미지를 적용했어요",
+      "message": "텍스트는 편집 가능한 상태로 이미지와 분리했습니다.",
+      "revision": 18
+    },
+    {
+      "at": 1789888348854,
+      "id": "ed6c2662-86d8-432f-bf58-641b068750ec",
+      "type": "tool.started",
+      "title": "이미지 생성 접수 중",
+      "message": "별도 이미지 크레딧을 사용합니다. 확인되지 않은 요청을 자동으로 다시 제출하지 않습니다.",
+      "revision": 20
+    },
+    {
+      "at": 1789888363851,
+      "id": "0a5ac996-ccf8-486d-82b3-794ab4ce76b9",
+      "type": "tool.completed",
+      "title": "이미지를 적용했어요",
+      "message": "텍스트는 편집 가능한 상태로 이미지와 분리했습니다.",
+      "revision": 26
+    },
+    {
+      "at": 1789888363857,
+      "id": "66af5fdb-a23f-48e1-ad95-1a7d0f392414",
+      "type": "tool.started",
+      "title": "이미지 생성 접수 중",
+      "message": "별도 이미지 크레딧을 사용합니다. 확인되지 않은 요청을 자동으로 다시 제출하지 않습니다.",
+      "revision": 28
+    },
+    {
+      "at": 1789888387424,
+      "id": "3583e78d-1fcb-45f9-855a-4d0a909fd515",
+      "type": "tool.completed",
+      "title": "이미지를 적용했어요",
+      "message": "텍스트는 편집 가능한 상태로 이미지와 분리했습니다.",
+      "revision": 37
+    },
+    {
+      "at": 1789888387429,
+      "id": "e99f604b-e9a9-4dce-a266-a66420ef2d0f",
+      "type": "images.completed",
+      "title": "이미지 채우기를 마쳤어요",
+      "message": "4/4장 적용. 실패한 카드는 업로드하거나 빈 카드 채우기로 다시 요청할 수 있어요.",
+      "revision": 38
+    },
+    {
+      "at": 1789888419843,
+      "id": "358765d4-77d3-41e0-b227-d34199dbf75c",
+      "type": "quality.started",
+      "title": "실제 출력물을 검수하고 있어요",
+      "message": "5장의 PNG를 문구와 대조합니다. 이미지 매칭·타이포그래피·내용·모바일 출력과 문구 보호를 확인합니다.",
+      "revision": 39
+    },
+    {
+      "at": 1789888446914,
+      "id": "6b73068b-6339-4c58-a163-be1a7acd8ee9",
+      "type": "quality.completed",
+      "title": "출력 검수 결과를 확인해 주세요",
+      "message": "전반적으로 식물 사진·연한 녹색 배경·짙은 본문색의 톤이 일관되고, 잘림이나 깨진 글자는 보이지 않습니다. 다만 360px 기준 본문 환산 크기 14.4px은 장문 카드에서 다소 촘촘하며, 2번의 식물 사진 식별과 줄바꿈, 5번 사진 속 비의도적 영문 인쇄물은 확인 또는 정리가 필요합니다.",
+      "revision": 40
+    },
+    {
+      "at": 1789888589171,
+      "id": "4ebab0f9-e770-492f-9c3e-cc2a504730cd",
+      "type": "input.received",
+      "title": "선택 카드 수정 요청",
+      "message": "2장 수정 · 창가의 덩굴성 식물 사진은 밝은 간접광 안내와 어울립니다. 다만 잎 형태만으로 사진 속 식물을 스킨답서스(포토스)라고 확정하기는 어렵습니다. 식물명을 정확히 보여줘야 한다면, 원본 이미지의 식물 종 표기 또는 포토스임을 확인한 이미지를 사용해 주세요.\n제목 위계는 명확하나 본문 마지막 ‘주세요.’가 한 줄로 단독 배치돼 읽기 흐름이 다소 끊깁니다. 본문 폭이나 텍스트 블록 위치를 소폭 조정해 마지막 문장이 앞줄과 자연스럽게 묶이도록 재배치해 주세요.",
+      "revision": 41
+    },
+    {
+      "at": 1789888589339,
+      "id": "f656a5ea-993e-499a-a6a6-305c7dcb4f30",
+      "type": "progress.updated",
+      "title": "선택 카드 수정 중",
+      "message": "확정한 조건을 바탕으로 다음 결과를 준비하고 있어요.",
+      "revision": 42
+    },
+    {
+      "at": 1789888593702,
+      "id": "31bed270-2ba1-4063-945b-b64044199029",
+      "type": "card.updated",
+      "title": "선택한 카드만 수정했어요",
+      "message": "2번 카드의 텍스트 블록이 더 안정적으로 읽히도록 텍스트 우선 레이아웃과 크롭을 조정했습니다. 원고와 이미지는 유지했습니다.",
+      "revision": 43
+    },
+    {
+      "at": 1789888593864,
+      "id": "133e83ba-bcd9-4208-a743-6c859ebb4058",
+      "type": "progress.updated",
+      "title": "내용 검수 중",
+      "message": "확정한 조건을 바탕으로 다음 결과를 준비하고 있어요.",
+      "revision": 44
+    },
+    {
+      "at": 1789888601168,
+      "id": "39898f00-5dd8-45df-afda-42e8e8beec09",
+      "type": "validation.updated",
+      "title": "내용 검수 결과",
+      "message": "5장 구성과 흐름은 ‘공간 점검 → 빛 조건별 식물 → 공통 관리 → 저장’으로 교육 목적에 잘 맞습니다. 물주기를 날짜가 아닌 흙 상태로 판단하도록 안내한 점, 낮은 빛을 ‘견디는 편’으로 제한한 점도 출처 내용과 대체로 일치합니다. 다만 스킨답서스 사진의 종 식별 불확실성과 반려동물 주의 문구의 구체성은 게시 전 보완이 필요합니다.",
+      "revision": 45
+    },
+    {
+      "at": 1789888666985,
+      "id": "d09f8573-e808-4d91-8352-43699df731e5",
+      "type": "preview.ready",
+      "title": "원고를 유지하고 시각 검수로 이어갑니다",
+      "message": "이미지와 배치를 조정한 뒤 실제 출력 검수에서 모든 항목을 다시 확인하세요.",
+      "revision": 46
+    },
+    {
+      "at": 1789888680817,
+      "id": "c9f007d0-de26-46f5-a83d-25c15b6bbf3d",
+      "type": "card.updated",
+      "title": "이미지 구상 수정",
+      "message": "원고와 현재 이미지는 보존했습니다. 이미지 생성 버튼을 누르면 새 구상으로 교체합니다.",
+      "revision": 47
+    },
+    {
+      "at": 1789888681100,
+      "id": "2ad17c0b-071d-44da-803a-9eb9bb5d8234",
+      "type": "tool.started",
+      "title": "이미지 생성 접수 중",
+      "message": "별도 이미지 크레딧을 사용합니다. 확인되지 않은 요청을 자동으로 다시 제출하지 않습니다.",
+      "revision": 48
+    },
+    {
+      "at": 1789888742064,
+      "id": "f04a2d71-4145-4a17-8903-b699e4b9a399",
+      "type": "tool.completed",
+      "title": "이미지를 적용했어요",
+      "message": "텍스트는 편집 가능한 상태로 이미지와 분리했습니다.",
+      "revision": 70
+    },
+    {
+      "at": 1789888768419,
+      "id": "33be62b5-3f15-4bab-9c90-23825a89a4b5",
+      "type": "card.updated",
+      "title": "이미지 구상 수정",
+      "message": "원고와 현재 이미지는 보존했습니다. 이미지 생성 버튼을 누르면 새 구상으로 교체합니다.",
+      "revision": 71
+    },
+    {
+      "at": 1789888768801,
+      "id": "ca0bf660-11e4-4677-8bb1-706e25515d36",
+      "type": "tool.started",
+      "title": "이미지 생성 접수 중",
+      "message": "별도 이미지 크레딧을 사용합니다. 확인되지 않은 요청을 자동으로 다시 제출하지 않습니다.",
+      "revision": 72
+    },
+    {
+      "at": 1789888784031,
+      "id": "bf935243-0859-496b-ac9c-782029111150",
+      "type": "tool.completed",
+      "title": "이미지를 적용했어요",
+      "message": "텍스트는 편집 가능한 상태로 이미지와 분리했습니다.",
+      "revision": 78
+    },
+    {
+      "at": 1789888816891,
+      "id": "bb09ce6a-f970-4480-8e99-d96618ac6251",
+      "type": "quality.started",
+      "title": "실제 출력물을 검수하고 있어요",
+      "message": "5장의 PNG를 문구와 대조합니다. 이미지 매칭·타이포그래피·내용·모바일 출력과 문구 보호를 확인합니다.",
+      "revision": 79
+    },
+    {
+      "at": 1789888841353,
+      "id": "b10cd0e3-5855-49ff-87d5-cde687f8a4d3",
+      "type": "quality.completed",
+      "title": "출력 검수 결과를 확인해 주세요",
+      "message": "전 카드에서 글자 잘림·누락·깨짐은 보이지 않으며, 360px 기준 본문 약 14.4px도 관찰상 읽을 수 있습니다. 카드 2의 사진은 스킨답서스의 덩굴성과 화분이 충분히 드러나지 않아 식물 소개의 시각적 일치 확인이 필요합니다. 카드 5는 사진에 보이는 포장물 때문에 미니멀한 체크리스트 마무리의 집중도가 약해집니다.",
+      "revision": 80
+    },
+    {
+      "at": 1789888942828,
+      "id": "04617be9-31c2-4d01-976c-2c45fc0a0a12",
+      "type": "card.updated",
+      "title": "이미지 구상 수정",
+      "message": "원고와 현재 이미지는 보존했습니다. 이미지 생성 버튼을 누르면 새 구상으로 교체합니다.",
+      "revision": 81
+    },
+    {
+      "at": 1789888943087,
+      "id": "2e77313b-f483-4559-9695-56005a34934e",
+      "type": "tool.started",
+      "title": "이미지 생성 접수 중",
+      "message": "별도 이미지 크레딧을 사용합니다. 확인되지 않은 요청을 자동으로 다시 제출하지 않습니다.",
+      "revision": 82
+    },
+    {
+      "at": 1789888964412,
+      "id": "c197e157-f48b-45c1-aa33-2714daee68ea",
+      "type": "tool.completed",
+      "title": "이미지를 적용했어요",
+      "message": "텍스트는 편집 가능한 상태로 이미지와 분리했습니다.",
+      "revision": 90
+    },
+    {
+      "at": 1789889008909,
+      "id": "e5a101b5-1c2e-4a14-a6c9-c35c345b4b98",
+      "type": "card.updated",
+      "title": "문구를 보존하고 재배치했어요",
+      "message": "글자 크기와 원고를 유지하고 사진·본문 공간 및 사진 위치만 조정했습니다.",
+      "revision": 91
+    },
+    {
+      "at": 1789889009152,
+      "id": "df8ee337-f55f-4717-bb88-1c4e214ef516",
+      "type": "card.updated",
+      "title": "문구를 보존하고 재배치했어요",
+      "message": "글자 크기와 원고를 유지하고 사진·본문 공간 및 사진 위치만 조정했습니다.",
+      "revision": 92
+    },
+    {
+      "at": 1789889022041,
+      "id": "7a73e950-b67c-48b3-b3ca-a0d1e023d617",
+      "type": "quality.started",
+      "title": "실제 출력물을 검수하고 있어요",
+      "message": "5장의 PNG를 문구와 대조합니다. 이미지 매칭·타이포그래피·내용·모바일 출력과 문구 보호를 확인합니다.",
+      "revision": 93
+    },
+    {
+      "at": 1789889050692,
+      "id": "a0435721-6da2-4e73-a6dd-523f28ebf8f8",
+      "type": "quality.completed",
+      "title": "출력 검수 결과를 확인해 주세요",
+      "message": "전반적으로 식물 사진과 연한 세이지 톤, 큰 제목 중심의 구성은 일관되고 글자 잘림은 보이지 않습니다. 다만 카드 2는 강한 햇빛과 화분 라벨이 본문·무라벨 이미지 의도와 충돌합니다. 본문 측정값 14.4px은 360px 환경에서 읽을 수 있으나, 카드 2~4의 긴 문장은 여유가 크지 않아 실제 기기에서 확인이 필요합니다. 외부 웹 검색은 수행하지 않았습니다.",
+      "revision": 94
+    },
+    {
+      "at": 1789889103661,
+      "id": "c5e38cd3-f1ed-4961-ad82-4e55b4226019",
+      "type": "card.updated",
+      "title": "이미지 구상 수정",
+      "message": "원고와 현재 이미지는 보존했습니다. 이미지 생성 버튼을 누르면 새 구상으로 교체합니다.",
+      "revision": 95
+    },
+    {
+      "at": 1789889103926,
+      "id": "1cbdbfce-834f-4a86-b27c-44cb1c7eb96f",
+      "type": "tool.started",
+      "title": "이미지 생성 접수 중",
+      "message": "별도 이미지 크레딧을 사용합니다. 확인되지 않은 요청을 자동으로 다시 제출하지 않습니다.",
+      "revision": 96
+    },
+    {
+      "at": 1789889117326,
+      "id": "a731d206-2a99-43a8-b3e5-16c1b294bb76",
+      "type": "tool.completed",
+      "title": "이미지를 적용했어요",
+      "message": "텍스트는 편집 가능한 상태로 이미지와 분리했습니다.",
+      "revision": 101
+    },
+    {
+      "at": 1789889160428,
+      "id": "9bfd2f4c-ec99-4ff0-b7af-50580b22161e",
+      "type": "quality.started",
+      "title": "실제 출력물을 검수하고 있어요",
+      "message": "5장의 PNG를 문구와 대조합니다. 이미지 매칭·타이포그래피·내용·모바일 출력과 문구 보호를 확인합니다.",
+      "revision": 102
+    },
+    {
+      "at": 1789889190233,
+      "id": "fb9ba678-8c9e-4e2a-bf30-6fcb3a103f3b",
+      "type": "quality.completed",
+      "title": "출력 검수 결과를 확인해 주세요",
+      "message": "전반적으로 식물 사진과 차분한 세이지·크림 톤, 정보 위계가 일관되며 글자 잘림·깨짐은 보이지 않습니다. 다만 측정된 본문 크기 14.4px은 360px 화면에서 장문 카드의 편안한 읽기에는 다소 작을 수 있어, 글자 축소 대신 사진 영역·여백 조정으로 본문 공간을 우선 확보하는 방안을 확인하세요. 반려동물 문구는 예방 행동을 더 구체화할지 사용자 확인이 필요합니다.",
+      "revision": 103
+    }
+  ],
+  "review": null,
+  "status": "ready",
+  "visual": {
+    "key": "0afdd905-7a0c-4502-a44d-ac3b2ee5cf98",
+    "jobId": "f7688cf3-659f-469b-a6f7-9c92ec7041fc",
+    "state": "completed",
+    "cardId": "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a",
+    "version": 25,
+    "mediaUrl": "https://d3u0tzju9qaucj.cloudfront.net/35066cb5-3e58-4acc-94c6-8200c0ccef83/e0008ca4-9b24-4d6d-84d3-a2382ce41435.png",
+    "requestId": "00fdf872-5e5d-4f79-ac1a-14d5916108ba",
+    "startedAt": 1789889103926,
+    "returnStatus": "ready"
+  },
+  "project": {
+    "id": "a4902734-47d5-4362-aa48-adf3452ddbd3",
+    "brand": "",
+    "brief": {
+      "tone": "friendly",
+      "count": 5,
+      "topic": "초보 식집사를 위한 첫 식물 가이드",
+      "audience": "",
+      "mustInclude": "초보자가 키우기 좋은 식물로 인스타 카드뉴스 만들어줘."
+    },
+    "ratio": "4:5",
+    "slots": [
+      {
+        "id": "e16e05cd-de75-4d8a-98c4-4bcd5826c2be",
+        "cta": "빛과 물주기부터 체크하기",
+        "dim": 0.15,
+        "body": "식물 이름보다 먼저, 내 공간의 빛과 물주기 습관을 살펴보세요. 첫 선택이 훨씬 쉬워집니다.",
+        "crop": 0,
+        "href": "",
+        "kind": "cover",
+        "trim": 0,
+        "media": {
+          "url": "https://d3u0tzju9qaucj.cloudfront.net/35066cb5-3e58-4acc-94c6-8200c0ccef83/3f5cc224-447e-4cba-b1ac-972c2d3d852c.png",
+          "kind": "image",
+          "name": "AI 생성 이미지"
+        },
+        "title": "초보 식집사, 무엇부터 볼까?",
+        "kicker": "BEGINNER PLANT GUIDE",
+        "prompt": "Warm editorial indoor plant photography, a calm beginner-friendly apartment corner with several healthy green houseplants near a sheer-curtained window, soft natural morning light, muted sage green, cream, and terracotta palette, clean centered composition with generous negative space, realistic botanical detail, consistent cozy mood. No text, no logos.",
+        "duration": 4,
+        "composition": "split",
+        "appliedJobId": "c08b1611-0b3f-48a8-bb6e-22f6c5c6e134"
+      },
+      {
+        "id": "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a",
+        "cta": "흙 상태를 보고 물 주기",
+        "dim": 0.08,
+        "body": "스킨답서스(포토스)는 밝은 간접광에 잘 맞아요. 강한 직사광선은 피하고, 흙이 어느 정도 말랐을 때 물을 주세요.",
+        "crop": 50,
+        "href": "",
+        "kind": "body",
+        "trim": 0,
+        "media": {
+          "url": "https://d3u0tzju9qaucj.cloudfront.net/35066cb5-3e58-4acc-94c6-8200c0ccef83/e0008ca4-9b24-4d6d-84d3-a2382ce41435.png",
+          "kind": "image",
+          "name": "AI 생성 이미지"
+        },
+        "title": "밝은 간접광엔 스킨답서스",
+        "kicker": "01 · BRIGHT INDIRECT LIGHT",
+        "prompt": "Botanical studio portrait of one Golden pothos (Epipremnum aureum) in a plain unmarked matte terracotta pot. The living plant has smooth glossy heart-shaped leaves with natural green and yellow marbling and a few trailing vines. Entire plant and pot visible together. Soft even diffuse softbox illumination with very soft shadows. Plain warm cream studio backdrop, sage green palette. No windows, no sun rays, no harsh sunlight, no labels, no packaging, no props, no writing, no logos.",
+        "duration": 4,
+        "composition": "split",
+        "appliedJobId": "f7688cf3-659f-469b-a6f7-9c92ec7041fc",
+        "readingLayout": "image-first"
+      },
+      {
+        "id": "22328b0a-25f2-4e0b-96b6-53215ab6a012",
+        "cta": "받침에 고인 물 비우기",
+        "dim": 0.08,
+        "body": "밝은 곳을 좋아하지만, 중간 밝기에도 적응할 수 있어요. 흙이 마르면 물을 주고 계속 젖어 있지 않게 해주세요.",
+        "crop": 50,
+        "href": "",
+        "kind": "body",
+        "trim": 0,
+        "media": {
+          "url": "https://d3u0tzju9qaucj.cloudfront.net/35066cb5-3e58-4acc-94c6-8200c0ccef83/efaf60a1-dfe1-4896-8654-51a04a79ecd9.png",
+          "kind": "image",
+          "name": "AI 생성 이미지"
+        },
+        "title": "밝은 곳엔 스파이더 플랜트",
+        "kicker": "02 · BRIGHT TO MEDIUM LIGHT",
+        "prompt": "Warm editorial indoor plant photography, a healthy spider plant with arching striped leaves in a simple ceramic pot on a wooden shelf, soft bright natural window light, muted sage green, cream, and terracotta palette, clean balanced composition, realistic botanical detail, consistent cozy mood. No text, no logos.",
+        "duration": 4,
+        "composition": "split",
+        "appliedJobId": "179b1b58-b955-4f87-a62b-5f814ab91907"
+      },
+      {
+        "id": "52a15675-e83b-4a6f-803b-03aeb577c150",
+        "cta": "낮은 빛도 완전한 어둠은 아니에요",
+        "dim": 0.08,
+        "body": "산세베리아와 ZZ플랜트는 낮은 빛을 견디는 편이에요. 빛이 적은 곳은 흙이 마르는 속도도 달라질 수 있으니, 날짜보다 흙 상태를 보고 물을 주세요.",
+        "crop": 50,
+        "href": "",
+        "kind": "body",
+        "trim": 0,
+        "media": {
+          "url": "https://d3u0tzju9qaucj.cloudfront.net/35066cb5-3e58-4acc-94c6-8200c0ccef83/0026c4b8-0808-4578-bd9a-35876ba20fc7.png",
+          "kind": "image",
+          "name": "AI 생성 이미지"
+        },
+        "title": "빛이 적다면 산세베리아·ZZ",
+        "kicker": "03 · LOW-LIGHT TOLERANT",
+        "prompt": "Warm editorial indoor plant photography, a sansevieria and ZZ plant arranged in simple neutral pots in a softly lit room away from direct sun, muted sage green, cream, and terracotta palette, calm symmetrical composition, realistic leaf detail, consistent cozy mood. No text, no logos.",
+        "duration": 4,
+        "composition": "split",
+        "appliedJobId": "95462c5e-ed7f-4e42-b832-6cfbfb010d84"
+      },
+      {
+        "id": "09e4a7ab-b6ae-4b9c-9a2c-ffd2b66dab84",
+        "cta": "식물 들이기 전 저장하세요",
+        "dim": 0.08,
+        "body": "배수구 있는 화분 사용\n흙 상태를 보고 물 주기\n받침에 고인 물 비우기\n반려동물과의 접근도 확인하기",
+        "crop": 50,
+        "href": "",
+        "kind": "cta",
+        "trim": 0,
+        "media": {
+          "url": "https://d3u0tzju9qaucj.cloudfront.net/35066cb5-3e58-4acc-94c6-8200c0ccef83/09997d04-9a42-481d-a52c-14556a04d58a.png",
+          "kind": "image",
+          "name": "AI 생성 이미지"
+        },
+        "title": "처음엔 이 4가지만 기억!",
+        "kicker": "04 · FIRST PLANT CHECKLIST",
+        "prompt": "A realistic macro photograph of human hands gently checking dark potting soil in one plain terracotta plant pot, with a small green houseplant growing in the pot. Close crop on fingers and soil texture, softly blurred warm cream indoor background, natural window light, muted sage green and terracotta palette. The entire scene contains only hands, soil, the plant and the one pot. No other objects, no products, no packets, no printed surfaces, no paper, no book, no writing, no labels, no logos.",
+        "duration": 4,
+        "composition": "split",
+        "appliedJobId": "181e89d7-5836-4f0d-aeb7-a897984d99d1"
+      }
+    ],
+    "title": "초보 식집사를 위한 첫 식물 가이드",
+    "format": "card-news",
+    "preset": "soft",
+    "caption": "처음 식물을 고를 때는 ‘잘 키우는 식물’보다 내 공간의 빛과 물주기 습관을 먼저 살펴보세요. 밝은 간접광에는 스킨답서스, 밝은 빛부터 중간 밝기까지는 스파이더 플랜트, 빛이 적은 자리에는 산세베리아·ZZ플랜트를 고려할 수 있습니다. 다만 낮은 빛을 견딘다고 해도 빛이 너무 부족하면 성장이 느려질 수 있어요. 물은 달력보다 흙 상태를 기준으로 확인하고, 배수구가 있는 화분과 물이 고이지 않는 환경을 준비해 주세요. 반려동물이 있다면 식물 이름과 접근 안전도 함께 확인하세요.\n\n출처: University of Illinois Extension, 「Pothos | Houseplants」, 「Spider Plant | Houseplants」; University of Minnesota Extension, 「Lighting for indoor plants and starting seeds」, 「Managing insects on indoor plants」; ASPCA, 「These Houseplants Can Cause Trouble for Your Pets」. 본 콘텐츠는 초보자를 위한 일반 관리 정보이며, 집의 채광·온도·화분 환경에 따라 관리 방법은 달라질 수 있습니다.\n\n식물 들이기 전, 이 카드 저장해 두세요 🌿",
+    "modelId": "soul-2",
+    "version": 26,
+    "createdAt": 1789885695745,
+    "updatedAt": 1789889117327
+  },
+  "quality": {
+    "cards": [
+      {
+        "cardId": "e16e05cd-de75-4d8a-98c4-4bcd5826c2be",
+        "findings": [
+          {
+            "status": "pass",
+            "evidence": "창가와 실내 식물이 보이는 사진이 ‘빛과 물주기 습관’부터 살핀다는 표지 메시지와 자연스럽게 연결됩니다. 상단 사진과 하단 정보 영역의 분할도 안정적입니다.",
+            "criterion": "matching",
+            "suggestion": ""
+          },
+          {
+            "status": "attention",
+            "evidence": "제목·영문 키커·본문의 위계와 대비는 분명합니다. 다만 측정 본문 크기 14.4px은 360px 화면에서 긴 문장을 편하게 읽기에는 작게 느껴질 수 있습니다.",
+            "criterion": "typography",
+            "suggestion": "본문을 줄이기보다 상단 사진 높이 또는 제목 아래 여백을 조금 조정해 본문 크기를 확보한 뒤 360px 실기기에서 확인하세요."
+          },
+          {
+            "status": "pass",
+            "evidence": "‘공간의 빛과 물주기 습관을 먼저 살핀다’는 안내는 뒤 카드의 구성과 일관되고, 특정 식물 관리 효과를 과장하지 않습니다.",
+            "criterion": "content",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "제목, 본문, 구분선, 페이지 표기가 모두 프레임 안에 있으며 잘림·누락·문자 깨짐은 관찰되지 않습니다.",
+            "criterion": "output",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "이 검수는 원고를 변경하지 않았습니다. 배치 전용 AI 수정은 서버에서 문구 필드를 보존합니다.",
+            "criterion": "protection",
+            "suggestion": "내용 수정이 필요하면 해당 카드에서 문구 변경을 명시적으로 허용하세요."
+          }
+        ]
+      },
+      {
+        "cardId": "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a",
+        "findings": [
+          {
+            "status": "pass",
+            "evidence": "노란 무늬의 하트형 잎과 화분 사진이 스킨답서스(포토스) 소개와 잘 맞고, 단색 배경이 텍스트 영역을 방해하지 않습니다.",
+            "criterion": "matching",
+            "suggestion": ""
+          },
+          {
+            "status": "attention",
+            "evidence": "한 줄 제목과 세 줄 본문의 위계는 명확합니다. 측정 본문 크기 14.4px은 모바일에서 읽을 수 있으나, 초보자 대상 정보 카드로는 여유가 크지 않습니다.",
+            "criterion": "typography",
+            "suggestion": "문구는 유지하고 사진 높이 또는 본문 블록 주변 여백을 조정해 본문 크기를 한 단계 확보할 수 있는지 확인하세요."
+          },
+          {
+            "status": "pass",
+            "evidence": "제공된 일리노이대 익스텐션 출처의 ‘밝은 간접광’, ‘물주기 사이 흙을 말림’ 안내와 카드 문구가 대체로 일치합니다.",
+            "criterion": "content",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "본문 마지막 줄과 페이지 표기까지 안전 여백 안에 있고, 사진·텍스트 경계도 깨지지 않았습니다.",
+            "criterion": "output",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "이 검수는 원고를 변경하지 않았습니다. 배치 전용 AI 수정은 서버에서 문구 필드를 보존합니다.",
+            "criterion": "protection",
+            "suggestion": "내용 수정이 필요하면 해당 카드에서 문구 변경을 명시적으로 허용하세요."
+          }
+        ]
+      },
+      {
+        "cardId": "22328b0a-25f2-4e0b-96b6-53215ab6a012",
+        "findings": [
+          {
+            "status": "pass",
+            "evidence": "길고 아치형으로 뻗은 줄무늬 잎의 사진이 스파이더 플랜트 제목과 시각적으로 부합합니다. 사진의 선형 리듬과 단정한 정보 레이아웃도 조화롭습니다.",
+            "criterion": "matching",
+            "suggestion": ""
+          },
+          {
+            "status": "attention",
+            "evidence": "제목은 한 줄로 명확하고 본문 줄바꿈도 단어 단위로 자연스럽습니다. 다만 본문 측정치 14.4px은 360px 화면에서 작은 편에 속합니다.",
+            "criterion": "typography",
+            "suggestion": "글자 자체를 줄이지 말고, 상단 사진 크롭이나 본문 위·아래 여백을 먼저 조정해 가독성 여유를 확보하세요."
+          },
+          {
+            "status": "pass",
+            "evidence": "제공된 일리노이대 익스텐션 출처의 ‘밝은 빛 선호·중간 빛 적응’, ‘흙이 마른 뒤 물주기’ 요약과 카드의 서술이 일치합니다.",
+            "criterion": "content",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "긴 제목과 본문, 하단 구분선·페이지 번호가 모두 온전히 표시됩니다. 글자 겹침, 잘림, 깨짐은 보이지 않습니다.",
+            "criterion": "output",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "이 검수는 원고를 변경하지 않았습니다. 배치 전용 AI 수정은 서버에서 문구 필드를 보존합니다.",
+            "criterion": "protection",
+            "suggestion": "내용 수정이 필요하면 해당 카드에서 문구 변경을 명시적으로 허용하세요."
+          }
+        ]
+      },
+      {
+        "cardId": "52a15675-e83b-4a6f-803b-03aeb577c150",
+        "findings": [
+          {
+            "status": "pass",
+            "evidence": "세로로 선 산세베리아와 깃꼴 잎 식물이 함께 보이는 사진이 ‘산세베리아·ZZ’라는 두 식물 소개와 조화롭습니다. 낮은 채도의 실내 분위기도 주제와 맞습니다.",
+            "criterion": "matching",
+            "suggestion": ""
+          },
+          {
+            "status": "attention",
+            "evidence": "제목과 본문의 대비가 충분하고 줄바꿈도 자연스럽습니다. 다만 네 줄 본문이 14.4px로 측정되어, 360px 환경에서 장시간 읽기에는 다소 촘촘할 수 있습니다.",
+            "criterion": "typography",
+            "suggestion": "본문 축소 없이 사진 영역 또는 제목과 본문 사이의 여백을 조절해 본문 글자 크기 확보 가능 여부를 점검하세요."
+          },
+          {
+            "status": "pass",
+            "evidence": "‘낮은 빛을 견디는 편’, 빛에 따라 흙 마름 속도가 달라질 수 있어 흙 상태를 본다는 설명은 제공된 UMN 출처 요약의 범위와 부합합니다.",
+            "criterion": "content",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "제목의 가운데점과 영문 ‘ZZ’를 포함한 모든 문자가 선명하며, 하단 요소도 프레임에서 잘리지 않았습니다.",
+            "criterion": "output",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "이 검수는 원고를 변경하지 않았습니다. 배치 전용 AI 수정은 서버에서 문구 필드를 보존합니다.",
+            "criterion": "protection",
+            "suggestion": "내용 수정이 필요하면 해당 카드에서 문구 변경을 명시적으로 허용하세요."
+          }
+        ]
+      },
+      {
+        "cardId": "09e4a7ab-b6ae-4b9c-9a2c-ffd2b66dab84",
+        "findings": [
+          {
+            "status": "pass",
+            "evidence": "손으로 흙 상태를 확인하는 장면이 체크리스트의 ‘흙 상태를 보고 물 주기’와 직접 연결됩니다. 저장 CTA도 마지막 요약 카드의 역할에 적합합니다.",
+            "criterion": "matching",
+            "suggestion": ""
+          },
+          {
+            "status": "attention",
+            "evidence": "제목, 네 항목, CTA 버튼의 위계가 명확하고 버튼 대비도 충분합니다. 다만 체크리스트 본문 측정치가 14.4px이므로 360px 화면에서 세부 항목은 작게 느껴질 수 있습니다.",
+            "criterion": "typography",
+            "suggestion": "항목 문구를 임의로 줄이기보다 사진 높이·항목 간 여백·CTA 위치를 조정해 본문 크기와 행간을 확보한 뒤 확인하세요."
+          },
+          {
+            "status": "attention",
+            "evidence": "배수 화분·물 고임 방지·흙 상태 확인은 제공 출처 요약과 맞습니다. ‘반려동물과의 접근도 확인하기’는 대상 식물과 필요한 행동이 구체적이지 않아 해석이 열려 있습니다.",
+            "criterion": "content",
+            "suggestion": "문구 변경이 승인된다면, 식물별 반려동물 유해 가능성 확인 및 닿지 않는 곳 배치처럼 예방 행동을 더 구체화할지 검토하세요."
+          },
+          {
+            "status": "pass",
+            "evidence": "네 체크 항목과 CTA 버튼, 하단 페이지 표기가 모두 표시되며 버튼 테두리·문자에 잘림이나 깨짐이 없습니다.",
+            "criterion": "output",
+            "suggestion": ""
+          },
+          {
+            "status": "pass",
+            "evidence": "이 검수는 원고를 변경하지 않았습니다. 배치 전용 AI 수정은 서버에서 문구 필드를 보존합니다.",
+            "criterion": "protection",
+            "suggestion": "내용 수정이 필요하면 해당 카드에서 문구 변경을 명시적으로 허용하세요."
+          }
+        ]
+      }
+    ],
+    "state": "ready",
+    "output": [
+      {
+        "cardId": "e16e05cd-de75-4d8a-98c4-4bcd5826c2be",
+        "issues": [],
+        "mobileBodyPx": 14.4
+      },
+      {
+        "cardId": "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a",
+        "issues": [],
+        "mobileBodyPx": 14.4
+      },
+      {
+        "cardId": "22328b0a-25f2-4e0b-96b6-53215ab6a012",
+        "issues": [],
+        "mobileBodyPx": 14.4
+      },
+      {
+        "cardId": "52a15675-e83b-4a6f-803b-03aeb577c150",
+        "issues": [],
+        "mobileBodyPx": 14.4
+      },
+      {
+        "cardId": "09e4a7ab-b6ae-4b9c-9a2c-ffd2b66dab84",
+        "issues": [],
+        "mobileBodyPx": 14.4
+      }
+    ],
+    "assetId": "e4b2a024-7311-4c57-a0ca-6f32e0553d70",
+    "summary": "전반적으로 식물 사진과 차분한 세이지·크림 톤, 정보 위계가 일관되며 글자 잘림·깨짐은 보이지 않습니다. 다만 측정된 본문 크기 14.4px은 360px 화면에서 장문 카드의 편안한 읽기에는 다소 작을 수 있어, 글자 축소 대신 사진 영역·여백 조정으로 본문 공간을 우선 확보하는 방안을 확인하세요. 반려동물 문구는 예방 행동을 더 구체화할지 사용자 확인이 필요합니다.",
+    "zipHash": "c73c4c860610ec13de9ba451919c4e959bd6cb0519f4aea1dc53f686f2b21192",
+    "reviewedAt": 1789889190233,
+    "projectVersion": 26
+  },
+  "sources": [
+    {
+      "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/lighting-for-indoor-plants",
+      "claim": "미네소타대 익스텐션은 저광도 실내 식물 목록에 포토스, 산세베리아(Dracaena trifasciata), ZZ플랜트(Zamioculcas)를 포함합니다. 카드에서는 ‘그늘에서도 무조건 잘 자람’보다 ‘낮은 빛을 견디는 편’으로 표현하고, 빛이 너무 적으면 성장 속도와 잎색이 달라질 수 있음을 덧붙이는 근거로 사용할 수 있습니다.",
+      "title": "Lighting for indoor plants and starting seeds | UMN Extension",
+      "accessedAt": 1789885759279
+    },
+    {
+      "url": "https://extension.illinois.edu/houseplants/pothos",
+      "claim": "일리노이대 익스텐션은 포토스를 밝은 간접광에서 잘 기르는 식물로 소개하며, 일반적인 데블스 아이비는 물주기 사이 흙을 적당히 말리도록 안내합니다. 카드 식물 소개에서는 ‘창가의 강한 직사광선 대신 밝은 간접광’, ‘흙 상태를 보고 물 주기’라는 실용 문구의 근거가 됩니다.",
+      "title": "Pothos | Houseplants | Illinois Extension",
+      "accessedAt": 1789885759279
+    },
+    {
+      "url": "https://extension.illinois.edu/houseplants/spider-plant",
+      "claim": "일리노이대 익스텐션은 스파이더 플랜트가 밝은 빛을 선호하지만 중간 빛에도 적응할 수 있고, 물주기 사이 흙을 말리도록 안내합니다. 초보자 카드에서는 ‘밝은 곳이 좋지만 중간 밝기에도 적응 가능’, ‘흙이 마른 뒤 물 주기’로 간단히 정리할 수 있습니다.",
+      "title": "Spider Plant | Houseplants | Illinois Extension",
+      "accessedAt": 1789885759279
+    },
+    {
+      "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/yard-and-garden-insects/insects-on-indoor-plants",
+      "claim": "미네소타대 익스텐션은 식물 환경에 맞는 식물을 고르고, 배수가 되는 화분을 사용하며, 화분이 물에 잠긴 상태를 피하라고 안내합니다. 과습과 배수 불량은 뿌리 문제 및 날파리류 등 해충 문제를 부추길 수 있어, 마지막 장의 공통 관리 체크리스트 근거로 적합합니다.",
+      "title": "Managing insects on indoor plants | UMN Extension",
+      "accessedAt": 1789885759279
+    },
+    {
+      "url": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets",
+      "claim": "ASPCA는 포토스와 ZZ플랜트를 포함한 일부 흔한 관엽식물이 반려동물이 씹었을 때 입안 자극, 침 흘림, 구토·설사 등을 유발할 수 있다고 안내합니다. 반려동물이 있는 집을 위한 카드 문구는 ‘식물 이름을 확인하고, 닿지 않는 곳에 두기’처럼 예방 중심으로 제한하는 것이 안전합니다.",
+      "title": "These Houseplants Can Cause Trouble for Your Pets | ASPCA",
+      "accessedAt": 1789885759279
+    }
+  ],
+  "feedback": "창가의 덩굴성 식물 사진은 밝은 간접광 안내와 어울립니다. 다만 잎 형태만으로 사진 속 식물을 스킨답서스(포토스)라고 확정하기는 어렵습니다. 식물명을 정확히 보여줘야 한다면, 원본 이미지의 식물 종 표기 또는 포토스임을 확인한 이미지를 사용해 주세요.\n제목 위계는 명확하나 본문 마지막 ‘주세요.’가 한 줄로 단독 배치돼 읽기 흐름이 다소 끊깁니다. 본문 폭이나 텍스트 블록 위치를 소폭 조정해 마지막 문장이 앞줄과 자연스럽게 묶이도록 재배치해 주세요.",
+  "revision": 103,
+  "createdAt": 1789888300548,
+  "patchMode": "layout",
+  "projectId": "a4902734-47d5-4362-aa48-adf3452ddbd3",
+  "responses": [
+    "bf99be84-7e9c-4e3b-8752-a98995aa4dea",
+    "71aaea4e-d042-4b4a-8d6d-c95d81e6c17c",
+    "65a52a7c-4593-4ea3-bd44-32077421819b",
+    "29454371-0b3e-47a9-b356-dc73940fdd4c",
+    "9fc4b14b-1496-4ee5-8aa0-e8e16383adb8",
+    "b23ad616-8816-40c3-ba7b-48740a84779c",
+    "4511ea9f-fa16-41ac-83ce-bb6e47abc643",
+    "8bbd9c28-96b0-4327-b5e4-3e159287ef06",
+    "1f6773f7-733a-4b98-92bc-21844ef72715"
+  ],
+  "targetIds": [
+    "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a"
+  ],
+  "updatedAt": 1789889190233,
+  "imageBatch": {
+    "key": "bf99be84-7e9c-4e3b-8752-a98995aa4dea",
+    "index": 4,
+    "state": "completed",
+    "cardIds": [
+      "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a",
+      "22328b0a-25f2-4e0b-96b6-53215ab6a012",
+      "52a15675-e83b-4a6f-803b-03aeb577c150",
+      "09e4a7ab-b6ae-4b9c-9a2c-ffd2b66dab84"
+    ],
+    "credits": 16,
+    "results": [
+      {
+        "state": "completed",
+        "cardId": "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a"
+      },
+      {
+        "state": "completed",
+        "cardId": "22328b0a-25f2-4e0b-96b6-53215ab6a012"
+      },
+      {
+        "state": "completed",
+        "cardId": "52a15675-e83b-4a6f-803b-03aeb577c150"
+      },
+      {
+        "state": "completed",
+        "cardId": "09e4a7ab-b6ae-4b9c-9a2c-ffd2b66dab84"
+      }
+    ]
+  },
+  "sourceRunId": "b8748512-a2b0-4e81-b320-cae21febf0ee",
+  "cardVersions": {
+    "09e4a7ab-b6ae-4b9c-9a2c-ffd2b66dab84": 1,
+    "22328b0a-25f2-4e0b-96b6-53215ab6a012": 3,
+    "52a15675-e83b-4a6f-803b-03aeb577c150": 2,
+    "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a": 3,
+    "e16e05cd-de75-4d8a-98c4-4bcd5826c2be": 1
+  },
+  "researchNote": "초보자용 5장 카드뉴스는 ‘식물 선택보다 자리와 물주기 확인이 먼저’라는 흐름이 적합합니다. 추천 식물은 빛 조건과 물주기 기준이 비교적 단순한 스킨답서스(포토스), 스파이더 플랜트, 산세베리아, ZZ플랜트로 좁힐 수 있습니다. 식물별로 ‘밝은 간접광/중간 빛/낮은 빛’과 ‘흙이 어느 정도 말랐을 때 물 주기’를 짧게 제시하고, 마지막 장에는 배수구·받침 물 비우기·반려동물 접근 주의·저장 CTA를 넣으세요.",
+  "needsResearch": true
+}

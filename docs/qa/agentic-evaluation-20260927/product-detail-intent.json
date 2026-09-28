@@ -1,0 +1,217 @@
+{
+  "id": "bf8ba475-a73c-4eab-b32a-524e15bc81df",
+  "idea": "QA 2026-09-27. 상품은 사진 속 크림색 세라믹 펌프 용기입니다. 원본 사진을 그대로 사용하고 효능, 용량, 항균성, 친환경 인증, 무료배송을 추정하지 마세요. 욕실에 두고 쓰는 빈 용기이며 내용물은 포함되지 않습니다. 마지막은 상품 문의로 연결. 문의는 mailto:shop@example.test.",
+  "plan": [],
+  "calls": 1,
+  "model": "gpt-5.6-terra",
+  "stage": "understand",
+  "effort": "low",
+  "events": [
+    {
+      "at": 1790501992965,
+      "id": "b7a526c8-5bf3-4c88-b50a-5d9a11bbb58c",
+      "title": "메모에서 제작 방향을 찾아요",
+      "message": "방문자와 원하는 행동을 제안합니다. 방향과 섹션 기획을 확인한 뒤 원고를 만들어요."
+    },
+    {
+      "at": 1790501992967,
+      "id": "4b36211f-4011-4eb9-b73b-caf394b8d065",
+      "title": "상품 사진을 함께 읽어요",
+      "message": "업로드한 1장의 사진과 상품명·설명을 함께 분석합니다. 대표 사진은 상품 소개에 우선 배치하고 기획에서 확인받아요."
+    },
+    {
+      "at": 1790501992986,
+      "id": "da7df3bc-8ba9-4fdc-836c-0dc2e01143b9",
+      "title": "요청의 의도를 정리하고 있어요",
+      "message": "1번째 AI 작업 · 직접 말씀한 조건과 AI의 가정 구분 · 독자·목적·결과물의 방향 정리"
+    },
+    {
+      "id": "d7d32287-a67a-42e7-9e77-f3d013d98902",
+      "title": "작업 결과를 저장했어요",
+      "message": "크림색 세라믹 펌프 용기 상품 상세 페이지입니다. 욕실에 두고 사용하는 빈 용기이며 내용물은 포함되지 않습니다. 상품명은 ‘크림 세라믹 펌프 용기’, 가격은 18,000원, 옵션은 크림색 1종입니다. 제공 사진은 채광이 드는 타일 욕실 공간의 크림색 용기와 타월을 담은 차분한 연출입니다. 효능·용량·항균성·친환경 인증·무료배송은 추정하지 않으며, 배송비·발송 일정과 반품 조건은 주문 전 문의로 안내합니다. 마지막 행동은 이메일 상품 문의입니다.",
+      "at": 1790502002188
+    }
+  ],
+  "intent": {
+    "goal": "상담 문의",
+    "tone": "calm",
+    "brand": "",
+    "facts": "",
+    "value": "크림색 1종의 세라믹 펌프형 빈 용기라는 상품 정보를 명확히 보여주고, 사용 전 세척·건조 방법 및 주문 전 확인이 필요한 배송·반품 사항을 함께 안내합니다.",
+    "preset": "editorial",
+    "ctaHref": "",
+    "problem": "내용물이 포함되지 않는 빈 용기인지, 사용 전 관리 방법과 배송비·발송 일정, 반품 조건을 어디서 확인해야 하는지 알기 어렵습니다.",
+    "product": {
+      "name": "크림 세라믹 펌프 용기",
+      "price": "18,000원",
+      "specs": "세라믹 본체 · 펌프형 · 빈 용기",
+      "usage": "사용 전 세척 후 충분히 건조해 주세요.",
+      "options": "크림색 1종",
+      "returns": "반품 조건은 주문 전 문의해 주세요.",
+      "category": "욕실용품",
+      "shipping": "배송비와 발송 일정은 주문 전 문의해 주세요."
+    },
+    "traffic": "상품을 검색하거나 욕실용품을 둘러보다 유입되어 상품의 기본 구성, 사용 안내, 배송·반품 조건을 확인하려는 방문자",
+    "audience": "욕실 공간에 둘 빈 용기를 찾으며, 상품의 구성과 사용·배송·반품 안내를 확인한 뒤 문의하려는 방문자",
+    "ctaLabel": "상품 문의"
+  },
+  "status": "waiting_user",
+  "project": {
+    "id": "29a25ccb-bc13-4488-b7a6-d8e35cdbc834",
+    "brand": "",
+    "brief": {
+      "tone": "calm",
+      "count": 5,
+      "topic": "크림 세라믹 펌프 용기",
+      "audience": "",
+      "mustInclude": "QA 2026-09-27. 상품은 사진 속 크림색 세라믹 펌프 용기입니다. 원본 사진을 그대로 사용하고 효능, 용량, 항균성, 친환경 인증, 무료배송을 추정하지 마세요. 욕실에 두고 쓰는 빈 용기이며 내용물은 포함되지 않습니다. 마지막은 상품 문의로 연결. 문의는 mailto:shop@example.test."
+    },
+    "ratio": "4:5",
+    "slots": [
+      {
+        "id": "65be59b9-cc8f-4943-b827-e1e3c4b3d103",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "",
+        "crop": 0,
+        "href": "",
+        "kind": "hero",
+        "trim": 0,
+        "title": "크림 세라믹 펌프 용기",
+        "kicker": "",
+        "prompt": "크림 세라믹 펌프 용기. Product detail photography, natural light. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "1:1",
+          "enabled": true,
+          "description": "크림 세라믹 펌프 용기 · 상품 소개"
+        },
+        "composition": "split"
+      },
+      {
+        "id": "1c15a928-b175-4f56-b1dd-0338080cceb6",
+        "cta": "",
+        "dim": 0.5,
+        "body": "QA 2026-09-27. 상품은 사진 속 크림색 세라믹 펌프 용기입니다. 원본 사진을 그대로 사용하고 효능, 용량, 항균성, 친환경 인증, 무료배송을 추정하지 마세요. 욕실에 두고 쓰는 빈 용기이며 내용물은 포함되지 않습니다. 마지막은 상품 문의로 연결. 문의는 mailto:shop@example.test.",
+        "crop": 0,
+        "href": "",
+        "kind": "features",
+        "trim": 0,
+        "title": "구매 포인트",
+        "kicker": "",
+        "prompt": "크림 세라믹 펌프 용기. Product detail photography, natural light. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "크림 세라믹 펌프 용기 · 구매 포인트"
+        },
+        "composition": "split"
+      },
+      {
+        "id": "00968f0c-a206-4cb2-8e28-36dace4f4e7d",
+        "cta": "",
+        "dim": 0.5,
+        "body": "상품의 실제 정보를 바탕으로 설명을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "story",
+        "trim": 0,
+        "title": "상품 디테일",
+        "kicker": "",
+        "prompt": "크림 세라믹 펌프 용기. Product detail photography, natural light. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "크림 세라믹 펌프 용기 · 상품 디테일"
+        },
+        "composition": "split"
+      },
+      {
+        "id": "c775c6c6-8ae0-4e55-bdea-5e6dce10bc22",
+        "cta": "",
+        "dim": 0.5,
+        "body": "상품의 실제 정보를 바탕으로 설명을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "usage",
+        "trim": 0,
+        "title": "사용 방법",
+        "kicker": "",
+        "prompt": "크림 세라믹 펌프 용기. Product detail photography, natural light. No text, no logos.",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": true,
+          "description": "크림 세라믹 펌프 용기 · 사용 방법"
+        },
+        "composition": "split"
+      },
+      {
+        "id": "0398667b-4517-438b-94d9-0459e2da0885",
+        "cta": "구매하러 가기",
+        "dim": 0.5,
+        "body": "상품의 실제 정보를 바탕으로 설명을 완성해 주세요.",
+        "crop": 0,
+        "href": "",
+        "kind": "cta",
+        "trim": 0,
+        "title": "구매 연결",
+        "kicker": "",
+        "prompt": "",
+        "duration": 4,
+        "imagePlan": {
+          "ratio": "16:9",
+          "enabled": false,
+          "description": "크림 세라믹 펌프 용기 · 구매 연결"
+        },
+        "composition": "split"
+      }
+    ],
+    "title": "크림 세라믹 펌프 용기",
+    "format": "product-detail",
+    "preset": "editorial",
+    "caption": "크림 세라믹 펌프 용기\n\nQA 2026-09-27. 상품은 사진 속 크림색 세라믹 펌프 용기입니다. 원본 사진을 그대로 사용하고 효능, 용량, 항균성, 친환경 인증, 무료배송을 추정하지 마세요. 욕실에 두고 쓰는 빈 용기이며 내용물은 포함되지 않습니다. 마지막은 상품 문의로 연결. 문의는 mailto:shop@example.test.",
+    "modelId": "soul-2",
+    "product": {
+      "name": "크림 세라믹 펌프 용기",
+      "price": "18,000원",
+      "specs": "세라믹 본체 · 펌프형 · 빈 용기",
+      "usage": "사용 전 세척 후 충분히 건조해 주세요.",
+      "options": "크림색 1종",
+      "returns": "반품 조건은 주문 전 문의해 주세요.",
+      "category": "욕실용품",
+      "shipping": "배송비와 발송 일정은 주문 전 문의해 주세요."
+    },
+    "version": 1,
+    "createdAt": 1790501992963,
+    "updatedAt": 1790501992963
+  },
+  "explicit": [
+    "problem",
+    "value",
+    "ctaLabel"
+  ],
+  "feedback": "",
+  "hasDraft": false,
+  "maxCalls": 12,
+  "revision": 3,
+  "targetId": "",
+  "createdAt": 1790501992963,
+  "projectId": "29a25ccb-bc13-4488-b7a6-d8e35cdbc834",
+  "responses": [],
+  "updatedAt": 1790502002188,
+  "planApproved": false,
+  "contentVersion": 1,
+  "intentApproved": false,
+  "referenceImages": [
+    {
+      "id": "bfd17f5e-bde2-4b5a-8c15-5e29e446cc54",
+      "url": "/api/workspace/assets/bfd17f5e-bde2-4b5a-8c15-5e29e446cc54",
+      "name": "qa-sage-still-life.jpg",
+      "width": 1122,
+      "height": 1402
+    }
+  ]
+}

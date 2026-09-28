@@ -1,0 +1,50 @@
+{
+  "zipFiles": [
+    "01.png",
+    "02.png",
+    "03.png",
+    "04.png",
+    "05.png",
+    "caption.txt",
+    "project.json"
+  ],
+  "zipBytes": 1665988,
+  "images": [
+    {
+      "name": "01.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 1288852,
+      "sha256": "f40c810bb34ecf19e3c10e04ea8e5d757bf876e4c2d71b901790bb0b0ffe043b"
+    },
+    {
+      "name": "02.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 91479,
+      "sha256": "c81787e9891c4f7f3d77d4a095739b941d3161d2ea344b27ca8e82e398df0321"
+    },
+    {
+      "name": "03.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 88150,
+      "sha256": "9a82352a491d692aac44a53cbf005a866058487fbeebd6d4dd8df786ef86ed68"
+    },
+    {
+      "name": "04.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 93466,
+      "sha256": "be9a741ee7d44fd14161e16d163e5bff19582278cdad4bcfd4113fb5afd241bb"
+    },
+    {
+      "name": "05.png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 95847,
+      "sha256": "cf46ccbf6b4de60e61c8a01d8bed17044648e24a20cd3058a786507b528a1d89"
+    }
+  ],
+  "individualDownloads": "200 image/png; bytes equal ZIP entries"
+}

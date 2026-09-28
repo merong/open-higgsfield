@@ -1,0 +1,37 @@
+[
+  {
+    "card": 1,
+    "id": "e16e05cd-de75-4d8a-98c4-4bcd5826c2be",
+    "unchanged": true,
+    "beforeBody": null,
+    "afterBody": null
+  },
+  {
+    "card": 2,
+    "id": "db91d8dc-b7b3-42e6-9a60-88bf5414dc1a",
+    "unchanged": true,
+    "beforeBody": null,
+    "afterBody": null
+  },
+  {
+    "card": 3,
+    "id": "22328b0a-25f2-4e0b-96b6-53215ab6a012",
+    "unchanged": false,
+    "beforeBody": "스파이더 플랜트는 밝은 빛을 좋아하고 중간 밝기에도 적응해요. 흙이 마른 뒤 물을 주고, 계속 젖지 않게 해주세요.",
+    "afterBody": "밝은 곳을 좋아하지만, 중간 밝기에도 적응할 수 있어요. 흙이 마르면 물을 주고 계속 젖어 있지 않게 해주세요."
+  },
+  {
+    "card": 4,
+    "id": "52a15675-e83b-4a6f-803b-03aeb577c150",
+    "unchanged": true,
+    "beforeBody": null,
+    "afterBody": null
+  },
+  {
+    "card": 5,
+    "id": "09e4a7ab-b6ae-4b9c-9a2c-ffd2b66dab84",
+    "unchanged": true,
+    "beforeBody": null,
+    "afterBody": null
+  }
+]

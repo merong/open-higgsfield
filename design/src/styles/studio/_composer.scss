@@ -1,0 +1,112 @@
+/* ---------- composer ---------- */
+
+/* Deletion's receipt, in the strip the composer already reserves for the
+   generation error — the studio gains no second floating layer. */
+.ohf-undo {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 9px 10px 9px 14px;
+  border-radius: var(--radius-lg);
+  background: var(--s2);
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-2), var(--glint);
+  animation: ohf-rise 0.22s var(--ease);
+}
+/* The window to change your mind, drawn rather than guessed at. Its duration
+   is set inline from the same constant that clears the record. */
+.ohf-undo-drain {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+  background: var(--tx4);
+  opacity: 0.5;
+  animation: ohf-drain linear forwards;
+}
+.ohf-undo-text {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--fs-sm);
+  color: var(--tx2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ohf-undo-act {
+  flex-shrink: 0;
+  height: var(--h-xs);
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--radius-md);
+  background: var(--s3);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--tx);
+  transition:
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease;
+}
+.ohf-undo-act:hover {
+  background: var(--s4);
+  border-color: var(--line-2);
+}
+.ohf-undo-act:active {
+  transform: scale(0.97);
+}
+
+.ohf-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 10px 10px 10px 13px;
+  border-radius: var(--radius-lg);
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-line);
+  animation: ohf-rise 0.22s var(--ease);
+}
+/* In the dock the strip floats over returned pictures, so the tint alone would
+   leave the message reading off the gallery. There it rides the same smoked
+   plate as the rest of the chrome that sits on a picture. */
+.ohf-composer-wrap .ohf-alert {
+  background: linear-gradient(var(--danger-bg), var(--danger-bg)), var(--plate);
+  backdrop-filter: blur(24px) saturate(1.15);
+  box-shadow: var(--shadow-2);
+}
+.ohf-alert-ic {
+  flex-shrink: 0;
+  color: var(--danger);
+  display: flex;
+}
+.ohf-alert-text {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--tx);
+}
+
+.ohf-icon-btn--ghost {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border-color: transparent;
+}
+/* Small visible target, full-size reach. */
+.ohf-icon-btn--ghost::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+}
+

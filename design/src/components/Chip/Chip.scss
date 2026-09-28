@@ -1,0 +1,31 @@
+@use "@/styles/mixins" as m;
+
+.ohf-chip {
+  &[data-state="hover"] {
+    background: var(--s3);
+    color: var(--tx);
+  }
+  &[data-state="active"] {
+    transform: scale(0.96);
+  }
+  @include m.disabled {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--tx-off);
+    transform: none;
+  }
+}
+.ohf-chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.ohf-chip-ratio {
+  display: block;
+  flex-shrink: 0;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.9;
+}

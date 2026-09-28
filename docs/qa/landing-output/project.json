@@ -1,0 +1,102 @@
+{
+  "id": "7550706d-e923-4063-8b6b-b76adfc0d709",
+  "brand": "SUNNY JOURNAL",
+  "brief": {
+    "tone": "calm",
+    "count": 5,
+    "topic": "SUNNY JOURNAL — 일상의 여유",
+    "audience": "감각적인 일상을 만드는 사람들",
+    "mustInclude": "가볍게 시작하는 일상\n필요한 것만 담았습니다\n어떻게 시작하나요?|마지막 버튼에서 프로젝트를 만들어 보세요."
+  },
+  "ratio": "4:5",
+  "slots": [
+    {
+      "id": "874ae442-863b-46d6-82da-c5aa922a587a",
+      "cta": "자세히 알아보기",
+      "dim": 0.5,
+      "body": "당신의 하루에 편안한 순간을 더합니다. 차분한 재료와 필요한 기능에 집중한 컬렉션을 만나보세요.",
+      "crop": 0,
+      "href": "#section-5",
+      "kind": "hero",
+      "trim": 0,
+      "media": {
+        "url": "/content/sage-still-life.jpg",
+        "kind": "image",
+        "name": "세이지 스튜디오 · 예시 이미지"
+      },
+      "title": "SUNNY JOURNAL — 일상의 여유",
+      "kicker": "",
+      "prompt": "SUNNY JOURNAL — 일상의 여유. Editorial composition, natural light, refined material detail. No text, no logos.",
+      "duration": 4,
+      "composition": "split"
+    },
+    {
+      "id": "b4e7b100-57f6-447e-8798-c5dabfb1252c",
+      "cta": "자세히 알아보기",
+      "dim": 0.5,
+      "body": "가볍게 시작하는 일상",
+      "crop": 0,
+      "href": "",
+      "kind": "features",
+      "trim": 0,
+      "title": "가볍게 시작하는 일상",
+      "kicker": "01",
+      "prompt": "SUNNY JOURNAL — 일상의 여유. 가볍게 시작하는 일상. No text, no logos.",
+      "duration": 4,
+      "composition": "split"
+    },
+    {
+      "id": "32e357d4-5920-4da3-a8b8-ee912ff241a1",
+      "cta": "자세히 알아보기",
+      "dim": 0.5,
+      "body": "필요한 것만 담았습니다",
+      "crop": 0,
+      "href": "",
+      "kind": "story",
+      "trim": 0,
+      "title": "필요한 것만 담았습니다",
+      "kicker": "02",
+      "prompt": "SUNNY JOURNAL — 일상의 여유. 필요한 것만 담았습니다. No text, no logos.",
+      "duration": 4,
+      "composition": "split"
+    },
+    {
+      "id": "b7b00556-06ab-4b13-9d06-f2ae377254a6",
+      "cta": "자세히 알아보기",
+      "dim": 0.5,
+      "body": "어떻게 시작하나요?|마지막 버튼에서 프로젝트를 만들어 보세요.",
+      "crop": 0,
+      "href": "",
+      "kind": "faq",
+      "trim": 0,
+      "title": "어떻게 시작하나요?|마지막 버튼에서 프로젝트를 만들어 보세요.",
+      "kicker": "03",
+      "prompt": "SUNNY JOURNAL — 일상의 여유. 어떻게 시작하나요?|마지막 버튼에서 프로젝트를 만들어 보세요.. No text, no logos.",
+      "duration": 4,
+      "composition": "split"
+    },
+    {
+      "id": "e692b89b-de43-4324-877a-ce79f7e8c060",
+      "cta": "자세히 알아보기",
+      "dim": 0.5,
+      "body": "브랜드의 실제 정보와 경험을 바탕으로 이 문장을 완성해 주세요.",
+      "crop": 0,
+      "href": "",
+      "kind": "cta",
+      "trim": 0,
+      "title": "지금, 시작해 보세요",
+      "kicker": "04",
+      "prompt": "SUNNY JOURNAL — 일상의 여유. Editorial composition, natural light, refined material detail. No text, no logos.",
+      "duration": 4,
+      "composition": "split"
+    }
+  ],
+  "title": "SUNNY JOURNAL — 일상의 여유",
+  "format": "landing",
+  "preset": "editorial",
+  "caption": "SUNNY JOURNAL — 일상의 여유\n\n가볍게 시작하는 일상\n필요한 것만 담았습니다\n어떻게 시작하나요?|마지막 버튼에서 프로젝트를 만들어 보세요.",
+  "modelId": "soul-2",
+  "version": 2,
+  "createdAt": 1789794047700,
+  "updatedAt": 1789794068706
+}

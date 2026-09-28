@@ -1,0 +1,25 @@
+✔ photo-only start stores owned references; invalid selections never reserve credits (22.422792ms)
+✔ multimodal planning maps each cut to owned source and keeps original on scoped copy edits (45.550167ms)
+[platform] request {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/files/generate-upload-url'
+}
+[platform] response {
+  method: 'POST',
+  url: 'https://api.higgsfield.ai/files/generate-upload-url',
+  status: 200
+}
+✔ image-derived frame preserves stored source bytes and supplies a portrait start image (9.071833ms)
+✔ provider storage upload follows signed PUT contract without forwarding API authorization (14.35225ms)
+✔ I2V submits one owned image and one charge; replay and low balance do not upload again (25.255375ms)
+✔ photo recommendation accepts empty text and returns grounded editable prompts without credits (7.019125ms)
+✔ recommendation transport includes images, model and output schema; incomplete response never applies (1.062ms)
+✔ one photo can seed every cut and failed input upload never becomes a text-only video (27.3115ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11474.401917

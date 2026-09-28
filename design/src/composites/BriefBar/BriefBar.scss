@@ -1,0 +1,26 @@
+@use "@/styles/mixins" as m;
+
+/* The composer's own card: same plate, same hairline, same glint. */
+.ohf-brief {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 14px;
+  border-radius: var(--radius-lg);
+  background: var(--s2);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-2), var(--glint);
+}
+.ohf-brief-label {
+  flex-shrink: 0;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-strong);
+  color: var(--tx3);
+}
+.ohf-brief-topic {
+  flex: 1;
+  min-width: 0;
+  font-size: 13.5px;
+  color: var(--tx);
+  @include m.truncate;
+}

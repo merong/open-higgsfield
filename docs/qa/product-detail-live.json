@@ -1,0 +1,76 @@
+{
+  "projectId": "3d7cbe3a-f5e9-4683-86ae-4c168e031731",
+  "workflowId": "4b120bea-6162-4856-acde-0adaee06739b",
+  "status": "completed",
+  "format": "product-detail",
+  "title": "데모 · 모닝 세라믹 머그 상세 페이지",
+  "sections": [
+    {
+      "id": "a09a5d7a-ce8f-4cbd-b879-f2351c4ad084",
+      "kind": "hero",
+      "title": "차분한 커피 시간을 위한 모닝 세라믹 머그",
+      "image": true
+    },
+    {
+      "id": "3a463fd8-5252-4ea7-9bed-d6757ca1581b",
+      "kind": "features",
+      "title": "과하지 않은 곡선, 차분하게 고르는 두 가지 색",
+      "image": false
+    },
+    {
+      "id": "34acf95d-c543-41bb-a477-29e17b0be255",
+      "kind": "story",
+      "title": "홈카페의 한 잔을 위한 기본 선택",
+      "image": false
+    },
+    {
+      "id": "879dbb73-14ea-4c80-bfab-403fac393278",
+      "kind": "usage",
+      "title": "부드러운 스펀지로 손세척해 주세요",
+      "image": false
+    },
+    {
+      "id": "08f004b2-f7a7-4ff2-b807-4dc3005af6af",
+      "kind": "specs",
+      "title": "구매 전 확인할 상품 구성과 규격",
+      "image": false
+    },
+    {
+      "id": "d3d08f43-d9f9-402a-b471-3e0f6b11ef0c",
+      "kind": "shipping",
+      "title": "배송·반품 안내를 확인해 주세요",
+      "image": false
+    },
+    {
+      "id": "f075adc0-6474-4a0c-8aaf-ffa036e40768",
+      "kind": "cta",
+      "title": "오늘의 커피 시간에 어울리는 머그를 선택하세요",
+      "image": false
+    }
+  ],
+  "product": {
+    "name": "모닝 세라믹 머그",
+    "price": "28,000원",
+    "specs": "소재 | 도자기\n용량 | 300 ml",
+    "usage": "부드러운 스펀지로 손세척해 주세요.",
+    "options": "아이보리 / 차콜 · 머그 1개",
+    "returns": "데모 정책 · 미사용 상품은 수령 후 7일 이내 접수, 단순 변심 반품비 6,000원",
+    "category": "리빙·주방",
+    "shipping": "데모 정책 · 배송비 3,000원, 결제 후 2영업일 내 출고"
+  },
+  "model": "gpt-5.6-terra",
+  "calls": 8,
+  "board": [
+    {
+      "state": "completed",
+      "model": "soul-2",
+      "applied": true,
+      "jobId": "e6002fdb-a95f-4a6f-93d2-9bc42f7f3b68"
+    }
+  ],
+  "imageAssets": [
+    "/api/workspace/assets/0b7e638d-5371-470f-bdc2-5e9805399249"
+  ],
+  "creditBalance": 328,
+  "exportDownloaded": true
+}

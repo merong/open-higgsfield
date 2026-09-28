@@ -1,0 +1,15 @@
+{
+  "entries": [
+    "assets/image-1.png",
+    "assets/font.woff2",
+    "assets/OFL-Pretendard.txt",
+    "index.html",
+    "project.json"
+  ],
+  "imageCount": 1,
+  "originalInZip": true,
+  "noPlaceholders": true,
+  "localImageReferences": true,
+  "pricePresent": true,
+  "productNamePresent": true
+}

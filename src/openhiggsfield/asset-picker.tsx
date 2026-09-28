@@ -31,7 +31,7 @@ interface Asset {
   /** The tile's name — a file name, or the prompt the run was made from. It is
       the alt text and the pointer title: a grey plate has no other handle. */
   title: string;
-  /** The run's layered-gradient art, so a tile whose media is slow to arrive or
+  /** The run's photo-backed example, so a tile whose media is slow to arrive or
       has aged off the platform's CDN is still a picture rather than a hole. */
   art?: string;
 }

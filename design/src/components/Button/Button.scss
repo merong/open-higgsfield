@@ -1,0 +1,98 @@
+@use "@/styles/mixins" as m;
+
+.ohf-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  height: var(--h-md);
+  padding: 0 13px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-ctl);
+  background: transparent;
+  color: var(--tx2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-tight);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  @include m.tabular;
+  @include m.control-states(var(--s3), var(--tx));
+
+  &[aria-expanded="true"] {
+    background: var(--s3);
+    border-color: var(--accent-32);
+    color: var(--tx);
+  }
+
+  &--sm {
+    height: var(--h-sm);
+    padding: 0 12px;
+    border-radius: var(--radius-md);
+  }
+  &--lg {
+    height: var(--h-lg);
+    padding: 0 14px;
+  }
+
+  /* The one lime button on a screen. Same face as .ohf-generate. */
+  &--primary {
+    border-color: transparent;
+    background: linear-gradient(180deg, #d9fe3e, var(--accent));
+    color: var(--accent-ink);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-display);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    @include m.hover {
+      background: linear-gradient(180deg, #d9fe3e, var(--accent));
+      color: var(--accent-ink);
+      filter: brightness(1.06);
+    }
+    @include m.disabled {
+      background: var(--s3);
+      color: var(--tx4);
+      box-shadow: var(--shadow-1);
+    }
+    /* Busy is not dead: a run in flight keeps the accent. */
+    &[data-busy="true"] {
+      background: var(--accent-14);
+      color: var(--accent);
+      box-shadow: inset 0 0 0 1px var(--accent-32);
+    }
+  }
+  &--model {
+    background: var(--s3);
+    color: var(--tx);
+    box-shadow: var(--shadow-1);
+    @include m.hover {
+      background: var(--s4);
+    }
+  }
+  &--ghost {
+    border-color: transparent;
+  }
+  &--danger {
+    background: var(--danger-bg);
+    border-color: var(--danger-line);
+    color: var(--danger);
+    @include m.hover {
+      background: var(--danger-line);
+      color: var(--danger);
+    }
+  }
+}
+.ohf-btn-icon {
+  display: flex;
+  flex-shrink: 0;
+}
+.ohf-btn-label {
+  position: relative;
+}
+.ohf-btn[data-loading="true"] .ohf-btn-label {
+  opacity: 0.7;
+}

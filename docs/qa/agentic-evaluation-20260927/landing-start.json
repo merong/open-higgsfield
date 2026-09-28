@@ -1,0 +1,156 @@
+{
+  "id": "bebd7ef4-e21e-4b27-b556-07b88a159d34",
+  "projectId": "21ba2232-446f-448b-a52d-901aceaa9162",
+  "project": {
+    "id": "21ba2232-446f-448b-a52d-901aceaa9162",
+    "format": "landing",
+    "title": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다",
+    "brief": {
+      "topic": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다",
+      "audience": "",
+      "tone": "calm",
+      "count": 5,
+      "mustInclude": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. 서비스는 욕실에 놓인 물건을 분류하고 배치하는 상담이며, 일정과 가격은 아직 정해지지 않았습니다. 예비 고객이 이메일로 상담을 문의하도록 해주세요. 효능, 친환경 인증, 고객 후기, 수치 성과를 만들지 마세요. CTA는 상담 문의, 연결은 mailto:hello@example.test."
+    },
+    "ratio": "4:5",
+    "preset": "editorial",
+    "brand": "",
+    "caption": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다\n\nQA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. 서비스는 욕실에 놓인 물건을 분류하고 배치하는 상담이며, 일정과 가격은 아직 정해지지 않았습니다. 예비 고객이 이메일로 상담을 문의하도록 해주세요. 효능, 친환경 인증, 고객 후기, 수치 성과를 만들지 마세요. CTA는 상담 문의, 연결은 mailto:hello@example.test.",
+    "modelId": "soul-2",
+    "slots": [
+      {
+        "id": "3d684194-5a74-4826-88eb-e44246237715",
+        "kind": "hero",
+        "title": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다",
+        "body": "전하고 싶은 핵심 메시지를 담아 보세요.",
+        "kicker": "",
+        "prompt": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "cta": "자세히 알아보기",
+        "href": "",
+        "duration": 4,
+        "trim": 0,
+        "composition": "split",
+        "dim": 0.5,
+        "crop": 0
+      },
+      {
+        "id": "44569ac3-3595-4ed9-b1b8-9dda7e9ec7d6",
+        "kind": "features",
+        "title": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. 서비스는 욕실에 놓인 물건을 분류하고 배치하는 상담",
+        "body": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. 서비스는 욕실에 놓인 물건을 분류하고 배치하는 상담이며, 일정과 가격은 아직 정해지지 않았습니다. 예비 고객이 이메일로 상담을 문의하도록 해주세요. 효능, 친환경 인증, 고객 후기, 수치 성과를 만들지 마세요. CTA는 상담 문의, 연결은 mailto:hello@example.test.",
+        "kicker": "01",
+        "prompt": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. 서비스는 욕실에 놓인 물건을 분류하고 배치하는 상담이며, 일정과 가격은 아직 정해지지 않았습니다. 예비 고객이 이메일로 상담을 문의하도록 해주세요. 효능, 친환경 인증, 고객 후기, 수치 성과를 만들지 마세요. CTA는 상담 문의, 연결은 mailto:hello@example.test.. No text, no logos.",
+        "cta": "자세히 알아보기",
+        "href": "",
+        "duration": 4,
+        "trim": 0,
+        "composition": "split",
+        "dim": 0.5,
+        "crop": 0
+      },
+      {
+        "id": "1d77701e-e631-43ce-84f2-89f34706d6b6",
+        "kind": "story",
+        "title": "하나씩 살펴보세요",
+        "body": "브랜드의 실제 정보와 경험을 바탕으로 이 문장을 완성해 주세요.",
+        "kicker": "02",
+        "prompt": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "cta": "자세히 알아보기",
+        "href": "",
+        "duration": 4,
+        "trim": 0,
+        "composition": "split",
+        "dim": 0.5,
+        "crop": 0
+      },
+      {
+        "id": "7a46b410-05ff-440c-b261-562bb931700d",
+        "kind": "faq",
+        "title": "나에게 맞는 선택",
+        "body": "브랜드의 실제 정보와 경험을 바탕으로 이 문장을 완성해 주세요.",
+        "kicker": "03",
+        "prompt": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "cta": "자세히 알아보기",
+        "href": "",
+        "duration": 4,
+        "trim": 0,
+        "composition": "split",
+        "dim": 0.5,
+        "crop": 0
+      },
+      {
+        "id": "102e0ed4-bf77-4b5f-b8b2-5f8dd69ed5f4",
+        "kind": "cta",
+        "title": "지금, 시작해 보세요",
+        "body": "브랜드의 실제 정보와 경험을 바탕으로 이 문장을 완성해 주세요.",
+        "kicker": "04",
+        "prompt": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "cta": "자세히 알아보기",
+        "href": "",
+        "duration": 4,
+        "trim": 0,
+        "composition": "split",
+        "dim": 0.5,
+        "crop": 0
+      }
+    ],
+    "createdAt": 1790501977342,
+    "updatedAt": 1790501977342,
+    "version": 1
+  },
+  "referenceImages": [
+    {
+      "id": "bfd17f5e-bde2-4b5a-8c15-5e29e446cc54",
+      "name": "qa-sage-still-life.jpg",
+      "url": "/api/workspace/assets/bfd17f5e-bde2-4b5a-8c15-5e29e446cc54",
+      "width": 1122,
+      "height": 1402
+    }
+  ],
+  "revision": 1,
+  "contentVersion": 1,
+  "status": "pending",
+  "stage": "understand",
+  "idea": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. 서비스는 욕실에 놓인 물건을 분류하고 배치하는 상담이며, 일정과 가격은 아직 정해지지 않았습니다. 예비 고객이 이메일로 상담을 문의하도록 해주세요. 효능, 친환경 인증, 고객 후기, 수치 성과를 만들지 마세요. CTA는 상담 문의, 연결은 mailto:hello@example.test.",
+  "model": "gpt-5.6-terra",
+  "effort": "low",
+  "intent": {
+    "brand": "",
+    "audience": "",
+    "problem": "",
+    "value": "",
+    "goal": "",
+    "ctaLabel": "",
+    "ctaHref": "",
+    "traffic": "",
+    "facts": "",
+    "tone": "calm",
+    "preset": "editorial"
+  },
+  "explicit": [],
+  "intentApproved": false,
+  "planApproved": false,
+  "plan": [],
+  "events": [
+    {
+      "id": "dfbbcd53-598d-4e1b-91b1-76c5ef8e0a32",
+      "title": "메모에서 제작 방향을 찾아요",
+      "message": "방문자와 원하는 행동을 제안합니다. 방향과 섹션 기획을 확인한 뒤 원고를 만들어요.",
+      "at": 1790501977344
+    },
+    {
+      "id": "e7a9aa13-2f2e-4be1-b5b1-a1728d509814",
+      "title": "참고 이미지를 함께 읽어요",
+      "message": "업로드한 1장의 이미지와 메모에서 페이지 방향을 제안합니다. 원본 이미지의 섹션 배치는 기획에서 직접 확인할 수 있어요.",
+      "at": 1790501977345
+    }
+  ],
+  "responses": [],
+  "calls": 0,
+  "maxCalls": 12,
+  "feedback": "",
+  "targetId": "",
+  "hasDraft": false,
+  "createdAt": 1790501977341,
+  "updatedAt": 1790501977341
+}

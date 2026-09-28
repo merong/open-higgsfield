@@ -1,0 +1,98 @@
+/* OpenHiggsfield AI — scoped design system.
+   Identity: near-black studio, one lime accent reserved for selection,
+   primary action and liveness. Structure = hairline borders; elevation =
+   offset shadows. One face throughout: Inter, with tabular numerals where the
+   type carries measurement. Tokens are emitted from tokens/_emit.scss. */
+
+.ohf {
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  line-height: 1.45;
+  color: var(--tx);
+  background: var(--bg);
+  color-scheme: dark;
+  caret-color: var(--accent);
+  accent-color: var(--accent);
+  -webkit-font-smoothing: antialiased;
+}
+
+.ohf *,
+.ohf *::before,
+.ohf *::after {
+  box-sizing: border-box;
+}
+
+/* Element defaults are zeroed rather than overridden one rule at a time: every
+   size, weight and gap in this file is stated by the component that owns it,
+   so a leftover UA margin only ever fights it. :where() keeps the whole reset
+   at zero specificity, so those component rules win without qualification. */
+:where(.ohf *, .ohf *::before, .ohf *::after) {
+  margin: 0;
+  padding: 0;
+}
+:where(.ohf :is(h1, h2, h3, h4, h5, h6)) {
+  font-size: inherit;
+  font-weight: inherit;
+}
+:where(.ohf :is(ul, ol)) {
+  list-style: none;
+}
+:where(.ohf :is(img, svg, video)) {
+  display: block;
+}
+:where(.ohf :is(img, video)) {
+  max-width: 100%;
+  height: auto;
+}
+
+.ohf ::selection {
+  background: rgba(209, 254, 23, 0.28);
+  color: #fbfef1;
+}
+
+/* :where() keeps the reset at zero extra specificity so component classes win. */
+.ohf :where(button) {
+  font-family: inherit;
+  border: 0;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+.ohf :where(button:disabled) {
+  cursor: default;
+}
+.ohf input,
+.ohf textarea {
+  font-family: inherit;
+  color: inherit;
+}
+.ohf :focus-visible {
+  outline: 2px solid var(--accent-32);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Themed browser scroll surfaces */
+.ohf ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.ohf ::-webkit-scrollbar-thumb {
+  background: var(--s3);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.ohf ::-webkit-scrollbar-thumb:hover {
+  background: var(--s4);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.ohf ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ohf .ohf-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--s3) transparent;
+}

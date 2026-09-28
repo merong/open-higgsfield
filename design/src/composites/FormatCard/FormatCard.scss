@@ -1,0 +1,73 @@
+@use "@/styles/mixins" as m;
+
+.ohf-fcard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: left;
+  background: var(--s1);
+  border: 1px solid var(--line);
+  color: var(--tx);
+  transition:
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+
+  @include m.hover {
+    background: var(--s2);
+    border-color: var(--line-2);
+  }
+  /* Deviation from the brief: the brief's hover rule excluded :disabled but
+     had no :active pair. Completed through m.active per the state-pinning
+     ruling — m.hover/m.active already exclude disabled/aria-disabled roots,
+     so the manual :not(:disabled) guard from the brief is folded into it. */
+  @include m.active {
+    transform: scale(0.98);
+  }
+  &[aria-pressed="true"] {
+    background: var(--accent-08);
+    border-color: var(--accent-32);
+    .ohf-fcard-icon {
+      color: var(--accent);
+    }
+  }
+  &:disabled {
+    background: transparent;
+    color: var(--tx-off);
+    cursor: default;
+    .ohf-fcard-icon,
+    .ohf-fcard-desc {
+      color: var(--tx-off);
+    }
+  }
+}
+.ohf-fcard-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.ohf-fcard-icon {
+  display: flex;
+  color: var(--tx2);
+}
+.ohf-fcard-name {
+  font-size: 13.5px;
+  font-weight: var(--fw-bold);
+}
+.ohf-fcard-spacer {
+  flex: 1;
+}
+.ohf-fcard-check {
+  display: flex;
+  color: var(--accent);
+}
+.ohf-fcard-desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--tx3);
+}

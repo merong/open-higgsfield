@@ -1,0 +1,89 @@
+[
+  {
+    "viewport": 1280,
+    "pageWidth": 1280,
+    "images": [
+      {
+        "loaded": true,
+        "alt": "연한 녹색 타일 욕실의 정물 사진입니다. 햇살과 잎 그림자 아래에 흰 용기, 유리컵, 접힌 흰 수건이 놓여 있어 차분하고 정돈된 분위기를 보여줍니다."
+      },
+      {
+        "loaded": true,
+        "alt": "밝고 차분한 욕실 선반 또는 세면대 위에 서로 다른 크기의 무지 용기, 수건, 작은 바구니가 여백을 두고 놓인 장면. 특정 브랜드나 효능 표시는 보이지 않으며, 물건의 용도별 구분과 접근하기 쉬운 배치를 직관적으로 보여줍니다."
+      }
+    ],
+    "links": [
+      {
+        "label": "더 알아보기 ↗",
+        "href": "#section-5"
+      },
+      {
+        "label": "상담 문의 ↗",
+        "href": "mailto:hello@example.test"
+      },
+      {
+        "label": "상담 문의 ↗",
+        "href": "mailto:hello@example.test"
+      }
+    ],
+    "bodyMinPx": 17
+  },
+  {
+    "viewport": 768,
+    "pageWidth": 768,
+    "images": [
+      {
+        "loaded": true,
+        "alt": "연한 녹색 타일 욕실의 정물 사진입니다. 햇살과 잎 그림자 아래에 흰 용기, 유리컵, 접힌 흰 수건이 놓여 있어 차분하고 정돈된 분위기를 보여줍니다."
+      },
+      {
+        "loaded": true,
+        "alt": "밝고 차분한 욕실 선반 또는 세면대 위에 서로 다른 크기의 무지 용기, 수건, 작은 바구니가 여백을 두고 놓인 장면. 특정 브랜드나 효능 표시는 보이지 않으며, 물건의 용도별 구분과 접근하기 쉬운 배치를 직관적으로 보여줍니다."
+      }
+    ],
+    "links": [
+      {
+        "label": "더 알아보기 ↗",
+        "href": "#section-5"
+      },
+      {
+        "label": "상담 문의 ↗",
+        "href": "mailto:hello@example.test"
+      },
+      {
+        "label": "상담 문의 ↗",
+        "href": "mailto:hello@example.test"
+      }
+    ],
+    "bodyMinPx": 17
+  },
+  {
+    "viewport": 360,
+    "pageWidth": 360,
+    "images": [
+      {
+        "loaded": true,
+        "alt": "연한 녹색 타일 욕실의 정물 사진입니다. 햇살과 잎 그림자 아래에 흰 용기, 유리컵, 접힌 흰 수건이 놓여 있어 차분하고 정돈된 분위기를 보여줍니다."
+      },
+      {
+        "loaded": true,
+        "alt": "밝고 차분한 욕실 선반 또는 세면대 위에 서로 다른 크기의 무지 용기, 수건, 작은 바구니가 여백을 두고 놓인 장면. 특정 브랜드나 효능 표시는 보이지 않으며, 물건의 용도별 구분과 접근하기 쉬운 배치를 직관적으로 보여줍니다."
+      }
+    ],
+    "links": [
+      {
+        "label": "더 알아보기 ↗",
+        "href": "#section-5"
+      },
+      {
+        "label": "상담 문의 ↗",
+        "href": "mailto:hello@example.test"
+      },
+      {
+        "label": "상담 문의 ↗",
+        "href": "mailto:hello@example.test"
+      }
+    ],
+    "bodyMinPx": 17
+  }
+]

@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { hasPlatformCredentials, submitGeneration } from "@/generation/actions";
 import { MissingCredentialsError } from "@/generation/credentials";
 import { MODELS, getModel } from "@/generation/catalog";
-import type { Surface } from "@/generation/catalog";
+import type { GenerationPlane, Surface } from "@/generation/catalog";
 import { assemblePlane } from "@/generation/plane";
 import type { GenerationStatus } from "@/generation/platform";
 import { POLL_DEADLINE_MS, stopWatching, watchRequest } from "@/generation/poll";
@@ -14,9 +14,12 @@ import { useImagePrompt, useVideoPrompt } from "@/generation/stores/prompt";
 import { useSettings } from "@/generation/stores/settings";
 
 import { GRAIN_URI, artFor } from "./artwork";
+import { videoCreditBlocked, VIDEO_CREDIT_MESSAGE } from "@/projects/credit-policy";
 import { Composer } from "./composer";
 import { fileNameFor, saveFile } from "./download";
-import { KeyModal } from "./key-modal";
+import { Button, Dialog } from "@openhiggsfield/design";
+import { api } from "@/projects/api";
+import { useSession } from "@/shell/workspace-shell";
 import {
   CROSS_VIEWS,
   countSetting,
@@ -57,12 +60,6 @@ type RunDraft = {
   createdAt: number;
 };
 
-function hueOf(seed: string): number {
-  let h = 0;
-  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) % 360;
-  return h;
-}
-
 function rowId(requestId: string, offset: number, count: number): string {
   return count > 1 ? `${requestId}#${offset}` : requestId;
 }
@@ -97,7 +94,7 @@ function runningRows(requestId: string, count: number, draft: RunDraft): RunReco
       kind: draft.surface,
       urls: [],
       status: "running",
-      art: artFor(draft.surface, hueOf(id), id),
+      art: artFor(draft.surface, draft.prompt),
       createdAt: draft.createdAt,
       settings: draft.settings,
     };
@@ -127,7 +124,7 @@ function terminalRows(requestId: string, draft: RunDraft, status: GenerationStat
       urls: url ? [url] : [],
       status: completed ? "completed" : "failed",
       error: failure,
-      art: artFor(draft.surface, hueOf(id), id),
+      art: artFor(draft.surface, draft.prompt),
       createdAt: draft.createdAt,
       settings: draft.settings,
     };
@@ -181,6 +178,8 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
   const [saving, setSaving] = useState<SaveProgress | null>(null);
   const [keyConfigured, setKeyConfigured] = useState(false);
   const [keysOpen, setKeysOpen] = useState(false);
+  const [consent, setConsent] = useState<{plane: GenerationPlane; cost:number; batch:number}|null>(null);
+  const session = useSession();
 
   const galleryRef = useRef<HTMLDivElement>(null);
   const rangeAnchor = useRef<number | null>(null);
@@ -223,8 +222,8 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
   useEffect(() => {
     void hasPlatformCredentials().then((ready) => {
       setKeyConfigured(ready);
-      if (!ready) setKeysOpen(true);
-    });
+
+    }).catch(() => setKeyConfigured(false));
   }, []);
 
   useEffect(() => {
@@ -323,16 +322,17 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
   /* Presses do not wait on each other. A press snapshots its own plane, opens
      its own skeletons and keeps its own watch, so the composer is free the
      moment the tiles appear and any number of runs can be in flight. */
-  const generate = useCallback(async () => {
+  const generate = useCallback(async (confirmed: GenerationPlane, confirmedBatch: number) => {
     if (!keyConfigured) {
       setKeysOpen(true);
-      setError("Add your platform key to generate.");
+      setError("로그인과 생성 API 연결 상태를 확인해 주세요.");
       return;
     }
-    const plane = assemblePlane();
+    const plane = confirmed;
     if (!plane.prompt.text.trim()) return;
 
     const entry = getModel(plane.model);
+    if (videoCreditBlocked(entry.surface, session.user?.credits ?? 0)) { setError(VIDEO_CREDIT_MESSAGE); return; }
     const ratio = ratioToCss(
       plane.settings.aspectRatio,
       entry.surface === "image" ? "4 / 3" : "16 / 9",
@@ -347,7 +347,7 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
     const native = countSetting(entry);
     const expected = native
       ? Math.max(1, Number(plane.settings[native.key]) || 1)
-      : useActive.getState().batch;
+      : confirmedBatch;
     const startedAt = Date.now();
     const seq = ++press.current;
     const pending: ActiveRun[] = Array.from({ length: expected }, (_, index) => ({
@@ -400,7 +400,8 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
     };
 
     await Promise.all(slots.map(runOne));
-  }, [keyConfigured, resume]);
+    await session.refresh();
+  }, [keyConfigured, resume, session]);
 
   /* Reuse restores the whole plane the run was made from — model, its dials,
      then the words. A reuse that dropped the ratio and resolution would
@@ -597,7 +598,15 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
 
   const openViewer = useCallback((id: string) => setViewerId(id), []);
   const openKeys = useCallback(() => setKeysOpen(true), []);
-  const runGenerate = useCallback(() => void generate(), [generate]);
+  const runGenerate = useCallback(() => {
+    const plane = assemblePlane();
+    if (!plane.prompt.text.trim()) return;
+    if (videoCreditBlocked(getModel(plane.model).surface, session.user?.credits ?? 0)) { setError(VIDEO_CREDIT_MESSAGE); return; }
+    const batch = useActive.getState().batch;
+    void api<{credits:number}>("quote", {method:"POST",body:JSON.stringify(plane)}).then(({credits}) => {
+      setConsent({plane,batch,cost:credits * (countSetting(getModel(plane.model)) ? 1 : batch)});
+    }).catch(error => setError(error.message));
+  }, [session.user?.credits]);
   const downloadSelection = useCallback(() => void downloadPicked(), [downloadPicked]);
   const dismissDeleted = useCallback(() => setDeleted(null), []);
   const viewerItem = viewerId
@@ -653,6 +662,7 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
             surface={surface}
             model={model}
             generating={busy}
+            generationBlocked={videoCreditBlocked(surface, session.user?.credits ?? 0) ? VIDEO_CREDIT_MESSAGE : undefined}
             error={error}
             focusNonce={focusNonce}
             history={history}
@@ -697,19 +707,17 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
             }}
           />
         )}
+        <Dialog open={Boolean(consent)} title="생성 요청 확인" closeLabel="닫기" onClose={() => setConsent(null)}>
+          <p>{consent?.cost} 크레딧을 예약합니다. 실패한 생성은 환불하며 접수 결과가 불명확한 요청은 관리자가 확인합니다.</p>
+          <Button variant="primary" disabled={(session.user?.credits ?? 0) < (consent?.cost ?? 0) || Boolean(consent && videoCreditBlocked(getModel(consent.plane.model).surface, session.user?.credits ?? 0))} onClick={() => { if (consent) { const snapshot=consent;setConsent(null);void generate(snapshot.plane,snapshot.batch); } }}>생성 시작</Button>
+          <Button href="/account/credits">크레딧 확인</Button>
+        </Dialog>
         {keysOpen && (
-          <KeyModal
-            configured={keyConfigured}
-            onClose={() => setKeysOpen(false)}
-            onSaved={() => {
-              setKeyConfigured(true);
-              setKeysOpen(false);
-              setError(null);
-            }}
-            onCleared={() => {
-              setKeyConfigured(false);
-            }}
-          />
+          <Dialog open title="생성 서비스" closeLabel="닫기" onClose={() => setKeysOpen(false)}>
+            <p>{session.user?.admin ? "환경설정에서 Higgsfield API 키를 등록하고 연결을 점검하세요." : "생성 API는 관리자가 환경설정에서 연결합니다."} AI 생성에는 계정의 크레딧이 사용됩니다.</p>
+            {session.user?.admin && <Button href="/settings" variant="primary">API 환경설정</Button>}
+            <Button href="/account/credits">크레딧 확인</Button>
+          </Dialog>
         )}
       </div>
     </div>

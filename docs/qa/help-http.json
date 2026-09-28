@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-09-19T07:38:20.860Z",
+  "guides": [
+    {
+      "slug": "getting-started",
+      "status": 200,
+      "workflow": false,
+      "image": 200
+    },
+    {
+      "slug": "studio-images",
+      "status": 200,
+      "workflow": true,
+      "image": 200
+    },
+    {
+      "slug": "studio-video",
+      "status": 200,
+      "workflow": true,
+      "image": 200
+    },
+    {
+      "slug": "card-news",
+      "status": 200,
+      "workflow": true,
+      "image": 200
+    },
+    {
+      "slug": "reels",
+      "status": 200,
+      "workflow": true,
+      "image": 200
+    },
+    {
+      "slug": "landing",
+      "status": 200,
+      "workflow": true,
+      "image": 200
+    },
+    {
+      "slug": "library",
+      "status": 200,
+      "workflow": false,
+      "image": 200
+    },
+    {
+      "slug": "credits",
+      "status": 200,
+      "workflow": false,
+      "image": 200
+    },
+    {
+      "slug": "account",
+      "status": 200,
+      "workflow": false,
+      "image": 200
+    },
+    {
+      "slug": "admin",
+      "status": 200,
+      "workflow": false,
+      "image": 200
+    },
+    {
+      "slug": "api-settings",
+      "status": 200,
+      "workflow": true,
+      "image": 200
+    },
+    {
+      "slug": "troubleshooting",
+      "status": 200,
+      "workflow": false,
+      "image": 200
+    }
+  ],
+  "unknownGuide": 404
+}

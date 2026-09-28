@@ -1,0 +1,354 @@
+/* ---------- picking runs ---------- */
+
+/* The mark sits top-left, where a selection is looked for, and opposite the
+   card's own three actions so the two rails never argue. It is offered on
+   hover and stands permanently once anything in the grid is picked — a
+   half-selected grid has to show which cards are the other half. */
+.ohf-pick {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  translate: -4px 0;
+  scale: 0.9;
+  pointer-events: none;
+  transition:
+    opacity 0.16s ease,
+    translate 0.24s var(--ease-slide),
+    scale 0.24s var(--ease-slide);
+}
+.ohf-tile:hover .ohf-pick,
+.ohf-tile:has(:focus-visible) .ohf-pick,
+.ohf-grid[data-selecting="true"] .ohf-pick {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  pointer-events: auto;
+}
+/* Same smoked plate as the badge and the action rail, so the three families of
+   chrome the card can carry read as one material over any returned picture. */
+.ohf-pick-box {
+  width: 21px;
+  height: 21px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--plate);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  color: transparent;
+  transition:
+    background 0.18s var(--ease),
+    border-color 0.18s var(--ease),
+    color 0.1s ease,
+    scale 0.16s var(--ease);
+}
+.ohf-pick-box svg {
+  opacity: 0;
+  scale: 0.4;
+  transition:
+    opacity 0.1s ease,
+    scale 0.26s var(--ease-slide);
+}
+.ohf-pick:hover .ohf-pick-box {
+  background: rgba(9, 13, 12, 0.86);
+  border-color: rgba(255, 255, 255, 0.62);
+}
+.ohf-pick:active .ohf-pick-box {
+  scale: 0.88;
+}
+/* Accent is the studio's selection colour; this is the one place it marks a
+   set rather than a single control. */
+.ohf-pick[aria-checked="true"] .ohf-pick-box {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.ohf-pick[aria-checked="true"]:hover .ohf-pick-box {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+.ohf-pick[aria-checked="true"] .ohf-pick-box svg {
+  opacity: 1;
+  scale: 1;
+}
+
+/* A picked card takes the accent frame and the picture pulls in behind it.
+   The set-back is a fixed inset, never a scale: this grid holds every ratio the
+   catalog can return, and a proportional shrink sets a 1:1 card back twice as
+   far as a 16:9 one — the same gesture reading as a different amount on every
+   card. The border grows inward instead, and `box-sizing: border-box` keeps the
+   slot identical, so the picture pulls in by exactly 3px whatever its shape. */
+.ohf-tile[data-picked="true"] {
+  border-width: 4px;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-2);
+}
+/* The picked frame is already accent, so the focus ring needs a dark gap to
+   read as a second mark rather than a thicker first one — the same offset the
+   studio's global focus outline carries. */
+.ohf-tile[data-picked="true"]:has(.ohf-tile-open:focus-visible) {
+  box-shadow:
+    var(--shadow-2),
+    0 0 0 2px var(--bg),
+    0 0 0 4px var(--accent-32);
+}
+.ohf-tile[data-picked="true"] .ohf-tile-media {
+  filter: brightness(0.82) saturate(0.94);
+}
+
+/* While a set is being assembled the per-card actions step aside: reuse,
+   delete and keep all act on one run, and the toolbar below now owns the
+   other three. */
+.ohf-grid[data-selecting="true"] .ohf-tile-acts {
+  opacity: 0;
+  translate: 0 -4px;
+  pointer-events: none;
+  transition:
+    opacity 0.16s ease,
+    translate var(--dur-slow) var(--ease);
+}
+/* The duration badge shares the corner the mark takes, so it makes room for
+   it rather than sitting under it. */
+.ohf-tile-badge {
+  transition: translate 0.26s var(--ease-slide);
+}
+.ohf-tile:hover .ohf-tile-badge,
+.ohf-grid[data-selecting="true"] .ohf-tile-badge {
+  translate: 30px 0;
+}
+
+/* The run that just landed gets its own arrival, once — every other tile
+   uses the shared entrance. */
+.ohf-tile[data-fresh="true"] {
+  animation: ohf-arrive 0.62s var(--ease) both;
+}
+
+.ohf-tile--failed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ohf-tile 0.32s var(--ease) both;
+}
+.ohf-fail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 20px;
+  text-align: center;
+  max-width: 320px;
+}
+.ohf-fail-ic {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+.ohf-fail-title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+}
+.ohf-fail-why {
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--tx2);
+  padding-bottom: 4px;
+}
+.ohf-grain {
+  position: absolute;
+  inset: 0;
+  background-image: var(--ohf-grain);
+  background-size: 128px 128px;
+  opacity: 0.28;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.ohf-tile-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 7px;
+  background: var(--plate);
+  backdrop-filter: blur(6px);
+  color: var(--plate-ink);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.ohf-tile-badge svg {
+  display: block;
+}
+/* Offered on hover on the same terms as the action rail opposite it, scrim
+   and all: a card at rest is the picture and nothing else. */
+.ohf-tile-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  padding: 40px 12px 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  /* Two lines of prompt stand where a one-line name never did, so the ramp
+     reaches its ground by the time the words start rather than at the very
+     bottom edge — a bright frame would otherwise read through them. */
+  background: linear-gradient(transparent, rgba(4, 7, 6, 0.58) 34%, rgba(4, 7, 6, 0.88));
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.16s ease,
+    transform 0.24s var(--ease);
+}
+.ohf-tile:hover .ohf-tile-caption,
+.ohf-tile:has(:focus-visible) .ohf-tile-caption {
+  opacity: 1;
+  transform: none;
+}
+/* A prompt is a sentence, not a name: it wraps to two lines before it clips, at
+   the weight a sentence is read at rather than the weight a title is. */
+.ohf-tile-prompt {
+  max-width: 100%;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  line-height: 1.38;
+  letter-spacing: -0.006em;
+  color: #f5faf8;
+  text-wrap: pretty;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.ohf-tile-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+/* The badge, the action rail and the pick box all wear the smoked plate; these
+   join them rather than inventing a fourth material. They skip the blur those
+   three carry — the scrim already grounds them, so the filter would buy
+   nothing and cost a compositor layer on every card in the grid. */
+.ohf-tile-fact {
+  padding: 3px 7px;
+  line-height: 1.3;
+  border-radius: 7px;
+  background: var(--plate);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: var(--plate-ink);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.005em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+/* The one name in a row of numbers, and the fact a viewer scans the row for: it
+   leads, and carries the ink the prompt above it does. */
+.ohf-tile-fact--model {
+  color: #f5faf8;
+  font-weight: var(--fw-bold);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ohf-skeleton {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  /* The plate rests and the light that crosses it is a layer of its own, so a
+     wait reads as one lamp travelling over a surface rather than the whole
+     tile changing colour. It enters on the returned tile's exact animation:
+     when the run lands, the picture takes the skeleton's place without a
+     second arrival. */
+  background: var(--s1);
+  animation: ohf-tile 0.32s var(--ease) both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
+}
+/* The original band, unchanged in colour and in width — s1 out to s3 over a
+   quarter of the tile — but laid down twice, one tile-width apart, so that as a
+   peak leaves the right edge the next is already entering from the left and the
+   plate is never idle between passes. */
+.ohf-skeleton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  background-image: linear-gradient(
+    100deg,
+    var(--s1) 24%,
+    var(--s3) 50%,
+    var(--s1) 76%
+  );
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: ohf-sheen 2.8s linear infinite;
+}
+/* There are only fifteen levels between s1 and s3, so on a 900px tile the ramp
+   quantises into 8-bit steps some seventeen pixels wide — flat vertical stripes
+   that a slow sweep then marches across, which is the opposite of smooth and is
+   worse again on a six-bit panel. A static grain a couple of levels deep is the
+   standard answer: it puts the error below the step, the contours dissolve, and
+   nothing about the band's colour or shape has to change. It stays still while
+   the band moves, so it reads as the plate's surface and not as film grain. */
+.ohf-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='ohf-dither'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23ohf-dither)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+/* The band is opaque, and an absolutely positioned pseudo-element paints over
+   in-flow text by default — so the type has to be raised or the sweep would
+   simply cover it. Raised above the grain too, which is there to dither the
+   plate, not the lettering. */
+.ohf-skeleton-label,
+.ohf-skeleton-clock {
+  position: relative;
+  z-index: 1;
+}
+.ohf-skeleton-label {
+  font-size: 10px;
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--tx3);
+}
+.ohf-skeleton-clock {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: var(--tx4);
+}
+

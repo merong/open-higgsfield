@@ -1,0 +1,64 @@
+@use "@/styles/mixins" as m;
+
+.ohf-scard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 12px;
+  text-align: left;
+  background: var(--s1);
+  border: 1px solid var(--line);
+  color: var(--tx);
+  transition:
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+
+  @include m.hover {
+    border-color: var(--line-2);
+  }
+  /* Deviation from the brief: hover had a pinned pair, active did not.
+     Completed through m.active per the state-pinning ruling (see ProjectCard). */
+  @include m.active {
+    transform: scale(0.98);
+  }
+  &[aria-pressed="true"] {
+    background: var(--accent-08);
+    border-color: var(--accent-32);
+  }
+}
+.ohf-scard-preview {
+  display: flex;
+  gap: 6px;
+  > * {
+    flex: 1;
+    min-width: 0;
+  }
+  .ohf-slide {
+    border-radius: var(--radius-sm);
+  }
+}
+.ohf-scard-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 2px;
+}
+.ohf-scard-name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+.ohf-scard-spacer {
+  flex: 1;
+}
+.ohf-scard-check {
+  display: flex;
+  color: var(--accent);
+}
+.ohf-scard-desc {
+  padding: 0 2px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--tx3);
+}

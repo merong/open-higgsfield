@@ -1,0 +1,137 @@
+{
+  "workflowId": "64c467ef-fcc6-4bea-99e9-84b18bba2554",
+  "projectId": "dacc378a-dccb-4b43-98ce-4442d5fcfa69",
+  "format": "landing",
+  "status": "completed",
+  "stage": "review",
+  "model": "gpt-5.6-terra",
+  "effort": "low",
+  "calls": 4,
+  "intentApproved": true,
+  "planApproved": true,
+  "referenceImages": [
+    {
+      "id": "6a970561-7d43-4d7b-9bcb-c5d40f234b6f",
+      "url": "/api/workspace/assets/6a970561-7d43-4d7b-9bcb-c5d40f234b6f",
+      "name": "fern-house.webp",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "id": "8dae8174-1dd5-4f87-a822-8e3862263e94",
+      "url": "/api/workspace/assets/8dae8174-1dd5-4f87-a822-8e3862263e94",
+      "name": "greenhouse.webp",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "sections": [
+    {
+      "id": "f6982808-a4f4-4602-b1e4-072c10f2bb28",
+      "title": "초록이 깊어지는 곳에서, 잠시 천천히",
+      "sourceImageId": "6a970561-7d43-4d7b-9bcb-c5d40f234b6f",
+      "media": {
+        "url": "/api/workspace/assets/6a970561-7d43-4d7b-9bcb-c5d40f234b6f",
+        "kind": "image",
+        "name": "fern-house.webp"
+      }
+    },
+    {
+      "id": "8cc68124-3141-4c69-884d-41fda0aec66b",
+      "title": "복잡한 하루에는 바라볼 여백이 필요합니다",
+      "sourceImageId": "",
+      "media": null
+    },
+    {
+      "id": "6719bfad-ba13-442b-9953-f389f0564d1a",
+      "title": "빛이 지나가는 방향을 따라",
+      "sourceImageId": "8dae8174-1dd5-4f87-a822-8e3862263e94",
+      "media": {
+        "url": "/api/workspace/assets/8dae8174-1dd5-4f87-a822-8e3862263e94",
+        "kind": "image",
+        "name": "greenhouse.webp"
+      }
+    },
+    {
+      "id": "9e491a4e-82a2-4bad-aa2e-2e316eeab5ca",
+      "title": "이 페이지는 어떤 순간을 위한가요?",
+      "sourceImageId": "",
+      "media": null
+    },
+    {
+      "id": "d0b8dbb9-2b96-44e4-8304-2b6df6709af7",
+      "title": "초록의 장면으로 돌아가기",
+      "sourceImageId": "",
+      "media": null
+    }
+  ],
+  "board": [
+    {
+      "slotId": "f6982808-a4f4-4602-b1e4-072c10f2bb28",
+      "applied": true,
+      "state": "idle",
+      "candidate": {
+        "url": "/api/workspace/assets/6a970561-7d43-4d7b-9bcb-c5d40f234b6f",
+        "kind": "image",
+        "name": "fern-house.webp"
+      }
+    },
+    {
+      "slotId": "6719bfad-ba13-442b-9953-f389f0564d1a",
+      "applied": true,
+      "state": "idle",
+      "candidate": {
+        "url": "/api/workspace/assets/8dae8174-1dd5-4f87-a822-8e3862263e94",
+        "kind": "image",
+        "name": "greenhouse.webp"
+      }
+    }
+  ],
+  "sourceAssetResponses": [
+    {
+      "id": "6a970561-7d43-4d7b-9bcb-c5d40f234b6f",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 105646
+    },
+    {
+      "id": "8dae8174-1dd5-4f87-a822-8e3862263e94",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 64718
+    }
+  ],
+  "removedFromSelectionAssetStatus": 200,
+  "anonymousPostStatus": {
+    "landing-images": 401,
+    "landing-recommendation": 401
+  },
+  "credits": {
+    "before": 286,
+    "after": 285,
+    "expectedDelta": -1
+  },
+  "librarySourceMatches": [
+    {
+      "id": "asset:8dae8174-1dd5-4f87-a822-8e3862263e94",
+      "name": "greenhouse.webp",
+      "feature": "landing",
+      "projectId": "dacc378a-dccb-4b43-98ce-4442d5fcfa69",
+      "url": "/api/workspace/assets/8dae8174-1dd5-4f87-a822-8e3862263e94"
+    },
+    {
+      "id": "asset:6a970561-7d43-4d7b-9bcb-c5d40f234b6f",
+      "name": "fern-house.webp",
+      "feature": "landing",
+      "projectId": "dacc378a-dccb-4b43-98ce-4442d5fcfa69",
+      "url": "/api/workspace/assets/6a970561-7d43-4d7b-9bcb-c5d40f234b6f"
+    }
+  ],
+  "libraryResponseKeys": [
+    "items",
+    "total",
+    "page",
+    "pages"
+  ],
+  "reviewIssueCount": 3
+}

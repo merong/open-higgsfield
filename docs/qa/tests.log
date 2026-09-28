@@ -1,0 +1,19 @@
+
+> openhiggsfield-ai@ test /Users/brian/works/agent/openhigsfield/open-higgsfield
+> node --import tsx --test test/*.test.ts
+
+✔ account passwords, sessions and privilege boundaries (1620.801458ms)
+✔ all three formats validate and persist; ownership and stale updates are rejected (15.155541ms)
+✔ validation rejects unsafe links, slot duplication and out of range durations (0.581208ms)
+✔ credit reservation is atomic and idempotent; completion and refunds happen once (18.542583ms)
+✔ definitive provider rejection refunds; ambiguous transport failure does not resubmit (11.634833ms)
+✔ AI outline validates untrusted output and credits settle once (11.046292ms)
+✔ assets are owned, size accounted and uploaded bytes survive storage (177.685083ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11795.942

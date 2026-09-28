@@ -1,0 +1,285 @@
+/* ---------- asset picker ---------- */
+
+/* Inputs come from two shelves — files this browser sent to Blob, and the runs
+   already finished — so the panel is a contact sheet with a tab per shelf,
+   opened over the + it belongs to rather than as a modal over the work. */
+.ohf-popover--assets {
+  width: min(560px, 100%);
+  max-height: min(64vh, 540px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ohf-assets-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px 9px 10px;
+  border-bottom: 1px solid var(--line);
+}
+.ohf-assets-tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ohf-assets-tabs::-webkit-scrollbar {
+  display: none;
+}
+.ohf-assets-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 11px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-strong);
+  letter-spacing: var(--ls-tight);
+  color: var(--tx2);
+  transition:
+    background var(--dur-base) ease,
+    color var(--dur-base) ease,
+    box-shadow var(--dur-base) ease;
+}
+.ohf-assets-tab:hover {
+  color: var(--tx);
+}
+.ohf-assets-tab:not([aria-selected="true"]):hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+.ohf-assets-tab[aria-selected="true"] {
+  color: var(--tx);
+  background: var(--s3);
+  box-shadow:
+    inset 0 0 0 1px var(--line-2),
+    var(--glint);
+}
+/* The shelf's size is measurement, not emphasis: tabular, quiet, and never
+   accent — the accent in this panel belongs to what is selected. */
+.ohf-assets-tab-count {
+  font-size: var(--fs-2xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--tx4);
+}
+.ohf-assets-tab[aria-selected="true"] .ohf-assets-tab-count {
+  color: var(--tx2);
+}
+
+/* Which slot the picked asset fills — present only where the model declares
+   more than one, so most models never see this row. */
+.ohf-assets-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.ohf-chip--role {
+  height: var(--h-xs);
+  padding: 0 11px;
+  gap: 7px;
+  font-size: var(--fs-xs);
+}
+.ohf-chip-count {
+  font-size: var(--fs-2xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--tx4);
+}
+.ohf-chip--role[aria-pressed="true"] .ohf-chip-count {
+  color: inherit;
+  opacity: 0.75;
+}
+
+.ohf-assets-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+.ohf-assets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  gap: 10px;
+  padding: 14px;
+}
+
+.ohf-asset {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 11px;
+  overflow: hidden;
+  background: var(--s1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition:
+    box-shadow 0.16s ease,
+    opacity 0.16s ease,
+    transform 0.16s var(--ease);
+}
+.ohf-asset:hover:not(:disabled) {
+  box-shadow:
+    inset 0 0 0 1px var(--line-2),
+    var(--shadow-1);
+}
+.ohf-asset:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.ohf-asset[data-picked="true"] {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+/* Only the cap disables a tile — an input already on the plane stays pressable,
+   because pressing it off is how it comes back off. */
+.ohf-asset:disabled {
+  opacity: 0.35;
+}
+.ohf-asset-art {
+  position: absolute;
+  inset: 0;
+  background: var(--s2);
+}
+.ohf-asset-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.35s var(--ease),
+    opacity 0.16s ease;
+}
+.ohf-asset:hover:not(:disabled) .ohf-asset-media {
+  transform: scale(1.045);
+}
+.ohf-asset-glyph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tx3);
+  transition: opacity 0.16s ease;
+}
+.ohf-asset-kind {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  background: var(--plate);
+  color: var(--plate-ink);
+}
+/* One mark for one state: the tile is in the set this panel will apply, whether
+   it arrived with the panel or was just pressed. */
+.ohf-asset-mark {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-1);
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.16s ease,
+    transform var(--dur-slow) var(--ease);
+}
+.ohf-asset[data-picked="true"] .ohf-asset-mark {
+  opacity: 1;
+  transform: none;
+}
+
+/* The one dashed edge on the surface: a slot waiting to be filled, not a
+   drawn control. */
+.ohf-asset--upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: none;
+  border: 1px dashed var(--line-2);
+  box-shadow: none;
+  color: var(--tx2);
+  transition:
+    border-color var(--dur-base) ease,
+    background var(--dur-base) ease,
+    color var(--dur-base) ease,
+    transform 0.16s var(--ease);
+}
+.ohf-asset--upload:hover:not(:disabled) {
+  background: var(--accent-08);
+  border-color: var(--accent-32);
+  box-shadow: none;
+  color: var(--tx);
+}
+.ohf-asset--upload:disabled {
+  border-color: var(--line);
+  color: var(--tx-off);
+  opacity: 1;
+}
+.ohf-asset-upload-label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-strong);
+}
+
+.ohf-assets-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 12px 11px 15px;
+  border-top: 1px solid var(--line);
+}
+.ohf-assets-tally {
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--tx3);
+}
+.ohf-btn-accent {
+  height: var(--h-sm);
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+  white-space: nowrap;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-1);
+  transition:
+    background var(--dur-base) ease,
+    color var(--dur-base) ease,
+    box-shadow var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+}
+.ohf-btn-accent:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+.ohf-btn-accent:active:not(:disabled) {
+  transform: scale(0.97);
+}
+/* Nothing staged: the press only closes the panel, so the button steps back to
+   the quiet plate every other dismissal on this surface uses. */
+.ohf-btn-accent[data-quiet="true"] {
+  background: var(--s3);
+  color: var(--tx2);
+  box-shadow: var(--shadow-1);
+}
+.ohf-btn-accent[data-quiet="true"]:hover {
+  background: var(--s4);
+  color: var(--tx);
+}
+

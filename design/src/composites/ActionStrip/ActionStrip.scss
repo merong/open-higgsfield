@@ -1,0 +1,27 @@
+.ohf-astrip {
+  flex-shrink: 0;
+  padding: 0 20px;
+  border-top: 1px solid var(--line);
+  background: var(--rail);
+}
+.ohf-astrip-notice {
+  padding-top: 10px;
+}
+.ohf-astrip-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+}
+.ohf-astrip-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-size: var(--fs-sm);
+  color: var(--tx2);
+}
+.ohf-astrip-spacer {
+  flex: 1 1 auto;
+  min-width: 0;
+}

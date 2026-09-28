@@ -1,0 +1,38 @@
+/* ---------- top bar ---------- */
+
+/* Two floating instruments on one baseline, held off every edge the way the
+   composer is: the scope pill and the platform lamp side by side, centred as a
+   pair over the work. Nothing spans the width — the runs are the ground. */
+.ohf-topbar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px 0;
+  pointer-events: none;
+}
+.ohf-bar {
+  pointer-events: auto;
+  height: var(--h-bar);
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  background: var(--s2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-bar);
+  box-shadow: var(--shadow-2), var(--glint);
+}
+
+/* The studio's page heading; the bar carries scope, not brand. */
+.ohf-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+

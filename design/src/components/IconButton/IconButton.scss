@@ -1,0 +1,43 @@
+@use "@/styles/mixins" as m;
+
+/* Doubled class so a size wins over the studio's 34px default and over the
+   28px the ghost modifier sets, whatever order the sheets land in. */
+.ohf-icon-btn.ohf-icon-btn--28 {
+  width: var(--h-xs);
+  height: var(--h-xs);
+}
+.ohf-icon-btn.ohf-icon-btn--30 {
+  width: 30px;
+  height: 30px;
+}
+.ohf-icon-btn.ohf-icon-btn--36 {
+  width: var(--h-md);
+  height: var(--h-md);
+}
+
+.ohf-icon-btn {
+  &[data-state="hover"] {
+    background: var(--s3);
+    color: var(--tx);
+    border-color: var(--line-2);
+  }
+  &[data-state="active"] {
+    transform: scale(0.96);
+  }
+  @include m.disabled {
+    color: var(--tx-off);
+    background: var(--s1);
+    border-color: var(--line);
+    transform: none;
+  }
+  &--ghost {
+    @include m.hover {
+      background: var(--s3);
+      border-color: transparent;
+    }
+    @include m.disabled {
+      background: transparent;
+      border-color: transparent;
+    }
+  }
+}

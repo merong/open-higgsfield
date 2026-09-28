@@ -1,0 +1,22 @@
+.ohf-dialog-panel {
+  max-width: calc(100vw - 32px);
+}
+.ohf-dialog-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 18px 0;
+}
+.ohf-dialog-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: var(--fw-display);
+  letter-spacing: -0.02em;
+}
+.ohf-dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 18px 18px;
+}

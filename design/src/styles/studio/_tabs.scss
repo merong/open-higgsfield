@@ -1,0 +1,75 @@
+/* ---------- scope tabs ---------- */
+
+.ohf-tabs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+/* One plate travels between the three scopes and morphs to each label's real
+   width, so a switch reads as a single continuous move rather than three
+   independent fades. Measured in Topbar.tsx — equal columns would pad the
+   short labels out to match "Assets". */
+.ohf-thumb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--thumb-w);
+  transform: translate3d(var(--thumb-x), 0, 0);
+  border-radius: var(--radius-ctl);
+  background: var(--s3);
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-1), var(--glint);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.44s var(--ease-slide),
+    width 0.44s var(--ease-slide),
+    opacity var(--dur-slow) ease;
+}
+.ohf-thumb[data-ready="true"] {
+  opacity: 1;
+}
+.ohf-tab {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--h-md);
+  padding: 0 13px;
+  border-radius: var(--radius-ctl);
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-strong);
+  letter-spacing: var(--ls-tight);
+  color: var(--tx2);
+  transition:
+    color 0.22s ease,
+    background var(--dur-base) ease;
+}
+.ohf-tab svg {
+  flex-shrink: 0;
+  color: var(--tx3);
+  transition: color 0.22s ease;
+}
+.ohf-tab:hover {
+  color: var(--tx);
+}
+.ohf-tab:hover svg {
+  color: var(--tx2);
+}
+.ohf-tab:not([aria-selected="true"]):hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+.ohf-tab:active {
+  transform: scale(0.97);
+}
+.ohf-tab[aria-selected="true"] {
+  color: var(--tx);
+}
+.ohf-tab[aria-selected="true"] svg {
+  color: var(--accent);
+}
+

@@ -1,0 +1,14 @@
+✔ landing recommendation uses owned decoded images and current intent without charging (11.201916ms)
+✔ recommendation rejects foreign, duplicate, missing, oversized and incomplete output (15.566041ms)
+✔ landing photo references are validated before reserving a credit; photo-only start persists order (17.4105ms)
+✔ landing model sends actual images at every stage and limits section roles to landing (28.111708ms)
+✔ landing plan selects primary, validates sources and allows replacing or omitting an image (7.2025ms)
+✔ approved photos reach draft, image board, library and HTML; copy edits and reload keep them (28.709667ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11675.340833

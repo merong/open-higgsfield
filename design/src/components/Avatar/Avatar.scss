@@ -1,0 +1,35 @@
+.ohf-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--s3);
+  border: 1px solid var(--line-2);
+  color: var(--tx2);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  &--28 {
+    width: var(--h-xs);
+    height: var(--h-xs);
+    font-size: 10px;
+  }
+  &--32 {
+    width: var(--h-sm);
+    height: var(--h-sm);
+  }
+  &--44 {
+    width: 44px;
+    height: 44px;
+    font-size: var(--fs-base);
+  }
+}
+.ohf-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

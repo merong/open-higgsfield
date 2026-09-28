@@ -1,0 +1,8 @@
+.ohf-tip[data-state="hover"][data-tip]::after {
+  opacity: 1;
+  translate: -50% 0;
+}
+.ohf-tip--start[data-state="hover"][data-tip]::after,
+.ohf-tip--end[data-state="hover"][data-tip]::after {
+  translate: 0 0;
+}

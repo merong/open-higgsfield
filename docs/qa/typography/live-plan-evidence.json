@@ -1,0 +1,45 @@
+{
+  "id": "85029ae9-0c9f-48fa-8de5-851ca646131e",
+  "projectId": "03b8ede3-fed1-450e-b1ad-3af28171f2e6",
+  "model": "gpt-5.6-terra",
+  "status": "waiting_user",
+  "recommendations": [
+    {
+      "reason": "초보자를 위한 관리 안내이므로 제목은 Pretendard 800으로 빠르게 구분하고, 본문은 Pretendard 400으로 두 항목을 또렷하게 전달하는 구성이 가장 적합합니다.",
+      "caution": "모바일에서는 본문 줄간격을 충분히 두고, 제목과 본문 대비를 유지하세요. 얇은 획이나 장식적인 본문 폰트는 피합니다.",
+      "presetId": "clear"
+    },
+    {
+      "reason": "처음 식물을 키우는 사람에게 부담 없이 말을 거는 표지와 짧은 실천 안내에 어울립니다. 제목은 Do Hyeon, 본문은 Noto Sans KR로 역할을 분리합니다.",
+      "caution": "Do Hyeon은 긴 본문에 쓰지 말고 제목에만 사용하세요. 작은 크기에서 본문 글자 획이 뭉개지지 않도록 확인이 필요합니다.",
+      "presetId": "friendly"
+    },
+    {
+      "reason": "‘식물과 함께 사는 연습’이라는 표지의 생활 감성을 GOWUN Batang 제목으로 살리되, 관리 안내 본문은 SUIT로 명료하게 유지하는 대안입니다.",
+      "caution": "감성 제목이 길어지면 줄 수가 늘 수 있습니다. 본문에는 명조체 대신 SUIT를 사용하고 작은 글자 크기의 가는 획은 피하세요.",
+      "presetId": "natural"
+    }
+  ],
+  "typography": {
+    "body": {
+      "font": "noto-sans-kr",
+      "weight": 400
+    },
+    "title": {
+      "font": "do-hyeon",
+      "weight": 400
+    },
+    "accent": {
+      "font": "poppins",
+      "weight": 600
+    },
+    "preset": "friendly",
+    "version": 1,
+    "confirmed": true
+  },
+  "copyUnchanged": true,
+  "cleanup": {
+    "status": "cancelled",
+    "balance": 285
+  }
+}

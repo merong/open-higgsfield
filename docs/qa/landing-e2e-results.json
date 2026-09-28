@@ -1,0 +1,21 @@
+{
+  "workflowId": "c1d506a5-2d55-4614-a700-260ee7c96e45",
+  "projectId": "5958d529-5b53-45ab-b99a-9b10c8422124",
+  "model": "gpt-5.6-terra",
+  "effort": "low",
+  "calls": 8,
+  "status": "completed",
+  "contentVersion": 7,
+  "reviewVersion": 7,
+  "reviewIssues": [],
+  "changedAfterFirstPatch": [
+    4
+  ],
+  "ctaPreserved": true,
+  "finalProjectVersion": 9,
+  "imageSlots": 1,
+  "appCreditsUsed": 1,
+  "mobileWidth": 390,
+  "mobileDocumentWidth": 390,
+  "archiveId": "d67ec2fa-a76d-40cb-9359-ab9dd62ac955"
+}

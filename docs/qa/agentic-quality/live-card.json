@@ -1,0 +1,318 @@
+{
+  "id": "e63338e0-5646-4da6-94ed-c0b48be5f384",
+  "projectId": "5f17d178-2f11-48e4-ad02-48f95d994c47",
+  "model": "gpt-5.6-terra",
+  "effort": "low",
+  "status": "ready",
+  "stage": "review",
+  "budget": {
+    "calls": 6,
+    "images": 0,
+    "repairs": 0,
+    "activeMs": 51585,
+    "maxCalls": 12,
+    "maxImages": 12,
+    "maxRepairs": 2,
+    "maxActiveMs": 600000
+  },
+  "editorial": {
+    "repairs": 0,
+    "reviews": [
+      {
+        "at": 1790073217798,
+        "round": 1,
+        "issues": [
+          {
+            "message": "‘판단을 덧붙이지 말고’는 제공된 사실에 없는 추가 관찰 원칙입니다. 본문을 ‘잎의 디테일을 살펴보며 어제 찍은 사진과 비교하세요. 달라진 점이 보이면 메모하세요.’로 보정하세요.",
+            "severity": "error",
+            "targetId": "3bee34f0-09aa-4c7e-a9d5-5e40ad2df33a"
+          },
+          {
+            "message": "‘같은 기준으로 이어 보는 습관’은 제공 메시지 밖의 효과·습관화 표현입니다. ‘오늘의 관찰과 메모를 남겼다면, 내일도 같은 자리에서 다시 기록하세요. 저장해 두고 이어 보세요.’처럼 기록 안내로 한정하세요.",
+            "severity": "error",
+            "targetId": "2e65c051-a9ea-4e78-93cc-c4c0a7318925"
+          }
+        ],
+        "summary": "3장 구성과 카드별 이미지 역할(전체 화분·잎 디테일·관찰 노트)은 명세에 맞고, 1장 확정 본문도 정확히 반영되었습니다. 다만 제공 사실은 ‘달라진 점을 메모’와 ‘내일 같은 자리에서 다시 기록’까지이므로, 2장의 ‘판단을 덧붙이지 말고’와 3장의 ‘습관’ 표현은 범위를 넓힙니다. 정보형 마무리의 저장 안내는 가능하지만 구매 유도는 없습니다.",
+        "criteria": [
+          {
+            "key": "intent",
+            "status": "pass",
+            "evidence": "처음 반려식물을 키우는 사람에게 오늘 관찰→어제 사진 비교·메모→내일 재기록의 실용적 순서로 안내하며, 판매·구매 CTA가 없습니다."
+          },
+          {
+            "key": "facts",
+            "status": "fail",
+            "evidence": "2장 본문의 ‘판단을 덧붙이지 말고’, 3장 본문의 ‘이어 보는 습관’은 사용자가 허용한 세 가지 사실·메시지에 직접 제시되지 않은 안내입니다."
+          },
+          {
+            "key": "narrative",
+            "status": "pass",
+            "evidence": "1장 ‘오늘의 잎’에서 시작해 2장 비교와 메모, 3장 같은 자리 재기록으로 이어져 각 장이 서로 다른 질문에 답합니다."
+          },
+          {
+            "key": "visual",
+            "status": "pass",
+            "evidence": "1장은 전체 화분, 2장은 잎의 질감과 사진 비교, 3장은 같은 위치의 화분과 관찰 노트로 구분되어 메시지와 장면의 역할이 겹치지 않습니다."
+          },
+          {
+            "key": "readability",
+            "status": "pass",
+            "evidence": "제목·키커·본문의 위계가 분명하고, 1장의 확정 본문은 짧고 단독으로 읽힙니다. Pretendard 제목 800·본문 400의 확정 역할도 유지되었습니다."
+          }
+        ]
+      }
+    ],
+    "scopeIds": [
+      "4d95a433-daa3-4639-b50d-8aaf8926192d"
+    ],
+    "targetIds": []
+  },
+  "slots": [
+    {
+      "id": "4d95a433-daa3-4639-b50d-8aaf8926192d",
+      "cta": "오늘의 잎을 천천히 살펴보세요",
+      "dim": 0.5,
+      "body": "오늘의 잎을 천천히 살펴보세요.",
+      "crop": 0,
+      "href": "",
+      "kind": "cover",
+      "trim": 0,
+      "title": "오늘의 잎을 천천히 보기",
+      "kicker": "반려식물 관찰 기록 · 01",
+      "prompt": "Vertical 4:5 editorial photograph for a beginner houseplant observation guide. A single potted leafy houseplant is the clear main subject, shown as a full pot from a medium distance on a simple windowsill in a quiet home. Soft natural side daylight, calm neutral green and beige palette, realistic observational mood. The entire plant, pot, leaves, and surrounding space are visible. No hands, no diagnostic tools, no product packaging. Leave calm negative space for Korean overlay copy. No text, no logos, no books, no magazine covers.",
+      "duration": 4,
+      "composition": "full",
+      "readingLayout": "balanced"
+    },
+    {
+      "id": "3bee34f0-09aa-4c7e-a9d5-5e40ad2df33a",
+      "cta": "달라진 점을 짧게 메모하세요",
+      "dim": 0.5,
+      "body": "잎의 디테일을 살펴보며 어제 찍은 사진과 비교하세요. 달라진 점이 보이면 판단을 덧붙이지 말고, 보이는 내용을 메모합니다.",
+      "crop": 0,
+      "href": "",
+      "kind": "body",
+      "trim": 0,
+      "title": "어제 사진과 나란히 비교",
+      "kicker": "반려식물 관찰 기록 · 02",
+      "prompt": "Vertical 4:5 close-up editorial photograph of the same houseplant leaf, focusing on natural veins, leaf edge, and surface texture in gentle side daylight. A beginner plant keeper’s hand lightly steadies one leaf without bending it. In the softly blurred background, a smartphone shows an indistinct plant photo with no readable interface or words, only a visual cue for comparison. Quiet home windowsill, calm neutral green and beige palette, realistic observational mood. Leave uncluttered space for Korean overlay copy. No text, no logos, no books, no magazine covers.",
+      "duration": 4,
+      "composition": "full"
+    },
+    {
+      "id": "2e65c051-a9ea-4e78-93cc-c4c0a7318925",
+      "cta": "저장하고 내일 같은 자리에서 기록하세요",
+      "dim": 0.5,
+      "body": "오늘의 관찰과 메모를 남겼다면, 내일도 같은 자리에서 다시 기록하세요. 같은 기준으로 이어 보는 습관을 저장해 두세요.",
+      "crop": 0,
+      "href": "",
+      "kind": "cta",
+      "trim": 0,
+      "title": "내일 같은 자리에서 다시 기록",
+      "kicker": "반려식물 관찰 기록 · 03",
+      "prompt": "Vertical 4:5 editorial photograph of a quiet plant observation setup at the same home windowsill. The same potted leafy houseplant sits in the background in a consistent position. In the foreground, a person’s hand writes simple observation marks in a plain open notebook; a smartphone lies face down beside it. The notebook has no readable writing, labels, or typography. Soft natural morning side light, calm neutral green and beige palette, realistic everyday scene. Leave negative space for Korean overlay copy. No text, no logos, no books, no magazine covers.",
+      "duration": 4,
+      "composition": "full"
+    }
+  ],
+  "events": [
+    {
+      "at": 1790072867782,
+      "id": "92977c74-611e-4d41-b203-57aff7450e9e",
+      "type": "brief.updated",
+      "title": "아이디어 접수",
+      "message": "조건을 정리하고 필요한 선택부터 안내합니다. 제작 1 크레딧을 예약했습니다.",
+      "revision": 2
+    },
+    {
+      "at": 1790072867969,
+      "id": "b369604b-8ca0-4949-83fe-416dac5cd40d",
+      "type": "progress.updated",
+      "title": "요청의 의도를 정리하고 있어요",
+      "message": "1번째 AI 작업 · 직접 말씀한 조건과 AI의 가정 구분 · 독자·목적·결과물의 방향 정리",
+      "revision": 2
+    },
+    {
+      "at": 1790072873376,
+      "id": "9380e835-a477-48b9-a26f-09867edd6384",
+      "type": "brief.updated",
+      "title": "이렇게 이해했어요",
+      "message": "초보 반려식물 사용자를 위한 인스타그램 4:5 규격의 3장 정보형 카드뉴스입니다. 오늘의 잎 관찰, 어제 사진과의 비교·메모, 내일 같은 자리에서의 재기록만 다루며, 각 장은 전체 화분·잎 디테일·관찰 노트 이미지로 구분합니다.",
+      "revision": 3
+    },
+    {
+      "at": 1790072873521,
+      "id": "d742b826-be68-4ae0-8dc9-5ccc9f001948",
+      "type": "progress.updated",
+      "title": "이야기의 흐름과 장면을 설계하고 있어요",
+      "message": "2번째 AI 작업 · 각 항목이 답할 질문과 전달할 메시지 · 이미지 역할·정보 순서·강조 방식",
+      "revision": 4
+    },
+    {
+      "at": 1790072890360,
+      "id": "2f16f39b-6dbd-4608-92f7-05783bfe3cac",
+      "type": "preview.ready",
+      "title": "장별 기획을 준비했어요",
+      "message": "처음 반려식물을 키우는 사람이 오늘의 모습을 관찰하고, 어제 사진과 비교해 변화만 메모한 뒤, 내일 같은 자리에서 다시 기록하는 3장 흐름입니다. 각 장은 ‘무엇을 볼까–어떻게 비교할까–무엇을 이어 할까’라는 서로 다른 질문에 답합니다. 병해 진단, 물주기, 효능 등 제공되지 않은 정보는 넣지 않았으며, 마지막은 구매 유도 대신 기록을 이어가는 행동으로 마무리합니다.",
+      "revision": 5
+    },
+    {
+      "at": 1790072890360,
+      "id": "e988e70a-c98a-475c-91d7-911e45750df5",
+      "type": "input.requested",
+      "title": "함께 정해 주세요",
+      "message": "3장 구성입니다. 이 흐름으로 만들까요?",
+      "revision": 5
+    },
+    {
+      "at": 1790072914731,
+      "id": "8ddc4b4c-678b-40bd-b1df-7c3d55424107",
+      "type": "input.requested",
+      "title": "함께 정해 주세요",
+      "message": "표지의 분위기를 골라 주세요.",
+      "revision": 6
+    },
+    {
+      "at": 1790072914731,
+      "id": "7621916d-615b-477b-ba44-bb40bce9de55",
+      "type": "brief.updated",
+      "title": "의견을 반영했어요",
+      "message": "현재 기획을 승인했습니다.",
+      "revision": 6
+    },
+    {
+      "at": 1790072923164,
+      "id": "f2483303-704a-4959-9fca-53c3c092a953",
+      "type": "brief.updated",
+      "title": "의견을 반영했어요",
+      "message": "부드러운 이야기",
+      "revision": 7
+    },
+    {
+      "at": 1790072923353,
+      "id": "08053388-bbcb-4b28-a7d5-21defc2247cc",
+      "type": "progress.updated",
+      "title": "승인한 구성에 내용을 채우고 있어요",
+      "message": "3번째 AI 작업 · 확정 원문과 필수 정보 보존 · 구체적인 문구와 항목별 이미지 구상",
+      "revision": 8
+    },
+    {
+      "at": 1790072930981,
+      "id": "ea8704cb-0f01-439a-b416-265924b5a17a",
+      "type": "card.updated",
+      "title": "전체 카드 초안을 만들었어요",
+      "message": "확정한 목적과 기획에 맞는지 검수합니다.",
+      "revision": 9
+    },
+    {
+      "at": 1790072931147,
+      "id": "bf639d0f-5a99-4a72-8a3e-975537a1d942",
+      "type": "progress.updated",
+      "title": "초안을 다섯 가지 기준으로 검토하고 있어요",
+      "message": "4번째 AI 작업 · 의도·사실·흐름·이미지·전달 밀도 · 이전 지적의 해결 여부와 남은 확인 사항",
+      "revision": 10
+    },
+    {
+      "at": 1790072939917,
+      "id": "6358e8af-1c87-4598-abe6-b97b061632d5",
+      "type": "validation.updated",
+      "title": "내용 검수 결과",
+      "message": "3장 구성과 이미지 구상은 요청한 순서(전체 화분→잎 디테일→관찰 노트)를 따르며, 판매·구매 유도나 병해 진단·물주기 수치·효능도 없습니다. 다만 1장의 ‘비교할 기준’과 3장의 ‘같은 기준’은 제공된 사실을 넘어 관찰의 기능을 해석한 표현이므로, 자료 범위를 엄격히 지키려면 제공 문구 중심으로 조정하는 편이 안전합니다. 마지막 장의 저장 안내는 정보형 콘텐츠의 비구매 CTA로 적절합니다.",
+      "revision": 11
+    },
+    {
+      "at": 1790072939917,
+      "id": "82f8df6d-d3ca-46a3-bd49-7cfe2f8b08e9",
+      "type": "preview.ready",
+      "title": "카드를 확인해 주세요",
+      "message": "원하는 카드만 고치거나 파일을 준비할 수 있어요. 파일 생성이 끝나면 제작이 완료됩니다.",
+      "revision": 11
+    },
+    {
+      "at": 1790073204500,
+      "id": "2a488038-00ed-4b9e-bcb5-ed5ba4315e15",
+      "type": "input.received",
+      "title": "선택 카드 수정 요청",
+      "message": "1장 수정 · 1장 본문만 다음 확정 문구로 바꿔 주세요: 오늘의 잎을 천천히 살펴보세요. 제목, 이미지 구상, 2·3장의 문구는 유지하세요.",
+      "revision": 12
+    },
+    {
+      "at": 1790073204675,
+      "id": "7dfc5ee3-edac-4bda-b982-88e85680d7d7",
+      "type": "progress.updated",
+      "title": "선택한 부분에 의견을 반영하고 있어요",
+      "message": "5번째 AI 작업 · 사용자가 허용한 범위와 문구 보호 · 변경의 영향과 추가 검수 준비",
+      "revision": 13
+    },
+    {
+      "at": 1790073208337,
+      "id": "d1e716d0-698c-477e-a1ca-c4afd4ceb466",
+      "type": "card.updated",
+      "title": "선택한 카드만 수정했어요",
+      "message": "1장 본문만 확정 문구로 변경했습니다. 제목, 이미지 프롬프트와 구도 설정은 유지했습니다.",
+      "revision": 14
+    },
+    {
+      "at": 1790073208509,
+      "id": "fe52ad05-0a54-463a-b860-96c109398c64",
+      "type": "progress.updated",
+      "title": "초안을 다섯 가지 기준으로 검토하고 있어요",
+      "message": "6번째 AI 작업 · 의도·사실·흐름·이미지·전달 밀도 · 이전 지적의 해결 여부와 남은 확인 사항",
+      "revision": 15
+    },
+    {
+      "at": 1790073217798,
+      "id": "0fda5ddc-b365-44b7-9124-530fc7da0dc7",
+      "type": "validation.updated",
+      "title": "내용 검수 결과",
+      "message": "3장 구성과 카드별 이미지 역할(전체 화분·잎 디테일·관찰 노트)은 명세에 맞고, 1장 확정 본문도 정확히 반영되었습니다. 다만 제공 사실은 ‘달라진 점을 메모’와 ‘내일 같은 자리에서 다시 기록’까지이므로, 2장의 ‘판단을 덧붙이지 말고’와 3장의 ‘습관’ 표현은 범위를 넓힙니다. 정보형 마무리의 저장 안내는 가능하지만 구매 유도는 없습니다.",
+      "revision": 16
+    },
+    {
+      "at": 1790073217798,
+      "id": "4bc62888-826d-47e2-8947-1a439dd9bdf9",
+      "type": "preview.ready",
+      "title": "카드를 확인해 주세요",
+      "message": "원하는 카드만 고치거나 파일을 준비할 수 있어요. 파일 생성이 끝나면 제작이 완료됩니다.",
+      "revision": 16
+    }
+  ],
+  "versions": [
+    {
+      "version": 7,
+      "reason": "선택 카드 수정",
+      "created_at": 1790073208339
+    },
+    {
+      "version": 6,
+      "reason": "카드 작성",
+      "created_at": 1790072930983
+    },
+    {
+      "version": 5,
+      "reason": "선택 반영",
+      "created_at": 1790072923166
+    },
+    {
+      "version": 4,
+      "reason": "선택 반영",
+      "created_at": 1790072914733
+    },
+    {
+      "version": 3,
+      "reason": "장별 기획",
+      "created_at": 1790072890363
+    },
+    {
+      "version": 2,
+      "reason": "요청 이해",
+      "created_at": 1790072873379
+    },
+    {
+      "version": 1,
+      "reason": "제작 시작",
+      "created_at": 1790072867782
+    }
+  ]
+}

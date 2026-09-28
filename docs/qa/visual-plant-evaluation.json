@@ -1,0 +1,112 @@
+{
+  "runId": "d44de09a-dbdf-4c03-8e1f-adba435f98f0",
+  "projectId": "a4902734-47d5-4362-aa48-adf3452ddbd3",
+  "status": "completed",
+  "version": 28,
+  "copyPreserved": true,
+  "copyFields": [
+    "id",
+    "kind",
+    "title",
+    "body",
+    "kicker",
+    "cta"
+  ],
+  "imagesBefore": 1,
+  "imagesAfter": 5,
+  "model": "gpt-5.6-terra",
+  "effort": "low",
+  "modelCalls": 7,
+  "imageCalls": 8,
+  "creditsBefore": 539,
+  "creditsAfter": 506,
+  "criteria": {
+    "matching": {
+      "pass": 4,
+      "attention": 1,
+      "fail": 0
+    },
+    "typography": {
+      "pass": 5,
+      "attention": 0,
+      "fail": 0
+    },
+    "content": {
+      "pass": 4,
+      "attention": 1,
+      "fail": 0
+    },
+    "output": {
+      "pass": 5,
+      "attention": 0,
+      "fail": 0
+    },
+    "protection": {
+      "pass": 5,
+      "attention": 0,
+      "fail": 0
+    }
+  },
+  "mobileWidths": [
+    390
+  ],
+  "documentWidths": [
+    390
+  ],
+  "bodyPxAt360": [
+    16.2,
+    16.2,
+    16.2,
+    16.2,
+    16.2
+  ],
+  "outputIssues": 0,
+  "artifacts": {
+    "files": [
+      {
+        "url": "/api/workspace/exports/24ed7a5c-c5be-4049-88f6-3820cd4df384",
+        "name": "01.png"
+      },
+      {
+        "url": "/api/workspace/exports/49bcde07-7b50-4703-b46f-7c07ab62dd43",
+        "name": "02.png"
+      },
+      {
+        "url": "/api/workspace/exports/987191c7-f79b-48e6-a694-5c4cc2363b55",
+        "name": "03.png"
+      },
+      {
+        "url": "/api/workspace/exports/ca1d2f30-2b8c-42e2-9016-21e8a58a10de",
+        "name": "04.png"
+      },
+      {
+        "url": "/api/workspace/exports/8f43e7c3-88b6-4356-b088-816fa161b30f",
+        "name": "05.png"
+      }
+    ],
+    "width": 1080,
+    "height": 1350,
+    "zipUrl": "/api/workspace/exports/fe0bfb65-066b-4e16-899d-9a77a6f34974",
+    "projectVersion": 28
+  },
+  "warnings": [
+    {
+      "card": 4,
+      "status": "attention",
+      "evidence": "왼쪽의 직립 잎과 중앙의 깃꼴 잎이 산세베리아·ZZ를 의도한 구성으로 보이나, 오른쪽에 다른 형태의 잎도 보여 두 식물을 명확히 보여 주는 사진인지는 불확실합니다.",
+      "criterion": "matching",
+      "suggestion": "두 식물을 소개하는 카드라면 산세베리아의 직립 잎과 ZZ의 윤기 있는 깃꼴 잎이 각각 더 분명히 보이도록 사진 구성을 확인해 보세요."
+    },
+    {
+      "card": 5,
+      "status": "attention",
+      "evidence": "배수·받침 물 비우기 항목은 제공된 UMN 출처 설명과 맞습니다. 다만 반려동물 항목은 ‘접근 확인’만으로 어떤 식물을 확인·분리할지 구체성은 부족합니다.",
+      "criterion": "content",
+      "suggestion": "제공 출처의 예방 취지를 살리려면 반려동물 관련 표현을 더 구체화할지 사용자 승인 후 검토하세요."
+    }
+  ],
+  "mobilePreviewWidth": 354,
+  "mobilePreviewBodyPx": 15.93,
+  "brokenThumbnailImages": 0,
+  "testsPassed": 73
+}

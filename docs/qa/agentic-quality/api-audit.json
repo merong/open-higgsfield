@@ -1,0 +1,155 @@
+[
+  {
+    "user": "admin",
+    "path": "session",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "projects",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "library",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "credits",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "admin/dashboard",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "admin/users",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "admin/projects",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "admin/activity",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "admin/library",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "settings/openai",
+    "status": 200,
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "configured": true
+  },
+  {
+    "user": "admin",
+    "path": "settings/higgsfield",
+    "status": 200
+  },
+  {
+    "user": "admin",
+    "path": "reel-workflow",
+    "status": 200,
+    "active": {
+      "id": "82f50aaf-4bae-429d-837b-18ad166c0cc4",
+      "stage": "production",
+      "status": "ready"
+    }
+  },
+  {
+    "user": "admin",
+    "path": "landing-workflow",
+    "status": 200,
+    "active": null
+  },
+  {
+    "user": "admin",
+    "path": "landing-workflow?format=product-detail",
+    "status": 200,
+    "active": null
+  },
+  {
+    "user": "user9",
+    "path": "session",
+    "status": 200
+  },
+  {
+    "user": "user9",
+    "path": "projects",
+    "status": 200
+  },
+  {
+    "user": "user9",
+    "path": "library",
+    "status": 200
+  },
+  {
+    "user": "user9",
+    "path": "credits",
+    "status": 200
+  },
+  {
+    "user": "user9",
+    "path": "admin/dashboard",
+    "status": 403
+  },
+  {
+    "user": "user9",
+    "path": "admin/users",
+    "status": 403
+  },
+  {
+    "user": "user9",
+    "path": "admin/projects",
+    "status": 403
+  },
+  {
+    "user": "user9",
+    "path": "admin/activity",
+    "status": 403
+  },
+  {
+    "user": "user9",
+    "path": "admin/library",
+    "status": 403
+  },
+  {
+    "user": "user9",
+    "path": "settings/openai",
+    "status": 403
+  },
+  {
+    "user": "user9",
+    "path": "settings/higgsfield",
+    "status": 403
+  },
+  {
+    "user": "user9",
+    "path": "reel-workflow",
+    "status": 200,
+    "active": null
+  },
+  {
+    "user": "user9",
+    "path": "landing-workflow",
+    "status": 200,
+    "active": null
+  },
+  {
+    "user": "user9",
+    "path": "landing-workflow?format=product-detail",
+    "status": 200,
+    "active": null
+  }
+]

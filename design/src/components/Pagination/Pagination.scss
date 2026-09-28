@@ -1,0 +1,15 @@
+.ohf-pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--text-primary);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  > span {
+    min-width: 5ch;
+    text-align: center;
+  }
+  > span > span {
+    color: var(--text-muted);
+  }
+}

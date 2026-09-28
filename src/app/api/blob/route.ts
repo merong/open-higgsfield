@@ -1,20 +1,23 @@
 import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
-import { cookies } from "next/headers";
+import { requireUser } from "@/service/session";
 import { NextResponse } from "next/server";
 
 import {
   DEVICE_COOKIE,
   DEVICE_COOKIE_OPTIONS,
   blobPathname,
-  resolveDeviceId,
 } from "@/generation/device";
 
-// Anyone who can hit this route can upload. Gate it when auth exists.
+/* Blob callbacks are signature-verified by handleUpload; only authenticated users mint tokens. */
 
 export async function POST(request: Request): Promise<NextResponse> {
   const incoming = (await request.json()) as HandleUploadBody;
-  const device =
-    incoming.type === "blob.generate-client-token" ? await readDeviceId() : null;
+  let device: {deviceId:string;minted:boolean}|null = null;
+  if (incoming.type === "blob.generate-client-token") {
+    if (!request.headers.get("origin") || new URL(request.headers.get("origin")!).host !== request.headers.get("host")) return new NextResponse(null,{status:403});
+    try { const user = await requireUser(); device={deviceId:user.id,minted:false}; }
+    catch { return new NextResponse(null,{status:401}); }
+  }
   const body = device ? withDevicePath(incoming, device.deviceId) : incoming;
   console.info("[blob] upload", summarizeBlobEvent(body));
 
@@ -52,11 +55,6 @@ export async function POST(request: Request): Promise<NextResponse> {
     if (device?.minted) return withDeviceCookie(new NextResponse(null, { status: 500 }), device);
     throw error;
   }
-}
-
-async function readDeviceId() {
-  const jar = await cookies();
-  return resolveDeviceId(jar.get(DEVICE_COOKIE)?.value);
 }
 
 function withDeviceCookie(

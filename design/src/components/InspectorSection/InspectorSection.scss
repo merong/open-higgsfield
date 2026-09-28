@@ -1,0 +1,35 @@
+.ohf-inspector {
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--sp-5) 0;
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+    color: var(--text-primary);
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary svg {
+    transform: rotate(-90deg);
+  }
+  &[open] summary svg {
+    transform: none;
+  }
+  > p {
+    margin-top: var(--sp-2);
+    color: var(--text-muted);
+    font-size: var(--fs-xs);
+    line-height: 1.6;
+  }
+}
+.ohf-inspector-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}

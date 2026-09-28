@@ -1,0 +1,40 @@
+{
+  "faq": {
+    "open": true,
+    "answer": "상담 일정과 가격은 정해졌나요?현재 상담 일정과 가격은 아직 정해지지 않았습니다. 이메일 문의를 확인한 뒤 안내드립니다."
+  },
+  "anchor": {
+    "hash": "#section-5",
+    "targetExists": true
+  },
+  "states": {
+    "p1": {
+      "user": "관리자",
+      "credits": 267
+    },
+    "card": {
+      "status": "ready",
+      "stage": "review",
+      "calls": 6
+    },
+    "p2": {
+      "user": "데모 사용자 9",
+      "credits": 39
+    },
+    "landing": {
+      "status": "completed",
+      "stage": "review",
+      "calls": 7
+    },
+    "product": {
+      "status": "completed",
+      "stage": "review",
+      "calls": 4
+    },
+    "reel": {
+      "status": "ready",
+      "stage": "production",
+      "calls": 6
+    }
+  }
+}

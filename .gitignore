@@ -12,3 +12,10 @@ tsconfig.tsbuildinfo
 
 .env*
 .idea
+
+.data/
+
+!.env.example
+
+!vendor/design/dist/
+!vendor/design/dist/**

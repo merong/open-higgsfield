@@ -1,0 +1,17 @@
+✔ product validation, manual draft, fixed information render and escaping (2.931334ms)
+✔ product and landing workflow discovery, idempotency and refunds are isolated by format (37.680167ms)
+✔ product intent, plan, copy, scoped revision, approved images, handoff, and library persistence (77.606125ms)
+✔ multipart uploads bound the streamed body even without content-length (30.733167ms)
+✔ uploads preserve original bytes and ownership; vision uses a decoded image copy (22.649583ms)
+✔ corrupt, disguised, oversized, empty, animated and too-large pixel inputs do not persist (5.772625ms)
+✔ EXIF orientation is respected and AI images are bounded without modifying originals (80.499375ms)
+✔ invalid reference selections reject before reserving credits or creating a workflow (6.341667ms)
+✔ multimodal request, approved source mapping, refresh, copy revision, image board and handoff (61.648958ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11919.765125

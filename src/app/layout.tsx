@@ -11,7 +11,10 @@ import {
   twitterFor,
 } from "@/site";
 
+import "@openhiggsfield/design/ohf.css";
 import "./base.css";
+import "@/editors/workspace.css";
+import { WorkspaceShell } from "@/shell/workspace-shell";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,8 +52,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="ko">
+      <body><WorkspaceShell>{children}</WorkspaceShell></body>
     </html>
   );
 }

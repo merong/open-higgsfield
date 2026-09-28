@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/projects/new?format=card-news",
+    "headings": [
+      "무엇을 만들어 볼까요?",
+      "한 줄에서 시작해내 의도에 맞게."
+    ],
+    "forms": 1,
+    "viewport": 1440,
+    "width": 1440,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "path": "/projects/new?format=reels",
+    "headings": [
+      "무엇을 만들어 볼까요?",
+      "사진 속 이야기를,움직이는 컷으로."
+    ],
+    "forms": 1,
+    "viewport": 1440,
+    "width": 1440,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "path": "/account",
+    "headings": [
+      "내 라이브러리"
+    ],
+    "forms": 2,
+    "viewport": 1440,
+    "width": 1440,
+    "errors": [],
+    "failed": []
+  }
+]

@@ -1,0 +1,587 @@
+/* ---------- the dock's second instrument ---------- */
+
+/* One slot, two instruments, laid on the same grid cell and aligned to the
+   same bottom edge: the dock never changes height, the gallery never reflows
+   under it, and the toolbar rises exactly where the composer's rail stood.
+   The composer stays mounted through it — an attached input and a half-typed
+   prompt survive a trip through selection. */
+.ohf-swap {
+  display: grid;
+  /* The track is pinned to the column rather than sized to its widest item:
+     the toolbar's controls do not shrink, and an auto track would let their
+     combined min-content width push the dock past a narrow viewport. */
+  grid-template-columns: minmax(0, 1fr);
+  align-items: end;
+}
+.ohf-swap > * {
+  grid-area: 1 / 1;
+}
+.ohf-dock[data-selecting="true"] .ohf-composer {
+  opacity: 0;
+  translate: 0 10px;
+  scale: 0.97;
+  pointer-events: none;
+}
+/* The wrap spans the whole column, so while the toolbar holds a fraction of it
+   the rest of that column hands its clicks back to the gallery. The banner
+   strip keeps its own. */
+.ohf-dock[data-selecting="true"] .ohf-composer-wrap {
+  pointer-events: none;
+}
+.ohf-dock[data-selecting="true"] :is(.ohf-undo, .ohf-alert) {
+  pointer-events: auto;
+}
+
+/* The toolbar is a plate, not a panel: it floats over returned pictures the
+   way the card chrome does, so it carries the same smoked backdrop rather than
+   the composer's opaque slate. */
+.ohf-selbar {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  background: rgba(19, 22, 24, 0.88);
+  /* Saturation just past 1 keeps the plate alive over a returned picture
+     without letting that picture tint the studio's chrome. */
+  backdrop-filter: blur(24px) saturate(1.15);
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-3), var(--glint);
+  pointer-events: none;
+  animation: ohf-selbar-out var(--dur-slow) var(--ease) both;
+}
+.ohf-selbar[data-on="true"] {
+  pointer-events: auto;
+  animation: ohf-selbar-in 0.42s var(--ease-slide) both;
+}
+/* The bar does not arrive as one block — each instrument resolves out of the
+   blur a beat after the one before it, left to right, the way the toolbar
+   would be read. */
+.ohf-selbar[data-on="true"] > * {
+  animation: ohf-selitem 0.38s var(--ease-slide) both;
+}
+.ohf-selbar[data-on="true"] > :nth-child(2) {
+  animation-delay: 0.03s;
+}
+.ohf-selbar[data-on="true"] > :nth-child(3) {
+  animation-delay: 0.055s;
+}
+.ohf-selbar[data-on="true"] > :nth-child(4) {
+  animation-delay: 0.08s;
+}
+.ohf-selbar[data-on="true"] > :nth-child(5) {
+  animation-delay: 0.105s;
+}
+.ohf-selbar[data-on="true"] > :nth-child(6) {
+  animation-delay: 0.13s;
+}
+.ohf-selbar[data-on="true"] > :nth-child(7) {
+  animation-delay: 0.155s;
+}
+
+.ohf-selbar-count {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  padding: 0 6px;
+  font-size: var(--fs-md);
+  color: var(--tx2);
+  white-space: nowrap;
+}
+.ohf-selbar-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ohf-selbar-n {
+  display: inline-block;
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--tx);
+  animation: ohf-count var(--dur-slide) var(--ease-slide);
+}
+
+/* What is held, not how many: three sheets deep, newest on top, so adding a
+   run to the set is visible without reading the number. */
+.ohf-selstack {
+  position: relative;
+  flex: none;
+  width: 37px;
+  height: 26px;
+}
+/* The sheets are cut apart by a dark ring rather than a light one: two pale
+   results stacked read as a single smear behind a hairline of white. */
+.ohf-selchip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  overflow: hidden;
+  border-radius: 7px;
+  box-shadow:
+    0 0 0 1.5px rgba(4, 6, 6, 0.9),
+    0 1px 4px rgba(0, 0, 0, 0.55);
+  background-size: cover;
+  translate: calc(var(--z) * 5px) 0;
+  scale: calc(1 - var(--z) * 0.1);
+  filter: brightness(calc(1 - var(--z) * 0.24));
+  z-index: calc(3 - var(--z));
+  animation: ohf-pop 0.26s var(--ease-slide);
+}
+.ohf-selchip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ohf-selchip-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.ohf-selbar-rule {
+  flex: none;
+  width: 1px;
+  height: 22px;
+  margin: 0 2px;
+  background: var(--line-2);
+}
+.ohf-selbar-slot {
+  display: flex;
+  flex: none;
+}
+
+.ohf-selact {
+  height: var(--h-md);
+  min-width: 36px;
+  flex: none;
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid transparent;
+  color: var(--tx);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.006em;
+  transition:
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+}
+.ohf-selact--wide {
+  padding: 0 13px 0 11px;
+}
+.ohf-selact:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--line-2);
+}
+.ohf-selact:active:not(:disabled) {
+  transform: scale(0.94);
+}
+.ohf-selact:disabled {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--tx-off);
+}
+.ohf-selact[data-on="true"] {
+  background: var(--accent-08);
+  border-color: var(--accent-32);
+  color: var(--accent);
+}
+.ohf-selact[data-on="true"]:hover {
+  background: var(--accent-14);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+.ohf-selact--danger:hover:not(:disabled) {
+  background: var(--danger-bg);
+  border-color: var(--danger-line);
+  color: var(--danger);
+}
+.ohf-selact--quiet {
+  background: transparent;
+  color: var(--tx2);
+}
+.ohf-selact--quiet:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--tx);
+}
+.ohf-selact-label {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Attachment and prompt share one line, and it starts on the same left rail as
+   the controls below — the composer reads as one column, not three insets. */
+.ohf-composer-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px 2px;
+}
+.ohf-prompt {
+  flex: 1;
+  min-width: 0;
+  resize: none;
+  min-height: 40px;
+  max-height: 168px;
+  background: transparent;
+  border: none;
+  padding: 9px 8px 8px 4px;
+  font-size: var(--fs-lg);
+  line-height: 1.5;
+  outline: none;
+}
+.ohf-prompt:focus-visible {
+  outline: none;
+}
+.ohf-prompt::placeholder {
+  color: var(--tx3);
+}
+
+/* One rail carries the model, whatever the catalog declares, and the batch;
+   the primary action holds the far end. The rail wraps rather than scrolls —
+   a hidden overflow is a control the visitor never finds. */
+.ohf-composer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
+  padding: 2px 12px 12px;
+}
+.ohf-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.ohf-attach {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  /* The head aligns to the top so a grown prompt keeps the button on its first
+     line; this nudge centres it optically on that line rather than on the box. */
+  margin-top: 3px;
+  border-radius: var(--ctl-r);
+  border: 1px solid var(--line-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tx2);
+  transition:
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+}
+.ohf-attach:hover:not(:disabled),
+.ohf-attach[aria-expanded="true"] {
+  background: var(--s3);
+  color: var(--tx);
+}
+.ohf-attach:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.ohf-attach:disabled {
+  color: var(--tx-off);
+  border-color: var(--line);
+}
+.ohf-spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-2);
+  border-top-color: var(--accent);
+  animation: ohf-rotate 0.7s linear infinite;
+}
+
+/* Every control on the rail is the same pill. The model keeps its swatch and
+   caret; each setting carries its own mark and its current value. */
+.ohf-ctl {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: var(--h-lg);
+  min-width: 0;
+  padding: 0 12px;
+  border-radius: var(--ctl-r);
+  border: 1px solid var(--line-2);
+  color: var(--tx2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  transition:
+    background var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease);
+}
+.ohf-ctl:hover {
+  background: var(--s3);
+  color: var(--tx);
+}
+.ohf-ctl:active {
+  transform: scale(0.96);
+}
+.ohf-ctl[aria-expanded="true"] {
+  background: var(--s3);
+  border-color: var(--accent-32);
+  color: var(--tx);
+}
+/* A flag is on or off, and on is a state — so it takes the accent the rest of
+   the rail never does. */
+.ohf-ctl--flag[aria-pressed="true"] {
+  background: var(--accent-14);
+  border-color: var(--accent-32);
+  color: var(--accent);
+}
+.ohf-ctl--model {
+  background: var(--s3);
+  box-shadow: var(--shadow-1);
+  color: var(--tx);
+}
+.ohf-ctl--model:hover {
+  background: var(--s4);
+}
+.ohf-ctl-glyph {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--tx3);
+  transition: color var(--dur-base) ease;
+}
+.ohf-ctl:hover .ohf-ctl-glyph,
+.ohf-ctl[aria-expanded="true"] .ohf-ctl-glyph {
+  color: var(--tx2);
+}
+.ohf-ctl--flag[aria-pressed="true"] .ohf-ctl-glyph {
+  color: inherit;
+}
+.ohf-ctl-value {
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ohf-ctl-name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* The aspect mark is the ratio itself, drawn in a fixed optical box so the
+   pill keeps its width as the value changes. */
+.ohf-ctl-ratio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.ohf-ctl-ratio-box {
+  border: 1.3px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+/* "auto" hands the frame to the model, so the frame is drawn but not fixed. */
+.ohf-ctl-ratio-box--auto {
+  width: 13px;
+  height: 9px;
+  border-style: dashed;
+  opacity: 0.6;
+}
+
+.ohf-model-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+.ohf-model-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  background: currentColor;
+  -webkit-mask: var(--ohf-model-icon) center / contain no-repeat;
+  mask: var(--ohf-model-icon) center / contain no-repeat;
+}
+.ohf-caret {
+  color: var(--tx3);
+  transition: transform var(--dur-slow) var(--ease);
+}
+[aria-expanded="true"] > .ohf-caret {
+  transform: rotate(180deg);
+}
+
+/* Batch size: the count and its ceiling between two steps, in one pill — the
+   number is the control, the arrows only nudge it. */
+.ohf-batch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: var(--h-lg);
+  flex-shrink: 0;
+  padding: 0 5px;
+  border-radius: var(--ctl-r);
+  border: 1px solid var(--line-2);
+  color: var(--tx2);
+  transition: background var(--dur-base) ease;
+}
+.ohf-batch:hover {
+  background: var(--s3);
+}
+.ohf-batch-step {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tx3);
+  transition:
+    background var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    transform var(--dur-fast) var(--ease);
+}
+.ohf-batch-step:hover:not(:disabled) {
+  background: var(--s4);
+  color: var(--tx);
+}
+.ohf-batch-step:active:not(:disabled) {
+  transform: scale(0.9);
+}
+.ohf-batch-step:disabled {
+  color: var(--tx-off);
+}
+.ohf-batch-value {
+  min-width: 30px;
+  text-align: center;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--tx);
+}
+.ohf-batch-max {
+  font-weight: var(--fw-medium);
+  color: var(--tx3);
+}
+
+.ohf-generate-slot {
+  margin-left: auto;
+  flex-shrink: 0;
+  display: flex;
+}
+.ohf-generate {
+  height: var(--h-lg);
+  border-radius: var(--ctl-r);
+  padding: 0 14px;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-display);
+  letter-spacing: var(--ls-tight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  background: linear-gradient(180deg, #d9fe3e, var(--accent));
+  color: var(--accent-ink);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition:
+    filter var(--dur-base) ease,
+    background var(--dur-slow) ease,
+    color var(--dur-slow) ease,
+    box-shadow var(--dur-slow) ease,
+    transform var(--dur-base) var(--ease);
+}
+.ohf-generate:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+.ohf-generate:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.ohf-generate:disabled {
+  background: var(--s3);
+  color: var(--tx4);
+  box-shadow: var(--shadow-1);
+}
+/* Busy is not dead: a run in flight keeps the accent, so it never reads as the
+   grey of "you cannot press this". */
+.ohf-generate[data-busy="true"]:disabled {
+  background: var(--accent-14);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent-32);
+}
+.ohf-generate-glyph {
+  display: none;
+  align-items: center;
+}
+.ohf-generate-label {
+  position: relative;
+}
+/* The shortcut glyphs fall back outside Inter, so they need the extra size and
+   their own tone rather than a blanket opacity. */
+.ohf-kbd {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  /* One key, recoloured by the button's own state — on lime it reads as dark
+     ink, on the disabled grey it follows the label. */
+  color: inherit;
+  opacity: 0.68;
+  background: rgba(0, 0, 0, 0.16);
+}
+.ohf-generate-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* The same closed sweep as the pending tile, on half its period. The button is
+   about a third of a tile wide, so an equal period would leave the lamp
+   crawling over a short run; 1.4s against 2.8s puts the studio's two waiting
+   surfaces on one 2:1 beat without either reading as anxious. */
+.ohf-generate-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.02) 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.02) 70%,
+    transparent 100%
+  );
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: ohf-sheen 1.4s linear infinite;
+}
+

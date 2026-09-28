@@ -1,0 +1,51 @@
+@use "@/styles/mixins" as m;
+
+.ohf-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background: var(--s4);
+  transition: background var(--dur-base) ease;
+
+  /* The off track lifts one step on hover; the checked track keeps the flat
+     accent fill below, since accent is state, not decoration to brighten. */
+  @include m.hover {
+    &:not([aria-checked="true"]) {
+      background: var(--line-2);
+    }
+  }
+  @include m.active {
+    .ohf-switch-knob {
+      scale: 0.92;
+    }
+  }
+
+  /* On is a state, so it is the one place this control takes the accent. */
+  &[aria-checked="true"] {
+    background: var(--accent);
+  }
+  &:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+}
+.ohf-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--tx);
+  box-shadow: var(--shadow-1);
+  transition:
+    translate var(--dur-slow) var(--ease),
+    background var(--dur-base) ease,
+    scale var(--dur-base) var(--ease);
+}
+.ohf-switch[aria-checked="true"] .ohf-switch-knob {
+  translate: 16px 0;
+  background: var(--bg);
+}

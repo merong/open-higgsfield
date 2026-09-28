@@ -1,0 +1,136 @@
+{
+  "id": "46b347aa-25aa-4f9b-96d6-b406fff7bd9e",
+  "projectId": "acf830a4-ca44-4c53-8e49-5a68a8bcbf04",
+  "project": {
+    "id": "acf830a4-ca44-4c53-8e49-5a68a8bcbf04",
+    "format": "reels",
+    "title": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초",
+    "brief": {
+      "topic": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초",
+      "audience": "",
+      "tone": "calm",
+      "count": 3,
+      "mustInclude": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초 브랜드 릴스, 3컷. 같은 원본 사진을 컷마다 다르게 크롭하고 천천히 확대하는 이미지 모션으로 만들어요. 1컷 정돈된 아침, 2컷 손이 닿는 자리, 3컷 작은 공간의 여유. 내레이션 없이 짧은 자막만. 가격, 효능, 친환경 인증, 실제 손 동작·액체 변화·새 사물 생성 요구는 제외. 원본 사진만으로 가능한 구도를 사용해 주세요."
+    },
+    "ratio": "9:16",
+    "preset": "editorial",
+    "brand": "",
+    "caption": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초\n\nQA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초 브랜드 릴스, 3컷. 같은 원본 사진을 컷마다 다르게 크롭하고 천천히 확대하는 이미지 모션으로 만들어요. 1컷 정돈된 아침, 2컷 손이 닿는 자리, 3컷 작은 공간의 여유. 내레이션 없이 짧은 자막만. 가격, 효능, 친환경 인증, 실제 손 동작·액체 변화·새 사물 생성 요구는 제외. 원본 사진만으로 가능한 구도를 사용해 주세요.",
+    "modelId": "kling-3-turbo",
+    "slots": [
+      {
+        "id": "bb86d58a-c807-41c2-a85b-12ce7a397c59",
+        "kind": "cover",
+        "title": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초",
+        "body": "전하고 싶은 핵심 메시지를 담아 보세요.",
+        "kicker": "",
+        "prompt": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "cta": "자세히 알아보기",
+        "href": "",
+        "duration": 4,
+        "trim": 0,
+        "composition": "full",
+        "dim": 0.5,
+        "crop": 0
+      },
+      {
+        "id": "edf177e0-278f-49f1-a627-1e4441a891a9",
+        "kind": "body",
+        "title": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초 브랜드 릴스, 3컷. 같은 원본 사진을 컷마다 다르게",
+        "body": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초 브랜드 릴스, 3컷. 같은 원본 사진을 컷마다 다르게 크롭하고 천천히 확대하는 이미지 모션으로 만들어요. 1컷 정돈된 아침, 2컷 손이 닿는 자리, 3컷 작은 공간의 여유. 내레이션 없이 짧은 자막만. 가격, 효능, 친환경 인증, 실제 손 동작·액체 변화·새 사물 생성 요구는 제외. 원본 사진만으로 가능한 구도를 사용해 주세요.",
+        "kicker": "01",
+        "prompt": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초. QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초 브랜드 릴스, 3컷. 같은 원본 사진을 컷마다 다르게 크롭하고 천천히 확대하는 이미지 모션으로 만들어요. 1컷 정돈된 아침, 2컷 손이 닿는 자리, 3컷 작은 공간의 여유. 내레이션 없이 짧은 자막만. 가격, 효능, 친환경 인증, 실제 손 동작·액체 변화·새 사물 생성 요구는 제외. 원본 사진만으로 가능한 구도를 사용해 주세요.. No text, no logos.",
+        "cta": "자세히 알아보기",
+        "href": "",
+        "duration": 4,
+        "trim": 0,
+        "composition": "full",
+        "dim": 0.5,
+        "crop": 0
+      },
+      {
+        "id": "c170d9e6-b8d5-4dfe-9d92-86648445bc38",
+        "kind": "cta",
+        "title": "다음 이야기도 함께해요",
+        "body": "브랜드의 실제 정보와 경험을 바탕으로 이 문장을 완성해 주세요.",
+        "kicker": "02",
+        "prompt": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초. Editorial composition, natural light, refined material detail. No text, no logos.",
+        "cta": "자세히 알아보기",
+        "href": "",
+        "duration": 4,
+        "trim": 0,
+        "composition": "full",
+        "dim": 0.5,
+        "crop": 0
+      }
+    ],
+    "createdAt": 1790502114341,
+    "updatedAt": 1790502114341,
+    "version": 1
+  },
+  "revision": 1,
+  "contentVersion": 1,
+  "status": "pending",
+  "stage": "understand",
+  "idea": "QA 2026-09-27. 사진 속 크림색 펌프 용기를 중심으로 욕실의 차분한 아침 분위기를 소개하는 15초 브랜드 릴스, 3컷. 같은 원본 사진을 컷마다 다르게 크롭하고 천천히 확대하는 이미지 모션으로 만들어요. 1컷 정돈된 아침, 2컷 손이 닿는 자리, 3컷 작은 공간의 여유. 내레이션 없이 짧은 자막만. 가격, 효능, 친환경 인증, 실제 손 동작·액체 변화·새 사물 생성 요구는 제외. 원본 사진만으로 가능한 구도를 사용해 주세요.",
+  "model": "gpt-5.6-terra",
+  "effort": "low",
+  "spec": {
+    "purpose": "",
+    "purposeOrigin": "ai_assumed",
+    "audience": "",
+    "duration": 15,
+    "durationLocked": true,
+    "narration": false,
+    "voice": "coral",
+    "constraints": [],
+    "mode": "guided"
+  },
+  "referenceImages": [
+    {
+      "id": "bfd17f5e-bde2-4b5a-8c15-5e29e446cc54",
+      "name": "qa-sage-still-life.jpg",
+      "url": "/api/workspace/assets/bfd17f5e-bde2-4b5a-8c15-5e29e446cc54",
+      "width": 1122,
+      "height": 1402
+    }
+  ],
+  "scenes": [],
+  "sources": [],
+  "researchNote": "",
+  "needResearch": false,
+  "events": [
+    {
+      "id": "03796ae4-d576-428a-bfe1-cf28d14856aa",
+      "title": "제작을 시작했어요",
+      "message": "목적과 조건을 정리합니다. 대본 제작 1 크레딧, 이미지·영상·음성은 비용을 확인하고 선택합니다.",
+      "at": 1790502114342,
+      "revision": 2
+    },
+    {
+      "id": "c13daeab-277d-473a-ace8-5609237c1fa7",
+      "title": "사진에서 컷을 구성해요",
+      "message": "1장의 원본을 분석하고 장면별 사진과 움직임을 제안합니다. 영상 생성은 컷 승인 후 선택합니다.",
+      "at": 1790502114343,
+      "revision": 2
+    }
+  ],
+  "responses": [],
+  "budget": {
+    "calls": 0,
+    "maxCalls": 12,
+    "generations": 0,
+    "maxGenerations": 16,
+    "voiceCalls": 0,
+    "maxVoiceCalls": 16,
+    "renders": 0,
+    "maxRenders": 12
+  },
+  "feedback": "",
+  "targetIds": [],
+  "planApproved": false,
+  "sampleApproved": false,
+  "history": [],
+  "createdAt": 1790502114341,
+  "updatedAt": 1790502114341
+}

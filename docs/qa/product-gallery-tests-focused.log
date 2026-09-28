@@ -1,0 +1,22 @@
+✔ product validation, manual draft, fixed information render and escaping (3.06075ms)
+✔ product and landing workflow discovery, idempotency and refunds are isolated by format (34.565917ms)
+✔ product intent, plan, copy, scoped revision, approved images, handoff, and library persistence (67.808334ms)
+✔ multipart uploads bound the streamed body even without content-length (24.898625ms)
+✔ uploads preserve original bytes and ownership; vision uses a decoded image copy (24.807375ms)
+✔ corrupt, disguised, oversized, empty, animated and too-large pixel inputs do not persist (5.807417ms)
+✔ EXIF orientation is respected and AI images are bounded without modifying originals (76.498084ms)
+✔ invalid reference selections reject before reserving credits or creating a workflow (6.22225ms)
+✔ multimodal request, approved source mapping, refresh, copy revision, image board and handoff (54.160458ms)
+✔ photo-only recommendation supplies owned bytes and does not create a project or spend credits (8.861334ms)
+✔ missing, forged, foreign and duplicate images are rejected before model invocation (2.356542ms)
+✔ Responses transport carries all images, saved context and a strict recommendation schema (14.976083ms)
+✔ malformed model output is never applied; explicit field selection preserves factual inputs (0.232833ms)
+✔ recommendations have an account rate limit without extra generation charges (64.383834ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11864.117209

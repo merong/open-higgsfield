@@ -1,0 +1,124 @@
+{
+  "card": {
+    "id": "f867d8bb-2089-40b6-a08e-a35cf523b241",
+    "projectId": "36300d46-8eab-48c4-bdb5-40003c36d4d9",
+    "model": "gpt-5.6-terra",
+    "effort": "low",
+    "calls": 6,
+    "images": 4,
+    "copyPreservedAcrossImageRepair": true,
+    "outputMeasurements": [
+      {
+        "cardId": "6fea0677-1de6-4a79-807d-46842e078289",
+        "issues": [],
+        "mobileBodyPx": 16.2
+      },
+      {
+        "cardId": "20a19e94-fcd0-4b91-ad18-2dd1c25efbb8",
+        "issues": [],
+        "mobileBodyPx": 16.2
+      },
+      {
+        "cardId": "46df51ed-0763-4a2b-a90c-08f64006a617",
+        "issues": [],
+        "mobileBodyPx": 16.2
+      }
+    ],
+    "nonPass": {
+      "pass": 11,
+      "attention": 4
+    },
+    "finalStatus": "ready",
+    "finalStage": "review"
+  },
+  "files": {
+    "card-final.zip": {
+      "bytes": 3707944,
+      "sha256": "07a1080df59a1ceba856a69ed3f5f7ff03dce14a8df18fc71079028ae2792a84"
+    },
+    "reel-output.mp4": {
+      "bytes": 1068613,
+      "sha256": "5e7ba6c40d427c7d7e699307f7ac680b45011525416526c1801bf00d2a32c2d2"
+    },
+    "reel-sample.mp4": {
+      "bytes": 398930,
+      "sha256": "a38047432aa495c4585483ad7ed04aab3c35be5d575edf4c9b825e42b175d125"
+    },
+    "card-reviewed.zip": {
+      "bytes": 3558387,
+      "sha256": "688758d5fa928b9da89f313305cd3922a34e373b5838fd9740190b6e662fbf9c"
+    },
+    "product-website.zip": {
+      "bytes": 2751739,
+      "sha256": "471605074912da3d9bbb12e4ae2489f0f69c074da3f6ed0581a337d73b3b10d7"
+    },
+    "landing-website.zip": {
+      "bytes": 6370315,
+      "sha256": "9e8f369f05d5c6fd104aa54afd07f86c1865e318cd6c307305e1dd4dbec7fd83"
+    }
+  },
+  "landing": {
+    "id": "bebd7ef4-e21e-4b27-b556-07b88a159d34",
+    "projectId": "21ba2232-446f-448b-a52d-901aceaa9162",
+    "calls": 7,
+    "status": "ready",
+    "sectionCount": 5,
+    "finalStatus": "completed",
+    "finalStage": "review"
+  },
+  "product-detail": {
+    "id": "bf8ba475-a73c-4eab-b32a-524e15bc81df",
+    "projectId": "29a25ccb-bc13-4488-b7a6-d8e35cdbc834",
+    "calls": 4,
+    "status": "ready",
+    "sectionCount": 6,
+    "finalStatus": "completed",
+    "finalStage": "review"
+  },
+  "reels": {
+    "id": "46b347aa-25aa-4f9b-96d6-b406fff7bd9e",
+    "projectId": "acf830a4-ca44-4c53-8e49-5a68a8bcbf04",
+    "calls": 6,
+    "repairs": 1,
+    "duration": 15,
+    "frames": 450,
+    "quality": {
+      "issues": [
+        {
+          "layer": "visual",
+          "message": "1컷과 병·유리컵·수건의 배치 및 화면상 크기가 거의 동일하게 보입니다. 장면별 서로 다른 크롭 조건을 충족하는지 최종 구간에서 확인이 필요합니다.",
+          "sceneId": "scene-2",
+          "severity": "attention"
+        },
+        {
+          "layer": "visual",
+          "message": "수건·유리컵·타일을 강조하는 별도 크롭 지시와 달리, 두 병이 1·2컷과 같은 비중과 구도로 화면 중심에 남아 있습니다. 3컷 클로징 크롭이 지시된 피사체 중심으로 적용되지 않았습니다.",
+          "sceneId": "scene-3",
+          "severity": "error"
+        }
+      ],
+      "summary": "3개 중앙 프레임 모두 욕실 정물의 차분한 무드와 문구 가독성은 양호합니다. 다만 장면별로 서로 다른 크롭을 사용해야 한다는 조건과 달리, 제공된 프레임에서는 병·유리컵·수건의 구도와 크기가 사실상 동일하게 보입니다. 특히 3컷은 수건·유리컵·타일 중심의 별도 크롭이어야 하나 두 병이 그대로 중심에 남아 있어 클로징 의도와 맞지 않습니다.",
+      "version": 4,
+      "renderId": "1bf7acc6-6881-40df-8bea-ee7ed633aa72"
+    },
+    "finalStatus": "ready",
+    "finalStage": "production"
+  },
+  "creditBalances": {
+    "admin": {
+      "before": 284,
+      "after": 267
+    },
+    "user9": {
+      "before": 46,
+      "after": 39
+    },
+    "netDebitIncludingOpenReservations": 24
+  },
+  "limitations": [
+    "One controlled input per format, not a statistical quality benchmark.",
+    "Reels used uploaded-image composition, not new provider-generated video.",
+    "Card and reel quality issues remain; workflows were not finalized.",
+    "Completed landing/product state means editor handoff, not publication."
+  ]
+}

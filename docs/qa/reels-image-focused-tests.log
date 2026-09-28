@@ -1,0 +1,34 @@
+✔ multipart uploads bound the streamed body even without content-length (24.424459ms)
+✔ uploads preserve original bytes and ownership; vision uses a decoded image copy (15.95ms)
+✔ corrupt, disguised, oversized, empty, animated and too-large pixel inputs do not persist (15.417167ms)
+✔ EXIF orientation is respected and AI images are bounded without modifying originals (79.381333ms)
+✔ invalid reference selections reject before reserving credits or creating a workflow (5.498584ms)
+✔ multimodal request, approved source mapping, refresh, copy revision, image board and handoff (58.801958ms)
+✔ photo-only recommendation supplies owned bytes and does not create a project or spend credits (8.726667ms)
+✔ missing, forged, foreign and duplicate images are rejected before model invocation (2.368125ms)
+✔ Responses transport carries all images, saved context and a strict recommendation schema (16.51225ms)
+✔ malformed model output is never applied; explicit field selection preserves factual inputs (0.349042ms)
+✔ recommendations have an account rate limit without extra generation charges (54.374583ms)
+✔ reels start/answers are owned, revision fenced and idempotent; waiting invokes no model (27.753292ms)
+✔ reels plan protects copy and duration; scoped patch and subtitle style retain audio and unrelated scenes (18.891209ms)
+✔ reels cancel fences a late model result; content cannot be marked complete without reviewed files (11.204958ms)
+✔ reels measured voice timing keeps confirmed words and asks before exceeding locked duration (15.103084ms)
+✔ reels video credit policy and sample gate prevent provider calls; remote URLs cannot target private hosts (21.856334ms)
+✔ reels alignment retry reuses stored audio, charges once and subtitle edits keep voice (96.314125ms)
+[reels:voice] {
+  name: 'Error',
+  message: 'fixture transport interruption',
+  code: undefined
+}
+✔ reels actual FFmpeg sample/full encode, full decode and reviewed ZIP completion (fixture overlays) (14418.139959ms)
+✔ reels model requests retain configured model/effort and have explicit output/research contracts (6.131417ms)
+✔ reels alignment bounds only the final ASR endpoint without losing words (0.129375ms)
+✔ reels ambiguous voice requests never auto-retry; explicit scoped retry keeps the prior ledger (58.748166ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 26802.230791

@@ -1,0 +1,65 @@
+{
+  "typography": {
+    "body": {
+      "font": "pretendard",
+      "weight": 400
+    },
+    "title": {
+      "font": "pretendard",
+      "weight": 800
+    },
+    "accent": {
+      "font": "inter",
+      "weight": 600
+    },
+    "preset": "clear",
+    "version": 1,
+    "confirmed": true
+  },
+  "files": [
+    {
+      "id": "pretendard",
+      "name": "Pretendard",
+      "path": "assets/fonts/pretendard-variable.woff2",
+      "sha256": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
+      "revision": "v1.3.9",
+      "source": "https://raw.githubusercontent.com/orioncactus/pretendard/v1.3.9/packages/pretendard/dist/web/variable/woff2/PretendardVariable.woff2",
+      "license": "OFL-1.1",
+      "licensePath": "assets/fonts/pretendard-OFL.txt",
+      "version": "Version 1.309;Glyphs 3.2 (3225)",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ]
+    },
+    {
+      "id": "inter",
+      "name": "Inter",
+      "path": "assets/fonts/inter-variable.woff2",
+      "sha256": "351f50d53207a6a7d8643edfa2520468627b141466d572493c0ef1b3075d0311",
+      "revision": "e44c4b011a820c2cbe2fd2cfa8052037d7edb571",
+      "source": "https://raw.githubusercontent.com/google/fonts/e44c4b011a820c2cbe2fd2cfa8052037d7edb571/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "license": "OFL-1.1",
+      "licensePath": "assets/fonts/inter-OFL.txt",
+      "version": "Version 4.001;git-66647c0bb",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "21ba2232-446f-448b-a52d-901aceaa9162",
+  "brand": "느린 아침 스튜디오",
+  "brief": {
+    "tone": "calm",
+    "count": 5,
+    "topic": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다",
+    "audience": "욕실에 놓인 물건을 정리하고 배치하는 방식에 대해 상담을 받고 싶은 예비 고객",
+    "mustInclude": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. 서비스는 욕실에 놓인 물건을 분류하고 배치하는 상담이며, 일정과 가격은 아직 정해지지 않았습니다. 예비 고객이 이메일로 상담을 문의하도록 해주세요. 효능, 친환경 인증, 고객 후기, 수치 성과를 만들지 마세요. CTA는 상담 문의, 연결은 mailto:hello@example.test."
+  },
+  "ratio": "4:5",
+  "slots": [
+    {
+      "id": "0c65ca61-3fd0-462b-82cf-8e083011dc60",
+      "cta": "상담 문의",
+      "dim": 0.5,
+      "body": "느린 아침 스튜디오는 욕실에 놓인 물건을 함께 분류하고, 사용하는 흐름을 고려해 배치 방식을 살펴보는 상담을 제공합니다.\n\n매일 쓰는 물건이 많은 욕실에서 무엇을 남기고 어디에 둘지, 내 생활에 맞는 기준을 함께 정리해 봅니다.",
+      "crop": 0,
+      "href": "mailto:hello@example.test",
+      "kind": "hero",
+      "trim": 0,
+      "media": {
+        "url": "/api/workspace/assets/bfd17f5e-bde2-4b5a-8c15-5e29e446cc54",
+        "kind": "image",
+        "name": "qa-sage-still-life.jpg"
+      },
+      "title": "욕실의 물건, 쓰는 흐름에 맞게",
+      "kicker": "느린 아침 스튜디오 · 욕실 정리 상담",
+      "prompt": "",
+      "duration": 4,
+      "imagePlan": {
+        "ratio": "3:4",
+        "enabled": true,
+        "description": "연한 녹색 타일 욕실의 정물 사진입니다. 햇살과 잎 그림자 아래에 흰 용기, 유리컵, 접힌 흰 수건이 놓여 있어 차분하고 정돈된 분위기를 보여줍니다."
+      },
+      "composition": "split"
+    },
+    {
+      "id": "e31de1c3-b155-426d-ab3f-a4f9807f8cc1",
+      "cta": "",
+      "dim": 0.5,
+      "body": "자주 손이 가는 물건과 보관해 둘 물건을 나누고, 꺼낸 뒤 다시 두는 순간까지 생각합니다. 물건의 수만 줄이기보다 지금의 욕실에서 편하게 사용할 수 있는 배치 기준을 함께 살펴봅니다.\n\n용도와 사용 빈도|욕실에 있는 물건을 어떤 때 사용하는지 함께 살펴보고 분류합니다.\n꺼내고 다시 두는 흐름|사용 후 제자리로 돌아가기 쉬운 배치 방식을 이야기합니다.\n내 생활에 맞는 기준|정답 같은 수납법 대신 평소의 사용 순서를 기준으로 정리합니다.",
+      "crop": 0,
+      "href": "",
+      "kind": "features",
+      "trim": 0,
+      "media": {
+        "url": "/api/workspace/assets/87e912cd-1b1d-4890-b9b8-e7e3fdb5b166",
+        "kind": "image",
+        "name": "밝고 차분한 욕실 선반 또는 세면대 위에 서로 다른 크기의 무지 용기, 수건, 작은 바구니가 여백을 두고 놓인 장면. 특정 브랜드나 효능 표시는 보이지 않으며, 물건의 용도별 구분과 접근하기 쉬운 배치를 직관적으로 보여줍니다."
+      },
+      "title": "정리보다 먼저, 쓰임을 살펴봅니다",
+      "kicker": "상담에서 함께 살펴보는 기준",
+      "prompt": "A calm, sunlit bathroom vanity or open shelf in soft sage green and warm ivory tones. Unbranded neutral containers, a folded white towel, a small simple basket, and a clear glass arranged with generous space to show categories and easy access. Editorial still life photography, natural morning light and soft plant shadows, realistic materials, quiet organized atmosphere, square composition. No text, no logos.",
+      "duration": 4,
+      "imagePlan": {
+        "ratio": "1:1",
+        "enabled": true,
+        "description": "밝고 차분한 욕실 선반 또는 세면대 위에 서로 다른 크기의 무지 용기, 수건, 작은 바구니가 여백을 두고 놓인 장면. 특정 브랜드나 효능 표시는 보이지 않으며, 물건의 용도별 구분과 접근하기 쉬운 배치를 직관적으로 보여줍니다."
+      },
+      "composition": "split",
+      "appliedJobId": "50e821fb-8e62-4985-af44-643f2a4ed608"
+    },
+    {
+      "id": "ff54bd8a-accc-4218-9f20-2d6421877f53",
+      "cta": "",
+      "dim": 0.5,
+      "body": "욕실의 구조와 현재 놓인 물건, 평소 사용하는 순서를 바탕으로 이야기를 나눕니다.\n\n보기 좋은 장면을 만드는 데서 그치지 않고, 각 물건을 어떤 기준으로 두면 좋을지 함께 살펴봅니다. 정답 같은 수납법 대신 내 생활에 맞는 배치를 정할 수 있도록 돕습니다.",
+      "crop": 0,
+      "href": "",
+      "kind": "story",
+      "trim": 0,
+      "title": "내 욕실에 맞는 기준을 찾는 시간",
+      "kicker": "욕실의 현재 모습에서 시작합니다",
+      "prompt": "",
+      "duration": 4,
+      "imagePlan": {
+        "ratio": "16:9",
+        "enabled": false,
+        "description": "이미지 없이 상담의 관점과 범위를 텍스트로 분명하게 전달합니다."
+      },
+      "composition": "split"
+    },
+    {
+      "id": "786317f4-6fea-4310-b610-eb1480f4a8ee",
+      "cta": "",
+      "dim": 0.5,
+      "body": "상담 일정과 가격은 정해졌나요?|현재 상담 일정과 가격은 아직 정해지지 않았습니다. 이메일 문의를 확인한 뒤 안내드립니다.\n어떤 내용을 문의하면 되나요?|궁금한 점이나 상담을 원하는 욕실의 상황을 이메일로 보내주세요.\n상담에서는 무엇을 살펴보나요?|욕실에 놓인 물건의 분류와 사용 흐름을 고려한 배치 방식을 함께 살펴봅니다.",
+      "crop": 0,
+      "href": "",
+      "kind": "faq",
+      "trim": 0,
+      "title": "상담 전에 알아둘 점",
+      "kicker": "문의 전 안내",
+      "prompt": "",
+      "duration": 4,
+      "imagePlan": {
+        "ratio": "1:1",
+        "enabled": false,
+        "description": "이미지 없이 일정과 가격이 아직 정해지지 않았다는 안내를 명확한 텍스트로 제공합니다."
+      },
+      "composition": "split"
+    },
+    {
+      "id": "1c3d339e-1625-44e1-8c39-ed6193c23e8e",
+      "cta": "상담 문의",
+      "dim": 0.5,
+      "body": "상담에 대해 궁금한 점이나 현재 욕실 정리에서 고민되는 부분을 이메일로 보내주세요.\n\n느린 아침 스튜디오가 확인하겠습니다.\nhello@example.test",
+      "crop": 0,
+      "href": "mailto:hello@example.test",
+      "kind": "cta",
+      "trim": 0,
+      "title": "욕실 정리 상담을 문의하세요",
+      "kicker": "상담 문의",
+      "prompt": "",
+      "duration": 4,
+      "imagePlan": {
+        "ratio": "1:1",
+        "enabled": false,
+        "description": "이미지 없이 ‘상담 문의’ 버튼과 이메일 주소에 집중하도록 구성합니다."
+      },
+      "composition": "split"
+    }
+  ],
+  "title": "느린 아침 스튜디오 | 욕실 정리 상담",
+  "format": "landing",
+  "preset": "editorial",
+  "caption": "QA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다\n\nQA 2026-09-27. 느린 아침 스튜디오의 욕실 정리 상담 소개. 사진은 연출 분위기 참고 이미지입니다. 서비스는 욕실에 놓인 물건을 분류하고 배치하는 상담이며, 일정과 가격은 아직 정해지지 않았습니다. 예비 고객이 이메일로 상담을 문의하도록 해주세요. 효능, 친환경 인증, 고객 후기, 수치 성과를 만들지 마세요. CTA는 상담 문의, 연결은 mailto:hello@example.test.",
+  "modelId": "soul-2",
+  "version": 6,
+  "createdAt": 1790501977342,
+  "updatedAt": 1790503028496,
+  "typography": {
+    "body": {
+      "font": "pretendard",
+      "weight": 400
+    },
+    "title": {
+      "font": "pretendard",
+      "weight": 800
+    },
+    "accent": {
+      "font": "inter",
+      "weight": 600
+    },
+    "preset": "clear",
+    "version": 1,
+    "confirmed": true
+  }
+}

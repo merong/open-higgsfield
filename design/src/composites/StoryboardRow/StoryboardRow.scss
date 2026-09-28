@@ -1,0 +1,185 @@
+@use "@/styles/mixins" as m;
+
+.ohf-sb-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px 56px minmax(0, 1.15fr) minmax(0, 1fr) 92px;
+  gap: 12px;
+  align-items: center;
+  height: 90px;
+  padding: 0 16px 0 12px;
+  border-left: 2px solid transparent;
+  border-bottom: 1px solid var(--line);
+  transition: background var(--dur-base) ease;
+
+  &:hover,
+  &[data-state="hover"] {
+    background: var(--rail);
+  }
+  /* The click lands on .ohf-sb-select, whose own box doesn't cover the row —
+     the press feedback for that press still belongs to the row it selects. */
+  &:has(.ohf-sb-select:active),
+  &[data-state="active"] {
+    background: var(--s1);
+  }
+  /* Selection is the one place the row takes the accent: a bar, not a fill. */
+  &--selected {
+    background: var(--s1);
+    border-left-color: var(--accent);
+  }
+  &--editing {
+    background: var(--s1);
+    box-shadow: inset 0 0 0 1px var(--accent-32);
+  }
+  &--dragging {
+    opacity: 0.6;
+    background: var(--s2);
+    box-shadow: var(--shadow-2);
+  }
+}
+.ohf-sb-num {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: var(--fw-medium);
+  color: var(--tx3);
+  @include m.tabular;
+}
+.ohf-sb-row--selected .ohf-sb-num {
+  color: var(--tx);
+  font-weight: var(--fw-bold);
+}
+.ohf-sb-grip {
+  display: flex;
+  color: transparent;
+}
+.ohf-sb-row--selected .ohf-sb-grip,
+.ohf-sb-row:hover .ohf-sb-grip,
+.ohf-sb-row[data-state="hover"] .ohf-sb-grip,
+.ohf-sb-row--dragging .ohf-sb-grip {
+  color: var(--tx4);
+}
+.ohf-sb-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-width: 0;
+}
+.ohf-sb-title {
+  max-width: 100%;
+  font-size: 13.5px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+  color: var(--tx);
+  @include m.truncate;
+}
+/* The reset already zeroes a <button>'s font/border/background/padding; what
+   is left is display and alignment, so it reads exactly like the div it
+   replaces. No `position` here — its ::after inherits .ohf-sb-row's
+   positioning context instead, so the stretched hit area covers the whole
+   row, not just the label's own box. */
+.ohf-sb-select {
+  display: block;
+  width: 100%;
+  text-align: left;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+  &:focus-visible::after {
+    outline: 2px solid var(--accent-32);
+    outline-offset: -2px;
+  }
+}
+.ohf-sb-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  font-size: 12px;
+  color: var(--tx3);
+}
+.ohf-sb-sub-text {
+  @include m.truncate;
+}
+.ohf-sb-counter {
+  flex-shrink: 0;
+  @include m.tabular;
+  &--over {
+    color: var(--danger);
+  }
+}
+.ohf-sb-side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.ohf-sb-prompt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  background: var(--s1);
+  border: 1px solid var(--line);
+  color: var(--tx2);
+  font-size: 12px;
+}
+.ohf-sb-row--selected .ohf-sb-prompt {
+  background: var(--s2);
+}
+.ohf-sb-prompt-ic {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--tx4);
+}
+.ohf-sb-prompt-text {
+  @include m.truncate;
+}
+.ohf-sb-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--tx4);
+  @include m.truncate;
+  &--live {
+    color: var(--tx3);
+  }
+  &--danger {
+    color: var(--danger);
+  }
+}
+.ohf-sb-lamp {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: ohf-pulse 2.4s ease-in-out infinite;
+}
+/* Both islands sit above .ohf-sb-select's stretched ::after (z-index: auto),
+   so their own clicks reach their own handlers instead of the row's select. */
+.ohf-sb-status-action {
+  position: relative;
+  z-index: 1;
+}
+.ohf-sb-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}

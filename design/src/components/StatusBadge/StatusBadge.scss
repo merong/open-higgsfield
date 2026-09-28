@@ -1,0 +1,34 @@
+.ohf-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: var(--fs-xs);
+  line-height: 1.2;
+  white-space: nowrap;
+  i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  &--success {
+    color: var(--success);
+  }
+  &--warning {
+    color: var(--warning);
+  }
+  &--danger {
+    color: var(--danger);
+  }
+  &--live {
+    color: var(--accent);
+    background: var(--accent-08);
+  }
+  &--info {
+    color: var(--info);
+  }
+}

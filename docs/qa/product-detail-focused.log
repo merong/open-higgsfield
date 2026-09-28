@@ -1,0 +1,11 @@
+✔ product validation, manual draft, fixed information render and escaping (3.352792ms)
+✔ product and landing workflow discovery, idempotency and refunds are isolated by format (30.884792ms)
+✔ product intent, plan, copy, scoped revision, approved images, handoff, and library persistence (63.242292ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11494.673792

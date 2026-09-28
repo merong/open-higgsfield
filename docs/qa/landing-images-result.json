@@ -1,0 +1,26 @@
+{
+  "projectId": "89790505-7d41-4482-8963-af89469fd9b8",
+  "originalCopyProtected": true,
+  "images": [
+    {
+      "slotId": "f49b1887-821f-492d-b0e5-d30ea0e040db",
+      "state": "completed",
+      "model": "soul-cinema",
+      "applied": true,
+      "assetUrl": "/api/workspace/assets/bfde66b3-d1d7-4a82-b8fc-ab11c6887c92",
+      "jobId": "04211df9-0e96-4814-baef-4bf9d9780f83"
+    },
+    {
+      "slotId": "4c0727c8-b857-4dd5-a468-99ca8f1c4494",
+      "state": "completed",
+      "model": "soul-2",
+      "applied": true,
+      "assetUrl": "/api/workspace/assets/dc884786-9e68-4e49-b3f6-2739c38c8345",
+      "jobId": "e380c92c-6003-4d91-a597-98b5f7f09991"
+    }
+  ],
+  "workflowId": "e077bb6e-e452-42ba-ba79-f9d575d6c5c1",
+  "workflowProjectId": "26236a51-bb22-498b-9353-173e06065bd3",
+  "realGeneratedImages": 3,
+  "applicationCredits": 13
+}

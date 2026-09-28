@@ -1,0 +1,43 @@
+.ohf-progress {
+  width: 100%;
+}
+.ohf-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.ohf-progress-track {
+  height: 3px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--surface-hover);
+  i {
+    display: block;
+    height: 100%;
+    width: var(--progress);
+    border-radius: inherit;
+    background: var(--accent);
+    transition: width var(--dur-slow) var(--ease);
+  }
+  &[data-indeterminate] i {
+    animation: ohf-progress-travel 1.5s ease-in-out infinite alternate;
+  }
+}
+.ohf-progress--danger i {
+  background: var(--danger);
+}
+@keyframes ohf-progress-travel {
+  to {
+    transform: translateX(185%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ohf-progress-track i {
+    animation: none;
+    transition: none;
+  }
+}

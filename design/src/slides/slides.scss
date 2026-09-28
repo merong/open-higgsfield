@@ -1,0 +1,369 @@
+// Slides are the customer's picture, not the app's chrome: every size is a
+// fraction of the slide's own width (cqw) and every colour comes from the
+// preset through --sl-*, never from the app palette.
+.ohf-slide {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  container-type: inline-size;
+  background: var(--sl-bg);
+  color: var(--sl-tx);
+  font-family: var(--sl-body);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.ohf-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--sl-image-position, center);
+}
+.ohf-slide-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 18, 32, var(--sl-dim, 0.5));
+  &--grad {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 16, 23, 0.02) 15%,
+      rgba(8, 16, 23, 0.35) 42%,
+      rgba(8, 16, 23, 0.88) 100%
+    );
+  }
+}
+.ohf-slide-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 9cqw 8cqw 16cqw;
+}
+.ohf-slide--start .ohf-slide-body {
+  justify-content: flex-start;
+}
+.ohf-slide--mid .ohf-slide-body {
+  justify-content: center;
+}
+.ohf-slide--end .ohf-slide-body {
+  justify-content: flex-end;
+}
+
+.ohf-slide-kicker {
+  align-self: flex-start;
+  margin-bottom: 3.2cqw;
+  padding: 1.1cqw 2.8cqw;
+  border-radius: 100cqw;
+  background: var(--sl-acc);
+  color: var(--sl-acc-ink);
+  font-size: 3.4cqw;
+  font-weight: 700;
+}
+.ohf-slide-title,
+.ohf-slide-h {
+  font-family: var(--sl-head);
+  font-weight: var(--sl-head-weight);
+  letter-spacing: var(--sl-head-ls);
+  line-height: var(--sl-head-lh);
+  text-wrap: balance;
+}
+.ohf-slide-title {
+  font-size: 10.2cqw;
+  &--md {
+    font-size: 8.4cqw;
+  }
+}
+.ohf-slide-h {
+  font-size: 7.4cqw;
+}
+.ohf-slide-sub {
+  margin-top: 2.6cqw;
+  font-size: 4.2cqw;
+  font-weight: 500;
+  opacity: 0.9;
+}
+.ohf-slide-text {
+  margin-top: 4cqw;
+  font-size: 4.1cqw;
+  line-height: 1.6;
+  font-weight: 500;
+  opacity: 0.95;
+}
+.ohf-slide-list {
+  margin-top: 5cqw;
+}
+.ohf-slide-item {
+  display: flex;
+  align-items: baseline;
+  gap: 3.4cqw;
+  padding: 3.3cqw 0;
+  border-top: 0.3cqw solid var(--sl-rule);
+  font-size: 4.1cqw;
+  font-weight: 600;
+  &:last-child {
+    border-bottom: 0.3cqw solid var(--sl-rule);
+  }
+}
+.ohf-slide-num {
+  font-style: normal;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--sl-acc);
+}
+.ohf-slide-item-label {
+  flex: 1;
+  min-width: 0;
+}
+.ohf-slide-item-value {
+  margin-left: auto;
+  font-size: 3.8cqw;
+  font-weight: 500;
+  opacity: 0.75;
+}
+.ohf-slide-qmark {
+  display: block;
+  height: 11cqw;
+  font-family: var(--sl-head);
+  font-size: 22cqw;
+  font-weight: 800;
+  line-height: 0.7;
+  color: var(--sl-acc);
+}
+.ohf-slide-quote {
+  font-family: var(--sl-head);
+  font-size: 6.8cqw;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.ohf-slide-src {
+  margin-top: 4cqw;
+  font-size: 3.8cqw;
+  opacity: 0.8;
+}
+.ohf-slide-pill {
+  align-self: flex-start;
+  margin-top: 6cqw;
+  padding: 1.8cqw 4.4cqw;
+  border: 0.4cqw solid var(--sl-acc);
+  border-radius: 100cqw;
+  color: var(--sl-acc);
+  font-size: 4cqw;
+  font-weight: 700;
+}
+.ohf-slide-foot {
+  position: absolute;
+  left: 8cqw;
+  right: 8cqw;
+  bottom: 5cqw;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.1cqw;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+/* Every composition remains exportable without the app's tokens or shell. */
+.ohf-slide-edition {
+  position: absolute;
+  z-index: 1;
+  top: 6cqw;
+  left: 8cqw;
+  right: 8cqw;
+  padding-bottom: 2.5cqw;
+  border-bottom: 0.2cqw solid var(--sl-rule);
+  font-size: 2.6cqw;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.ohf-slide-foot {
+  border-top: 0.2cqw solid var(--sl-rule);
+  padding-top: 2.4cqw;
+  font-size: 2.7cqw;
+  letter-spacing: 0.025em;
+}
+.ohf-slide-sub {
+  line-height: 1.55;
+  max-width: 30ch;
+}
+.ohf-slide-kicker {
+  font-size: 2.9cqw;
+  letter-spacing: 0.06em;
+  margin-bottom: 4cqw;
+}
+.ohf-slide:where([data-preset="editorial"]) {
+  .ohf-slide-kicker {
+    padding: 0;
+    background: none;
+    color: inherit;
+    border-radius: 0;
+    border-bottom: 0.3cqw solid var(--sl-acc);
+    padding-bottom: 2cqw;
+  }
+  .ohf-slide-title {
+    font-size: 9.5cqw;
+    line-height: 1.32;
+  }
+  .ohf-slide-pill {
+    border-radius: 0;
+    border-width: 0 0 0.25cqw;
+    padding: 0 0 2cqw;
+  }
+}
+.ohf-slide:where([data-preset="impact"]) {
+  .ohf-slide-kicker {
+    border-radius: 0;
+  }
+  .ohf-slide-title {
+    font-size: 11.2cqw;
+    line-height: 1.12;
+  }
+  .ohf-slide-h {
+    font-size: 8.6cqw;
+  }
+  .ohf-slide-pill {
+    border-radius: 0;
+    background: var(--sl-acc);
+    color: var(--sl-acc-ink);
+  }
+}
+.ohf-slide:where([data-preset="soft"]) {
+  .ohf-slide-title {
+    font-size: 9cqw;
+    line-height: 1.35;
+  }
+  .ohf-slide-kicker {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+  .ohf-slide-body {
+    padding-left: 10cqw;
+    padding-right: 10cqw;
+  }
+}
+.ohf-slide--split {
+  .ohf-slide-img {
+    height: 43%;
+    top: 0;
+  }
+  .ohf-slide-body {
+    top: 43%;
+    padding-top: 5cqw;
+    justify-content: center;
+  }
+  .ohf-slide-edition {
+    top: 4cqw;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.35);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
+  .ohf-slide-title,
+  .ohf-slide-h {
+    font-size: 7.8cqw;
+  }
+  .ohf-slide-kicker {
+    font-size: 2.5cqw;
+    margin-bottom: 2cqw;
+  }
+  .ohf-slide-sub {
+    font-size: 3.4cqw;
+  }
+  .ohf-slide-text {
+    font-size: 3.6cqw;
+    margin-top: 2.5cqw;
+  }
+}
+.ohf-slide--inset {
+  .ohf-slide-img {
+    inset: 14cqw 8cqw auto;
+    width: 84%;
+    height: 38%;
+  }
+  .ohf-slide-body {
+    top: 48%;
+    justify-content: center;
+    padding-top: 5cqw;
+  }
+  .ohf-slide-title,
+  .ohf-slide-h {
+    font-size: 7.2cqw;
+  }
+  .ohf-slide-sub,
+  .ohf-slide-text {
+    font-size: 3.5cqw;
+  }
+  .ohf-slide-kicker {
+    font-size: 2.5cqw;
+    margin-bottom: 2cqw;
+  }
+}
+.ohf-slide[data-ratio="1:1"] {
+  .ohf-slide-body {
+    padding-top: 12cqw;
+    padding-bottom: 15cqw;
+  }
+  .ohf-slide-title {
+    font-size: 8.6cqw;
+  }
+  .ohf-slide-text {
+    font-size: 3.8cqw;
+    line-height: 1.5;
+  }
+  .ohf-slide-h {
+    font-size: 6.8cqw;
+  }
+  .ohf-slide-item {
+    font-size: 3.8cqw;
+    padding: 2.2cqw 0;
+  }
+  &.ohf-slide--split,
+  &.ohf-slide--inset {
+    .ohf-slide-body {
+      padding-top: 3cqw;
+    }
+    .ohf-slide-title {
+      font-size: 6.4cqw;
+    }
+    .ohf-slide-sub {
+      font-size: 3cqw;
+      margin-top: 1.5cqw;
+    }
+  }
+}
+.ohf-slide-metric {
+  font-family: var(--sl-head);
+  font-size: 25cqw;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--sl-acc);
+  margin-bottom: 7cqw;
+  font-variant-numeric: tabular-nums;
+  span {
+    font-size: 6cqw;
+    margin-left: 2cqw;
+    letter-spacing: 0;
+  }
+}
+.ohf-slide-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5cqw;
+  margin-top: 8cqw;
+  > div {
+    border-top: 0.4cqw solid var(--sl-acc);
+    padding-top: 4cqw;
+  }
+  h3 {
+    font-size: 5.5cqw;
+    margin-bottom: 3cqw;
+  }
+  p {
+    font-size: 4cqw;
+    line-height: 1.7;
+  }
+}
