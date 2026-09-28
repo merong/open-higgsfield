@@ -4,6 +4,7 @@ import { imagePlan, imagePlaceholder, IMAGE_SIZES } from "@/projects/landing-ima
 import { SLIDE_STYLES } from "@openhiggsfield/design";
 import type { Project } from "@/projects/types";
 import { safeLink } from "@/projects/formats";
+import { parsePairedCopy } from "@/projects/paired-copy";
 export const escapeHtml = (value: string) =>
   value.replace(
     /[&<>"']/g,
@@ -49,13 +50,17 @@ export function landingHtml(
           const copy = detail.length ? `<h3>${e(heading)}</h3><p>${e(detail.join("|"))}</p>` : line.length > 80 ? `<p>${e(line)}</p>` : `<h3>${e(line)}</h3>`;
           return `<article><span class="number">${String(j + 1).padStart(2, "0")}</span>${copy}</article>`;
         }).join("")}</div>${img}</section>`;
-      if (slot.kind === "faq")
+      if (slot.kind === "faq") {
+        const parsed = parsePairedCopy(slot.body, true);
+        if (parsed) return `<section id="section-${i + 1}" class="faq"><h2>${title}</h2>${parsed.introduction.map(line => `<p>${e(line)}</p>`).join("")}${parsed.pairs.map(({ label, value }) => `<details><summary>${e(label)}</summary><p>${e(value)}</p></details>`).join("")}${img}</section>`;
+        // Keep the editor's existing placeholders for unfinished manual copy.
         return `<section id="section-${i + 1}" class="faq"><h2>${title}</h2>${body
           .map((line) => {
             const [q, ...a] = line.split("|");
             return `<details><summary>${e(q)}</summary><p>${e(a.join("|") || "답변을 입력해 주세요.")}</p></details>`;
           })
           .join("")}${img}</section>`;
+      }
       if (slot.kind === "testimonial")
         return `<section id="section-${i + 1}" class="quote"><blockquote>${title}</blockquote><p>${e(slot.body)}</p>${img}</section>`;
       return `<section id="section-${i + 1}" class="${slot.kind === "cta" ? "cta" : "story"}">${img}<div><span class="eyebrow">${e(slot.kicker)}</span><h2>${title}</h2><p>${e(slot.body)}</p>${cta}</div></section>`;

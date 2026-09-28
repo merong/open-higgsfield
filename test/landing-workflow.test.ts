@@ -150,3 +150,44 @@ await test("text-only planned sections accept empty image prompts without blocki
   assert(r.project.slots.filter(s => s.imagePlan?.enabled).every(s => !!s.prompt));
   await cancel(await getLanding(user.id, r.id));
 });
+
+await test("FAQ introduction survives AI writing, persistence and export without becoming an unanswered question", async () => {
+  let r = await planned();
+  r = await act(r, { action: "confirm_plan", plan: r.plan });
+  const body = "사용하기 전에 차례로 살펴보세요.\n \n어떤 형태를 고를까요?|자주 쓰는 형태를 살펴보세요.\n표면은 어떤가요?|사진의 <질감>을 확인하세요.";
+  r = await step(r, async run => ({ summary: "소개와 질문을 작성했습니다.", title: "사용 안내", sections: copyFor(run).map(s => run.plan.find(p => p.id === s.id)?.kind === "faq" ? { ...s, body } : s) }));
+  try {
+    assert.equal(r.status, "pending", r.error);
+    assert.equal(r.stage, "review");
+    const saved = await getProject(user.id, r.projectId);
+    assert.equal(saved.slots.find(s => s.kind === "faq")!.body, body);
+    const html = landingHtml(saved);
+    assert.match(html, /<p>사용하기 전에 차례로 살펴보세요\.<\/p><details>/);
+    assert(!html.includes("<summary>사용하기 전에"));
+    assert.match(html, /사진의 &lt;질감&gt;을 확인하세요/);
+    assert(!html.includes("답변을 입력해 주세요."));
+  } finally { await cancel(await getLanding(user.id, r.id)); }
+});
+
+await test("FAQ and specification validation keeps malformed pairs atomic for write and revisions", async () => {
+  const r = await ready();
+  try {
+    const faq = r.project.slots.find(s => s.kind === "faq")!;
+    for (const kind of ["faq", "specs"] as const) {
+      for (const body of ["소개 문장만 있습니다.", "질문| ", " |답변", "질문|답변\n빠진 답변", ...(kind === "specs" ? ["소개 문장\n소재|도자기"] : [])]) {
+        const run = structuredClone(r); run.stage = "patch"; run.targetId = faq.id;
+        run.project.slots.find(s => s.id === faq.id)!.kind = kind;
+        const before = structuredClone(run.project);
+        assert.throws(() => applyLandingCopy(run, [{ id: faq.id, title: "확인", body, kicker: "", prompt: "" }], true), /형식/);
+        assert.deepEqual(run.project, before);
+      }
+    }
+    for (const stage of ["patch", "refine"] as const) {
+      const run = structuredClone(r); run.stage = stage; run.targetId = faq.id;
+      run.editorial!.targetIds = [faq.id];
+      applyLandingCopy(run, [{ id: faq.id, title: "확인", body: "안내 문장\n\n질문|답변", kicker: "", prompt: "" }], true);
+      assert.equal(run.project.slots.find(s => s.id === faq.id)!.body, "안내 문장\n\n질문|답변");
+      assert.deepEqual(JSON.parse(JSON.stringify(run.project.slots.filter(s => s.id !== faq.id))), r.project.slots.filter(s => s.id !== faq.id));
+    }
+  } finally { await cancel(await getLanding(user.id, r.id)); }
+});

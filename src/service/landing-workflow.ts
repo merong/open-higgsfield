@@ -1,4 +1,5 @@
 import { agentTask } from "@/projects/agent-progress";
+import { parsePairedCopy } from "@/projects/paired-copy";
 import { newEditorialLoop, editorialTargets, MAX_EDITORIAL_REPAIRS } from "@/projects/editorial-review";
 import { recordEditorialReview } from "./editorial-review";
 import { parseTypography, proposeTypography } from "@/projects/typography-validation";
@@ -130,7 +131,7 @@ export function applyLandingCopy(r: LandingWorkflow, value: unknown, patch: bool
     const d = sections.find(d => d.id === s.id);
     if (!d) return s;
     const updated = { ...s, title: text(d.title, "제목", 90, 1), body: text(d.body, "본문", 2000, 1), kicker: text(d.kicker, "상단 문구", 60), prompt: r.stage === "refine" ? s.prompt : text(d.prompt, "이미지 구상", 1000, imagePlan(s).enabled && !s.media ? 1 : 0), cta: ["hero", "cta"].includes(s.kind) ? r.intent.ctaLabel : "", href: ["hero", "cta"].includes(s.kind) ? r.intent.ctaHref : "" };
-    if (["faq", "specs"].includes(s.kind) && updated.body.split("\n").filter(Boolean).some(line => !line.split("|")[1]?.trim())) throw new ServiceError(502, "질문·답변 또는 규격의 항목·값 형식을 확인하지 못했어요.");
+    if (["faq", "specs"].includes(s.kind) && !parsePairedCopy(updated.body, s.kind === "faq")) throw new ServiceError(502, "질문·답변 또는 규격의 항목·값 형식을 확인하지 못했어요.");
     return updated;
   });
   r.project = parseProject({ ...r.project, brand: r.intent.brand, preset: r.intent.preset, ...(r.intent.product ? { product: r.intent.product } : {}), brief: { ...r.project.brief, audience: r.intent.audience.slice(0, 100), tone: r.intent.tone, count: slots.length, mustInclude: r.intent.facts || r.idea }, slots });
